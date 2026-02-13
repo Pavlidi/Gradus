@@ -17,7 +17,7 @@ body {
   background-color: #FAF9F6;
 }
 
-h1, h2, h3, p, a {
+h1, h2, h3, p, a, .btn {
     text-box-trim: trim-both; /*Убирает отступы текста у блока в котором он находится, обязательно в связке с нижним свойством*/
     text-box-edge: cap alphabetic; /*Убирает отступы текста у блока в котором он находится, обязательно в связке с верхним свойством*/
     color: #252532;
@@ -78,6 +78,7 @@ h1 {
 .burger span {
   display: block;
   height: 0.2564vw;
+  width: 3.8462vw;
   background: #252532;
 }
 
@@ -89,7 +90,7 @@ h1 {
   z-index: 1000;
 
   transform: translateY(-100%);
-  transition: 0.35s ease;
+  transition: 0.6s ease;
   padding: 17.1795vw 0 0 12.8205vw;
 }
 
@@ -179,4 +180,75 @@ h1 {
     margin-top: 5.6410vw;
     text-align: center;
     font-weight: 300;
+}
+
+.hero__btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 6.4103vw;
+}
+
+.btn {
+    border: none;
+    padding: 2.8205vw;
+    font-family: 'Inter';
+    font-size: 4.1026vw;
+    font-weight: 700;
+
+    color: #fff;
+    background: linear-gradient(180deg, #3B3A4E 0%, #272733 100%);
+    box-shadow: 0vw 1.2821vw 1.0256vw #424151 inset, 0vw 1.0256vw 3.8462vw rgba(15, 14, 23, 0.20);
+    border-radius: 10.2564vw;
+}
+
+h2.plc__univer {
+    font-family: 'Montserrat';
+    font-size: 4.1026vw;
+    font-weight: 900;
+    line-height: 1;
+    text-align: center;
+    margin-top: 58.2051vw;
+}
+
+.univer__marquee {
+    overflow: hidden;
+    position: relative;
+    margin-top: 1.5385vw;
+}
+
+.univer__track {
+    display: flex;
+    width: max-content;
+    gap: 8.4615vw;
+    animation: scroll 30s linear infinite;
+}
+
+.univer__track img {
+  display: block;
+  width: 185.6410vw;
+  height: auto;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.univer__bkg {
+    width: 100vw;
+    height: 20.7692vw;
+    position: absolute;
+    top: 176.9230vw;
+    z-index: -90;
+    box-shadow: 0vw -9,7436vw 25.641vw 1.2821vw #faf9f6, 0vw 9,7436vw 25.641vw 1.2821vw #faf9f6;
+    background: linear-gradient(
+    0deg,
+    rgba(250, 249, 246, 0.8) 0%,
+    rgba(250, 249, 246, 1) 50%,
+    rgba(250, 249, 246, 0.8) 100%
+  );
 }
