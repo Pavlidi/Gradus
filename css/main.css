@@ -18,8 +18,6 @@ body {
 }
 
 h1, h2, h3, p, a, .btn {
-    text-box-trim: trim-both; /*Убирает отступы текста у блока в котором он находится, обязательно в связке с нижним свойством*/
-    text-box-edge: cap alphabetic; /*Убирает отступы текста у блока в котором он находится, обязательно в связке с верхним свойством*/
     color: #252532;
 }
 
@@ -132,7 +130,6 @@ h1 {
 .orbits {
     position: absolute;
     top: 0;
-    right: 0;
     width: 100vw;
     height: auto;
     z-index: -100;
@@ -140,11 +137,18 @@ h1 {
 
 .hero__name {
     position: relative;
-    text-align: center;
     margin-top: 69.4872vw;
+    margin-left: 12.0513vw;
+    width: 76.1538vw;
+    height: 15.8974vw;
 
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     line-height: 1;
 }
+
 
 .phys__grad {
     background: linear-gradient(
@@ -174,27 +178,45 @@ h1 {
     color: transparent;
 }
 
+.hero__title-box {
+  position: relative;
+  margin-left: 14.1026vw;
+  margin-top: 5.6410vw;
+  width: 72.55128vw;
+  height: 5.6410vw;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1.1;
+}
+
 .hero__title {
     font-size: 3.0769vw;
-    line-height: 1.1;
-    margin-top: 5.6410vw;
-    text-align: center;
-    font-weight: 300;
+    font-weight: 400;
 }
 
 .hero__btn {
     display: flex;
     justify-content: center;
-    margin-top: 6.4103vw;
+    margin-top: 6.4102vw;
 }
 
 .btn {
+    width: 53.0769vw;
+    height: 8.7179vw;
+  
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     border: none;
     padding: 2.8205vw;
     font-family: 'Inter';
     font-size: 4.1026vw;
     font-weight: 700;
-
+    line-height: 1;
     color: #fff;
     background: linear-gradient(180deg, #3B3A4E 0%, #272733 100%);
     box-shadow: 0vw 1.2821vw 1.0256vw #424151 inset, 0vw 1.0256vw 3.8462vw rgba(15, 14, 23, 0.20);
@@ -208,19 +230,26 @@ h2.plc__univer {
     line-height: 1;
     text-align: center;
     margin-top: 58.2051vw;
+    margin-left: 26.6666vw;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .univer__marquee {
     overflow: hidden;
     position: relative;
     margin-top: 1.5385vw;
+
 }
 
 .univer__track {
     display: flex;
     width: max-content;
     gap: 8.4615vw;
-    animation: scroll 30s linear infinite;
+    animation: scroll 5s linear infinite;
+
 }
 
 .univer__track img {
@@ -228,6 +257,7 @@ h2.plc__univer {
   width: 185.6410vw;
   height: auto;
 }
+
 
 @keyframes scroll {
   from {
@@ -251,4 +281,42 @@ h2.plc__univer {
     rgba(250, 249, 246, 1) 50%,
     rgba(250, 249, 246, 0.8) 100%
   );
+}
+
+
+.window {
+  position: relative;
+  margin-top: 1.5385vw;
+  overflow: hidden;
+}
+
+.track {
+  display: flex;
+  width: 300vw;
+  
+  animation: track 5s linear infinite;
+}
+
+.track span
+{
+  display: block;
+  width: 150vw;
+  height: 40vw;
+}
+
+#one {
+  background-color: red;
+}
+
+#two {
+  background-color: blue;
+}
+
+@keyframes track {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
