@@ -17,6 +17,7 @@ body {
   background-color: #FAF9F6;
 }
 
+
 h1, h2, h3, p, a, .btn {
     color: #252532;
 }
@@ -25,6 +26,34 @@ h1 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 900;
     font-size: 5.8974vw;
+}
+
+.h1__grad {
+  position: relative;
+  margin-top: 12.8205vw;
+  
+  height: 4.1026vw;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1;
+}
+
+.h1__grad h1 {
+  background: linear-gradient(
+        90deg,
+        #12C2E9 0%,
+        #C471ED 50%,
+        #F64F59 100%
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+    color: transparent;
 }
 
 .container {
@@ -147,8 +176,8 @@ h1 {
     justify-content: center;
     text-align: center;
     line-height: 1;
+    color: #252532;
 }
-
 
 .phys__grad {
     background: linear-gradient(
@@ -240,31 +269,36 @@ h2.plc__univer {
 .univer__marquee {
     overflow: hidden;
     position: relative;
-    margin-top: 1.5385vw;
-
+    margin-top: 2.8205vw;
+    width: 100vw;
+    height: 16.0513vw;
 }
 
 .univer__track {
     display: flex;
     width: max-content;
-    gap: 8.4615vw;
-    animation: scroll 5s linear infinite;
-
+    height: 16.0513vw;
+    animation: univer__track 10s linear infinite;
 }
 
 .univer__track img {
   display: block;
-  width: 185.6410vw;
-  height: auto;
+  padding-right: 8.4615vw;
+  flex: 0 0 185.6410vw;
+  height: 16.0513vw;
+  
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 
-@keyframes scroll {
+@keyframes univer__track {
   from {
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
   to {
-    transform: translateX(-50%);
+    transform: translate3d(-194.1025641vw, 0, 0);
   }
 }
 
@@ -272,7 +306,7 @@ h2.plc__univer {
     width: 100vw;
     height: 20.7692vw;
     position: absolute;
-    top: 176.9230vw;
+    top: 178.2051vw;
     z-index: -90;
     box-shadow: 0vw -9,7436vw 25.641vw 1.2821vw #faf9f6, 0vw 9,7436vw 25.641vw 1.2821vw #faf9f6;
     background: linear-gradient(
@@ -281,42 +315,4 @@ h2.plc__univer {
     rgba(250, 249, 246, 1) 50%,
     rgba(250, 249, 246, 0.8) 100%
   );
-}
-
-
-.window {
-  position: relative;
-  margin-top: 1.5385vw;
-  overflow: hidden;
-}
-
-.track {
-  display: flex;
-  width: 300vw;
-  
-  animation: track 5s linear infinite;
-}
-
-.track span
-{
-  display: block;
-  width: 150vw;
-  height: 40vw;
-}
-
-#one {
-  background-color: red;
-}
-
-#two {
-  background-color: blue;
-}
-
-@keyframes track {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
 }
