@@ -4,6 +4,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 img {
@@ -278,7 +279,7 @@ h2.plc__univer {
     display: flex;
     width: max-content;
     height: 16.0513vw;
-    animation: univer__track 10s linear infinite;
+    animation: univer__track 20s linear infinite;
 }
 
 .univer__track img {
@@ -321,7 +322,7 @@ h2.plc__univer {
 
 .courses__main {
   display: block;
-  background-color: red;
+  background-color: #fff;
   width: 92.3077vw;
   height: 175.3846vw;
   border-radius: 7.6923vw;
@@ -367,16 +368,102 @@ h2.plc__univer {
 }
 
 .format-card {
-  display: block;
+  display: flex;
+  flex-direction: column;
   width: 85.1282vw;
   height: 68.97435vw;
+  margin-top: 1.79487vw;
+  margin-left: 1.79487vw;
 
+  padding-left: 4.10256vw;
 
   border-color: #E2E2E2;
-  border-width: 0.51282vw;
   border-style: solid;
+  border-width:  0.5128vw;
   border-radius: 5.1282vw;
 }
+
+.format-card__title {
+  margin-top: 4.10256vw;
+  display: inline-flex;
+  align-items: center;
+  justify-items: center;
+  width: 42.30769vw;
+  height: 3.84615vw;
+
+
+}
+
+.format-card__title h2 {
+  font-size: 5.1282vw;
+  font-weight: 700;
+}
+
+.format-card__text {
+  margin-top: 3.3333vw;
+  display: inline-flex;
+  align-items: center;
+  justify-items: center;
+  width: 72.8205vw;
+  height: 6.4103vw;
+}
+
+.format-card__text p {
+  font-weight: 300;
+  color: #4F4F4F;
+  line-height: 1.1;
+}
+
+.format-card__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 3.84615vw;
+  padding: 0;
+  height: 34.35897vw;
+}
+
+.format-card__list li {
+  position: relative;
+  font-weight: 300;
+  color: #4F4F4F;
+  line-height: 1.2;
+
+  padding-left: 5vw;
+}
+
+/* Галочка */
+.format-card__list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.74358974vw; /* регулируй точное выравнивание */
+
+  width: 2.8205vw;
+  height: 2.8205vw;
+
+  background-image: url("../image/check.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.btn.format-card__btn {
+  position: absolute;
+  margin-top: 57.6923vw;
+  margin-left: 43.333vw;
+  width: 35.1282vw;
+  box-shadow: 0vw 0.7692vw 1.28205vw #0000000f, 0vw 0.7692vw 2.05128vw #00000026;
+  background: linear-gradient(
+  180deg,
+  rgba(59, 58, 78, 1) 0%,
+  rgba(39, 39, 51, 1) 100%
+);
+}
+
+
+
+
 
 .switch {
   display: inline-flex;
