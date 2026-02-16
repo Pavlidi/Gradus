@@ -30,7 +30,7 @@
             <li><a href="">Отзывы</a></li>
         </ul>
         </nav>
-
+    <!-- Hero начало -->
     <div><img src="image/orbits-mobile.webp" class="orbits" alt=""></div>
     <section class="hero">
         <div class="hero__name">
@@ -55,11 +55,63 @@
         </div>
     </section>
     <div class="univer__bkg"></div>
+    <!-- Hero конец -->
 
+    <!-- "Наши курсы" начало -->
     <section class="courses">
         <div class="h1__grad">
             <h1>Наши курсы</h1>
         </div>
+        
+        <div class="courses__main">
+            <div class="Quote">
+                <p><span class="Quote-color">Хороший</span> план подготовки<br>
+                <span class="Quote-color">залог хорошего</span> результата</p>
+            </div>
+            <div class="format-card__bkg">
+                <div class="format-card">
+                    <h3 class="format-card__title">Формат занятий</h3>
+                    <p class="format-card__text">
+                        Мы выстраиваем учебный процесс так, чтобы каждый шаг работал на результат.
+                    </p>
+
+                    <ul class="format-card__list">
+                        <li>Занятия 2 раза в неделю</li>
+                        <li>Мини-группы до 8 человек</li>
+                        <li>Ежемесячное тестирование</li>
+                        <li>Система генерации задач</li>
+                        <li>Материалы, адаптированные под формат ОГЭ и ЕГЭ</li>
+                    </ul>
+
+                    <button class="btn format-card__btn">
+                        Тестирование
+                    </button>
+                </div>
+            </div>
+
+            <!-- Переключение предмета -->
+            <div class="switch subject-switch">
+                <button class="switch-btn active" data-subject="math">Математика</button>
+                <button class="switch-btn" data-subject="physics">Физика</button>
+            </div>
+
+            <!-- Карточка с предметами -->
+            <div class="course-card">
+                <div class="card-header">
+                    <h3 id="cardTitle">Математика</h3>
+                    <!-- Переключение экзамена -->
+                    <div class="switch exam-switch">
+                        <button class="switch-btn active" data-exam="ege">ЕГЭ</button>
+                        <button class="switch-btn" data-exam="oge">ОГЭ</button>
+                    </div>
+                </div>
+
+                <p id="cardText"></p>
+
+                <button class="more-btn">Подробнее</button>
+            </div>
+        </div>
     </section>
+    <!-- "Наши курсы" конец -->
 </body>
 </html>
