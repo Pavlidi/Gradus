@@ -564,7 +564,8 @@ h2.plc__univer {
   border-radius: 5.1282vw;
   display: flex;
   flex-direction: column;
-  padding-left: 4.10256vw;;
+  padding-left: 4.10256vw;
+  box-shadow: 1.28205vw 3.5897vw 10.2564vw -2.30769vw #3d3a56, inset 0vw 2.05128vw 7.6923vw #2a2a34;
 }
 
 .card-header h2 {
@@ -603,6 +604,7 @@ h2.plc__univer {
   text-align: center;
   align-items: center;
   justify-content: center;
+  color: #252532;
   width: 31.0256vw;
   height: 8.4615vw;
   margin-top: 57.9487vw;
