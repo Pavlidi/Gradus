@@ -390,8 +390,6 @@ h2.plc__univer {
   justify-items: center;
   width: 42.30769vw;
   height: 3.84615vw;
-
-
 }
 
 .format-card__title h2 {
@@ -438,7 +436,7 @@ h2.plc__univer {
   content: "";
   position: absolute;
   left: 0;
-  top: 0.74358974vw; /* регулируй точное выравнивание */
+  top: 0.74358974vw;
 
   width: 2.8205vw;
   height: 2.8205vw;
@@ -465,45 +463,153 @@ h2.plc__univer {
 
 
 
-.switch {
+.switch.subject-switch {
   display: inline-flex;
-  background: #2b2b3a;
-  padding: 4px;
-  border-radius: 999px;
-  gap: 4px;
+  align-content: center;
+  justify-content: space-between;
+  width: 48.2051vw;
+  height: 7.6923vw;
+  margin-top: 4.61538vw;
+  margin-left: 5.6410vw;
+  border-radius: 43.5897vw;
+  border: 0.2564102564vw solid;
+  border-color: #32303e;
+  background-color: #252532;
 }
 
+.switch.exam-switch {   /* Выбор экзамена */
+  display: inline-flex;
+  align-content: center;
+  justify-content: space-between;
+  width: 27vw;
+  height: 7.6923vw;
+  border-radius: 43.5897vw;
+  border: 0.2564102564vw solid;
+  border-color: #5C5C64;
+  background-color: #E9E9EB;
+}
+
+
 .switch-btn {
+  display: inline-flex;
+  justify-items: center;
+  align-items: center;
   border: none;
-  padding: 8px 16px;
-  border-radius: 999px;
+  padding: 2.8205vw 3.5897vw 2.5641vw;
+  line-height: 1;
+  font-size: 3.333vw;
+  font-weight: 600;
   background: transparent;
-  color: #fff;
+  color: #B0B0B0;
   cursor: pointer;
 }
 
-.switch-btn.active {
-  background: #fff;
-  color: #222;
+.switch.exam-switch .switch-btn {
+  display: inline-flex;
+  justify-items: center;
+  align-items: center;
+  border: none;
+  padding-top: 2.8205vw;
+  padding-right: 3.0769vw;
+  padding-left: 3.0769vw;
+  line-height: 1;
+  font-size: 3.333vw;
+  font-weight: 600;
+  background: transparent;
+  color: #5C5C64;
+  cursor: pointer;
+}
+
+.switch.subject-switch .active {
+  display: inline-flex;
+  justify-items: center;
+  align-items: center;
+  margin: 0.25641vw;
+  padding: 2.05128vw 3.3333vw;
+  font-size: 3.5897vw;
+  color: #fff;
+  border-radius: 43.5897vw;
+  box-shadow: 0vw 0.7692vw 0.2564vw #0000000f, 0vw 0.7692vw 2.05128vw #00000026;
+  background: linear-gradient(
+      180deg,
+      rgba(59, 58, 78, 1) 0%,
+      rgba(39, 39, 51, 1) 100%
+  );
+}
+
+.switch.exam-switch .active {
+  display: inline-flex;
+  justify-items: center;
+  align-items: center;
+  margin: 0.25641vw;
+  padding: 2.05128vw 3.0769vw;
+  font-size: 3.5897vw;
+  color: #252532;
+  border-radius: 43.5897vw;
+  box-shadow: 0vw 0.7692vw 0.2564vw #0000000f, 0vw 0.7692vw 2.05128vw #00000026;
+  background: linear-gradient(
+    180deg,
+    rgba(251, 251, 251, 1) 0%,
+    rgba(240, 240, 240, 1) 100%
+  );
+
 }
 
 .course-card {
-  background: linear-gradient(135deg, #1f2030, #2c2d3e);
-  color: white;
-  padding: 24px;
-  border-radius: 24px;
-  margin-top: 20px;
+  background: #252532;
+  margin-top: 3.0769vw;
+  margin-left: 3.5897vw;
+  width: 85.1282vw;
+  height: 68.9744vw;
+  border-radius: 5.1282vw;
+  display: flex;
+  flex-direction: column;
+  padding-left: 4.10256vw;;
+}
+
+.card-header h2 {
+  color: #fff;
+}
+
+.course-card p {
+  color: #fff;
+  font-size: 3.5897vw;
+  font-weight: 300;
+  line-height: 1.1;
+
+}
+
+.textCourse {
+  display: inline-flex;
+  margin-top: 8.2051vw;
 }
 
 .card-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 2.30769vw;
+  margin-right: 2.30769vw;
+  height: 7.6923vw;
+}
+
+#cardText {
+  white-space: pre-line;
 }
 
 .more-btn {
-  margin-top: 20px;
-  padding: 10px 18px;
-  border-radius: 999px;
+  position: absolute;
+  display: inline-flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  width: 31.0256vw;
+  height: 8.4615vw;
+  margin-top: 57.9487vw;
+  margin-left: 47.4359vw;
+  padding: 2.82051vw 3.5897vw;
+  border-radius: 5.1282vw;
+  font-weight: 700;
+  font-size: 4.10256vw;
   border: none;
 }
