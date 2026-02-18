@@ -73,3 +73,13 @@ examButtons.forEach(btn => {
 });
 
 updateCard();
+
+const swiper = new Swiper(".mySwiper", {
+  slidesPerView: "auto",      // Автоматическая ширина (настроили в CSS 80%)
+  centeredSlides: true,      // Активная карточка строго по центру
+  spaceBetween: 20,          // Расстояние между карточками
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,         // Чтобы можно было кликать на точки
+  },
+});

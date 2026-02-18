@@ -332,7 +332,6 @@ h2.plc__univer {
   margin-left: 3.8462vw;
 }
 
-
 .Quote {
   display: inline-flex;
   align-items: center;
@@ -408,7 +407,7 @@ h2.plc__univer {
 
 .format-card__text p {
   font-weight: 300;
-  color: #4F4F4F;
+  color: #252532;
   line-height: 1.1;
 }
 
@@ -425,7 +424,7 @@ h2.plc__univer {
 .format-card__list li {
   position: relative;
   font-weight: 300;
-  color: #4F4F4F;
+  color: #252532;
   line-height: 1.2;
 
   padding-left: 5vw;
@@ -445,6 +444,8 @@ h2.plc__univer {
   background-size: contain;
   background-repeat: no-repeat;
 }
+
+
 
 .btn.format-card__btn {
   position: absolute;
@@ -614,4 +615,68 @@ h2.plc__univer {
   font-weight: 700;
   font-size: 4.10256vw;
   border: none;
+}
+
+/* Почему нам доверяют */
+
+.courses__main-trust {
+  display: flex;
+  background-color: #fff;
+  justify-content: center;
+  margin-top: 4.35897vw;
+  margin-left: 7.9487vw;
+
+  width: 83.8462vw;
+  height: 48.7179vw;
+}
+
+.format-card__bkg-trust {
+  display: flex;
+  width: 80.2564vw;
+  height: 45.1282vw;
+  background-color: #FAF9F6;
+  border-radius: 6.410256vw;
+
+ 
+  margin: 1.79487vw;
+
+}
+
+
+/* Переключение карточек */
+
+.swiper {
+  width: 100%;
+  padding-bottom: 50px; /* Место для точек */
+}
+
+.swiper-slide {
+  width: 80%; /* Чтобы боковые карточки были немного видны */
+  display: flex;
+  justify-content: center;
+}
+
+/* Стили карточки (как на фото) */
+.card {
+  background: #fff;
+  border-radius: 40px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  text-align: left;
+}
+
+/* Стилизация индикаторов (Dots) */
+.swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background: #ccc;
+  opacity: 1;
+  transition: all 0.3s ease; /* Плавное удлинение */
+}
+
+/* Активная точка превращается в длинную */
+.swiper-pagination-bullet-active {
+  width: 24px; 
+  border-radius: 4px;
+  background: #b0b0b0; /* Цвет как на скрине */
 }

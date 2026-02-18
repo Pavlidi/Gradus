@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <script src="js/main.js" defer></script>
     <title>Центр подготовки к ОГЭ и ЕГЭ «Градус»</title>
 </head>
@@ -70,7 +71,7 @@
             </div>
             <div class="format-card__bkg">
                 <div class="format-card">
-                    <div class="format-card__title"></divclass><h2>Формат занятий</h2></div>
+                    <div class="format-card__title"><h2>Формат занятий</h2></div>
                     <div class="format-card__text">
                         <p>Мы выстраиваем учебный процесс так,<br>чтобы каждый шаг работал на результат.</p>
                     </div>
@@ -101,6 +102,7 @@
                     <h2 id="cardTitle">Математика</h2>
                     <!-- Переключение экзамена -->
                     <div class="switch exam-switch">
+                        
                         <button class="switch-btn active" data-exam="ege">ЕГЭ</button>
                         <button class="switch-btn" data-exam="oge">ОГЭ</button>
                     </div>
@@ -113,6 +115,62 @@
         </div>
     </section>
     <!-- "Наши курсы" конец -->
-     <div style="width: 100vw; height: 40vw;"></div>
+    <section class="trust">
+        <div class="h1__grad">
+            <h1>Почему нам доверяют?</h1>
+        </div>
+        <div class="courses__main-trust">
+            <div class="format-card__bkg-trust">
+                <div class="format-card">
+                    <div class="format-card__title-trust"></divclass><h2>Формат занятий</h2></div>
+                    <div class="format-card__text">
+                        <p>Мы выстраиваем учебный процесс так,<br>чтобы каждый шаг работал на результат.</p>
+                    </div>
+
+                    <ul class="format-card__list">
+                        <li class="liFirst"><div>Занятия 2 раза в неделю</div></li>
+                        <li class="liFirst"><div>Мини-группы до 8 человек</div></li>
+                        <li class="liFirst"><div>Ежемесячное тестирование</div></li>
+                        <li class="liFirst"><div>Система генерации задач</div></li>
+                        <li class="li5th"><div>Материалы, адаптированные<br> под формат ОГЭ и ЕГЭ</div></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <!-- Карточка 1 -->
+                <div class="swiper-slide">
+                <div class="card">
+                    <h3>Спокойствие</h3>
+                    <p>Подготовка проходит без спешки...</p>
+                </div>
+                </div>
+                <!-- Карточка 2 -->
+                <div class="swiper-slide">
+                <div class="card">
+                    <h3>Надёжность</h3>
+                    <p>Мы отслеживаем прогресс...</p>
+                </div>
+                </div>
+                <!-- Добавь столько карточек, сколько нужно -->
+            </div>
+            
+            <!-- Те самые точки (индикаторы) -->
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </body>
 </html>
