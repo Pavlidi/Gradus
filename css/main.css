@@ -57,6 +57,11 @@ h1 {
     color: transparent;
 }
 
+h2 {
+  font-size: 5.1282vw;
+  font-weight: 700;
+}
+
 .container {
   max-width: 480px;
   margin: 0 auto;
@@ -391,10 +396,6 @@ h2.plc__univer {
   height: 3.84615vw;
 }
 
-.format-card__title h2 {
-  font-size: 5.1282vw;
-  font-weight: 700;
-}
 
 .format-card__text {
   margin-top: 3.3333vw;
@@ -666,40 +667,217 @@ h2.plc__univer {
 
 .swiper {
   margin-top: 3.3333vw;
-  width: 100%;
-  height: 72.30769vw;
-  padding-bottom: 6.1538vw; /* Место для точек */
+  width: 100vw;
 }
 
 .swiper-slide {
   display: flex;
-  justify-content: center;
 }
 
 /* Стили карточки (как на фото) */
 .card {
+  display: flex;
+  flex-direction: column;
   width: 59.7436vw; /* Чтобы боковые карточки были немного видны */
   height: 66.1538vw;
+  padding: 1.79487vw;
   background: #fff;
-  border-radius: 40px;
-  padding: 30px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  border-radius: 7.6923vw;
+  box-shadow: 0vw 1.53846vw 7.6923vw rgba(0, 0, 0, 0.06);
   text-align: left;
 }
 
+.card-how {
+  display: flex;
+  flex-direction: column;
+  width: 82.30769vw; /* Чтобы боковые карточки были немного видны */
+  height: 79.4872vw;
+  padding: 1.79487vw;
+  background: #fff;
+  border-radius: 7.6923vw;
+  box-shadow: 0vw 1.53846vw 7.6923vw rgba(0, 0, 0, 0.06);
+  text-align: left;
+}
+
+.card img {
+  width: 56.1538vw;
+  height: 40.7692vw;
+  border-radius: 6.410256vw;
+  border-color: #E2E2E2;
+  border-width: 0.2564vw;
+  border-style: solid;
+}
+
+.card-how img {
+  width: 78.7179vw;
+  height: 57.1795vw;
+  border-radius: 6.410256vw;
+  border-color: #E2E2E2;
+  border-width: 0.2564vw;
+  border-style: solid;
+}
+
+.card__trust-head {
+  display: inline-flex;
+  align-items: center;
+  height: 3.84615vw;
+  margin-top: 4.10256vw;
+  margin-left: 2.30769vw;
+}
+
+.card__trust-text {
+  display: inline-flex;
+  align-items: center;
+  height: 8.9744vw;
+  width: 52.0513vw;
+  margin-top: 2.5641vw;
+  margin-left: 2.30769vw;
+}
+
+.card__how-text {
+  display: inline-flex;
+  align-items: center;
+  height: 5.8974vw;
+  width: 70.7692vw;
+  margin-top: 2.5641vw;
+  margin-left: 2.30769vw;
+}
+
+.card p {
+  font-size: 3.0769vw;
+  line-height: 1.1;
+  font-weight: 300;
+}
+
+.card-how p {
+  font-size: 3.33333vw;
+  line-height: 1.1;
+  font-weight: 300;
+}
+
+.mySwiper .swiper-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4.10256vw;
+  position: relative;
+  margin-top: 5.8974vw;
+}
+
 /* Стилизация индикаторов (Dots) */
-.swiper-pagination-bullet {
-  width: 8px;
-  height: 8px;
-  background: #ccc;
+.mySwiper .swiper-pagination-bullet {
+  width: 1.79487vw;
+  height: 1.79487vw;
+  background: #BABABA;
   opacity: 1;
   transition: all 0.3s ease; /* Плавное удлинение */
 }
 
 /* Активная точка превращается в длинную */
-.swiper-pagination-bullet-active {
-  width: 24px; 
-  border-radius: 4px;
-  background: #b0b0b0; /* Цвет как на скрине */
+.mySwiper .swiper-pagination-bullet-active {
+  width: 8.2051vw;
+  height: 2.30769vw;
+  border-radius: 25.6410vw;
+  background: #BABABA; /* Цвет как на скрине */
 }
 
+.mySwiper2 .swiper-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4.10256vw;
+  position: relative;
+  margin-top: 5.8974vw;
+}
+
+/* Стилизация индикаторов (Dots) */
+.mySwiper2 .swiper-pagination-bullet {
+  width: 1.79487vw;
+  height: 1.79487vw;
+  background: #BABABA;
+  opacity: 1;
+  transition: all 0.3s ease; /* Плавное удлинение */
+}
+
+/* Активная точка превращается в длинную */
+.mySwiper2 .swiper-pagination-bullet-active {
+  width: 8.2051vw;
+  height: 2.30769vw;
+  border-radius: 25.6410vw;
+  background: #BABABA; /* Цвет как на скрине */
+}
+
+
+/* Вопросы и ответы */
+.faq {
+  margin-top: 12.8205vw;
+
+}
+
+.faq-group {
+  display: flex;
+  flex-direction: column;
+  width: 93.5897vw;
+  height: 123.0769vw;
+  margin-top: 4.35897vw;
+  margin-left: 3.0769vw;
+  background: #fff;
+  box-shadow: 0vw 1.53846vw 7.6923vw rgba(0, 0, 0, 0.06);
+  border-radius: 7.6923vw;
+  padding-left: 1.79487vw;
+  padding-top: 1.53846vw;
+}
+
+.faq-group__title {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.faq-item {
+  border-bottom: 1px solid #ddd;
+}
+
+.faq-question {
+  width: 100%;
+  padding: 18px 0;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 18px;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #2E2F3E;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  transition: transform 0.3s ease;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  padding: 0;
+  font-size: 16px;
+  color: #555;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 200px;
+  padding: 10px 0 20px 0;
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(45deg);
+}

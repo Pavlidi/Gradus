@@ -77,7 +77,7 @@ updateCard();
 // Переключение карточек через свайп
 
 const swiper = new Swiper(".mySwiper", {
-  slidesPerView: 1.63,                               // Автоматическая ширина (настроили в CSS 80%)
+  slidesPerView: 1.6,                           // Автоматическая ширина (настроили в CSS 80%)
   centeredSlides: true,                             // Активная карточка строго по центру
   initialSlide: 1,                                  // ← Открываем вторую
   spaceBetween: window.innerWidth * 0.025641,       // Расстояние между карточками
@@ -85,4 +85,33 @@ const swiper = new Swiper(".mySwiper", {
     el: ".swiper-pagination",
     clickable: true,                                // Чтобы можно было кликать на точки
   },
+});
+
+const swiper2 = new Swiper(".mySwiper2", {
+  slidesPerView: 1.2,                           // Автоматическая ширина (настроили в CSS 80%)
+  centeredSlides: true,                             // Активная карточка строго по центру
+  initialSlide: 1,                                  // ← Открываем вторую
+  spaceBetween: window.innerWidth * 0.025641,       // Расстояние между карточками
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,                                // Чтобы можно было кликать на точки
+  },
+});
+
+
+// Вопросы и ответы
+document.querySelectorAll('.faq-question').forEach(button => {
+  button.addEventListener('click', () => {
+
+    const item = button.parentElement;
+
+    // если хочешь чтобы был открыт только один пункт
+    document.querySelectorAll('.faq-item').forEach(el => {
+      if (el !== item) {
+        el.classList.remove('active');
+      }
+    });
+
+    item.classList.toggle('active');
+  });
 });
