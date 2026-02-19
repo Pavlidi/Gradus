@@ -74,12 +74,15 @@ examButtons.forEach(btn => {
 
 updateCard();
 
+// Переключение карточек через свайп
+
 const swiper = new Swiper(".mySwiper", {
-  slidesPerView: "auto",      // Автоматическая ширина (настроили в CSS 80%)
-  centeredSlides: true,      // Активная карточка строго по центру
-  spaceBetween: 20,          // Расстояние между карточками
+  slidesPerView: 1.63,                               // Автоматическая ширина (настроили в CSS 80%)
+  centeredSlides: true,                             // Активная карточка строго по центру
+  initialSlide: 1,                                  // ← Открываем вторую
+  spaceBetween: window.innerWidth * 0.025641,       // Расстояние между карточками
   pagination: {
     el: ".swiper-pagination",
-    clickable: true,         // Чтобы можно было кликать на точки
+    clickable: true,                                // Чтобы можно было кликать на точки
   },
 });

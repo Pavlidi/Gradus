@@ -626,6 +626,7 @@ h2.plc__univer {
   margin-top: 4.35897vw;
   margin-left: 7.9487vw;
 
+  border-radius: 7.6923vw;
   width: 83.8462vw;
   height: 48.7179vw;
 }
@@ -637,27 +638,48 @@ h2.plc__univer {
   background-color: #FAF9F6;
   border-radius: 6.410256vw;
 
- 
   margin: 1.79487vw;
+}
 
+.format-card-trust {
+  display: flex;
+  flex-direction: column;
+  width: 76.666667vw;
+  height: 41.53846vw;
+  margin: 1.79487vw;  
+
+  padding-left: 4.10256vw;
+  border-color: #E2E2E2;
+  border-style: solid;
+  border-width:  0.5128vw;
+  border-radius: 5.1282vw;
+}
+
+.format-card-trust_logo {
+  width: 19.2308vw;
+  height: auto;
+  margin-top: 4.61538vw;
 }
 
 
 /* Переключение карточек */
 
 .swiper {
+  margin-top: 3.3333vw;
   width: 100%;
-  padding-bottom: 50px; /* Место для точек */
+  height: 72.30769vw;
+  padding-bottom: 6.1538vw; /* Место для точек */
 }
 
 .swiper-slide {
-  width: 80%; /* Чтобы боковые карточки были немного видны */
   display: flex;
   justify-content: center;
 }
 
 /* Стили карточки (как на фото) */
 .card {
+  width: 59.7436vw; /* Чтобы боковые карточки были немного видны */
+  height: 66.1538vw;
   background: #fff;
   border-radius: 40px;
   padding: 30px;
@@ -680,3 +702,4 @@ h2.plc__univer {
   border-radius: 4px;
   background: #b0b0b0; /* Цвет как на скрине */
 }
+
