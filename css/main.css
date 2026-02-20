@@ -818,7 +818,7 @@ h2.plc__univer {
   display: flex;
   flex-direction: column;
   width: 93.5897vw;
-  height: 123.0769vw;
+  height: max-content;
   margin-top: 4.35897vw;
   margin-left: 3.0769vw;
   background: #fff;
@@ -826,41 +826,65 @@ h2.plc__univer {
   border-radius: 7.6923vw;
   padding-left: 1.79487vw;
   padding-top: 1.53846vw;
+  padding-bottom: 1.79487vw;
+}
+
+.faq-group__block {
+  width: 90vw;
+  height: max-content;
+  margin-top: 3.5897vw;
 }
 
 .faq-group__title {
-  font-size: 22px;
-  margin-bottom: 20px;
+  margin-left: 6.9231vw;
+  width: max-content;
+  height: 3.84615vw;
+  display: inline-flex;
+  align-items: center;
+  justify-content: left;
+  text-align: center;
+  line-height: 108%; /* Устанавливаем то же значение, что и в Figma */
 }
 
-.faq-item {
-  border-bottom: 1px solid #ddd;
+.faq-group__box {
+  display: flex;
+  flex-direction: column;
+  width: 90vw;
+  height: max-content;/*30.51282vw;*/
+  background-color: #FAF9F6;
+  border-radius: 6.410256vw;
+  margin-top: 1.7949vw;
+  padding-top: 1.7949vw;
+  padding-bottom: 3.8462vw;
 }
 
 .faq-question {
-  width: 100%;
-  padding: 18px 0;
+  width: 79.7436vw;
+  height: 4.6154vw;
   background: none;
   border: none;
   text-align: left;
-  font-size: 18px;
+  font-size: 3.5897vw;
+  font-weight: 300;
+  color: #252532;
   cursor: pointer;
-
+  margin-top: 2.0513vw;
+  margin-left: 5.1282vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .faq-icon {
-  width: 32px;
-  height: 32px;
+  width: 4.6154vw;
+  height: 4.6154vw;
   border-radius: 50%;
-  background: #2E2F3E;
+  background: #252532;
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 18px;
+  font-size: 2.5961vw;
   transition: transform 0.3s ease;
 }
 
@@ -869,13 +893,24 @@ h2.plc__univer {
   overflow: hidden;
   transition: max-height 0.3s ease, padding 0.3s ease;
   padding: 0;
-  font-size: 16px;
+  font-size: 3.5897vw;
+  font-weight: 300;
   color: #555;
 }
 
+.faq-line {
+  display: block;
+  width: 79.4872vw;
+  height: 0.5128vw;
+  margin-top: 2.0513vw;
+  margin-left: 5.3846vw;
+  background-color: #E2E2E2;
+}
+
 .faq-item.active .faq-answer {
-  max-height: 200px;
-  padding: 10px 0 20px 0;
+  max-height: max-content;
+  margin-top: 2.0513vw;
+  margin-left: 5.3846vw;
 }
 
 .faq-item.active .faq-icon {
