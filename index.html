@@ -92,8 +92,8 @@
 
             <!-- Переключение предмета -->
             <div class="switch subject-switch">
-                <button class="switch-btn active" data-subject="math">Математика</button>
-                <button class="switch-btn" data-subject="physics">Физика</button>
+                <button class="switch-btn left active" data-subject="math">Математика</button>
+                <button class="switch-btn right" data-subject="physics">Физика</button>
             </div>
 
             <!-- Карточка с предметами -->
@@ -325,7 +325,49 @@
                         </div>
                     </div>
             </div>
-  
+    </section>
+    <section class="contact">
+        <div class="contact-card">
+
+            <div class="contact-header">
+                <div class="contact-icon"><img src="image/phone-mobile.webp" alt=""></div>
+                <div class="contact-header-hp">
+                    <div class="contact-header-h"><h2>Остались вопросы?</h2></div>
+                    <div class="contact-header-p"><p>Заполните форму, мы свяжемся с вами в ближайшее время.</p></div>
+                </div>
+            </div>
+
+            <!-- Переключатель -->
+            <div class="contact-switch">
+                <button class="switch-btn-c active" data-role="parent">Родитель</button>
+                <button class="switch-btn-c" data-role="student">Ученик</button>
+            </div>
+
+            <!-- Форма -->
+            <form class="contact-form" id="contactForm">
+
+                <input type="text" name="name" placeholder="Ваше имя" required>
+
+                <input type="tel" name="phone" placeholder="Телефон*" required>
+
+                <textarea name="question" placeholder="Ваш вопрос..."></textarea>
+
+                <label class="checkbox">
+                    <input type="checkbox" required>
+                    <span class="checkmark"></span>
+                    <span class="checkbox-text">
+                    Я выражаю согласие на передачу и обработку персональных данных
+                    в соответствии с <a href="#">Политикой конфиденциальности</a> *
+                    </span>
+                </label>
+
+                <button type="submit" class="submit-btn">
+                    Отправить
+                </button>
+
+            </form>
+
+        </div>
     </section>
     <!-- "Вопросы и ответы - конец" -->
     

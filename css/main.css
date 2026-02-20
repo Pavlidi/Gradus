@@ -506,6 +506,14 @@ h2.plc__univer {
   cursor: pointer;
 }
 
+.switch-btn.right {
+  color: red;
+}
+
+.switch-btn.left {
+  color: blue;
+}
+
 .switch.exam-switch .switch-btn {
   display: inline-flex;
   justify-items: center;
@@ -884,7 +892,7 @@ h2.plc__univer {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2.5961vw;
+  font-size: 3.2vw;
   transition: transform 0.3s ease;
 }
 
@@ -915,4 +923,191 @@ h2.plc__univer {
 
 .faq-item.active .faq-icon {
   transform: rotate(45deg);
+}
+
+
+/* Форма для вопросов */
+
+.contact {
+  padding-top: 5.1282vw;
+  display: flex;
+  justify-content: center;
+}
+
+.contact-card {
+  width: 83.3333vw;
+  height: 92.0513vw;
+  background: #fff;
+  padding-top: 5.1282vw;
+  padding-left: 4.1026vw;
+  border-radius: 7.6923vw;
+  box-shadow: 0vw 1.5385vw 7.6923vw rgba(0, 0, 0, 0.06);
+}
+
+.contact-header {
+  display: flex;
+  gap: 2.0513vw;
+  margin-bottom: 3.5897vw;
+}
+
+.contact-icon {
+  width: 11.5385vw;
+  height: 9.7436vw;
+}
+
+.contact-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* или cover если нужно заполнить полностью */
+  display: block;
+}
+
+.contact-header-hp {
+  width: 52.0513vw;
+  height: max-content;
+}
+
+.contact-header-h {
+  width: 52.0513vw;
+  height: 3.8462vw;
+  display: inline-flex;
+  align-items: center;
+  justify-content: left;
+  text-align: left;
+  line-height: 108%; /* Устанавливаем то же значение, что и в Figma */
+}
+
+.contact-header-p {
+  width: 50vw;
+  height: 4.6154vw;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  line-height: 1.1; /* Устанавливаем то же значение, что и в Figma */
+  margin-top: 1.7949vw;
+  color: #252532;
+  font-size: 2.5641vw;
+  font-weight: 300;
+}
+
+/* переключатель */
+.contact-switch {
+  display: inline-flex;
+  align-content: center;
+  justify-content: space-between;
+  width: 75.1282vw;
+  height: 7.6923vw;
+  border-radius: 43.5897vw;
+  border: 0.2564102564vw solid;
+  border-color: #32303e;
+  background-color: #252532;
+}
+
+.switch-btn-c {
+  display: inline-flex;
+  justify-items: center;
+  align-items: center;
+  border: none;
+
+  padding-top: 2.8205vw;
+  padding-bottom: 2.5641vw;
+  padding-left: 12vw;
+  padding-right: 10vw;
+  line-height: 1;
+  font-size: 3.333vw;
+  font-weight: 600;
+  background: transparent;
+  color: #B0B0B0;
+  cursor: pointer;
+}
+
+.switch-btn-c.active {
+  display: inline-flex;
+  justify-items: center;
+  align-items: center;
+  margin: 0.25641vw;
+  padding: 2.05128vw 11.7949vw;
+  font-size: 3.5897vw;
+  color: #fff;
+  border-radius: 43.5897vw;
+  box-shadow: 0vw 0.7692vw 0.2564vw #0000000f, 0vw 0.7692vw 2.05128vw #00000026;
+  background: linear-gradient(
+      180deg,
+      rgba(59, 58, 78, 1) 0%,
+      rgba(39, 39, 51, 1) 100%
+  );
+}
+
+/* поля */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 14px 20px;
+  margin-bottom: 20px;
+  border-radius: 999px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  outline: none;
+}
+
+.contact-form textarea {
+  border-radius: 24px;
+  min-height: 120px;
+  resize: none;
+}
+
+/* чекбокс */
+.checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  margin-bottom: 25px;
+  cursor: pointer;
+}
+
+.checkbox input {
+  display: none;
+}
+
+.checkmark {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ddd;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.checkbox input:checked + .checkmark {
+  background: #2E2F3E;
+}
+
+.checkbox input:checked + .checkmark::after {
+  content: "✓";
+  position: absolute;
+  color: #fff;
+  font-size: 14px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.checkbox-text a {
+  text-decoration: underline;
+  color: inherit;
+}
+
+/* кнопка */
+.submit-btn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(180deg, #3B3A4E, #272733);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
 }
