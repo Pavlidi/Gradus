@@ -497,7 +497,6 @@ h2.plc__univer {
   justify-items: center;
   align-items: center;
   border: none;
-  padding: 2.8205vw 3.5897vw 2.5641vw;
   line-height: 1;
   font-size: 3.333vw;
   font-weight: 600;
@@ -507,11 +506,17 @@ h2.plc__univer {
 }
 
 .switch-btn.right {
-  color: red;
+  padding-top: 2.8205vw;
+  padding-right: 3.8462vw;
+  padding-left: 3.0769vw;
+  padding-bottom: 2.5641vw;
 }
 
 .switch-btn.left {
-  color: blue;
+  padding-top: 2.8205vw;
+  padding-right: 3.0769vw;
+  padding-left: 4.35897vw;
+  padding-bottom: 2.5641vw;
 }
 
 .switch.exam-switch .switch-btn {
@@ -1040,30 +1045,46 @@ h2.plc__univer {
 }
 
 /* поля */
+
 .contact-form input,
 .contact-form textarea {
-  width: 100%;
-  padding: 14px 20px;
-  margin-bottom: 20px;
-  border-radius: 999px;
-  border: 1px solid #ddd;
-  font-size: 16px;
+  width: 75.1282vw;
+  height: 7.6923vw;
+  padding-left: 4.10256vw;
+  padding-top: 2.8205vw;
+  padding-bottom: 2.5641vw;
+  margin-top: 2.5641vw;
+  border-radius: 3.8462vw;
+  border: 0.2564vw solid #E2E2E2;
+  background-color: #FAFAFA;
+  font-size: 3.3333vw;
+  font-weight: 300;
   outline: none;
 }
 
 .contact-form textarea {
-  border-radius: 24px;
-  min-height: 120px;
+  border-radius: 5.1282vw;
+  height: 18.2051vw;
   resize: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #2F2E2D;
+  font-family: 'Inter';
+  font-weight: 300;
 }
 
 /* чекбокс */
 .checkbox {
   display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  font-size: 14px;
-  margin-bottom: 25px;
+  align-items: center;
+  width: 65.8974vw;
+  height: 4.1026vw;
+  gap: 1.2821vw;
+  font-size: 1.7949vw;
+  margin-top: 2.5641vw;
+  margin-left: 4.6154vw;
   cursor: pointer;
 }
 
@@ -1072,26 +1093,31 @@ h2.plc__univer {
 }
 
 .checkmark {
-  width: 20px;
-  height: 20px;
+  width: 2.8205vw;
+  height: 2.8205vw;
   border-radius: 50%;
-  background: #ddd;
+  background: #2F2E2D;
   flex-shrink: 0;
   position: relative;
 }
 
 .checkbox input:checked + .checkmark {
-  background: #2E2F3E;
+  background: #2F2E2D;
 }
 
 .checkbox input:checked + .checkmark::after {
-  content: "✓";
+  content: "";
+  width: 2.8205vw;
+  height: 2.8205vw;
+  /* Вставляем картинку фоном */
+  background-image: url("../image/check-box.svg");
+  background-size: contain; /* Картинка впишется в размеры */
+  background-repeat: no-repeat;
+  background-position: center;
   position: absolute;
   color: #fff;
   font-size: 14px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+
 }
 
 .checkbox-text a {
@@ -1101,13 +1127,71 @@ h2.plc__univer {
 
 /* кнопка */
 .submit-btn {
-  width: 100%;
-  padding: 14px;
-  border-radius: 999px;
+  width: 28.2051vw;
+  height: 8.7179vw;
+  margin-top: 3.8462vw;
+  margin-left: 23.5897vw;
+  padding: 2.8205vw;
+  border-radius: 10.2564vw;
   border: none;
-  background: linear-gradient(180deg, #3B3A4E, #272733);
+  box-shadow: 0vw 0.7692vw 1.28205vw #0000000f, 0vw 0.7692vw 2.05128vw #00000026;
+  background: linear-gradient(
+  180deg,
+  rgba(59, 58, 78, 1) 0%,
+  rgba(39, 39, 51, 1) 100%
+  );
   color: #fff;
-  font-size: 18px;
+  font-size: 4.1026vw;
   font-weight: 700;
   cursor: pointer;
+}
+.submit-btn div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22.5641vw;
+  height: 3.0769vw;
+}
+
+
+/* Отзывы */
+.card-review {
+  display: block;
+  width: max-content;
+  height: max-content;
+  background-color: #fff;
+  box-shadow: 0vw 1.5385vw 7.6923vw rgba(0, 0, 0, 0.06);
+  border-radius: 5.1282vw;
+}
+
+.review-header {
+  display: flex;
+  padding-top: 3.5897vw;
+  padding-left: 3.5897vw;
+  padding-right: 5.1282vw;
+}
+
+.review-header div {
+  margin-top: 2.0513vw;
+  margin-left: 2.3077vw;
+  margin-bottom: 1.0256vw;
+  /*
+  height: 6.9231vw;
+  align-items: center;
+  justify-items: center;
+  text-align: left;
+  line-height: 1.1; /* Устанавливаем то же значение, что и в Figma */
+}
+
+
+.review-header h3, p {
+  font-size: 3.5897vw;
+  line-height: 100%;
+
+}
+
+
+
+.review-header a {
+  text-decoration: none;
 }
