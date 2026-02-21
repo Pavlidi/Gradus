@@ -98,6 +98,18 @@ const swiper2 = new Swiper(".mySwiper2", {
   },
 });
 
+const swiper3 = new Swiper(".mySwiper3", {
+  slidesPerView: 1.15,                           // Автоматическая ширина (настроили в CSS 80%)
+  centeredSlides: true,                             // Активная карточка строго по центру
+  initialSlide: 1,                                  // ← Открываем вторую
+  spaceBetween: window.innerWidth * 0.2,       // Расстояние между карточками
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,                                // Чтобы можно было кликать на точки
+  },
+});
+
+
 
 // Вопросы и ответы
 document.querySelectorAll('.faq-question').forEach(button => {

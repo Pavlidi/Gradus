@@ -820,6 +820,33 @@ h2.plc__univer {
   background: #BABABA; /* Цвет как на скрине */
 }
 
+.mySwiper3 .swiper-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4.10256vw;
+  position: relative;
+  margin-top: 5.8974vw;
+}
+
+/* Стилизация индикаторов (Dots) */
+.mySwiper3 .swiper-pagination-bullet {
+  width: 1.79487vw;
+  height: 1.79487vw;
+  background: #BABABA;
+  opacity: 1;
+  transition: all 0.3s ease; /* Плавное удлинение */
+}
+
+/* Активная точка превращается в длинную */
+.mySwiper3 .swiper-pagination-bullet-active {
+  width: 8.2051vw;
+  height: 2.30769vw;
+  border-radius: 25.6410vw;
+  background: #BABABA; /* Цвет как на скрине */
+}
+
+
 
 /* Вопросы и ответы */
 .faq {
@@ -995,7 +1022,10 @@ h2.plc__univer {
   font-size: 2.5641vw;
   font-weight: 300;
 }
-
+.contact-header-p p {
+  font-size: 2.5641vw;
+  line-height: 1;
+}
 /* переключатель */
 .contact-switch {
   display: inline-flex;
@@ -1155,8 +1185,9 @@ textarea::placeholder {
 
 
 /* Отзывы */
+
 .card-review {
-  display: block;
+  position: relative;
   width: max-content;
   height: max-content;
   background-color: #fff;
@@ -1175,23 +1206,264 @@ textarea::placeholder {
   margin-top: 2.0513vw;
   margin-left: 2.3077vw;
   margin-bottom: 1.0256vw;
-  /*
-  height: 6.9231vw;
+}
+
+.review-header h3, .review-header p {
+  font-size: 3.5897vw;
+  line-height: 72%;
+}
+
+.review-header h3 {
+  margin-bottom: 1.7949vw;
+}
+
+.card-review span {
+  position: absolute;
+  top: 5.1282vw;
+  right: 5.1282vw;
+
+}
+
+.card-review a {
+  text-decoration: none;
+  font-size: 2.5641vw;
+  font-weight: 800;
+}
+
+.card__review-text {
+  display: flex;
+  flex-direction: column;
+  margin-left: 3.5897vw;
+  margin-right: 3.5897vw;
+  margin-top: 3.5897vw;
+  margin-bottom: 1.0256vw;
+
+}
+
+.card__review-text-one {
+  display: inline-flex;
   align-items: center;
-  justify-items: center;
+  justify-content: center;
   text-align: left;
   line-height: 1.1; /* Устанавливаем то же значение, что и в Figma */
+  width: max-content;
+  margin-bottom: 2.5641vw;
+  height: 2.3077vw;
+}
+
+.card__review-text-two {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  line-height: 1.1; /* Устанавливаем то же значение, что и в Figma */
+  width: max-content;
+  margin-bottom: 2.5641vw;
+  height: 5.8974vw;
+}
+
+.card__review-text-three {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  line-height: 1.1; /* Устанавливаем то же значение, что и в Figma */
+  width: max-content;
+  margin-bottom: 2.5641vw;
+  height: 9.4872vw;
+}
+
+.card__review-text p {
+  font-size: 3.3333vw;
+  font-weight: 300;
+  line-height: 1;
 }
 
 
-.review-header h3, p {
+
+/* Блок с контактами */
+.contact-map {
+  margin-top: 8.2051vw;
+  margin-bottom: 27.6923vw;
+  display: flex;
+  justify-content: center;
+}
+
+.contact-map-card {
+  width: 83.3333vw;
+  background: #FFFFFF;
+  border-radius: 6.4103vw;
+  padding: 1.7949vw;
+  box-shadow: 0vw 1.5385vw 7.6923vw rgba(0, 0, 0, 0.06);
+  text-align: center;
+}
+
+/* ===== Карта ===== */
+
+.map-container {
+  width: 100%;
+  height: 57.1795vw;
+  border-radius: 5.1282vw;
+  overflow: hidden;
+  margin-bottom: 4.1026vw;
+}
+
+#map2gis {
+  width: 100%;
+  height: 100%;
+}
+
+/* ===== Кнопка ===== */
+.call__btn {
+  width: 75.1282vw;
+  height: 8.7179vw;
+  padding: 2.8205vw 13.8462vw;
+  border-radius: 10.2564vw;
+  border: none;
+  box-shadow: 0vw 0.7692vw 1.28205vw #0000000f, 0vw 0.7692vw 2.05128vw #00000026;
+  background: linear-gradient(
+  180deg,
+  rgba(59, 58, 78, 1) 0%,
+  rgba(39, 39, 51, 1) 100%
+  );
+  color: #fff;
+  font-size: 4.1026vw;
+  font-weight: 700;
+  cursor: pointer;
+  margin-bottom: 3.5641vw;
+}
+.call__btn div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 47.4359vw;
+  height: 3.0769vw;
+}
+
+
+/* ===== Контакты ===== */
+
+.contact-info {
+  margin-bottom: 2vw;
+}
+
+.contact-info p {
+  font-size: 2.8205vw;
+  font-weight: 300;
+  margin-bottom: 2vw;
+}
+
+.phone {
   font-size: 3.5897vw;
-  line-height: 100%;
-
+  font-weight: 700;
+  text-decoration: none;
+  color: #1e1f2a;
 }
 
 
 
-.review-header a {
+
+
+/* Футер */
+.footer {
+  padding: 3.5897vw;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===== Верхняя часть ===== */
+
+.footer-top {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6vw;
+}
+
+/* Бренд */
+
+.footer-brand {
+  max-width: 100%;
+}
+
+.footer-logo {
+  font-size: 6vw;
+  font-weight: 800;
+  margin-bottom: 3vw;
+}
+
+.footer-description {
+  font-size: 4vw;
+  line-height: 1.4;
+  color: #6e6e73;
+}
+
+/* ===== Навигация ===== */
+
+.footer-nav {
+  display: flex;
+  gap: 12vw;
+}
+
+.footer-column h3 {
+  font-size: 4.5vw;
+  margin-bottom: 3vw;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column li {
+  margin-bottom: 2.5vw;
+}
+
+.footer-column a {
   text-decoration: none;
+  font-size: 4vw;
+  color: #6e6e73;
+  transition: 0.2s ease;
+}
+
+.footer-column a:hover {
+  color: #2c2c34;
+}
+
+/* ===== Разделитель ===== */
+
+.footer-divider {
+  margin: 8vw 0;
+  height: 1px;
+  background: #dcdcdc;
+}
+
+/* ===== Нижняя часть ===== */
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 4vw;
+  flex-wrap: wrap;
+}
+
+.footer-links {
+  display: flex;
+  gap: 6vw;
+}
+
+.footer-links a {
+  font-size: 3.8vw;
+  text-decoration: none;
+  color: #6e6e73;
+}
+
+.footer-copy {
+  font-size: 3.8vw;
+  color: #6e6e73;
 }
