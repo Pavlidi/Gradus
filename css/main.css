@@ -314,7 +314,7 @@ h2.plc__univer {
     position: absolute;
     top: 178.2051vw;
     z-index: -90;
-    box-shadow: 0vw -9,7436vw 25.641vw 1.2821vw #faf9f6, 0vw 9,7436vw 25.641vw 1.2821vw #faf9f6;
+    box-shadow: 0vw -9.7436vw 25.641vw 1.2821vw #faf9f6, 0vw 9,7436vw 25.641vw 1.2821vw #faf9f6;
     background: linear-gradient(
     0deg,
     rgba(250, 249, 246, 0.8) 0%,
@@ -1154,14 +1154,14 @@ h2.plc__univer {
   cursor: pointer;
 }
 
-.switch-btn-с.right {
+.switch-btn-c.right {
   padding-top: 2.8205vw;
   padding-right: 12.5641vw;
   padding-left: 10.7692vw;
   padding-bottom: 2.5641vw;
 }
 
-.switch-btn-с.left {
+.switch-btn-c.left {
   padding-top: 2.8205vw;
   padding-right: 10.7692vw;
   padding-left: 12.8205vw;
