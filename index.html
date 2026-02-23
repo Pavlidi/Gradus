@@ -103,8 +103,8 @@
                     <!-- Переключение экзамена -->
                     <div class="switch exam-switch">
                         
-                        <button class="switch-btn active" data-exam="ege">ЕГЭ</button>
-                        <button class="switch-btn" data-exam="oge">ОГЭ</button>
+                        <button class="switch-btn-ex left active" data-exam="ege">ЕГЭ</button>
+                        <button class="switch-btn-ex right" data-exam="oge">ОГЭ</button>
                     </div>
                 </div>
 
@@ -117,6 +117,8 @@
     <!-- "Наши курсы" конец -->
 
     <!-- "Почему нам доверяют? начало" -->
+    <div><img src="image/bkg-mobile-1.webp" class="bkg-1" alt=""></div>
+    <!--<div><img src="image/bcg-mobile-1-1.webp" class="bkg-1-1" alt=""></div>-->
     <section class="trust">
         <div class="h1__grad">
             <h1>Почему нам доверяют?</h1>
@@ -168,6 +170,7 @@
     <!-- "Почему нам доверяют? конец" -->
 
      <!-- "Как проходят занятия начало" -->
+    <div><img src="image/bkg-mobile-2.webp" class="bkg-2" alt=""></div>
     <section class="trust">
         <div class="h1__grad">
             <h1>Как проходят занятия</h1>
@@ -214,6 +217,7 @@
     <!-- "Как проходят занятия конец" -->
 
     <!-- "Вопросы и ответы - начало" -->
+    <div><img src="image/bkg-mobile-3.webp" class="bkg-3" alt=""></div>
     <section class="faq">
             <div class="h1__grad">
                 <h1>Вопросы и ответы</h1>
@@ -326,6 +330,7 @@
                     </div>
             </div>
     </section>
+    <div><img src="image/bkg-mobile-4.webp" class="bkg-4" alt=""></div>
     <section class="contact">
         <div class="contact-card">
 
@@ -339,8 +344,8 @@
 
             <!-- Переключатель -->
             <div class="contact-switch">
-                <button class="switch-btn-c active" data-role="parent">Родитель</button>
-                <button class="switch-btn-c" data-role="student">Ученик</button>
+                <button class="switch-btn-c left active" data-role="parent">Родитель</button>
+                <button class="switch-btn-c right" data-role="student">Ученик</button>
             </div>
 
             <!-- Форма -->
@@ -453,15 +458,16 @@
             <div class="swiper-pagination"></div>
         </div>
     </section>
-    <!-- "Вопросы и ответы - конец" -->
+    <!-- "Отзывы - конец" -->
 
     <!-- "Контакты - начало" -->
+     <div><img src="image/bkg-mobile-5.webp" class="bkg-5" alt=""></div>
      <section class="contact-map">
         <div class="contact-map-card">
 
             <!-- Карта -->
             <div class="map-container">
-            <iframe id="map_648979627" frameborder="0" width="311px" height="223px" src="https://makemap.2gis.ru/widget?data=eJw1jkFvgzAMhf-Ld42qkDQU-AGdduut0qYeEPG2SAFHwZXaIf77TNh8st6zv_cWoOwxo39FGpFzwBm6jwX4mRA6OGPP94ygIGVKmLn4CwwUKYv_ok1TfRrxOXDcPmT1OA85JA407cLP2-TxAV2l_2dV8LUHPjfcX9qFwsRyP5CUClPPpUxjDq3RprLKuYO2trY3eQ9-452O603B2KcLzWEPXCD2DF25rWrjXG3apjpaBXGzC00UfWqcrdumlXpEo8CcUKU4xXj9RozvReV8x_UXvH1ZGA" sandbox="allow-modals allow-forms allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
+            <iframe id="map_648979627" frameborder="0" src="https://makemap.2gis.ru/widget?data=eJw1jkFvgzAMhf-Ld42qkDQU-AGdduut0qYeEPG2SAFHwZXaIf77TNh8st6zv_cWoOwxo39FGpFzwBm6jwX4mRA6OGPP94ygIGVKmLn4CwwUKYv_ok1TfRrxOXDcPmT1OA85JA407cLP2-TxAV2l_2dV8LUHPjfcX9qFwsRyP5CUClPPpUxjDq3RprLKuYO2trY3eQ9-452O603B2KcLzWEPXCD2DF25rWrjXG3apjpaBXGzC00UfWqcrdumlXpEo8CcUKU4xXj9RozvReV8x_UXvH1ZGA" sandbox="allow-modals allow-forms allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
             </div>
 
             <!-- Кнопка -->
@@ -490,7 +496,9 @@
 
                 <!-- Лого + описание -->
                 <div class="footer-brand">
-                    <div class="footer-logo">ГРАДУС°</div>
+                    <div class="footer-logo">
+                        <img src="image/logo-black.webp" class="footer-logo__img" alt="">
+                    </div>
                     <p class="footer-description">
                     Центр подготовки к ОГЭ и ЕГЭ по физике и математике
                     </p>
@@ -530,15 +538,15 @@
 
             <!-- Нижняя часть -->
             <div class="footer-bottom">
-            <div class="footer-links">
-                <a href="#">Политика конфиденциальности</a>
-                <a href="#">Пользовательское соглашение</a>
-            </div>
+                <div class="footer-links">
+                    <a href="#">Политика конфиденциальности</a>
+                    <a href="#">Пользовательское соглашение</a>
+                </div>
 
-            <div class="footer-copy">
-                ©2026 Образовательный центр «Градус».<br>
-                Все права защищены.
-            </div>
+                <div class="footer-copy">
+                    ©2026 Образовательный центр «Градус».<br>
+                    Все права защищены.
+                </div>
             </div>
 
         </div>
