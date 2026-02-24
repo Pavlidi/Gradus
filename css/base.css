@@ -12,7 +12,179 @@ img {
   height: 100%;
 }
 
-/*                                                 Размеры шрифтов                                                 */
+h1,
+h2,
+h3,
+p,
+a {
+  color: #252532;
+}
+
+
+p {
+  line-height: 1.1;
+  font-weight: 400;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1;
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: calc(100vw * var(--h__1) / var(--mainWidth));
+  font-weight: 900;
+  text-align: center;
+}
+
+h2 {
+  font-family: 'Inter', sans-serif;
+  font-size: calc(100vw * var(--h__2) / var(--mainWidth));
+  font-weight: 700;
+}
+
+h3 {
+  font-family: 'Inter', sans-serif;
+  font-size: calc(100vw * var(--h__3) / var(--mainWidth));
+  font-weight: 800;
+}
+
+.h_2-M {
+  font-family: 'Montserrat', sans-serif;
+  font-size: calc(100vw * var(--h__2-M) / var(--mainWidth));
+  font-weight: 900;
+  text-align: center;
+}
+
+.P1 {
+  font-family: 'Inter', sans-serif;
+  font-size: calc(100vw * var(--p1) / var(--mainWidth));
+  font-weight: 500;
+}
+
+.P2 {
+  font-family: 'Inter', sans-serif;
+  font-size: calc(100vw * var(--p2) / var(--mainWidth));
+}
+
+.P3 {
+  font-family: 'Inter', sans-serif;
+  font-size: calc(100vw * var(--p3) / var(--mainWidth));
+}
+
+.P4 {
+  font-family: 'Inter', sans-serif;
+  font-size: calc(100vw * var(--p4) / var(--mainWidth));
+  font-weight: 300;
+}
+
+.P5 {
+  font-family: 'Inter', sans-serif;
+  font-size: calc(100vw * var(--p5) / var(--mainWidth));
+}
+
+.P6 {
+  font-family: 'Inter', sans-serif;
+  font-size: calc(100vw * var(--p6) / var(--mainWidth));
+}
+
+.h1__grad h1 {
+  background: linear-gradient(90deg,
+      #12C2E9 0%,
+      #C471ED 50%,
+      #F64F59 100%);
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.phys__grad {
+  background: linear-gradient(90deg,
+      #12C2E9 0%,
+      #C471ED 100%);
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.math__grad {
+  background: linear-gradient(90deg,
+      #C471ED 0%,
+      #F64F59 100%);
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/*                                                 Переменные величины - Begin                                                 */
 :root {
-    --main_font_size: calc(100vw * 14 / 390);
+  --mainWidth: 390;
+  /*  Основная ширина экрана в Фигме (390, 768, 1440  */
+
+  --main_font_size: calc(100vw * 14 / var(--mainWidth));
+  /*  Текст, который пишется вне p, h1, h2, h3, a  */
+
+  --h__1: 23;
+  --h__2-M: 16;
+  --h__2: 20;
+  --h__3: 14;
+  --h__1-margin: 50;
+  --p1: 16;
+  --p2: 14;
+  --p3: 13;
+  --p4: 12;
+  --p5: 10;
+  --p6: 7;
+  /*  Размеры шрифтов указаны в px, если изменить тут значения - они автоматически изменятся и в vw  */
+
+  /*  Margins - Begin  */
+  --h__name-margin: 267;
+  --hero__title-margin: 17;
+  --hero__btn-margin: 23;
+  /*  Margins - End  */
+
+
+  /*  Button - Begin */
+  --btn__padding-top: calc(100vw * 9 / var(--mainWidth));
+  --btn__padding-right: calc(100vw * 11 / var(--mainWidth));
+  --btn__font-size: calc(100vw * 16 / var(--mainWidth));
+  /*  Button - End */
+}
+/*                                                 Переменные величины - End                                                 */
+
+
+
+/*                                                 Постоянные величины - Begin                                                 */
+:root {
+  /*  Backgrounds - Begin */
+  --btn__background: linear-gradient(180deg, #3B3A4E 0%, #272733 100%);
+  /*  Backgrounds - End */
+
+  /*  BoxShadow - Begin */
+  --box__shadow-1: box-shadow: 0vw 0.7692vw 1.28205vw #0000000f, 0vw 0.7692vw 2.05128vw #00000026;
+  --box__shadow-2: box-shadow: 0vw 0.7692vw 0.2564vw #0000000f, 0vw 0.7692vw 2.05128vw #00000026;
+  --box__shadow-3: box-shadow: 0vw 1.53846vw 7.6923vw rgba(0, 0, 0, 0.06);
+  --box__shadow-4: box-shadow: 0vw 1.5385vw 7.6923vw rgba(0, 0, 0, 0.06);
+  /*  BoxShadow - End */
+}
+/*                                                 Постоянные величины - Begin                                                 */
+
+
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  font-size: var(--main_font_size);
+  background-color: #FAF9F6;
 }

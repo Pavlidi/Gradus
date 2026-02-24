@@ -1,0 +1,17 @@
+.btn {
+    display: inline-flex;
+    align-items: center;
+
+    padding:  var(--btn__padding-top)  var(--btn__padding-right);
+    border: none;
+    border-radius: 10.2564vw;
+
+    font-family: 'Inter';
+    font-size: var(--btn__font-size);
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+
+    background: var(--btn__background);
+    box-shadow: 0vw 1.2821vw 1.0256vw #424151 inset, 0vw 1.0256vw 3.8462vw rgba(15, 14, 23, 0.20);
+}
