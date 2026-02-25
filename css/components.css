@@ -11,6 +11,8 @@
     font-weight: 700;
     line-height: 1;
     color: #fff;
+    
+    cursor: pointer;
 
     background: var(--btn__background);
     box-shadow: 0vw 1.2821vw 1.0256vw #424151 inset, 0vw 1.0256vw 3.8462vw rgba(15, 14, 23, 0.20);

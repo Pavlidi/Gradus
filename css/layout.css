@@ -93,39 +93,3 @@
   display: block;
 }
 /*                                                 Header - mobile - end                                                */
-
-
-/*                                                 Hero - mobile - begin                                                */
-.hero__name {
-  position: relative;
-  margin-top: calc(100vw * var(--hero__name-margin) / var(--mainWidth));
-} 
-
-.h1__grad {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  margin-top: calc(100vw * var(--h__1-margin) / var(--mainWidth));
-}
-
-.hero__title {
-  margin-top: calc(100vw * var(--hero__title-margin) / var(--mainWidth));
-  text-align: center;
-}
-
-.hero__btn {
-  margin-top: calc(100vw * var(--hero__btn-margin) / var(--mainWidth));
-  text-align: center;
-}
-
-.universities {
-  margin-top: calc(100vw * var(--hero__universities-margin) / var(--mainWidth));
-}
-
-.univer__marquee {
-  position: relative;  
-  overflow: hidden;
-  width: var(--hero__univer__marquee-width);
-  margin-top: calc(100vw * var(--hero__univer__marquee-margin) / var(--mainWidth));
-}

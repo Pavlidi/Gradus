@@ -61,12 +61,13 @@ h3 {
 .P1 {
   font-family: 'Inter', sans-serif;
   font-size: calc(100vw * var(--p1) / var(--mainWidth));
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .P2 {
   font-family: 'Inter', sans-serif;
   font-size: calc(100vw * var(--p2) / var(--mainWidth));
+  font-weight: 300;
 }
 
 .P3 {
@@ -150,28 +151,65 @@ h3 {
 
 
   /*  Margins - Begin  */
+  --margin__from-h1: 15;
   --hero__name-margin: 267;
   --hero__title-margin: 17;
   --hero__btn-margin: 23;
   --hero__universities-margin: 224;
   --hero__univer__marquee-margin: 18;
+  --courses__main__Quote-marginLeft: 14;
+  --format-card__bkg-marginTop: 10;
+  --format-card__text-marginTop: 8;
+  --format-card__list-marginTop: 13;
+  --format-card__btn-marginTop: 7;
+  --format-card__btn-marginLeft: 169;
   /*  Margins - End  */
 
 
   /*  Paddings - Begin  */
+  --padding-1: 14;
+  --padding-2: 7;
   --hero__univer__track__img-paddingRight: 33;
+  --courses__main-paddingTop: 16;
+  --courses__format-card-paddingTop: 13;
+  --courses__format-card-paddingRight: 10;
+  --courses__format-card-paddingBottom: 10;
+  --courses__format-card-paddingLeft: 16;
+  --format-card__list__li-paddingLeft: 21;
+  --format-card__list__li__before-Top: 3; /* Отступ галочки сверху */
   /*  Paddings - End  */
+
+
+  /*  Gapps - Begin  */
+  --ul_li-gap: 12;
+  /*  Gapps - End  */
 
 
   /*  Widths - Begin  */
   --hero__univer__marquee-width: 100vw;
   --hero__univer__track__img-width: 724;
+  --format-card__list__li__before-width: 11;
   /*  Widths - End  */
 
 
   /*  Heights - Begin  */
-  --hero__univer__track-height: 63;
+  --hero__univer__track-height: 62.6;
+  --hero__univer__bkg-height: 81;
   /*  Heights - End  */
+
+
+  /*  Position - Begin  */
+  --hero__univer__bkg-top: 697;
+  /*  Position - End  */
+
+  
+  /*  Border - Begin  */
+  --border__1-radius: 30;
+  --border__2-radius: 25;
+  --border__3-radius: 20;
+  --border__size_1: 2;
+  --border__size_2: 1;
+  /*  Border - End  */
 
 
   /*  Button - Begin */
@@ -181,7 +219,6 @@ h3 {
   /*  Button - End */
 }
 /*                                                 Переменные величины - End                                                 */
-
 
 
 /*                                                 Постоянные величины - Begin                                                 */
