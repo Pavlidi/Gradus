@@ -148,11 +148,30 @@ h3 {
   --p6: 7;
   /*  Размеры шрифтов указаны в px, если изменить тут значения - они автоматически изменятся и в vw  */
 
+
   /*  Margins - Begin  */
-  --h__name-margin: 267;
+  --hero__name-margin: 267;
   --hero__title-margin: 17;
   --hero__btn-margin: 23;
+  --hero__universities-margin: 224;
+  --hero__univer__marquee-margin: 18;
   /*  Margins - End  */
+
+
+  /*  Paddings - Begin  */
+  --hero__univer__track__img-paddingRight: 33;
+  /*  Paddings - End  */
+
+
+  /*  Widths - Begin  */
+  --hero__univer__marquee-width: 100vw;
+  --hero__univer__track__img-width: 724;
+  /*  Widths - End  */
+
+
+  /*  Heights - Begin  */
+  --hero__univer__track-height: 63;
+  /*  Heights - End  */
 
 
   /*  Button - Begin */

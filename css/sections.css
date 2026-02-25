@@ -7,5 +7,46 @@
     z-index: -100;
 }
 
+.univer__track {
+    display: flex;
+    width: max-content;
+    height: calc(100vw * var(--hero__univer__track-height) / var(--mainWidth));
+    animation: univer__track 20s linear infinite;
+}
+
+.univer__track img {
+    display: block;
+    flex: 0 0 calc(100vw * var(--hero__univer__track__img-width) / var(--mainWidth));
+    padding-right: calc(100vw * var(--hero__univer__track__img-paddingRight) / var(--mainWidth));
+
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    will-change: transform;;
+}
+
+
+@keyframes univer__track {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(calc(-1 * 100vw * (var(--hero__univer__track__img-width) + var(--hero__univer__track__img-paddingRight)) / var(--mainWidth)), 0, 0);
+  }
+}
+
+.univer__bkg {
+    width: 100vw;
+    height: 20.7692vw;
+    position: absolute;
+    top: 178.2051vw;
+    z-index: -90;
+    box-shadow: 0vw -9.7436vw 25.641vw 1.2821vw #faf9f6, 0vw 9,7436vw 25.641vw 1.2821vw #faf9f6;
+    background: linear-gradient(
+    0deg,
+    rgba(250, 249, 246, 0.8) 0%,
+    rgba(250, 249, 246, 1) 50%,
+    rgba(250, 249, 246, 0.8) 100%
+  );
+}
 
 /*                                                 Hero - End                                               */
