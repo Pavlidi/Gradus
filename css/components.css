@@ -33,7 +33,7 @@
   justify-content: space-between;
 
   border-radius: var(--btn__border-radius);
-  border-width: calc(100vw * var(--border__size_2) / 390);
+  border-width: calc(100vw * var(--border__size_2) / var(--mainWidth));
   border-style:  solid;
   border-color: #32303e;
 
@@ -41,13 +41,13 @@
 }
 
 .subject-switch {
-  width: calc(100vw * var(--subject-switch-width) / 390);
-  margin-top: calc(100vw * var(--subject-switch-marginTop) / 390);
-  margin-left: calc(100vw * var(--subject-switch-marginLeft) / 390);
+  width: calc(100vw * var(--subject-switch-width) / var(--mainWidth));
+  margin-top: calc(100vw * var(--subject-switch-marginTop) / var(--mainWidth));
+  margin-left: calc(100vw * var(--subject-switch-marginLeft) / var(--mainWidth));
 }
 
 .exam-switch {
-  width: calc(100vw * var(--exam-switch-width) / 390);
+  width: calc(100vw * var(--exam-switch-width) / var(--mainWidth));
   border-color: #F8F8F8;
   background-color: #E9E9EB;
 }
@@ -55,7 +55,7 @@
 .switch-btn {
   border: none;
 
-  font-size: calc(100vw * var(--switch-btn-fontSize) / 390);
+  font-size: calc(100vw * var(--switch-btn-fontSize) / var(--mainWidth));
   font-weight: 600;
   color: #B0B0B0;
 
@@ -68,22 +68,22 @@
 }
 
 .switch-btn.left {
-  padding-left: calc(100vw * var(--switch-btn-paddingLeftRight) / 390);
+  padding-left: calc(100vw * var(--switch-btn-paddingLeftRight) / var(--mainWidth));
 }
 
 .switch-btn.right {
-  padding-right: calc(100vw * var(--switch-btn-paddingLeftRight) / 390);
+  padding-right: calc(100vw * var(--switch-btn-paddingLeftRight) / var(--mainWidth));
 }
 
 .switch .active {
   display: block;
   
-  margin: calc(100vw * var(--switch__active-margin) / 390);
-  padding: calc(100vw * var(--switch__active-paddingTop) / 390) calc(100vw * var(--switch__active-paddingLeft) / 390);
+  margin: calc(100vw * var(--switch__active-margin) / var(--mainWidth));
+  padding: calc(100vw * var(--switch__active-paddingTop) / var(--mainWidth)) calc(100vw * var(--switch__active-paddingLeft) / var(--mainWidth));
 
   border-radius: var(--btn__border-radius);
 
-  font-size: calc(100vw * var(--switch-btn__active-fontSize) / 390);
+  font-size: calc(100vw * var(--switch-btn__active-fontSize) / var(--mainWidth));
   color: #fff;
 
   background: var(--btn__background);
@@ -98,3 +98,64 @@
 /*                                                 Button and Switch - End                                          */
 
 /*                                                 Swiper - Begin                                          */
+.swiper {
+  position: relative;
+  margin-top:  calc(100vw * var(--course-card-marginTop) / var(--mainWidth));
+  width: 100vw;
+}
+
+.swiper-slide {
+  display: flex;
+}
+
+[class*="mySwiper"] .swiper-pagination {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: calc(100vw * var(--swiper-pagination-marginTop) / var(--mainWidth));
+  gap: calc(100vw * var(--swiper-pagination-gap) / var(--mainWidth));
+}
+
+/* Стилизация индикаторов (Dots) */
+[class*="mySwiper"] .swiper-pagination-bullet {
+  width: calc(100vw * var(--swiper-pagination_Dots-width) / var(--mainWidth));
+  height: calc(100vw * var(--swiper-pagination_Dots-width) / var(--mainWidth));
+  background: #BABABA;
+  opacity: 1;
+  transition: all 0.3s ease; /* Плавное удлинение */
+}
+
+/* Активная точка превращается в длинную */
+[class*="mySwiper"] .swiper-pagination-bullet-active {
+  width: calc(100vw * var(--swiper-pagination_Active-width) / var(--mainWidth));
+  height: calc(100vw * var(--swiper-pagination_Active-height) / var(--mainWidth));
+  border-radius: calc(100vw * var(--swiper-pagination_Active-radius) / var(--mainWidth));
+  background: #BABABA; /* Цвет как на скрине */
+}
+
+/* Левое затемнение */
+.swiper::before,
+.swiper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  
+  width: calc(100vw * var(--swiper-pagination_shadow-width) / var(--mainWidth)); /* ширина затемнения */
+  height: 100%;
+  z-index: 10;
+  pointer-events: none; /* ВАЖНО! */
+}
+
+/* Левый градиент */
+.swiper::before {
+  left: 0;
+  background: linear-gradient(90deg, #FAF9F6 0%, rgba(250, 249, 246, 0) 100%)
+}
+
+/* Правый градиент */
+.swiper::after {
+  right: 0;
+  background: linear-gradient(90deg, rgba(250, 249, 246, 0) 0%, #FAF9F6 100%)
+}

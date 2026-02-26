@@ -239,6 +239,18 @@ h3 {
   --switch-btn-fontSize: 13;
   --switch-btn__active-fontSize: 14;
   /*  Button - End */
+
+
+  /*  Swiper - Begin */
+  --swiper-pagination-marginTop: 23;
+  --swiper-pagination_shadow-width: 31;
+  --swiper-pagination-gap: 16;
+  --swiper-pagination_Dots-width: 7;
+  --swiper-pagination_Active-width: 32;
+  --swiper-pagination_Active-height: 9;
+  --swiper-pagination_Active-radius: 99;
+
+  /*  Swiper - End */
 }
 /*                                                 Переменные величины - End                                                 */
 

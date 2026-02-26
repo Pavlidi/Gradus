@@ -237,7 +237,7 @@
 /*                                                 Courses - End                                          */
 
 
-/*                                                 Trust - End                                          */
+/*                                                 Trust - Begin                                          */
 .courses__main-trust {
   display: flex;
 
@@ -277,20 +277,7 @@
   width: calc(100vw * var(--format-card-trust_logo-width) / var(--mainWidth));
 }
 
-
-
-/* Переключение карточек */
-
-.swiper {
-  margin-top: 3.3333vw;
-  width: 100vw;
-}
-
-.swiper-slide {
-  display: flex;
-}
-
-/* Стили карточки (как на фото) */
+/* Стили карточки */
 .card {
   display: flex;
   flex-direction: column;
