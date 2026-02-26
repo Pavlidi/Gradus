@@ -72,6 +72,16 @@ examButtons.forEach(btn => {
   });
 });
 
+// Остались вопросы? Перезвоним
+const switchButtons = document.querySelectorAll('.switch-btn-c');
+
+switchButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    switchButtons.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
+
 updateCard();
 
 // Переключение карточек через свайп
@@ -128,13 +138,3 @@ document.querySelectorAll('.faq-question').forEach(button => {
   });
 });
 
-
-// Остались вопросы? Перезвоним
-const switchButtons = document.querySelectorAll('.switch-btn-c');
-
-switchButtons.forEach(btn => {
-  btn.addEventListener('click', () => {
-    switchButtons.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-  });
-});

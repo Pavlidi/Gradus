@@ -202,7 +202,7 @@ h3 {
   --hero__univer__bkg-top: 697;
   /*  Position - End  */
 
-  
+
   /*  Border - Begin  */
   --border__1-radius: 30;
   --border__2-radius: 25;
@@ -216,6 +216,7 @@ h3 {
   --btn__padding-top: calc(100vw * 9 / var(--mainWidth));
   --btn__padding-right: calc(100vw * 11 / var(--mainWidth));
   --btn__font-size: calc(100vw * 16 / var(--mainWidth));
+  --btn__border-radius: calc(100vw * 40 / var(--mainWidth));
   /*  Button - End */
 }
 /*                                                 Переменные величины - End                                                 */
