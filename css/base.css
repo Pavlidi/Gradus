@@ -67,27 +67,32 @@ h3 {
 .P2 {
   font-family: 'Inter', sans-serif;
   font-size: calc(100vw * var(--p2) / var(--mainWidth));
+  line-height: 1.1;
   font-weight: 300;
 }
 
 .P3 {
   font-family: 'Inter', sans-serif;
+  line-height: 1.1;
   font-size: calc(100vw * var(--p3) / var(--mainWidth));
 }
 
 .P4 {
   font-family: 'Inter', sans-serif;
+  line-height: 1.1;
   font-size: calc(100vw * var(--p4) / var(--mainWidth));
   font-weight: 300;
 }
 
 .P5 {
   font-family: 'Inter', sans-serif;
+  line-height: 1.1;
   font-size: calc(100vw * var(--p5) / var(--mainWidth));
 }
 
 .P6 {
   font-family: 'Inter', sans-serif;
+  line-height: 1.1;
   font-size: calc(100vw * var(--p6) / var(--mainWidth));
 }
 
@@ -162,7 +167,13 @@ h3 {
   --format-card__text-marginTop: 8;
   --format-card__list-marginTop: 13;
   --format-card__btn-marginTop: 7;
-  --format-card__btn-marginLeft: 169;
+  --subject-switch-marginTop: 18;
+  --subject-switch-marginLeft: 22;
+  --switch__active-margin: 1;
+  --course-card-marginTop: 12;
+  --card-header-marginTop: 9;
+  --btn__white-marginTop: 36;
+  --course-card__textCourse-marginTop: 21;
   /*  Margins - End  */
 
 
@@ -177,6 +188,10 @@ h3 {
   --courses__format-card-paddingLeft: 16;
   --format-card__list__li-paddingLeft: 21;
   --format-card__list__li__before-Top: 3; /* Отступ галочки сверху */
+  --switch-btn-paddingLeftRight: 16;
+  --switch__active-paddingTop: 6;
+  --switch__active-paddingLeft: 12;
+  --format-card-trust-text-padding: 16;
   /*  Paddings - End  */
 
 
@@ -189,6 +204,10 @@ h3 {
   --hero__univer__marquee-width: 100vw;
   --hero__univer__track__img-width: 724;
   --format-card__list__li__before-width: 11;
+  --course-card-width: 332;
+  --subject-switch-width: 188;
+  --exam-switch-width: 104;
+  --format-card-trust_logo-width: 75;
   /*  Widths - End  */
 
 
@@ -217,6 +236,8 @@ h3 {
   --btn__padding-right: calc(100vw * 11 / var(--mainWidth));
   --btn__font-size: calc(100vw * 16 / var(--mainWidth));
   --btn__border-radius: calc(100vw * 40 / var(--mainWidth));
+  --switch-btn-fontSize: 13;
+  --switch-btn__active-fontSize: 14;
   /*  Button - End */
 }
 /*                                                 Переменные величины - End                                                 */
@@ -229,10 +250,10 @@ h3 {
   /*  Backgrounds - End */
 
   /*  BoxShadow - Begin */
-  --box__shadow-1: box-shadow: 0vw 0.7692vw 1.28205vw #0000000f, 0vw 0.7692vw 2.05128vw #00000026;
-  --box__shadow-2: box-shadow: 0vw 0.7692vw 0.2564vw #0000000f, 0vw 0.7692vw 2.05128vw #00000026;
-  --box__shadow-3: box-shadow: 0vw 1.53846vw 7.6923vw rgba(0, 0, 0, 0.06);
-  --box__shadow-4: box-shadow: 0vw 1.5385vw 7.6923vw rgba(0, 0, 0, 0.06);
+  --box__shadow-1: 0vw 0.7692vw 1.28205vw #0000000f, 0vw 0.7692vw 2.05128vw #00000026;
+  --box__shadow-2: 0vw 0.7692vw 0.2564vw #0000000f, 0vw 0.7692vw 2.05128vw #00000026;
+  --box__shadow-3: 0vw 1.53846vw 7.6923vw rgba(0, 0, 0, 0.06);
+  --box__shadow-4: 0vw 1.5385vw 7.6923vw rgba(0, 0, 0, 0.06);
   /*  BoxShadow - End */
 }
 /*                                                 Постоянные величины - Begin                                                 */

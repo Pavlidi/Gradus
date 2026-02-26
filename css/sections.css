@@ -1,10 +1,10 @@
 /*                                                 Hero - Begin                                               */
 .orbits {
-    position: absolute;
-    top: 0;
-    width: 100vw;
-    height: auto;
-    z-index: -100;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: auto;
+  z-index: -100;
 }
 
 .hero__name {
@@ -93,10 +93,10 @@
 
   width: max-content;
   margin: calc(100vw * var(--margin__from-h1) / var(--mainWidth)) auto 0;
-  padding: calc(100vw * var(--courses__main-paddingTop) / var(--mainWidth)) calc(100vw * var(--padding-2) / var(--mainWidth)) 0 ;
+  padding: calc(100vw * var(--courses__main-paddingTop) / var(--mainWidth)) calc(100vw * var(--padding-2) / var(--mainWidth)) calc(100vw * var(--padding-2) / var(--mainWidth));
 
   border-radius: calc(100vw * var(--border__1-radius) / var(--mainWidth));
-  background-color: red;
+  background-color: #fff;
 }
 
 .Quote {
@@ -128,6 +128,8 @@
 .format-card {
   display: flex;
   flex-direction: column;
+
+  width: calc(100vw * var(--course-card-width) / var(--mainWidth));
 
   padding-top: calc(100vw * var(--courses__format-card-paddingTop) / var(--mainWidth));
   padding-right: calc(100vw * var(--courses__format-card-paddingRight) / var(--mainWidth));
@@ -181,9 +183,190 @@
   
   width: max-content;
   margin-top: calc(100vw * var(--format-card__btn-marginTop) / var(--mainWidth));
-  margin-left: calc(100vw * var(--format-card__btn-marginLeft) / var(--mainWidth));
+  margin-left: auto;
 
   box-shadow: var(--box__shadow-1);
   background: var(--btn__background);
 }
 
+
+.course-card {
+  display: flex;
+  flex-direction: column;
+
+  width: calc(100vw * var(--course-card-width) / var(--mainWidth));
+  margin: calc(100vw * var(--course-card-marginTop) / var(--mainWidth)) calc(100vw * var(--padding-2) / var(--mainWidth)) calc(100vw * var(--padding-2) / var(--mainWidth));
+  padding-right: calc(100vw * var(--courses__format-card-paddingRight) / var(--mainWidth));
+  padding-bottom: calc(100vw * var(--courses__format-card-paddingBottom) / var(--mainWidth));
+  padding-left: calc(100vw * var(--courses__format-card-paddingLeft) / var(--mainWidth));
+
+  border-radius: calc(100vw * var(--border__3-radius) / var(--mainWidth));
+  
+  background: #252532;
+  box-shadow: 1.28205vw 3.5897vw 10.2564vw -2.30769vw #3d3a56, inset 0vw 2.05128vw 7.6923vw #2a2a34;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: calc(100vw * var(--card-header-marginTop) / var(--mainWidth));
+}
+
+.course-card h2, .course-card p {
+  color: #fff;
+}
+
+.textCourse {
+  margin-top: calc(100vw * var(--course-card__textCourse-marginTop) / var(--mainWidth));
+}
+
+
+#cardText {
+  white-space: pre-line;
+}
+
+.btn.white {
+  position: relative;
+
+  width: max-content;
+  margin-top: calc(100vw * var(--btn__white-marginTop) / var(--mainWidth));
+  margin-left: auto;
+}
+/*                                                 Courses - End                                          */
+
+
+/*                                                 Trust - End                                          */
+.courses__main-trust {
+  display: flex;
+
+  width: max-content;
+  margin-top: calc(100vw * var(--margin__from-h1) / var(--mainWidth));
+  margin-right: auto;
+  margin-left: auto;
+  padding: calc(100vw * var(--padding-2) / var(--mainWidth));
+
+  border-radius: calc(100vw * var(--border__1-radius) / var(--mainWidth));
+  background-color: #fff;
+}
+
+.format-card__bkg-trust {
+  display: flex;
+
+  padding: calc(100vw * var(--padding-2) / var(--mainWidth));
+
+  border-radius: calc(100vw * var(--border__2-radius) / var(--mainWidth));
+  background-color: #FAF9F6;
+}
+
+.format-card-trust {
+  display: flex;
+  flex-direction: column;
+  
+
+  padding: calc(100vw * var(--format-card-trust-text-padding) / var(--mainWidth));
+
+  border-width:  calc(100vw * var(--border__size_1) / var(--mainWidth));
+  border-color: #E2E2E2;
+  border-style: solid;
+  border-radius: calc(100vw * var(--border__3-radius) / var(--mainWidth));
+}
+
+.format-card-trust_logo {
+  width: calc(100vw * var(--format-card-trust_logo-width) / var(--mainWidth));
+}
+
+
+
+/* Переключение карточек */
+
+.swiper {
+  margin-top: 3.3333vw;
+  width: 100vw;
+}
+
+.swiper-slide {
+  display: flex;
+}
+
+/* Стили карточки (как на фото) */
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 59.7436vw; /* Чтобы боковые карточки были немного видны */
+  height: 66.1538vw;
+  padding: 1.79487vw;
+  background: #fff;
+  border-radius: 7.6923vw;
+  box-shadow: var(--box__shadow-3);
+  text-align: left;
+}
+
+.card-how {
+  display: flex;
+  flex-direction: column;
+  width: 82.30769vw; /* Чтобы боковые карточки были немного видны */
+  height: 79.4872vw;
+  padding: 1.79487vw;
+  background: #fff;
+  border-radius: 7.6923vw;
+  box-shadow: var(--box__shadow-3);
+  text-align: left;
+}
+
+.card img {
+  width: 56.1538vw;
+  height: 40.7692vw;
+  border-radius: 6.410256vw;
+  border-color: #E2E2E2;
+  border-width: 0.2564vw;
+  border-style: solid;
+}
+
+.card-how img {
+  width: 78.7179vw;
+  height: 57.1795vw;
+  border-radius: 6.410256vw;
+  border-color: #E2E2E2;
+  border-width: 0.2564vw;
+  border-style: solid;
+}
+
+.card__trust-head {
+  display: inline-flex;
+  align-items: center;
+  height: 3.84615vw;
+  margin-top: 4.10256vw;
+  margin-left: 2.30769vw;
+}
+
+.card__trust-text {
+  display: inline-flex;
+  align-items: center;
+  height: 8.9744vw;
+  width: 52.0513vw;
+  margin-top: 2.5641vw;
+  margin-left: 2.30769vw;
+}
+
+.card__how-text {
+  display: inline-flex;
+  align-items: center;
+  height: 5.8974vw;
+  width: 70.7692vw;
+  margin-top: 2.5641vw;
+  margin-left: 2.30769vw;
+}
+
+.card p {
+  font-size: 3.0769vw;
+  line-height: 1.1;
+  font-weight: 300;
+}
+
+.card-how p {
+  font-size: 3.33333vw;
+  line-height: 1.1;
+  font-weight: 300;
+}

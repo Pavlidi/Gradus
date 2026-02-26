@@ -82,6 +82,25 @@ switchButtons.forEach(btn => {
   });
 });
 
+
+// Вопросы и ответы
+document.querySelectorAll('.faq-question').forEach(button => {
+  button.addEventListener('click', () => {
+
+    const item = button.parentElement;
+
+    // если хочешь чтобы был открыт только один пункт
+    document.querySelectorAll('.faq-item').forEach(el => {
+      if (el !== item) {
+        el.classList.remove('active');
+      }
+    });
+
+    item.classList.toggle('active');
+  });
+});
+
+
 updateCard();
 
 // Переключение карточек через свайп
@@ -117,24 +136,5 @@ const swiper3 = new Swiper(".mySwiper3", {
     el: ".swiper-pagination",
     clickable: true,                                // Чтобы можно было кликать на точки
   },
-});
-
-
-
-// Вопросы и ответы
-document.querySelectorAll('.faq-question').forEach(button => {
-  button.addEventListener('click', () => {
-
-    const item = button.parentElement;
-
-    // если хочешь чтобы был открыт только один пункт
-    document.querySelectorAll('.faq-item').forEach(el => {
-      if (el !== item) {
-        el.classList.remove('active');
-      }
-    });
-
-    item.classList.toggle('active');
-  });
 });
 
