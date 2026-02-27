@@ -66,8 +66,8 @@ h3 {
 
 .P2 {
   font-family: 'Inter', sans-serif;
-  font-size: calc(100vw * var(--p2) / var(--mainWidth));
   line-height: 1.1;
+  font-size: calc(100vw * var(--p2) / var(--mainWidth));
   font-weight: 300;
 }
 
@@ -75,6 +75,7 @@ h3 {
   font-family: 'Inter', sans-serif;
   line-height: 1.1;
   font-size: calc(100vw * var(--p3) / var(--mainWidth));
+  font-weight: 300;
 }
 
 .P4 {
@@ -174,6 +175,11 @@ h3 {
   --card-header-marginTop: 9;
   --btn__white-marginTop: 36;
   --course-card__textCourse-marginTop: 21;
+  --trust__card__img-marginBottom: 14;
+  --trust__card__head-marginLeft: 12;
+  --trust__card__text-marginTop: 5;
+  --trust__card__text-marginBottom: 7;
+  --faq-group-marginTop: 14;
   /*  Margins - End  */
 
 
@@ -192,6 +198,7 @@ h3 {
   --switch__active-paddingTop: 6;
   --switch__active-paddingLeft: 12;
   --format-card-trust-text-padding: 16;
+  --faq-group-paddingTop: 5;
   /*  Paddings - End  */
 
 
