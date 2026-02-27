@@ -89,6 +89,7 @@ h3 {
   font-family: 'Inter', sans-serif;
   line-height: 1.1;
   font-size: calc(100vw * var(--p5) / var(--mainWidth));
+  font-weight: 300;
 }
 
 .P6 {
@@ -180,6 +181,11 @@ h3 {
   --trust__card__text-marginTop: 5;
   --trust__card__text-marginBottom: 7;
   --faq-group-marginTop: 14;
+  --faq-group__title-marginLeft: 20;
+  --faq-group__title-marginBottom: 4;
+  --faq-line-marginTop: 7;
+  --faq-line-marginBottom: 9;
+  --faq-answer-marginTopLeft: 4;
   /*  Margins - End  */
 
 
@@ -199,6 +205,11 @@ h3 {
   --switch__active-paddingLeft: 12;
   --format-card-trust-text-padding: 16;
   --faq-group-paddingTop: 5;
+  --faq-group__box-paddintTop: 14;
+  --faq-group__box-paddingLeft: 20;
+  --contact-paddingTop: 20;
+  --switch-btn_role-paddingLeftRight: 43;
+  --switch__role__active-paddingLeft: 43;
   /*  Paddings - End  */
 
 
@@ -215,12 +226,19 @@ h3 {
   --subject-switch-width: 188;
   --exam-switch-width: 104;
   --format-card-trust_logo-width: 75;
+  --format-card__main-width: 233;
+  --format-card__how-width: 321;
+  --faq-item__line-width: 310;
+  --faq-icon-width: 18;
+  --faq-icon__font__size-width: 13;
+  --contact-switch-width: 293;
   /*  Widths - End  */
 
 
   /*  Heights - Begin  */
   --hero__univer__track-height: 62.6;
   --hero__univer__bkg-height: 81;
+  --faq-line-height: 2;
   /*  Heights - End  */
 
 

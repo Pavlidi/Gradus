@@ -44,6 +44,7 @@ const cardText = document.getElementById("cardText");
 
 const subjectButtons = document.querySelectorAll("[data-subject]");
 const examButtons = document.querySelectorAll("[data-exam]");
+const roleButtons = document.querySelectorAll("[data-role]");
 
 function updateCard() {
   const data = content[currentSubject][currentExam];
@@ -72,13 +73,11 @@ examButtons.forEach(btn => {
   });
 });
 
-// Остались вопросы? Перезвоним
-const switchButtons = document.querySelectorAll('.switch-btn-c');
-
-switchButtons.forEach(btn => {
-  btn.addEventListener('click', () => {
-    switchButtons.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
+roleButtons.forEach(btn => {
+  btn.addEventListener("click", () => {
+    currentRole = btn.dataset.role;
+    setActive(roleButtons, btn);
+    updateCard();
   });
 });
 
@@ -109,7 +108,7 @@ const swiper = new Swiper(".mySwiper", {
   slidesPerView: 1.6,                           // Автоматическая ширина (настроили в CSS 80%)
   centeredSlides: true,                             // Активная карточка строго по центру
   initialSlide: 1,                                  // ← Открываем вторую
-  spaceBetween: window.innerWidth * 0.025641,       // Расстояние между карточками
+  /*spaceBetween: window.innerWidth * 0.025641,       // Расстояние между карточками*/
   pagination: {
     el: ".swiper-pagination",
     clickable: true,                                // Чтобы можно было кликать на точки
@@ -117,10 +116,9 @@ const swiper = new Swiper(".mySwiper", {
 });
 
 const swiper2 = new Swiper(".mySwiper2", {
-  slidesPerView: 1.2,                           // Автоматическая ширина (настроили в CSS 80%)
+  slidesPerView: 1.1526,                           // Автоматическая ширина (настроили в CSS 80%)
   centeredSlides: true,                             // Активная карточка строго по центру
   initialSlide: 1,                                  // ← Открываем вторую
-  spaceBetween: window.innerWidth * 0.025641,       // Расстояние между карточками
   pagination: {
     el: ".swiper-pagination",
     clickable: true,                                // Чтобы можно было кликать на точки

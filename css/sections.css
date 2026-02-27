@@ -282,6 +282,7 @@
   display: flex;
   flex-direction: column;
 
+  width: calc(100vw * var(--format-card__main-width) / var(--mainWidth));
   padding: calc(100vw * var(--padding-2) / var(--mainWidth));
 
   text-align: left;
@@ -310,26 +311,8 @@
   margin-left: calc(100vw * var(--trust__card__head-marginLeft) / var(--mainWidth));
 }
 
-.card-how {
-  display: flex;
-  flex-direction: column;
-
-  padding: calc(100vw * var(--padding-2) / var(--mainWidth));
-
-  text-align: left;
-
-  border-radius: calc(100vw * var(--border__1-radius) / var(--mainWidth));
-  background: #fff;
-  box-shadow: var(--box__shadow-3);
-}
-
-.card-how img {
-  margin-bottom: calc(100vw * var(--trust__card__img-marginBottom) / var(--mainWidth));
-
-  border-radius: calc(100vw * var(--border__2-radius) / var(--mainWidth));
-  border-width: calc(100vw * var(--border__size_2) / var(--mainWidth));
-  border-color: #E2E2E2;
-  border-style: solid;
+.card.how {
+  width: calc(100vw * var(--format-card__how-width) / var(--mainWidth));
 }
 /*                                                 Trust and How? - End                                          */
 
@@ -337,11 +320,13 @@
 /*                                                 FAQ - Begin                                          */
 .faq-group {
   display: flex;
+
   flex-direction: column;
 
   margin-top: calc(100vw * var(--faq-group-marginTop) / var(--mainWidth));
   margin-left: auto;
   margin-right: auto;
+  
   width: max-content;
   padding: calc(100vw * var(--faq-group-paddingTop) / var(--mainWidth)) calc(100vw * var(--padding-2) / var(--mainWidth)) calc(100vw * var(--padding-2) / var(--mainWidth));
 
@@ -351,61 +336,56 @@
 }
 
 .faq-group__block {
-  width: 90vw;
-  height: max-content;
-  margin-top: 3.5897vw;
+  margin-top: calc(100vw * var(--faq-group-marginTop) / var(--mainWidth));
 }
 
 .faq-group__title {
-  margin-left: 6.9231vw;
-  width: max-content;
-  height: 3.84615vw;
-  display: inline-flex;
-  align-items: center;
-  justify-content: left;
-  text-align: center;
-  line-height: 108%; /* Устанавливаем то же значение, что и в Figma */
+  margin-left: calc(100vw * var(--faq-group__title-marginLeft) / var(--mainWidth));
+  margin-bottom: calc(100vw * var(--faq-group__title-marginBottom) / var(--mainWidth));
 }
 
 .faq-group__box {
   display: flex;
   flex-direction: column;
-  width: 90vw;
-  height: max-content;/*30.51282vw;*/
+
+  width: max-content;
+  padding: calc(100vw * var(--faq-group__box-paddintTop) / var(--mainWidth)) calc(100vw * var(--faq-group__box-paddingLeft) / var(--mainWidth));
+
   background-color: #FAF9F6;
-  border-radius: 6.410256vw;
-  margin-top: 1.7949vw;
-  padding-top: 1.7949vw;
-  padding-bottom: 3.8462vw;
+  border-radius: calc(100vw * var(--border__2-radius) / var(--mainWidth));
+}
+
+.faq-item {
+  width: calc(100vw * var(--faq-item__line-width) / var(--mainWidth));
 }
 
 .faq-question {
-  width: 79.7436vw;
-  height: 4.6154vw;
-  background: none;
-  border: none;
-  text-align: left;
-  font-size: 3.5897vw;
-  font-weight: 300;
-  color: #252532;
-  cursor: pointer;
-  margin-top: 2.0513vw;
-  margin-left: 5.1282vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  width: calc(100vw * var(--faq-item__line-width) / var(--mainWidth));
+
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 .faq-icon {
-  width: 4.6154vw;
-  height: 4.6154vw;
-  border-radius: 50%;
-  background: #252532;
-  color: white;
   display: flex;
-  align-items: center;
   justify-content: center;
-  font-size: 3.2vw;
+  align-items: center;
+  width: calc(100vw * var(--faq-icon-width) / var(--mainWidth));
+  height: calc(100vw * var(--faq-icon-width) / var(--mainWidth));
+  border-radius: 50%;
+
+  padding-bottom: calc(100vw * 2 / var(--mainWidth)); /* Костыль для того чтобы плюс был ровно по центру */
+  
+  
+  font-size: calc(100vw *  var(--faq-icon__font__size-width) / var(--mainWidth));
+  color: white;
+
+  background: #252532;
   transition: transform 0.3s ease;
 }
 
@@ -414,24 +394,24 @@
   overflow: hidden;
   transition: max-height 0.3s ease, padding 0.3s ease;
   padding: 0;
-  font-size: 3.5897vw;
-  font-weight: 300;
   color: #555;
 }
 
 .faq-line {
   display: block;
-  width: 79.4872vw;
-  height: 0.5128vw;
-  margin-top: 2.0513vw;
-  margin-left: 5.3846vw;
+
+  width: calc(100vw * var(--faq-item__line-width) / var(--mainWidth));
+  height: calc(100vw * var(--faq-line-height) / var(--mainWidth));
+  margin-top: calc(100vw * var(--faq-line-marginTop) / var(--mainWidth));
+  margin-bottom: calc(100vw * var(--faq-line-marginBottom) / var(--mainWidth));
+  
   background-color: #E2E2E2;
 }
 
 .faq-item.active .faq-answer {
   max-height: max-content;
-  margin-top: 2.0513vw;
-  margin-left: 5.3846vw;
+  margin-top: calc(100vw * var(--faq-answer-marginTopLeft) / var(--mainWidth));
+  margin-left: calc(100vw * var(--faq-answer-marginTopLeft) / var(--mainWidth));
 }
 
 .faq-item.active .faq-icon {
@@ -442,127 +422,41 @@
 /* Форма для вопросов */
 
 .contact {
-  padding-top: 5.1282vw;
   display: flex;
   justify-content: center;
+
+  padding-top: calc(100vw * var(--contact-paddingTop) / var(--mainWidth));
 }
 
 .contact-card {
   width: 83.3333vw;
   height: 92.0513vw;
   background: #fff;
-  padding-top: 5.1282vw;
-  padding-left: 4.1026vw;
-  border-radius: 7.6923vw;
+  padding: calc(100vw * 16 / var(--mainWidth));
+  border-radius: calc(100vw * var(--border__1-radius) / var(--mainWidth));
   box-shadow: var(--box__shadow-4);
 }
 
 .contact-header {
   display: flex;
-  gap: 2.0513vw;
-  margin-bottom: 3.5897vw;
+  width: max-content;
+  gap: calc(100vw * 8 / var(--mainWidth));
+  margin-bottom: calc(100vw * 12 / var(--mainWidth));
 }
 
 .contact-icon {
-  width: 11.5385vw;
-  height: 9.7436vw;
+  width: calc(100vw * 45 / var(--mainWidth));
 }
 
 .contact-icon img {
-  width: 100%;
-  height: 100%;
   object-fit: contain; /* или cover если нужно заполнить полностью */
   display: block;
 }
 
 .contact-header-hp {
-  width: 52.0513vw;
-  height: max-content;
-}
-
-.contact-header-h {
-  width: 52.0513vw;
-  height: 3.8462vw;
-  display: inline-flex;
-  align-items: center;
-  justify-content: left;
-  text-align: left;
-  line-height: 108%; /* Устанавливаем то же значение, что и в Figma */
-}
-
-.contact-header-p {
-  width: 50vw;
-  height: 4.6154vw;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  text-align: left;
-  line-height: 1.1; /* Устанавливаем то же значение, что и в Figma */
-  margin-top: 1.7949vw;
-  color: #252532;
-  font-size: 2.5641vw;
-  font-weight: 300;
-}
-.contact-header-p p {
-  font-size: 2.5641vw;
-  line-height: 1;
-}
-/* переключатель */
-.contact-switch {
-  display: inline-flex;
-  align-content: center;
-  justify-content: space-between;
-  width: max-content;
-  height: 7.6923vw;
-  border-radius: 43.5897vw;
-  border: 0.2564102564vw solid;
-  border-color: #32303e;
-  background-color: #252532;
-}
-
-.switch-btn-c {
-  display: inline-flex;
-  justify-items: center;
-  align-items: center;
-  border: none;
-
-  padding-top: 2.8205vw;
-  padding-bottom: 2.5641vw;
-  padding-left: 12vw;
-  padding-right: 10vw;
-  line-height: 1;
-  font-size: 3.333vw;
-  font-weight: 600;
-  background: transparent;
-  color: #B0B0B0;
-  cursor: pointer;
-}
-
-.switch-btn-c.right {
-  padding-top: 2.8205vw;
-  padding-right: 12.5641vw;
-  padding-left: 10.7692vw;
-  padding-bottom: 2.5641vw;
-}
-
-.switch-btn-c.left {
-  padding-top: 2.8205vw;
-  padding-right: 10.7692vw;
-  padding-left: 12.8205vw;
-  padding-bottom: 2.5641vw;
-}
-
-.switch-btn-c.active {
-  display: inline-flex;
-  justify-items: center;
-  align-items: center;
-  margin: 0.25641vw;
-  padding: 2.05128vw 11.7949vw;
-  font-size: 3.5897vw;
-  color: #fff;
-  border-radius: 43.5897vw;
-  box-shadow: var(--box__shadow-2);
-  background: var(--btn__background);
+  display: flex;
+  flex-direction: column;
+  gap: calc(100vw * 3 / var(--mainWidth));
 }
 
 /* поля */
