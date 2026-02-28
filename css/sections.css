@@ -7,6 +7,10 @@
   z-index: -100;
 }
 
+.orbits__tablet {
+  display: none;
+}
+
 .hero__name {
   position: relative;
   margin-top: calc(100vw * var(--hero__name-margin) / var(--mainWidth));
@@ -544,6 +548,7 @@ textarea::placeholder {
 .card-review {
   position: relative;
 
+  width: max-content;
   margin: 0 auto;
   padding: calc(100vw * var(--padding-1) / var(--mainWidth));
 
@@ -642,3 +647,19 @@ textarea::placeholder {
   color: #1e1f2a;
 }
 /*                                                 Contact Map - End                                          */
+
+@media (min-width: 768px) {
+  .orbits {
+    display: none;
+  }
+
+  .orbits__tablet {
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: auto;
+    z-index: -100;
+  }
+
+}

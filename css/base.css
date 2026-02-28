@@ -351,9 +351,179 @@ h3 {
   * {
     line-height: 1;
   }
-
+  /*                                                 Переменные величины - Begin                                                 */
   :root {
     --mainWidth: 768;
   /*  Основная ширина экрана в Фигме (390, 768, 1440  */
+
+    --main_font_size: calc(100vw * 14 / var(--mainWidth));
+    /*  Текст, который пишется вне p, h1, h2, h3, a  */
+
+    --h__1: 26;
+    --h__2-M: 14;
+    --h__1-margin: 50;
+    --p1: 22;
+    --p4: 14;
+    /*  Размеры шрифтов указаны в px, если изменить тут значения - они автоматически изменятся и в vw  */
+
+        /*  Margins - Begin  */
+    --margin__from-h1: 15;
+    --hero__name-margin: 267;
+    --hero__title-margin: 17;
+    --hero__btn-margin: 23;
+    --hero__universities-margin: 224;
+    --hero__univer__marquee-margin: 18;
+    --courses__main__Quote-marginLeft: 14;
+    --format-card__bkg-marginTop: 10;
+    --format-card__text-marginTop: 8;
+    --format-card__list-marginTop: 13;
+    --format-card__btn-marginTop: 7;
+    --subject-switch-marginTop: 18;
+    --subject-switch-marginLeft: 22;
+    --switch__active-margin: 1;
+    --course-card-marginTop: 12;
+    --card-header-marginTop: 9;
+    --btn__white-marginTop: 36;
+    --course-card__textCourse-marginTop: 21;
+    --trust__card__img-marginBottom: 14;
+    --trust__card__head-marginLeft: 12;
+    --trust__card__text-marginTop: 5;
+    --trust__card__text-marginBottom: 7;
+    --faq-group-marginTop: 14;
+    --faq-group__title-marginLeft: 20;
+    --faq-group__title-marginBottom: 4;
+    --faq-line-marginTop: 7;
+    --faq-line-marginBottom: 9;
+    --faq-answer-marginTopLeft: 4;
+    --contact-header-marginBottom: 12;
+    --contact-form_input_textareat-marginTop: 9;
+    --checkbox-marginTop: 10;
+    --checkbox-marginLeft: 18;
+    --contact-form__btn-marginTop: 15;
+    --contact-form__btn-marginLeft: 92;
+    --review-header__div-marginTop: 4;
+    --review-header__div-marginBottom: 13;
+    --review-header__div-marginLeft: 11;
+    --review-header__h3-marginBottom: 2;
+    --contact-map-marginTop: 32;
+    --contact-map-marginBottom: 100;
+    --contact-map__btn-marginTop: 16;
+    --contact-map__btn-marginLeftRight: 9;
+    --contact-map__btn-marginBottom: 14;
+    --footer-description-marginTop: 14;
+    --footer-nav-marginTop: 20;
+    --footer-divider-marginTopBottom: 20;
+    /*  Margins - End  */
+
+
+    /*  Paddings - Begin  */
+    --padding-1: 18;
+    --padding-2: 9;
+    --header-desktop-paddingTop: 50;
+    --header__nav-bar-padding: 6;
+    --hero__univer__track__img-paddingRight: 33;
+    --courses__main-paddingTop: 16;
+    --courses__format-card-paddingTop: 13;
+    --courses__format-card-paddingRight: 10;
+    --courses__format-card-paddingBottom: 10;
+    --courses__format-card-paddingLeft: 16;
+    --format-card__list__li-paddingLeft: 21;
+    --format-card__list__li__before-Top: 3; /* Отступ галочки сверху */
+    --switch-btn-paddingLeftRight: 16;
+    --switch__active-paddingTop: 6;
+    --switch__active-paddingLeft: 12;
+    --format-card-trust-text-padding: 16;
+    --faq-group-paddingTop: 5;
+    --faq-group__box-paddintTop: 14;
+    --faq-group__box-paddingLeft: 20;
+    --contact-card-paddingAll: 16;
+    --contact-paddingTop: 20;
+    --switch-btn_role-paddingLeftRight: 43;
+    --switch__role__active-paddingLeft: 43;
+    --contact-form_input_textareat-paddingTop: 8;
+    --contact-form_input_textareat-paddingLeftRight: 16;
+    --contact-form_input_textareat-paddingButtom: 7;
+    --contact-form-textarea-paddingBottom: 40;
+    /*  Paddings - End  */
+
+
+    /*  Gapps - Begin  */
+    --ul_li-gap: 12;
+    --contact-header-gap: 8;
+    --contact-header-hp-gap: 3;
+    --checkbox-gap: 5;
+    --card__review-text-gap: 6;
+    --footer-nav-gap: 65;
+    --footer-bottom-gap: 10;
+    --footer-links-gap: 18;
+    /*  Gapps - End  */
+
+
+    /*  Widths - Begin  */
+    --header__nav-bar-width: 566;
+    --hero__univer__marquee-width: 100vw;
+    --hero__univer__track__img-width: 724;
+    --format-card__list__li__before-width: 11;
+    --course-card-width: 332;
+    --subject-switch-width: 188;
+    --exam-switch-width: 104;
+    --format-card-trust_logo-width: 75;
+    --format-card__main-width: 233;
+    --format-card__how-width: 321;
+    --faq-item__line-width: 310;
+    --faq-icon-width: 18;
+    --faq-icon__font__size-width: 13;
+    --contact-card-width: 325;
+    --contact-icon-width: 45;
+    --contact-switch-width: 293;
+    --checkmark-width: 11;
+    --review-header__width: 39;
+    --footer-logo-width: 75;
+    /*  Widths - End  */
+
+
+    /*  Heights - Begin  */
+    --hero__univer__track-height: 62.6;
+    --hero__univer__bkg-height: 81;
+    --faq-line-height: 2;
+    --map-container-height: 223;
+    /*  Heights - End  */
+
+
+    /*  Position - Begin  */
+    --hero__univer__bkg-top: 697;
+    --card-review__span-top: 18;
+    --card-review__span-right: 20;
+    /*  Position - End  */
+
+
+    /*  Border - Begin  */
+    --border__1-radius: 50;
+    --border__2-radius: 42;
+    --border__3-radius: 36;
+    /*  Border - End  */
+
+
+    /*  Button - Begin */
+    --btn__padding-top: calc(100vw * 9 / var(--mainWidth));
+    --btn__padding-right: calc(100vw * 11 / var(--mainWidth));
+    --btn__font-size: calc(100vw * 16 / var(--mainWidth));
+    --btn__border-radius: calc(100vw * 40 / var(--mainWidth));
+    --switch-btn-fontSize: 13;
+    --switch-btn__active-fontSize: 14;
+    /*  Button - End */
+
+
+    /*  Swiper - Begin */
+    --swiper-pagination-marginTop: 23;
+    --swiper-pagination_shadow-width: 31;
+    --swiper-pagination-gap: 16;
+    --swiper-pagination_Dots-width: 7;
+    --swiper-pagination_Active-width: 32;
+    --swiper-pagination_Active-height: 9;
+    --swiper-pagination_Active-radius: 99;
+
+    /*  Swiper - End */
   }
+  /*                                                 Переменные величины - End                                                 */
 }
