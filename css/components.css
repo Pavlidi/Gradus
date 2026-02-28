@@ -2,6 +2,7 @@
 .btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
 
   padding:  var(--btn__padding-top)  var(--btn__padding-right);
   border: none;
@@ -25,7 +26,6 @@
   background: linear-gradient(180deg,rgba(251, 251, 251, 1) 0%,rgba(240, 240, 240, 1) 100%);
   box-shadow: 0vw 1.28205vw 2.5641vw rgba(0, 0, 0, 0.20);
 }
-
 
 .switch {
   display: inline-flex;

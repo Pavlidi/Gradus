@@ -364,22 +364,22 @@
             <!-- Форма -->
             <form class="contact-form" id="contactForm">
 
-                <input type="text" name="name" placeholder="Ваше имя" required>
+                <input type="text" name="name" autocomplete="name" placeholder="Ваше имя" required>
 
-                <input type="tel" name="phone" placeholder="Телефон*" required>
+                <input type="tel" name="phone" autocomplete="tel" placeholder="Телефон*" required>
 
                 <textarea name="question" placeholder="Ваш вопрос..."></textarea>
 
                 <label class="checkbox">
                     <input type="checkbox" required>
                     <span class="checkmark"></span>
-                    <span class="checkbox-text">
-                    Я выражаю согласие на передачу и обработку персональных данных
+                    <span class="checkbox-text P6">
+                    Я выражаю согласие на передачу и обработку персональных данных<br>
                     в соответствии с <a href="">Политикой конфиденциальности*</a>
                     </span>
                 </label>
 
-                <button type="submit" class="submit-btn">
+                <button type="submit" class="btn">
                     <div>Отправить</div>
                 </button>
 
@@ -400,17 +400,17 @@
                 <div class="swiper-slide">
                     <div class="card-review">
                         <div class="review-header">
-                            <img src="image/parent1-mobile.webp" style="width: 10vw; height: 10vw;" alt="">
+                            <img src="image/parent1-mobile.webp"  alt="">
                             <div>
-                                <h3>Любимова Светлана</h3>
-                                <p>Родитель</p>
+                                <h3 class="H3">Любимова Светлана</h3>
+                                <p class="P2">Родитель</p>
                             </div>
                             <span><a href="">2ГИС</a></span>
                         </div>
                         <div class="card__review-text">
-                            <div class="card__review-text-two"><p>Благодарим преподавателя Сергея,<br>за проделанную им работу.</p></div>
-                            <div class="card__review-text-two"><p>Подготовил ребёнка к ЕГЭ очень быстро<br>и понятно. </p></div>
-                            <div class="card__review-text-two"><p>Успехов в дальнейшей работе!</p></div>
+                            <p class="P3">Благодарим преподавателя Сергея,<br>за проделанную им работу.</p>
+                            <p class="P3">Подготовил ребёнка к ЕГЭ очень быстро<br>и понятно. </p>
+                            <p class="P3">Успехов в дальнейшей работе!</p>
                         </div>
                     </div>
                 </div>
@@ -419,16 +419,16 @@
                     <div class="card-review">
                         <span><a href="">2ГИС</a></span>
                         <div class="review-header">
-                            <img src="image/parent2-mobile.webp" style="width: 10vw; height: 10vw;" alt="">
+                            <img src="image/parent2-mobile.webp" alt="">
                             <div>
-                                <h3>Самсонюк Алёна</h3>
-                                <p>Родитель</p>
+                                <h3 class="H3">Самсонюк Алёна</h3>
+                                <p class="P2">Родитель</p>
                             </div>
                         </div>
                         <div class="card__review-text">
-                            <div class="card__review-text-two"><p>Благодаря Сергею Юрьевичу, сын полюбил<br>математику, сдал ОГЭ.</p></div>
-                            <div class="card__review-text-three"><p>Сергей Юрьевич всегда идет на контакт с<br>родителями, объяснит что у ребенка получается,<br>что не получается, находит подход.</p></div>
-                            <div class="card__review-text-two"><p>Дети с большим удовольствиям идут на занятия.<br>Спасибо большое!</p></div>
+                            <p class="P3">Благодаря Сергею Юрьевичу, сын полюбил<br>математику, сдал ОГЭ.</p>
+                            <p class="P3">Сергей Юрьевич всегда идет на контакт с<br>родителями, объяснит что у ребенка получается,<br>что не получается, находит подход.</p>
+                            <p class="P3">Дети с большим удовольствиям идут на занятия.<br>Спасибо большое!</p>
                         </div>
                     </div>
                 </div>
@@ -436,16 +436,16 @@
                 <div class="swiper-slide">
                     <div class="card-review">
                         <div class="review-header">
-                            <img src="image/parent3-mobile.webp" style="width: 10vw; height: 10vw;" alt="">
+                            <img src="image/parent3-mobile.webp" alt="">
                             <div>
-                                <h3>Некрасов Алексей</h3>
-                                <p>Ученик</p>
+                                <h3 class="H3">Некрасов Алексей</h3>
+                                <p class="P2">Ученик</p>
                             </div>
                             <span><a href="">2ГИС</a></span>
                         </div>
                         <div class="card__review-text">
-                            <div class="card__review-text-three"><p>Шикарная школа для подготовки к ЕГЭ, сдал на 78,<br>хоть мог и лучше, просто со второй частью<br>не очень повезло.</p></div>
-                            <div class="card__review-text-three"><p>Преподаватель объясняет очень понятно, разбирает<br>проблемные темы с каждым учеником<br>индивидуально.</p></div>
+                            <p class="P3">Шикарная школа для подготовки к ЕГЭ, сдал на 78,<br>хоть мог и лучше, просто со второй частью<br>не очень повезло.</p>
+                            <p class="P3">Преподаватель объясняет очень понятно, разбирает<br>проблемные темы с каждым учеником<br>индивидуально.</p>
                         </div>
                     </div>
                 </div>
@@ -453,16 +453,16 @@
                 <div class="swiper-slide">
                     <div class="card-review">
                         <div class="review-header">
-                            <img src="image/parent4-mobile.webp" style="width: 10vw; height: 10vw;" alt="">
+                            <img src="image/parent4-mobile.webp" alt="">
                             <div>
-                                <h3>Тресков Илья</h3>
-                                <p>Ученик</p>
+                                <h3 class="H3">Тресков Илья</h3>
+                                <p class="P2">Ученик</p>
                             </div>
                             <span><a href="">2ГИС</a></span>
                         </div>
                         <div class="card__review-text">
-                            <div class="card__review-text-two"><p>Ходил на протяжении года к двум разным<br>репетиторам, это место лучшее.</p></div>
-                            <div class="card__review-text-one"><p>Пробные ОГЭ каждый месяц - самое крутое!</p></div>
+                            <p class="P3">Ходил на протяжении года к двум разным<br>репетиторам, это место лучшее.</p>
+                            <p class="P3">Пробные ОГЭ каждый месяц - самое крутое!</p>
                         </div>
                     </div>
                 </div>
@@ -484,13 +484,13 @@
             </div>
 
             <!-- Кнопка -->
-            <button type="submit" class="call__btn">
-                    <div>Записаться на занятия</div>
+            <button type="submit" class="btn call">
+                <div>Записаться на занятия</div>
             </button>
 
             <!-- Контакты -->
             <div class="contact-info">
-            <div class="contact-info_adress"><p>г.Новосибирск, ул. Красный Проспект, д.46, оф. 6</p></div>
+            <div class="contact-info_adress"><p class="P5">г.Новосибирск, ул. Красный Проспект, д.46, оф. 6</p></div>
             <a href="tel:+79681748319" class="phone">
                 +7 (968) 174-83-19
             </a>
@@ -523,7 +523,7 @@
 
                     <!-- Курсы -->
                     <div class="footer-column">
-                    <h3>Курсы</h3>
+                    <h3 class="H3">Курсы</h3>
                     <ul>
                         <li><a href="#">ЕГЭ по математике</a></li>
                         <li><a href="#">ЕГЭ по физике</a></li>
@@ -534,7 +534,7 @@
 
                     <!-- О центре -->
                     <div class="footer-column">
-                    <h3>О центре</h3>
+                    <h3 class="H3">О центре</h3>
                     <ul>
                         <li><a href="#">Сведения об организации</a></li>
                         <li><a href="#">Акции</a></li>

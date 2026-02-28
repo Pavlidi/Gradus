@@ -1,5 +1,5 @@
 
-/*                                                 Header - mobile - begin                                                */
+/*                                                 Header-mobile - Begin                                                */
 .header {
   position: fixed;
   top: 0;        /* Прижать к самому верху */
@@ -92,4 +92,125 @@
   font-weight: 700;
   display: block;
 }
-/*                                                 Header - mobile - end                                                */
+/*                                                 Header-mobile - End                                                */
+
+
+/*                                                 Backgrounds-mobile - Begin                                                */
+.bkg-1 {
+  position: absolute;
+  top: 420vw;
+  width: 100vw;
+  height: auto;
+  z-index: -100;
+}
+
+.bkg-2 {
+  position: absolute;
+  top: 569vw;
+  width: 100vw;
+  height: auto;
+  z-index: -100;
+}
+
+.bkg-3 {
+  position: absolute;
+  top: 676vw;
+  width: 100vw;
+  height: auto;
+  z-index: -100;
+}
+
+.bkg-4 {
+  position: absolute;
+  top: 813vw;
+  width: 100vw;
+  height: auto;
+  z-index: -100;
+}
+
+.bkg-5 {
+  position: absolute;
+  top: 994vw;
+  width: 100vw;
+  height: auto;
+  z-index: -100;
+}
+/*                                                 Backgrounds-mobile - End                                                */
+
+/*                                                 Footer-mobile - Begin                                                */
+.footer {
+  padding: calc(100vw * var(--padding-1) / var(--mainWidth));
+}
+.footer, .footer p, .footer a {
+  font-size: calc(100vw * var(--p3) / var(--mainWidth));
+  font-weight: 300;
+  color: #737373;
+}
+/* ===== Верхняя часть ===== */
+.footer-top {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+/* Бренд */
+.footer-brand {
+  max-width: 100%;
+}
+
+.footer-logo {
+  width: calc(100vw * var(--footer-logo-width) / var(--mainWidth));
+}
+
+.footer-description {
+  margin-top: calc(100vw * var(--footer-description-marginTop) / var(--mainWidth));
+}
+/* ===== Навигация ===== */
+.footer-nav {
+  display: flex;
+  margin-top: calc(100vw * var(--footer-nav-marginTop) / var(--mainWidth));
+  gap: calc(100vw * var(--footer-nav-gap) / var(--mainWidth));
+}
+
+.footer-column ul {
+  list-style: none;
+}
+
+.footer-column li {
+  margin-top: calc(100vw * var(--footer-description-marginTop) / var(--mainWidth));
+  line-height: 0.64;
+}
+
+.footer-column a {
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.footer-column a:hover {
+  color: #2c2c34;
+}
+/* ===== Разделитель ===== */
+.footer-divider {
+  margin: calc(100vw * var(--footer-divider-marginTopBottom) / var(--mainWidth)) 0;
+  height: calc(100vw * var(--border__size_2) / var(--mainWidth));
+  background: #EAEAEA;
+}
+/* ===== Нижняя часть ===== */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: calc(100vw * var(--footer-bottom-gap) / var(--mainWidth));
+  flex-wrap: wrap;
+}
+
+.footer-links {
+  display: flex;
+  gap: calc(100vw * var(--footer-links-gap) / var(--mainWidth));;
+  line-height: 0.73;
+}
+
+.footer-links a, .footer-copy {
+  font-size: calc(100vw * var(--footer__links-a) / var(--mainWidth));
+  text-decoration: none;
+}
+/*                                                 Footer-mobile - End                                                */

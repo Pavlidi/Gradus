@@ -7,6 +7,12 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: var(--main_font_size);
+  background-color: #FAF9F6;
+}
+
 img {
   width: 100%;
   height: 100%;
@@ -96,6 +102,7 @@ h3 {
   font-family: 'Inter', sans-serif;
   line-height: 1.1;
   font-size: calc(100vw * var(--p6) / var(--mainWidth));
+  font-weight: 300;
 }
 
 .h1__grad h1 {
@@ -154,6 +161,8 @@ h3 {
   --p4: 12;
   --p5: 10;
   --p6: 7;
+  --card-review-a: 10;
+  --footer__links-a: 11;
   /*  Размеры шрифтов указаны в px, если изменить тут значения - они автоматически изменятся и в vw  */
 
 
@@ -186,6 +195,24 @@ h3 {
   --faq-line-marginTop: 7;
   --faq-line-marginBottom: 9;
   --faq-answer-marginTopLeft: 4;
+  --contact-header-marginBottom: 12;
+  --contact-form_input_textareat-marginTop: 9;
+  --checkbox-marginTop: 10;
+  --checkbox-marginLeft: 18;
+  --contact-form__btn-marginTop: 15;
+  --contact-form__btn-marginLeft: 92;
+  --review-header__div-marginTop: 4;
+  --review-header__div-marginBottom: 13;
+  --review-header__div-marginLeft: 11;
+  --review-header__h3-marginBottom: 2;
+  --contact-map-marginTop: 32;
+  --contact-map-marginBottom: 100;
+  --contact-map__btn-marginTop: 16;
+  --contact-map__btn-marginLeftRight: 9;
+  --contact-map__btn-marginBottom: 14;
+  --footer-description-marginTop: 14;
+  --footer-nav-marginTop: 20;
+  --footer-divider-marginTopBottom: 20;
   /*  Margins - End  */
 
 
@@ -207,14 +234,27 @@ h3 {
   --faq-group-paddingTop: 5;
   --faq-group__box-paddintTop: 14;
   --faq-group__box-paddingLeft: 20;
+  --contact-card-paddingAll: 16;
   --contact-paddingTop: 20;
   --switch-btn_role-paddingLeftRight: 43;
   --switch__role__active-paddingLeft: 43;
+  --contact-form_input_textareat-paddingTop: 8;
+  --contact-form_input_textareat-paddingLeftRight: 16;
+  --contact-form_input_textareat-paddingButtom: 7;
+  --contact-form-textarea-paddingBottom: 40;
+  
   /*  Paddings - End  */
 
 
   /*  Gapps - Begin  */
   --ul_li-gap: 12;
+  --contact-header-gap: 8;
+  --contact-header-hp-gap: 3;
+  --checkbox-gap: 5;
+  --card__review-text-gap: 6;
+  --footer-nav-gap: 65;
+  --footer-bottom-gap: 10;
+  --footer-links-gap: 18;
   /*  Gapps - End  */
 
 
@@ -231,7 +271,12 @@ h3 {
   --faq-item__line-width: 310;
   --faq-icon-width: 18;
   --faq-icon__font__size-width: 13;
+  --contact-card-width: 325;
+  --contact-icon-width: 45;
   --contact-switch-width: 293;
+  --checkmark-width: 11;
+  --review-header__width: 39;
+  --footer-logo-width: 75;
   /*  Widths - End  */
 
 
@@ -239,11 +284,14 @@ h3 {
   --hero__univer__track-height: 62.6;
   --hero__univer__bkg-height: 81;
   --faq-line-height: 2;
+  --map-container-height: 223;
   /*  Heights - End  */
 
 
   /*  Position - Begin  */
   --hero__univer__bkg-top: 697;
+  --card-review__span-top: 18;
+  --card-review__span-right: 20;
   /*  Position - End  */
 
 
@@ -294,12 +342,3 @@ h3 {
   /*  BoxShadow - End */
 }
 /*                                                 Постоянные величины - Begin                                                 */
-
-
-
-body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  font-size: var(--main_font_size);
-  background-color: #FAF9F6;
-}
