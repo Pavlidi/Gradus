@@ -219,6 +219,8 @@ h3 {
   /*  Paddings - Begin  */
   --padding-1: 14;
   --padding-2: 7;
+  --header-desktop-paddingTop: 50;
+  --header__nav-bar-padding: 6;
   --hero__univer__track__img-paddingRight: 33;
   --courses__main-paddingTop: 16;
   --courses__format-card-paddingTop: 13;
@@ -242,7 +244,6 @@ h3 {
   --contact-form_input_textareat-paddingLeftRight: 16;
   --contact-form_input_textareat-paddingButtom: 7;
   --contact-form-textarea-paddingBottom: 40;
-  
   /*  Paddings - End  */
 
 
@@ -259,6 +260,7 @@ h3 {
 
 
   /*  Widths - Begin  */
+  --header__nav-bar-width: 566;
   --hero__univer__marquee-width: 100vw;
   --hero__univer__track__img-width: 724;
   --format-card__list__li__before-width: 11;
@@ -342,3 +344,16 @@ h3 {
   /*  BoxShadow - End */
 }
 /*                                                 Постоянные величины - Begin                                                 */
+
+
+@media (min-width: 768px) {
+
+  * {
+    line-height: 1;
+  }
+
+  :root {
+    --mainWidth: 768;
+  /*  Основная ширина экрана в Фигме (390, 768, 1440  */
+  }
+}

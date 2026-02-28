@@ -136,3 +136,19 @@ const swiper3 = new Swiper(".mySwiper3", {
   },
 });
 
+
+
+
+const navLinks = document.querySelectorAll('.nav-link');
+
+navLinks.forEach(link => {
+  link.addEventListener('click', function() {
+    
+    // Убираем active у всех
+    navLinks.forEach(l => l.classList.remove('active'));
+    
+    // Добавляем текущему
+    this.classList.add('active');
+    
+  });
+});
