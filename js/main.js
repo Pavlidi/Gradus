@@ -39,8 +39,8 @@ const content = {
 let currentSubject = "math";
 let currentExam = "ege";
 
-const cardTitle = document.getElementById("cardTitle");
-const cardText = document.getElementById("cardText");
+const cardTitles = document.querySelectorAll(".cardTitle");
+const cardTexts = document.querySelectorAll(".cardText");
 
 const subjectButtons = document.querySelectorAll("[data-subject]");
 const examButtons = document.querySelectorAll("[data-exam]");
@@ -48,8 +48,13 @@ const roleButtons = document.querySelectorAll("[data-role]");
 
 function updateCard() {
   const data = content[currentSubject][currentExam];
-  cardTitle.textContent = data.title;
-  cardText.textContent = data.text;
+  cardTitles.forEach(title => {
+    title.textContent = data.title;
+  });
+
+  cardTexts.forEach(text => {
+    text.textContent = data.text;
+  });
 }
 
 function setActive(buttons, activeButton) {

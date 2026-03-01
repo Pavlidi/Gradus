@@ -180,7 +180,9 @@
 @media (min-width: 768px) {
 /*                                                 Button and Switch - Begin                                          */
 
-
+  .thin {
+    padding: var(--btn-thin__padding-top) var(--btn-thin__padding-right);
+  }
 
   .btn.white {
     color: #252532;
@@ -204,11 +206,17 @@
 
   .subject-switch {
     width: calc(100vw * var(--subject-switch-width) / var(--mainWidth));
-    margin-top: calc(100vw * var(--subject-switch-marginTop) / var(--mainWidth));
-    margin-left: calc(100vw * var(--subject-switch-marginLeft) / var(--mainWidth));
+    margin-top: auto;
+    margin-right: calc(100vw * var(--subject-switch-marginRight) / var(--mainWidth));
+    margin-bottom: auto;
+    margin-left: auto;
   }
 
   .exam-switch {
+    position: absolute;
+    top: calc(100vw * var(--course-card__exam-switch-top) / var(--mainWidth));
+    left: calc(100vw * var(--course-card__exam-switch-left) / var(--mainWidth));
+
     width: calc(100vw * var(--exam-switch-width) / var(--mainWidth));
     border-color: #F8F8F8;
     background-color: #E9E9EB;

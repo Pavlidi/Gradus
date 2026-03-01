@@ -373,19 +373,22 @@ h3 {
     --hero__btn-margin: 25;
     --hero__universities-margin: 360;
     --hero__univer__marquee-margin: 20;
-    
-    --courses__main__Quote-marginLeft: 14;
-    --format-card__bkg-marginTop: 10;
+    --courses__main__Quote-marginLeft: 35;
+    --format-card__bkg-marginTop: 13;
+
     --format-card__text-marginTop: 8;
     --format-card__list-marginTop: 13;
     --format-card__btn-marginTop: 7;
     --subject-switch-marginTop: 18;
     --subject-switch-marginLeft: 22;
+    --subject-switch-marginRight: 17;
     --switch__active-margin: 1;
     --course-card-marginTop: 12;
     --card-header-marginTop: 9;
     --btn__white-marginTop: 36;
-    --course-card__textCourse-marginTop: 21;
+    --btn__white-marginRight: 4;
+    --btn__white-marginBottom: 14;
+    --course-card__textCourse-marginTop: 15;
     --trust__card__img-marginBottom: 14;
     --trust__card__head-marginLeft: 12;
     --trust__card__text-marginTop: 5;
@@ -423,9 +426,9 @@ h3 {
     --header-desktop-paddingTop: 50;
     --header__nav-bar-padding: 6;
     --hero__univer__track__img-paddingRight: 33;
-    --courses__main-paddingTop: 16;
-    --courses__format-card-paddingTop: 13;
-    --courses__format-card-paddingRight: 10;
+    --courses__main-paddingTop: 23;
+    --courses__format-card-paddingTop: 26;
+    --courses__format-card-paddingRight: 14;
     --courses__format-card-paddingBottom: 10;
     --courses__format-card-paddingLeft: 16;
     --format-card__list__li-paddingLeft: 21;
@@ -450,6 +453,7 @@ h3 {
 
     /*  Gapps - Begin  */
     --ul_li-gap: 12;
+    --format-card__bkg-gap: 11;
     --contact-header-gap: 8;
     --contact-header-hp-gap: 3;
     --checkbox-gap: 5;
@@ -464,6 +468,7 @@ h3 {
     --header__nav-bar-width: 566;
     --hero__univer__marquee-width: 100vw;
     --hero__univer__track__img-width: 724;
+    --logo__tablet-width: 60;
     --format-card__list__li__before-width: 11;
     --course-card-width: 332;
     --subject-switch-width: 188;
@@ -493,7 +498,10 @@ h3 {
 
     /*  Position - Begin  */
     --hero__univer__bkg-top: 894;
-
+    --logo__tablet-top: 262;
+    --logo__tablet-left: 354;
+    --course-card__exam-switch-top: 14;
+    --course-card__exam-switch-left: 214;
     --card-review__span-top: 18;
     --card-review__span-right: 20;
     /*  Position - End  */
@@ -509,6 +517,8 @@ h3 {
     /*  Button - Begin */
     --btn__padding-top: calc(100vw * 12 / var(--mainWidth));
     --btn__padding-right: calc(100vw * 14 / var(--mainWidth));
+    --btn-thin__padding-top: calc(100vw * 8 / var(--mainWidth));
+    --btn-thin__padding-right: calc(100vw * 12 / var(--mainWidth));
     --btn__font-size: calc(100vw * 16 / var(--mainWidth));
     --btn__border-radius: calc(100vw * 40 / var(--mainWidth));
     --switch-btn-fontSize: 13;

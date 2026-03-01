@@ -60,6 +60,7 @@
     <div><img  class="orbits" src="image/orbits-mobile.webp" alt=""></div>
     <div><img  class="orbits__tablet" src="image/orbits-tablet.webp" alt=""></div>
     <section class="hero">
+        <div><img  class="logo__tablet" src="image/logo-tablet.webp" alt=""></div>
         <div class="hero__name">
             <h1>Подготовка<br>к ОГЭ и ЕГЭ по<br><span class="phys__grad">Физике</span> и <span class="math__grad">Математике</span></h1>
         </div>
@@ -135,16 +136,23 @@
                     </div>
                 </div>
 
-                <div class="textCourse"><p class="P2" id="cardText"></p></div>
+                <div class="textCourse"><p class="P2 cardText"></p></div>
 
                 <button class="btn white">Подробнее</button>
             </div>
         </div>
 
         <div class="courses__main-tablet">
-            <div class="Quote">
-                <p class="P1"><span class="Quote-color">Хороший</span> план подготовки<br>
-                <span class="Quote-color">залог хорошего</span> результата</p>
+            <div class="Quote__Subject">
+                <div class="Quote">
+                    <p class="P1"><span class="Quote-color">Хороший</span> план подготовки<br>
+                    <span class="Quote-color">залог хорошего</span> результата</p>
+                </div>
+                <!-- Переключение предмета -->
+                <div class="switch subject-switch">
+                    <button class="switch-btn left active" data-subject="math">Математика</button>
+                    <button class="switch-btn right" data-subject="physics">Физика</button>
+                </div>
             </div>
             <div class="format-card__bkg">
                 <div class="format-card">
@@ -161,32 +169,23 @@
                         <li class="P2">Материалы, адаптированные<br> под формат ОГЭ и ЕГЭ</li>
                     </ul>
 
-                    <button class="btn format-card__btn">
+                    <button class="btn thin format-card__btn">
                         Тестирование
                     </button>
                 </div>
-            </div>
-
-            <!-- Переключение предмета -->
-            <div class="switch subject-switch">
-                <button class="switch-btn left active" data-subject="math">Математика</button>
-                <button class="switch-btn right" data-subject="physics">Физика</button>
-            </div>
-
-            <!-- Карточка с предметами -->
-            <div class="course-card">
-                <div class="card-header">
-                    <h2 id="cardTitle">Математика</h2>
+                <!-- Карточка с предметами -->
+                <div class="course-card">
+                    <div class="card-header">
+                        <h2 id="cardTitle">Математика</h2>
+                    </div>
+                    <div class="textCourse"><p class="P2 cardText"></p></div>
                     <!-- Переключение экзамена -->
                     <div class="switch exam-switch">
                         <button class="switch-btn exam left active" data-exam="ege">ЕГЭ</button>
                         <button class="switch-btn exam right" data-exam="oge">ОГЭ</button>
                     </div>
+                    <button class="btn thin white">Подробнее</button>
                 </div>
-
-                <div class="textCourse"><p class="P2" id="cardText"></p></div>
-
-                <button class="btn white">Подробнее</button>
             </div>
         </div>
     </section>

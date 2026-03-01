@@ -11,6 +11,10 @@
   display: none;
 }
 
+.logo__tablet {
+  display: none;
+}
+
 .hero__name {
   display: block;
   position: relative;
@@ -228,7 +232,7 @@
   margin-top: calc(100vw * var(--course-card__textCourse-marginTop) / var(--mainWidth));
 }
 
-#cardText {
+.cardText {
   white-space: pre-line;
 }
 
@@ -667,6 +671,16 @@ textarea::placeholder {
     height: auto;
     z-index: -100;
   }
+
+  .logo__tablet {
+    position: absolute;
+    display: block;
+    top: calc(100vw * var(--logo__tablet-top) / var(--mainWidth));
+    left: calc(100vw * var(--logo__tablet-left) / var(--mainWidth));
+
+    width: calc(100vw * var(--logo__tablet-width) / var(--mainWidth));
+    height: auto;
+  }
 /*                                                 Hero - End                                          */ 
 
 /*                                                 Courses - Begin                                          */
@@ -684,7 +698,13 @@ textarea::placeholder {
     padding: calc(100vw * var(--courses__main-paddingTop) / var(--mainWidth)) calc(100vw * var(--padding-2) / var(--mainWidth)) calc(100vw * var(--padding-2) / var(--mainWidth));
 
     border-radius: calc(100vw * var(--border__1-radius) / var(--mainWidth));
-    background-color: red;
+    background-color: #fff;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.06);
+  }
+
+  .Quote__Subject {
+    display: flex;
+    align-items: center;
   }
 
   .Quote {
@@ -708,6 +728,7 @@ textarea::placeholder {
     height: max-content;
     margin-top: calc(100vw * var(--format-card__bkg-marginTop) / var(--mainWidth));
     padding: calc(100vw * var(--padding-2) / var(--mainWidth));
+    gap: calc(100vw * var(--format-card__bkg-gap) / var(--mainWidth));
 
     background-color: #FAF9F6;
     border-radius: calc(100vw * var(--border__2-radius) / var(--mainWidth));
@@ -721,8 +742,8 @@ textarea::placeholder {
 
     padding-top: calc(100vw * var(--courses__format-card-paddingTop) / var(--mainWidth));
     padding-right: calc(100vw * var(--courses__format-card-paddingRight) / var(--mainWidth));
-    padding-bottom: calc(100vw * var(--courses__format-card-paddingBottom) / var(--mainWidth));
-    padding-left: calc(100vw * var(--courses__format-card-paddingLeft) / var(--mainWidth));
+    padding-bottom: calc(100vw * var(--courses__format-card-paddingRight) / var(--mainWidth));
+    padding-left: calc(100vw * var(--courses__format-card-paddingTop) / var(--mainWidth));
     
     border-width:  calc(100vw * var(--border__size_1) / var(--mainWidth));
     border-color: #E2E2E2;
@@ -777,19 +798,21 @@ textarea::placeholder {
   }
 
   .course-card {
+    position: relative;
     display: flex;
     flex-direction: column;
 
     width: calc(100vw * var(--course-card-width) / var(--mainWidth));
-    margin: calc(100vw * var(--course-card-marginTop) / var(--mainWidth)) calc(100vw * var(--padding-2) / var(--mainWidth)) calc(100vw * var(--padding-2) / var(--mainWidth));
-    padding-right: calc(100vw * var(--courses__format-card-paddingRight) / var(--mainWidth));
-    padding-bottom: calc(100vw * var(--courses__format-card-paddingBottom) / var(--mainWidth));
-    padding-left: calc(100vw * var(--courses__format-card-paddingLeft) / var(--mainWidth));
+    margin: 0;
+    padding-top: calc(100vw * var(--courses__format-card-paddingTop) / var(--mainWidth));
+    padding-right: calc(100vw * var(--courses__format-card-paddingBottom) / var(--mainWidth));
+    padding-bottom: 0;
+    padding-left: calc(100vw * var(--courses__format-card-paddingTop) / var(--mainWidth));
 
     border-radius: calc(100vw * var(--border__3-radius) / var(--mainWidth));
     
     background: #252532;
-    box-shadow: 1.28205vw 3.5897vw 10.2564vw -2.30769vw #3d3a56, inset 0vw 2.05128vw 7.6923vw #2a2a34;
+    box-shadow: 5px 14px 40px -9px #3E3B56, 0px 8px 30px #2B2A35 inset;
   }
 
   .card-header {
@@ -797,7 +820,7 @@ textarea::placeholder {
     justify-content: space-between;
     align-items: center;
 
-    margin-top: calc(100vw * var(--card-header-marginTop) / var(--mainWidth));
+    margin-top: 0;
   }
 
   .course-card h2, .course-card p {
@@ -808,15 +831,15 @@ textarea::placeholder {
     margin-top: calc(100vw * var(--course-card__textCourse-marginTop) / var(--mainWidth));
   }
 
-  #cardText {
+  .cardText {
     white-space: pre-line;
   }
 
   .btn.white {
     position: relative;
-
-    width: max-content;
-    margin-top: calc(100vw * var(--btn__white-marginTop) / var(--mainWidth));
+    margin-top: auto;
+    margin-right: calc(100vw * var(--btn__white-marginRight) / var(--mainWidth));
+    margin-bottom: calc(100vw * var(--btn__white-marginBottom) / var(--mainWidth));
     margin-left: auto;
   }
 /*                                                 Courses - End                                          */
