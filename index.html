@@ -3,8 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/main.css?v=0">
-
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/components.css">
@@ -95,6 +93,55 @@
         </div>
         
         <div class="courses__main">
+            <div class="Quote">
+                <p class="P1"><span class="Quote-color">Хороший</span> план подготовки<br>
+                <span class="Quote-color">залог хорошего</span> результата</p>
+            </div>
+            <div class="format-card__bkg">
+                <div class="format-card">
+                    <h2>Формат занятий</h2>
+                    <div class="format-card__text">
+                        <p class="P2">Мы выстраиваем учебный процесс так,<br>чтобы каждый шаг работал на результат.</p>
+                    </div>
+
+                    <ul class="format-card__list">
+                        <li class="P2">Занятия 2 раза в неделю</li>
+                        <li class="P2">Мини-группы до 8 человек</li>
+                        <li class="P2">Ежемесячное тестирование</li>
+                        <li class="P2">Система генерации задач</li>
+                        <li class="P2">Материалы, адаптированные<br> под формат ОГЭ и ЕГЭ</li>
+                    </ul>
+
+                    <button class="btn format-card__btn">
+                        Тестирование
+                    </button>
+                </div>
+            </div>
+
+            <!-- Переключение предмета -->
+            <div class="switch subject-switch">
+                <button class="switch-btn left active" data-subject="math">Математика</button>
+                <button class="switch-btn right" data-subject="physics">Физика</button>
+            </div>
+
+            <!-- Карточка с предметами -->
+            <div class="course-card">
+                <div class="card-header">
+                    <h2 id="cardTitle">Математика</h2>
+                    <!-- Переключение экзамена -->
+                    <div class="switch exam-switch">
+                        <button class="switch-btn exam left active" data-exam="ege">ЕГЭ</button>
+                        <button class="switch-btn exam right" data-exam="oge">ОГЭ</button>
+                    </div>
+                </div>
+
+                <div class="textCourse"><p class="P2" id="cardText"></p></div>
+
+                <button class="btn white">Подробнее</button>
+            </div>
+        </div>
+
+        <div class="courses__main-tablet">
             <div class="Quote">
                 <p class="P1"><span class="Quote-color">Хороший</span> план подготовки<br>
                 <span class="Quote-color">залог хорошего</span> результата</p>

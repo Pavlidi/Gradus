@@ -368,11 +368,12 @@ h3 {
 
         /*  Margins - Begin  */
     --margin__from-h1: 15;
-    --hero__name-margin: 267;
-    --hero__title-margin: 17;
-    --hero__btn-margin: 23;
-    --hero__universities-margin: 224;
-    --hero__univer__marquee-margin: 18;
+    --hero__name-margin: 228;
+    --hero__title-margin: 20;
+    --hero__btn-margin: 25;
+    --hero__universities-margin: 360;
+    --hero__univer__marquee-margin: 20;
+    
     --courses__main__Quote-marginLeft: 14;
     --format-card__bkg-marginTop: 10;
     --format-card__text-marginTop: 8;
@@ -483,15 +484,16 @@ h3 {
 
 
     /*  Heights - Begin  */
-    --hero__univer__track-height: 62.6;
-    --hero__univer__bkg-height: 81;
+    --hero__univer__bkg-height: 100;
+
     --faq-line-height: 2;
     --map-container-height: 223;
     /*  Heights - End  */
 
 
     /*  Position - Begin  */
-    --hero__univer__bkg-top: 697;
+    --hero__univer__bkg-top: 894;
+
     --card-review__span-top: 18;
     --card-review__span-right: 20;
     /*  Position - End  */
@@ -505,8 +507,8 @@ h3 {
 
 
     /*  Button - Begin */
-    --btn__padding-top: calc(100vw * 9 / var(--mainWidth));
-    --btn__padding-right: calc(100vw * 11 / var(--mainWidth));
+    --btn__padding-top: calc(100vw * 12 / var(--mainWidth));
+    --btn__padding-right: calc(100vw * 14 / var(--mainWidth));
     --btn__font-size: calc(100vw * 16 / var(--mainWidth));
     --btn__border-radius: calc(100vw * 40 / var(--mainWidth));
     --switch-btn-fontSize: 13;

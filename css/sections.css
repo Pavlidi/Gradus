@@ -12,6 +12,7 @@
 }
 
 .hero__name {
+  display: block;
   position: relative;
   margin-top: calc(100vw * var(--hero__name-margin) / var(--mainWidth));
 } 
@@ -71,7 +72,7 @@
     transform: translate3d(0, 0, 0);
   }
   to {
-    transform: translate3d(calc(-1 * 100vw * 757 / var(--mainWidth)), 0, 0);
+    transform: translate3d(calc(-1 * 100vw * (var(--hero__univer__track__img-width) + var(--hero__univer__track__img-paddingRight)) / var(--mainWidth)), 0, 0);
   }
 }
 
@@ -100,6 +101,10 @@
 
   border-radius: calc(100vw * var(--border__1-radius) / var(--mainWidth));
   background-color: #fff;
+}
+
+.courses__main-tablet {
+  display: none;
 }
 
 .Quote {
@@ -649,6 +654,7 @@ textarea::placeholder {
 /*                                                 Contact Map - End                                          */
 
 @media (min-width: 768px) {
+/*                                                 Hero - Begin                                          */ 
   .orbits {
     display: none;
   }
@@ -661,5 +667,157 @@ textarea::placeholder {
     height: auto;
     z-index: -100;
   }
+/*                                                 Hero - End                                          */ 
 
+/*                                                 Courses - Begin                                          */
+  .courses__main {
+    display: none;
+  }  
+
+  .courses__main-tablet {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    width: max-content;
+    margin: calc(100vw * var(--margin__from-h1) / var(--mainWidth)) auto 0;
+    padding: calc(100vw * var(--courses__main-paddingTop) / var(--mainWidth)) calc(100vw * var(--padding-2) / var(--mainWidth)) calc(100vw * var(--padding-2) / var(--mainWidth));
+
+    border-radius: calc(100vw * var(--border__1-radius) / var(--mainWidth));
+    background-color: red;
+  }
+
+  .Quote {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+
+    width: max-content;
+    margin-left: calc(100vw * var(--courses__main__Quote-marginLeft) / var(--mainWidth));
+  }
+
+  .Quote .Quote-color {
+    color: #BABABA;
+  }
+
+  .format-card__bkg {
+    position: relative;
+    display: flex;
+
+    width: max-content;
+    height: max-content;
+    margin-top: calc(100vw * var(--format-card__bkg-marginTop) / var(--mainWidth));
+    padding: calc(100vw * var(--padding-2) / var(--mainWidth));
+
+    background-color: #FAF9F6;
+    border-radius: calc(100vw * var(--border__2-radius) / var(--mainWidth));
+  }
+
+  .format-card {
+    display: flex;
+    flex-direction: column;
+
+    width: calc(100vw * var(--course-card-width) / var(--mainWidth));
+
+    padding-top: calc(100vw * var(--courses__format-card-paddingTop) / var(--mainWidth));
+    padding-right: calc(100vw * var(--courses__format-card-paddingRight) / var(--mainWidth));
+    padding-bottom: calc(100vw * var(--courses__format-card-paddingBottom) / var(--mainWidth));
+    padding-left: calc(100vw * var(--courses__format-card-paddingLeft) / var(--mainWidth));
+    
+    border-width:  calc(100vw * var(--border__size_1) / var(--mainWidth));
+    border-color: #E2E2E2;
+    border-style: solid;
+    border-radius: calc(100vw * var(--border__3-radius) / var(--mainWidth));
+  }
+
+  .format-card__text {
+    margin-top: calc(100vw * var(--format-card__text-marginTop) / var(--mainWidth));
+  }
+
+  .format-card__list {
+    display: flex;
+    flex-direction: column;
+
+    margin-top: calc(100vw * var(--format-card__list-marginTop) / var(--mainWidth));
+    padding: 0;
+
+    gap: calc(100vw * var(--ul_li-gap) / var(--mainWidth));
+    list-style: none;
+  }
+
+  .format-card__list li {
+    position: relative;
+    padding-left: calc(100vw * var(--format-card__list__li-paddingLeft) / var(--mainWidth));
+  }
+  /* Галочка */
+  .format-card__list li::before {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    top: calc(100vw * var(--format-card__list__li__before-Top) / var(--mainWidth));
+
+    width: calc(100vw * var(--format-card__list__li__before-width) / var(--mainWidth));
+    height: calc(100vw * var(--format-card__list__li__before-width) / var(--mainWidth));
+
+    background-image: url("../image/check.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .btn.format-card__btn {
+    position: relative;
+    
+    width: max-content;
+    margin-top: calc(100vw * var(--format-card__btn-marginTop) / var(--mainWidth));
+    margin-left: auto;
+
+    box-shadow: var(--box__shadow-1);
+    background: var(--btn__background);
+  }
+
+  .course-card {
+    display: flex;
+    flex-direction: column;
+
+    width: calc(100vw * var(--course-card-width) / var(--mainWidth));
+    margin: calc(100vw * var(--course-card-marginTop) / var(--mainWidth)) calc(100vw * var(--padding-2) / var(--mainWidth)) calc(100vw * var(--padding-2) / var(--mainWidth));
+    padding-right: calc(100vw * var(--courses__format-card-paddingRight) / var(--mainWidth));
+    padding-bottom: calc(100vw * var(--courses__format-card-paddingBottom) / var(--mainWidth));
+    padding-left: calc(100vw * var(--courses__format-card-paddingLeft) / var(--mainWidth));
+
+    border-radius: calc(100vw * var(--border__3-radius) / var(--mainWidth));
+    
+    background: #252532;
+    box-shadow: 1.28205vw 3.5897vw 10.2564vw -2.30769vw #3d3a56, inset 0vw 2.05128vw 7.6923vw #2a2a34;
+  }
+
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: calc(100vw * var(--card-header-marginTop) / var(--mainWidth));
+  }
+
+  .course-card h2, .course-card p {
+    color: #fff;
+  }
+
+  .textCourse {
+    margin-top: calc(100vw * var(--course-card__textCourse-marginTop) / var(--mainWidth));
+  }
+
+  #cardText {
+    white-space: pre-line;
+  }
+
+  .btn.white {
+    position: relative;
+
+    width: max-content;
+    margin-top: calc(100vw * var(--btn__white-marginTop) / var(--mainWidth));
+    margin-left: auto;
+  }
+/*                                                 Courses - End                                          */
 }
