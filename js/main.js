@@ -108,12 +108,11 @@ document.querySelectorAll('.faq-question').forEach(button => {
 updateCard();
 
 // Переключение карточек через свайп
-
 const swiper = new Swiper(".mySwiper", {
   slidesPerView: 1.6,                           // Автоматическая ширина (настроили в CSS 80%)
   centeredSlides: true,                             // Активная карточка строго по центру
   initialSlide: 1,                                  // ← Открываем вторую
-  /*spaceBetween: window.innerWidth * 0.025641,       // Расстояние между карточками*/
+  //spaceBetween: window.innerWidth * 0.025641,       // Расстояние между карточками
   pagination: {
     el: ".swiper-pagination",
     clickable: true,                                // Чтобы можно было кликать на точки
@@ -140,9 +139,6 @@ const swiper3 = new Swiper(".mySwiper3", {
     clickable: true,                                // Чтобы можно было кликать на точки
   },
 });
-
-
-
 
 const navLinks = document.querySelectorAll('.nav-link');
 

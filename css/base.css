@@ -237,7 +237,7 @@ h3 {
   --faq-group__box-paddintTop: 14;
   --faq-group__box-paddingLeft: 20;
   --contact-card-paddingAll: 16;
-  --contact-paddingTop: 20;
+
   --switch-btn_role-paddingLeftRight: 43;
   --switch__role__active-paddingLeft: 43;
   --contact-form_input_textareat-paddingTop: 8;
@@ -253,6 +253,7 @@ h3 {
   --contact-header-hp-gap: 3;
   --checkbox-gap: 5;
   --card__review-text-gap: 6;
+  --faq-contact-gap: 20;
   --footer-nav-gap: 65;
   --footer-bottom-gap: 10;
   --footer-links-gap: 18;
@@ -363,7 +364,7 @@ h3 {
     --h__2-M: 14;
     --h__1-margin: 50;
     --p1: 22;
-    --p4: 14;
+    --p4: 12;
     /*  Размеры шрифтов указаны в px, если изменить тут значения - они автоматически изменятся и в vw  */
 
         /*  Margins - Begin  */
@@ -382,13 +383,16 @@ h3 {
     --subject-switch-marginLeft: 22;
     --subject-switch-marginRight: 17;
     --switch__active-margin: 1;
-    --course-card-marginTop: 12;
+    --course-card-marginTop: 10;
     --card-header-marginTop: 9;
     --btn__white-marginTop: 36;
     --btn__white-marginRight: 4;
     --btn__white-marginBottom: 14;
     --course-card__textCourse-marginTop: 15;
-    --trust__card__img-marginBottom: 14;
+    --card__trust-tablet-marginTop: 10;
+    --how__trust__tablet-marginTop: 5;
+    --how__trust__tablet-FirstSecond-marginTop: 11;
+    --trust__card__img-marginBottom: 8;
     --trust__card__head-marginLeft: 12;
     --trust__card__text-marginTop: 5;
     --trust__card__text-marginBottom: 7;
@@ -408,12 +412,15 @@ h3 {
     --checkbox-marginLeft: 18;
     --contact-form__btn-marginTop: 15;
     --contact-form__btn-marginLeft: 92;
+
+    --review__tablet-marginTop: 16;
     --review-header__div-marginTop: 4;
     --review-header__div-marginBottom: 13;
     --review-header__div-marginLeft: 11;
     --review-header__h3-marginBottom: 2;
-    --contact-map-marginTop: 32;
-    --contact-map-marginBottom: 100;
+
+    --contact-map-marginTop: 60;
+    --contact-map-marginBottom: 55;
     --contact-map__btn-marginTop: 16;
     --contact-map__btn-marginLeftRight: 9;
     --contact-map__btn-marginBottom: 14;
@@ -444,13 +451,15 @@ h3 {
     --faq-group__box-paddintTop: 14;
     --faq-group__box-paddingLeft: 20;
     --contact-card-paddingAll: 16;
-    --contact-paddingTop: 20;
+
     --switch-btn_role-paddingLeftRight: 43;
     --switch__role__active-paddingLeft: 43;
     --contact-form_input_textareat-paddingTop: 8;
     --contact-form_input_textareat-paddingLeftRight: 16;
     --contact-form_input_textareat-paddingButtom: 7;
     --contact-form-textarea-paddingBottom: 40;
+
+    --card-review__tablet-padding: 14;
     /*  Paddings - End  */
 
 
@@ -462,6 +471,13 @@ h3 {
     --contact-header-hp-gap: 3;
     --checkbox-gap: 5;
     --card__review-text-gap: 6;
+    --card__trust-tablet-gap: 10;
+
+    --how__trust__tablet-gap: 11;
+
+    --review__tablet-gap: 7;
+
+    --faq-contact-gap: 13;
     --footer-nav-gap: 65;
     --footer-bottom-gap: 10;
     --footer-links-gap: 18;
@@ -480,8 +496,8 @@ h3 {
     --format-card-trust-tablet-width: 686;
     --format-card-trust-photo-width: 180;
     --format-card-trust_logo-width: 75;
-    --format-card__main-width: 233;
-    --format-card__how-width: 321;
+    --format-card__main-width: 234;
+    --format-card__how-width: 356;
     --faq-item__line-width: 310;
     --faq-icon-width: 18;
     --faq-icon__font__size-width: 13;
@@ -490,6 +506,7 @@ h3 {
     --contact-switch-width: 293;
     --checkmark-width: 11;
     --review-header__width: 39;
+    --map-container-width: 582;
     --footer-logo-width: 75;
     /*  Widths - End  */
 
@@ -497,8 +514,10 @@ h3 {
     /*  Heights - Begin  */
     --hero__univer__bkg-height: 100;
     --format-card-trust-photo-height: 208;
+    --card__img-height: 162;
+    --card__how__img-height: 244;
     --faq-line-height: 2;
-    --map-container-height: 223;
+    --map-container-height: 279;
     /*  Heights - End  */
 
 
@@ -517,7 +536,12 @@ h3 {
     --border__1-radius: 50;
     --border__2-radius: 42;
     --border__3-radius: 36;
+    --border__4-radius: 23;
+    --border__5-radius: 30;
     --format-card-trust-photo-radius: 20;
+
+    --contact-map-card__tablet-radius: 25;
+    --contact-map-card__tablet-map-radius: 20;
     /*  Border - End  */
 
 
@@ -545,4 +569,19 @@ h3 {
     /*  Swiper - End */
   }
   /*                                                 Переменные величины - End                                                 */
+
+  /*                                                 Постоянные величины - Begin                                                 */
+  :root {
+    /*  Backgrounds - Begin */
+    --btn__background: linear-gradient(180deg, #3B3A4E 0%, #272733 100%);
+    /*  Backgrounds - End */
+
+    /*  BoxShadow - Begin */
+    --box__shadow-1: 0vw 0.7692vw 1.28205vw #0000000f, 0vw 0.7692vw 2.05128vw #00000026;
+    --box__shadow-2: 0vw 0.7692vw 0.2564vw #0000000f, 0vw 0.7692vw 2.05128vw #00000026;
+    --box__shadow-3: 0vw calc(100vw * 6 / var(--mainWidth)) calc(100vw * 30 / var(--mainWidth)) rgba(0, 0, 0, 0.06); 
+    --box__shadow-4: 0vw 1.5385vw 7.6923vw rgba(0, 0, 0, 0.06);
+    /*  BoxShadow - End */
+  }
+  /*                                                 Постоянные величины - Begin                                                 */
 }
