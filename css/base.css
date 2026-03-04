@@ -362,13 +362,11 @@ h3 {
 
     --h__1: 26;
     --h__2-M: 14;
-    --h__1-margin: 50;
     --p1: 22;
     --p4: 12;
     /*  Размеры шрифтов указаны в px, если изменить тут значения - они автоматически изменятся и в vw  */
 
         /*  Margins - Begin  */
-    --margin__from-h1: 15;
     --hero__name-margin: 228;
     --hero__title-margin: 20;
     --hero__btn-margin: 25;
@@ -376,16 +374,11 @@ h3 {
     --hero__univer__marquee-margin: 20;
     --courses__main__Quote-marginLeft: 35;
     --format-card__bkg-marginTop: 13;
-    --format-card__text-marginTop: 8;
-    --format-card__list-marginTop: 13;
-    --format-card__btn-marginTop: 7;
-    --subject-switch-marginTop: 18;
-    --subject-switch-marginLeft: 22;
+
     --subject-switch-marginRight: 17;
-    --switch__active-margin: 1;
+
     --course-card-marginTop: 10;
-    --card-header-marginTop: 9;
-    --btn__white-marginTop: 36;
+
     --btn__white-marginRight: 4;
     --btn__white-marginBottom: 14;
     --course-card__textCourse-marginTop: 15;
@@ -393,88 +386,38 @@ h3 {
     --how__trust__tablet-marginTop: 5;
     --how__trust__tablet-FirstSecond-marginTop: 11;
     --trust__card__img-marginBottom: 8;
-    --trust__card__head-marginLeft: 12;
-    --trust__card__text-marginTop: 5;
-    --trust__card__text-marginBottom: 7;
+
     --format-card-trust-text-marginTop: 25;
     --format-card-trust-text-marginRight: 1;
     --format-card-trust-text__h2-marginBottom: 10;
     --format-card-trust-photo-marginTipRight: 16;
-    --faq-group-marginTop: 14;
-    --faq-group__title-marginLeft: 20;
-    --faq-group__title-marginBottom: 4;
-    --faq-line-marginTop: 7;
-    --faq-line-marginBottom: 9;
-    --faq-answer-marginTopLeft: 4;
-    --contact-header-marginBottom: 12;
-    --contact-form_input_textareat-marginTop: 9;
-    --checkbox-marginTop: 10;
-    --checkbox-marginLeft: 18;
-    --contact-form__btn-marginTop: 15;
-    --contact-form__btn-marginLeft: 92;
 
     --review__tablet-marginTop: 16;
-    --review-header__div-marginTop: 4;
-    --review-header__div-marginBottom: 13;
-    --review-header__div-marginLeft: 11;
-    --review-header__h3-marginBottom: 2;
 
     --contact-map-marginTop: 60;
     --contact-map-marginBottom: 55;
-    --contact-map__btn-marginTop: 16;
-    --contact-map__btn-marginLeftRight: 9;
-    --contact-map__btn-marginBottom: 14;
     --contact-map-card__tablet__flex-marginTop: 14;
     --contact-map-card__tablet__flex-marginRightLeft: 11;
     --contact-map-card__tablet__flex-marginBottom: 9;
     --contact-phone-marginTop: 4;
-    --footer-description-marginTop: 14;
-    --footer-nav-marginTop: 20;
-    --footer-divider-marginTopBottom: 20;
     /*  Margins - End  */
 
 
     /*  Paddings - Begin  */
     --padding-1: 18;
     --padding-2: 9;
-    --header-desktop-paddingTop: 50;
-    --header__nav-bar-padding: 6;
-    --hero__univer__track__img-paddingRight: 33;
+
     --courses__main-paddingTop: 23;
     --courses__format-card-paddingTop: 26;
     --courses__format-card-paddingRight: 14;
-    --courses__format-card-paddingBottom: 10;
-    --courses__format-card-paddingLeft: 16;
-    --format-card__list__li-paddingLeft: 21;
-    --format-card__list__li__before-Top: 3; /* Отступ галочки сверху */
-    --switch-btn-paddingLeftRight: 16;
-    --switch__active-paddingTop: 6;
-    --switch__active-paddingLeft: 12;
-    --format-card-trust-text-padding: 16;
-    --faq-group-paddingTop: 5;
-    --faq-group__box-paddintTop: 14;
-    --faq-group__box-paddingLeft: 20;
-    --contact-card-paddingAll: 16;
-
-    --switch-btn_role-paddingLeftRight: 43;
-    --switch__role__active-paddingLeft: 43;
-    --contact-form_input_textareat-paddingTop: 8;
-    --contact-form_input_textareat-paddingLeftRight: 16;
-    --contact-form_input_textareat-paddingButtom: 7;
-    --contact-form-textarea-paddingBottom: 40;
 
     --card-review__tablet-padding: 14;
     /*  Paddings - End  */
 
 
     /*  Gapps - Begin  */
-    --ul_li-gap: 12;
     --format-card__bkg-gap: 11;
     --format-card-trust-text-gap: 7;
-    --contact-header-gap: 8;
-    --contact-header-hp-gap: 3;
-    --checkbox-gap: 5;
-    --card__review-text-gap: 6;
     --card__trust-tablet-gap: 10;
 
     --how__trust__tablet-gap: 11;
@@ -484,38 +427,18 @@ h3 {
     --contact-map-card__tablet__phoneBox-gap: 4;
 
     --faq-contact-gap: 13;
-    --footer-nav-gap: 65;
-    --footer-bottom-gap: 10;
-    --footer-links-gap: 18;
     /*  Gapps - End  */
 
 
     /*  Widths - Begin  */
-    --header__nav-bar-width: 566;
-    --hero__univer__marquee-width: 100vw;
-    --hero__univer__track__img-width: 724;
     --logo__tablet-width: 60;
-    --format-card__list__li__before-width: 11;
-    --course-card-width: 332;
-    --subject-switch-width: 188;
-    --exam-switch-width: 104;
     --format-card-trust-tablet-width: 686;
     --format-card-trust-photo-width: 180;
-    --format-card-trust_logo-width: 75;
     --format-card__main-width: 234;
     --format-card__how-width: 356;
-    --faq-item__line-width: 310;
-    --faq-icon-width: 18;
-    --faq-icon__font__size-width: 13;
 
-    --contact-card-width: 325;
-    --contact-icon-width: 45;
-    --contact-switch-width: 293;
     --contact-map-card__tablet__icons-width: 18;
-    --checkmark-width: 11;
-    --review-header__width: 39;
     --map-container-width: 582;
-    --footer-logo-width: 75;
     /*  Widths - End  */
 
 
@@ -524,7 +447,6 @@ h3 {
     --format-card-trust-photo-height: 208;
     --card__img-height: 162;
     --card__how__img-height: 244;
-    --faq-line-height: 2;
     --map-container-height: 279;
     /*  Heights - End  */
 
@@ -535,8 +457,6 @@ h3 {
     --logo__tablet-left: 354;
     --course-card__exam-switch-top: 14;
     --course-card__exam-switch-left: 214;
-    --card-review__span-top: 18;
-    --card-review__span-right: 20;
     /*  Position - End  */
 
 
@@ -558,23 +478,7 @@ h3 {
     --btn__padding-right: calc(100vw * 14 / var(--mainWidth));
     --btn-thin__padding-top: calc(100vw * 8 / var(--mainWidth));
     --btn-thin__padding-right: calc(100vw * 12 / var(--mainWidth));
-    --btn__font-size: calc(100vw * 16 / var(--mainWidth));
-    --btn__border-radius: calc(100vw * 40 / var(--mainWidth));
-    --switch-btn-fontSize: 13;
-    --switch-btn__active-fontSize: 14;
     /*  Button - End */
-
-
-    /*  Swiper - Begin */
-    --swiper-pagination-marginTop: 23;
-    --swiper-pagination_shadow-width: 31;
-    --swiper-pagination-gap: 16;
-    --swiper-pagination_Dots-width: 7;
-    --swiper-pagination_Active-width: 32;
-    --swiper-pagination_Active-height: 9;
-    --swiper-pagination_Active-radius: 99;
-
-    /*  Swiper - End */
   }
   /*                                                 Переменные величины - End                                                 */
 
@@ -583,13 +487,6 @@ h3 {
     /*  Backgrounds - Begin */
     --btn__background: linear-gradient(180deg, #3B3A4E 0%, #272733 100%);
     /*  Backgrounds - End */
-
-    /*  BoxShadow - Begin */
-    --box__shadow-1: 0vw 0.7692vw 1.28205vw #0000000f, 0vw 0.7692vw 2.05128vw #00000026;
-    --box__shadow-2: 0vw 0.7692vw 0.2564vw #0000000f, 0vw 0.7692vw 2.05128vw #00000026;
-    --box__shadow-3: 0vw calc(100vw * 6 / var(--mainWidth)) calc(100vw * 30 / var(--mainWidth)) rgba(0, 0, 0, 0.06); 
-    --box__shadow-4: 0vw 1.5385vw 7.6923vw rgba(0, 0, 0, 0.06);
-    /*  BoxShadow - End */
   }
   /*                                                 Постоянные величины - Begin                                                 */
 }

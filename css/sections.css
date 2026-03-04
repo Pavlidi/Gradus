@@ -683,6 +683,8 @@ textarea::placeholder {
 }
 /*                                                 Contact Map - End                                          */
 
+/* Test*/
+
 @media (min-width: 768px) {
 /*                                                 Hero - Begin                                          */ 
   .orbits {
@@ -734,94 +736,13 @@ textarea::placeholder {
     align-items: center;
   }
 
-  .Quote {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-
-    width: max-content;
-    margin-left: calc(100vw * var(--courses__main__Quote-marginLeft) / var(--mainWidth));
-  }
-
-  .Quote .Quote-color {
-    color: #BABABA;
-  }
-
   .format-card__bkg {
-    position: relative;
-    display: flex;
-
-    width: max-content;
-    height: max-content;
-    margin-top: calc(100vw * var(--format-card__bkg-marginTop) / var(--mainWidth));
-    padding: calc(100vw * var(--padding-2) / var(--mainWidth));
     gap: calc(100vw * var(--format-card__bkg-gap) / var(--mainWidth));
-
-    background-color: #FAF9F6;
-    border-radius: calc(100vw * var(--border__2-radius) / var(--mainWidth));
   }
 
   .format-card {
-    display: flex;
-    flex-direction: column;
-
-    width: calc(100vw * var(--course-card-width) / var(--mainWidth));
-
-    padding-top: calc(100vw * var(--courses__format-card-paddingTop) / var(--mainWidth));
-    padding-right: calc(100vw * var(--courses__format-card-paddingRight) / var(--mainWidth));
     padding-bottom: calc(100vw * var(--courses__format-card-paddingRight) / var(--mainWidth));
     padding-left: calc(100vw * var(--courses__format-card-paddingTop) / var(--mainWidth));
-    
-    border-width:  calc(100vw * var(--border__size_1) / var(--mainWidth));
-    border-color: #E2E2E2;
-    border-style: solid;
-    border-radius: calc(100vw * var(--border__3-radius) / var(--mainWidth));
-  }
-
-  .format-card__text {
-    margin-top: calc(100vw * var(--format-card__text-marginTop) / var(--mainWidth));
-  }
-
-  .format-card__list {
-    display: flex;
-    flex-direction: column;
-
-    margin-top: calc(100vw * var(--format-card__list-marginTop) / var(--mainWidth));
-    padding: 0;
-
-    gap: calc(100vw * var(--ul_li-gap) / var(--mainWidth));
-    list-style: none;
-  }
-
-  .format-card__list li {
-    position: relative;
-    padding-left: calc(100vw * var(--format-card__list__li-paddingLeft) / var(--mainWidth));
-  }
-  /* Галочка */
-  .format-card__list li::before {
-    content: "";
-
-    position: absolute;
-    left: 0;
-    top: calc(100vw * var(--format-card__list__li__before-Top) / var(--mainWidth));
-
-    width: calc(100vw * var(--format-card__list__li__before-width) / var(--mainWidth));
-    height: calc(100vw * var(--format-card__list__li__before-width) / var(--mainWidth));
-
-    background-image: url("../image/check.svg");
-    background-size: contain;
-    background-repeat: no-repeat;
-  }
-
-  .btn.format-card__btn {
-    position: relative;
-    
-    width: max-content;
-    margin-top: calc(100vw * var(--format-card__btn-marginTop) / var(--mainWidth));
-    margin-left: auto;
-
-    box-shadow: var(--box__shadow-1);
-    background: var(--btn__background);
   }
 
   .course-card {
@@ -850,18 +771,6 @@ textarea::placeholder {
     margin-top: 0;
   }
 
-  .course-card h2, .course-card p {
-    color: #fff;
-  }
-
-  .textCourse {
-    margin-top: calc(100vw * var(--course-card__textCourse-marginTop) / var(--mainWidth));
-  }
-
-  .cardText {
-    white-space: pre-line;
-  }
-
   .btn.white {
     position: relative;
     margin-top: auto;
@@ -872,27 +781,7 @@ textarea::placeholder {
 /*                                                 Courses - End                                          */
 
 /*                                                 Trust and How? - Begin                                          */
-  .courses__main-trust {
-    display: flex;
 
-    width: max-content;
-    margin-top: calc(100vw * var(--margin__from-h1) / var(--mainWidth));
-    margin-right: auto;
-    margin-left: auto;
-    padding: calc(100vw * var(--padding-2) / var(--mainWidth));
-
-    border-radius: calc(100vw * var(--border__1-radius) / var(--mainWidth));
-    background-color: #fff;
-  }
-
-  .format-card__bkg-trust {
-    display: flex;
-
-    padding: calc(100vw * var(--padding-2) / var(--mainWidth));
-
-    border-radius: calc(100vw * var(--border__2-radius) / var(--mainWidth));
-    background-color: #FAF9F6;
-  }
 
   .format-card-trust {
     display: none;
@@ -907,9 +796,6 @@ textarea::placeholder {
     border-radius: calc(100vw * var(--border__3-radius) / var(--mainWidth));
   }
 
-  .format-card-trust_logo {
-    width: calc(100vw * var(--format-card-trust_logo-width) / var(--mainWidth));
-  }
 
   .format-card-trust-tablet {
     display: flex;
@@ -935,7 +821,6 @@ textarea::placeholder {
   .format-card-trust-text h2 {
     margin-bottom: calc(100vw * var(--format-card-trust-text__h2-marginBottom) / var(--mainWidth));
   }
-
 
   .format-card-trust-photo {
     width: calc(100vw * var(--format-card-trust-photo-width) / var(--mainWidth));
@@ -979,16 +864,6 @@ textarea::placeholder {
     border-style: solid;
   }
 
-  .card__trust-head {
-    margin-left: calc(100vw * var(--trust__card__head-marginLeft) / var(--mainWidth));
-  }
-
-  .card__trust-text {
-    margin-top: calc(100vw * var(--trust__card__text-marginTop) / var(--mainWidth));
-    margin-bottom: calc(100vw * var(--trust__card__text-marginBottom) / var(--mainWidth));
-    margin-left: calc(100vw * var(--trust__card__head-marginLeft) / var(--mainWidth));
-  }
-
   .how__trust__tablet {
     display: flex;
     flex-direction: column;
@@ -1014,405 +889,178 @@ textarea::placeholder {
 /*                                                 Trust and How? - End                                          */
 
 /*                                                 FAQ - Begin                                          */
-.faq-contact {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-start;
+  .faq-contact {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
 
-  gap: calc(100vw * var(--faq-contact-gap) / var(--mainWidth))
-}
+    gap: calc(100vw * var(--faq-contact-gap) / var(--mainWidth))
+  }
 
-.faq-group {
-  display: flex;
+  .faq-group {
+    display: flex;
 
-  flex-direction: column;
+    flex-direction: column;
 
-  margin-top: calc(100vw * var(--faq-group-marginTop) / var(--mainWidth));
-  margin-left: auto;
-  margin-right: 0;
-  /* margin-right: auto; */
-  
-  width: max-content;
-  padding: calc(100vw * var(--faq-group-paddingTop) / var(--mainWidth)) calc(100vw * var(--padding-2) / var(--mainWidth)) calc(100vw * var(--padding-2) / var(--mainWidth));
+    margin-top: calc(100vw * var(--faq-group-marginTop) / var(--mainWidth));
+    margin-left: auto;
+    margin-right: 0;
+    /* margin-right: auto; */
+    
+    width: max-content;
+    padding: calc(100vw * var(--faq-group-paddingTop) / var(--mainWidth)) calc(100vw * var(--padding-2) / var(--mainWidth)) calc(100vw * var(--padding-2) / var(--mainWidth));
 
-  border-radius: calc(100vw * var(--border__5-radius) / var(--mainWidth));
-  background: #fff;
-  box-shadow: var(--box__shadow-3);
-}
+    border-radius: calc(100vw * var(--border__5-radius) / var(--mainWidth));
+    background: #fff;
+    box-shadow: var(--box__shadow-3);
+  }
 
-.faq-group__block {
-  margin-top: calc(100vw * var(--faq-group-marginTop) / var(--mainWidth));
-}
+  .faq-group__box {
+    display: flex;
+    flex-direction: column;
 
-.faq-group__title {
-  margin-left: calc(100vw * var(--faq-group__title-marginLeft) / var(--mainWidth));
-  margin-bottom: calc(100vw * var(--faq-group__title-marginBottom) / var(--mainWidth));
-}
+    width: max-content;
+    padding: calc(100vw * var(--faq-group__box-paddintTop) / var(--mainWidth)) calc(100vw * var(--faq-group__box-paddingLeft) / var(--mainWidth));
 
-.faq-group__box {
-  display: flex;
-  flex-direction: column;
+    background-color: #FAF9F6;
+    border-radius: calc(100vw * var(--contact-map-card__tablet-radius) / var(--mainWidth));
+  }
+  /* Форма для вопросов */
+  .contact-card {
+    width: calc(100vw * var(--contact-card-width) / var(--mainWidth));
 
-  width: max-content;
-  padding: calc(100vw * var(--faq-group__box-paddintTop) / var(--mainWidth)) calc(100vw * var(--faq-group__box-paddingLeft) / var(--mainWidth));
-
-  background-color: #FAF9F6;
-  border-radius: calc(100vw * var(--contact-map-card__tablet-radius) / var(--mainWidth));
-}
-
-.faq-item {
-  width: calc(100vw * var(--faq-item__line-width) / var(--mainWidth));
-}
-
-.faq-question {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  width: calc(100vw * var(--faq-item__line-width) / var(--mainWidth));
-
-  background: none;
-  border: none;
-  color: #252532;
-  cursor: pointer;
-}
-
-.faq-icon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: calc(100vw * var(--faq-icon-width) / var(--mainWidth));
-  height: calc(100vw * var(--faq-icon-width) / var(--mainWidth));
-  border-radius: 50%;
-
-  padding-bottom: calc(100vw * 2 / var(--mainWidth)); /* Костыль для того чтобы плюс был ровно по центру */
-  
-  
-  font-size: calc(100vw *  var(--faq-icon__font__size-width) / var(--mainWidth));
-  color: white;
-
-  background: #252532;
-  transition: transform 0.3s ease;
-}
-
-.faq-answer {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease, padding 0.3s ease;
-  padding: 0;
-  color: #555;
-}
-
-.faq-line {
-  display: block;
-
-  width: calc(100vw * var(--faq-item__line-width) / var(--mainWidth));
-  height: calc(100vw * var(--faq-line-height) / var(--mainWidth));
-  margin-top: calc(100vw * var(--faq-line-marginTop) / var(--mainWidth));
-  margin-bottom: calc(100vw * var(--faq-line-marginBottom) / var(--mainWidth));
-  
-  background-color: #E2E2E2;
-}
-
-.faq-item.active .faq-answer {
-  max-height: max-content;
-  margin-top: calc(100vw * var(--faq-answer-marginTopLeft) / var(--mainWidth));
-  margin-left: calc(100vw * var(--faq-answer-marginTopLeft) / var(--mainWidth));
-}
-
-.faq-item.active .faq-icon {
-  transform: rotate(45deg);
-}
-/* Форма для вопросов */
-.contact-card {
-  width: calc(100vw * var(--contact-card-width) / var(--mainWidth));
-
-  background: #fff;
-  margin-top: calc(100vw * var(--faq-group-marginTop) / var(--mainWidth));
-  /* margin-left: auto; */
-  margin-left: 0;
-  margin-right: auto;
-  padding: calc(100vw * var(--contact-card-paddingAll) / var(--mainWidth));
-  border-radius: calc(100vw * var(--border__5-radius) / var(--mainWidth));
-  box-shadow: var(--box__shadow-4);
-}
-
-.contact-header {
-  display: flex;
-  width: max-content;
-  gap: calc(100vw * var(--contact-header-gap) / var(--mainWidth));
-  margin-bottom: calc(100vw * var(--contact-header-marginBottom) / var(--mainWidth));
-}
-
-.contact-icon {
-  width: calc(100vw * var(--contact-icon-width) / var(--mainWidth));
-}
-
-.contact-icon img {
-  object-fit: contain; /* или cover если нужно заполнить полностью */
-  display: block;
-}
-
-.contact-header-hp {
-  display: flex;
-  flex-direction: column;
-
-  gap: calc(100vw * var(--contact-header-hp-gap) / var(--mainWidth));
-}
-/* поля */
-.contact-form input,
-.contact-form textarea {
-  width: calc(100vw * var(--contact-switch-width) / var(--mainWidth));
-  margin-top: calc(100vw * var(--contact-form_input_textareat-marginTop) / var(--mainWidth));
-  padding: calc(100vw * var(--contact-form_input_textareat-paddingTop) / var(--mainWidth)) calc(100vw * var(--contact-form_input_textareat-paddingLeftRight) / var(--mainWidth)) calc(100vw * var(--contact-form_input_textareat-paddingButtom) / var(--mainWidth));
-  
-  border-radius: calc(100vw * var(--border__1-radius) / var(--mainWidth));
-  border-width: calc(100vw * var(--border__size_2) / var(--mainWidth));
-  border-style: solid;
-  border-color: #E2E2E2;
-
-  font-size: calc(100vw * var(--p3) / var(--mainWidth));
-  font-weight: 300;
-
-  background-color: #FAFAFA;
-  outline: none;
-}
-
-.contact-form textarea {
-  padding-bottom: calc(100vw * var(--contact-form-textarea-paddingBottom) / var(--mainWidth));
-  border-radius: calc(100vw * var(--border__4-radius) / var(--mainWidth));
-  resize: none;
-}
-
-input::placeholder,
-textarea::placeholder {
-  color: #252532;
-  font-family: 'Inter';
-  font-weight: 300;
-}
-
-.checkbox {
-  display: flex;
-  align-items: center;
-
-  width: max-content;
-  margin-top: calc(100vw * var(--checkbox-marginTop) / var(--mainWidth));
-  margin-left: calc(100vw * var(--checkbox-marginLeft) / var(--mainWidth));
-  gap: calc(100vw * var(--checkbox-gap) / var(--mainWidth));
-
-  cursor: pointer;
-}
-
-.checkbox input {
-  display: none;
-}
-
-.checkmark {
-  position: relative;
-  width: calc(100vw * var(--checkmark-width) / var(--mainWidth));
-  height: calc(100vw * var(--checkmark-width) / var(--mainWidth));
-  border-radius: 50%;
-  background: #2F2E2D;
-  flex-shrink: 0;
-}
-
-.checkbox input:checked + .checkmark {
-  background: #2F2E2D;
-}
-
-.checkbox input:checked + .checkmark::after {
-  content: "";
-  width: calc(100vw * var(--checkmark-width) / var(--mainWidth));
-  height: calc(100vw * var(--checkmark-width) / var(--mainWidth));
-  background-image: url("../image/check-box.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  position: absolute;
-  color: #fff;
-  font-size: calc(100vw * var(--p2) / var(--mainWidth));;
-
-}
-
-.checkbox-text a {
-  text-decoration: underline;
-  color: inherit;
-}
-
-.contact-form .btn {
-  margin-top: calc(100vw * var(--contact-form__btn-marginTop) / var(--mainWidth));
-  margin-left: calc(100vw * var(--contact-form__btn-marginLeft) / var(--mainWidth));
-}
+    background: #fff;
+    margin-top: calc(100vw * var(--faq-group-marginTop) / var(--mainWidth));
+    /* margin-left: auto; */
+    margin-left: 0;
+    margin-right: auto;
+    padding: calc(100vw * var(--contact-card-paddingAll) / var(--mainWidth));
+    border-radius: calc(100vw * var(--border__5-radius) / var(--mainWidth));
+    box-shadow: var(--box__shadow-4);
+  }
+  /* поля */
+  .contact-form textarea {
+    padding-bottom: calc(100vw * var(--contact-form-textarea-paddingBottom) / var(--mainWidth));
+    border-radius: calc(100vw * var(--border__4-radius) / var(--mainWidth));
+    resize: none;
+  }
 /*                                                 FAQ - End                                          */
 
 /*                                                 Review - Begin                                          */
-.review__tablet {
-  display: flex;
-  justify-content: center;
+  .review__tablet {
+    display: flex;
+    justify-content: center;
 
-  margin-top: calc(100vw * var(--review__tablet-marginTop) / var(--mainWidth));
-  gap: calc(100vw * var(--review__tablet-gap) / var(--mainWidth));
-}
+    margin-top: calc(100vw * var(--review__tablet-marginTop) / var(--mainWidth));
+    gap: calc(100vw * var(--review__tablet-gap) / var(--mainWidth));
+  }
 
+  .review__tablet__first, .review__tablet__second {
+    display: flex;
+    flex-direction: column;
 
-.review__tablet__first, .review__tablet__second {
-  display: flex;
-  flex-direction: column;
+    gap: calc(100vw * var(--review__tablet-gap) / var(--mainWidth));
+  }
 
-  gap: calc(100vw * var(--review__tablet-gap) / var(--mainWidth));
-}
+  .review__tablet__first {
+    align-items: flex-end;
+  }
 
-.review__tablet__first {
-  align-items: flex-end;
-}
+  .tablet {
+    display: block;
+  }
 
-.tablet {
-  display: block;
-}
+  .btn.thin.white.tablet {
+    margin-left: auto;
+    margin-top: calc(100vw * var(--hero__title-margin) / var(--mainWidth));
+    margin-right: auto;
+  }
 
-.btn.thin.white.tablet {
-  margin-left: auto;
-  margin-top: calc(100vw * var(--hero__title-margin) / var(--mainWidth));
-  margin-right: auto;
-}
+  .card-review {
+    position: relative;
 
+    width: max-content;
+    margin: 0;
+    padding: calc(100vw * var(--card-review__tablet-padding) / var(--mainWidth));
 
-.card-review {
-  position: relative;
-
-  width: max-content;
-  margin: 0;
-  padding: calc(100vw * var(--card-review__tablet-padding) / var(--mainWidth));
-
-  border-radius: calc(100vw * var(--format-card-trust-photo-radius) / var(--mainWidth));
-  background-color: #fff;
-  box-shadow: var(--box__shadow-4);
-}
-
-.review-header {
-  display: flex;
-}
-
-.review-header img {
-  width: calc(100vw * var(--review-header__width) / var(--mainWidth));
-}
-
-.review-header div {
-  margin-top: calc(100vw * var(--review-header__div-marginTop) / var(--mainWidth));
-  margin-bottom: calc(100vw * var(--review-header__div-marginBottom) / var(--mainWidth));
-  margin-left: calc(100vw * var(--review-header__div-marginLeft) / var(--mainWidth));
-}
-
-.review-header h3 {
-  margin-bottom: calc(100vw * var(--review-header__h3-marginBottom) / var(--mainWidth));
-}
-
-.card-review span {
-  position: absolute;
-  top: calc(100vw * var(--card-review__span-top) / var(--mainWidth));
-  right: calc(100vw * var(--card-review__span-right) / var(--mainWidth));
-
-}
-
-.card-review a {
-  text-decoration: none;
-  font-size: calc(100vw * var(--card-review-a) / var(--mainWidth));
-  font-weight: 800;
-}
-
-.card__review-text {
-  display: flex;
-  flex-direction: column;
-  gap: calc(100vw * var(--card__review-text-gap) / var(--mainWidth));
-}
+    border-radius: calc(100vw * var(--format-card-trust-photo-radius) / var(--mainWidth));
+    background-color: #fff;
+    box-shadow: var(--box__shadow-4);
+  }
 /*                                                 Review - End                                          */
 
 /*                                                 Contact Map - Begin                                          */
-.contact-map {
-  display: flex;
-  justify-content: center;
+  .contact-map-card {
+    display: none;
+  }
 
-  margin-top: calc(100vw * var(--contact-map-marginTop) / var(--mainWidth));
-  margin-bottom: calc(100vw * var(--contact-map-marginBottom)  / var(--mainWidth));
-}
+  .contact-map-card__tablet {
+    display: block;
+    padding: calc(100vw * var(--padding-2) / var(--mainWidth));
+    text-align: center;
 
-.contact-map-card {
-  display: none;
-}
+    border-radius: calc(100vw * var(--contact-map-card__tablet-radius) / var(--mainWidth));
+    background: #FFFFFF;
+    box-shadow: var(--box__shadow-4);
+  }
 
-.contact-map-card__tablet {
-  display: block;
-  padding: calc(100vw * var(--padding-2) / var(--mainWidth));
-  text-align: center;
+  .contact-map-card__tablet__flex {
+    display: flex;
+    justify-content: space-between;
 
-  border-radius: calc(100vw * var(--contact-map-card__tablet-radius) / var(--mainWidth));
-  background: #FFFFFF;
-  box-shadow: var(--box__shadow-4);
-}
+    margin: calc(100vw * var(--contact-map-card__tablet__flex-marginTop) / var(--mainWidth)) calc(100vw * var(--contact-map-card__tablet__flex-marginRightLeft) / var(--mainWidth)) calc(100vw * var(--contact-map-card__tablet__flex-marginBottom) / var(--mainWidth));
+  }
 
-.contact-map-card__tablet__flex {
-  display: flex;
-  justify-content: space-between;
+  .contact-map-card__tablet__phoneBox {
+    display: flex;
+    align-items: center;
 
-  margin: calc(100vw * var(--contact-map-card__tablet__flex-marginTop) / var(--mainWidth)) calc(100vw * var(--contact-map-card__tablet__flex-marginRightLeft) / var(--mainWidth)) calc(100vw * var(--contact-map-card__tablet__flex-marginBottom) / var(--mainWidth));
-}
+    gap: calc(100vw * var(--contact-map-card__tablet__phoneBox-gap) / var(--mainWidth));
+  }
 
-.contact-map-card__tablet__phoneBox {
-  display: flex;
-  align-items: center;
+  .contact-map-card__tablet__phoneBox img {
+    width: calc(100vw * var(--contact-map-card__tablet__icons-width) / var(--mainWidth));
+  }
 
-  gap: calc(100vw * var(--contact-map-card__tablet__phoneBox-gap) / var(--mainWidth));
-}
+  .contact-map-card__tablet__phoneBox-text p {
+    color: #7E7E87;
+  }
 
-.contact-map-card__tablet__phoneBox img {
-  width: calc(100vw * var(--contact-map-card__tablet__icons-width) / var(--mainWidth));
-}
+  .map-container {
+    width: calc(100vw * var(--map-container-width) / var(--mainWidth));
+    height: calc(100vw * var(--map-container-height) / var(--mainWidth));
 
-.contact-map-card__tablet__phoneBox-text p {
-  color: #7E7E87;
-}
+    border-radius: calc(100vw * var(--contact-map-card__tablet-map-radius) / var(--mainWidth));
+    overflow: hidden;
+  }
 
-.map-container {
-  width: calc(100vw * var(--map-container-width) / var(--mainWidth));
-  height: calc(100vw * var(--map-container-height) / var(--mainWidth));
+  .call {
+    display: none;
+    width: calc(100vw * var(--contact-switch-width) / var(--mainWidth));
+    margin: calc(100vw * var(--contact-map__btn-marginTop) / var(--mainWidth)) calc(100vw * var(--contact-map__btn-marginLeftRight) / var(--mainWidth)) calc(100vw * var(--contact-map__btn-marginBottom) / var(--mainWidth));
+  }
 
-  border-radius: calc(100vw * var(--contact-map-card__tablet-map-radius) / var(--mainWidth));
-  overflow: hidden;
-}
+  .contact-info {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
 
-.map-container iframe {
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
+    margin-bottom: 0;
+    gap: calc(100vw * var(--padding-2) / var(--mainWidth));;
+  }
 
-.call {
-  display: none;
-  width: calc(100vw * var(--contact-switch-width) / var(--mainWidth));
-  margin: calc(100vw * var(--contact-map__btn-marginTop) / var(--mainWidth)) calc(100vw * var(--contact-map__btn-marginLeftRight) / var(--mainWidth)) calc(100vw * var(--contact-map__btn-marginBottom) / var(--mainWidth));
-}
+  .contact-info img {
+    width: calc(100vw * var(--contact-map-card__tablet__icons-width) / var(--mainWidth));
+  }
 
-.contact-info {
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-
-  margin-bottom: 0;
-  gap: calc(100vw * var(--padding-2) / var(--mainWidth));;
-}
-
-.contact-info img {
-  width: calc(100vw * var(--contact-map-card__tablet__icons-width) / var(--mainWidth));
-}
-
-.phone {
-  margin-top: calc(100vw * var(--contact-phone-marginTop) / var(--mainWidth));
-  
-  font-size: calc(100vw * var(--p2) / var(--mainWidth));
-  font-weight: 700;
-  text-decoration: none;
-  color: #1e1f2a;
-}
+  .phone {
+    margin-top: calc(100vw * var(--contact-phone-marginTop) / var(--mainWidth));
+    
+    font-size: calc(100vw * var(--p2) / var(--mainWidth));
+    font-weight: 700;
+    text-decoration: none;
+    color: #1e1f2a;
+  }
 /*                                                 Contact Map - End                                          */
 }
