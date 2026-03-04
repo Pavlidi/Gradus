@@ -690,9 +690,10 @@ textarea::placeholder {
   }
 
   .orbits__tablet {
-    display: block;
     position: absolute;
     top: 0;
+    display: block;
+
     width: 100vw;
     height: auto;
     z-index: -100;
@@ -700,9 +701,9 @@ textarea::placeholder {
 
   .logo__tablet {
     position: absolute;
-    display: block;
     top: calc(100vw * var(--logo__tablet-top) / var(--mainWidth));
     left: calc(100vw * var(--logo__tablet-left) / var(--mainWidth));
+    display: block;
 
     width: calc(100vw * var(--logo__tablet-width) / var(--mainWidth));
     height: auto;
@@ -1057,7 +1058,7 @@ textarea::placeholder {
   padding: calc(100vw * var(--faq-group__box-paddintTop) / var(--mainWidth)) calc(100vw * var(--faq-group__box-paddingLeft) / var(--mainWidth));
 
   background-color: #FAF9F6;
-  border-radius: calc(100vw * var(--border__2-radius) / var(--mainWidth));
+  border-radius: calc(100vw * var(--contact-map-card__tablet-radius) / var(--mainWidth));
 }
 
 .faq-item {
@@ -1339,6 +1340,7 @@ textarea::placeholder {
 .contact-map-card {
   display: none;
 }
+
 .contact-map-card__tablet {
   display: block;
   padding: calc(100vw * var(--padding-2) / var(--mainWidth));
@@ -1347,6 +1349,28 @@ textarea::placeholder {
   border-radius: calc(100vw * var(--contact-map-card__tablet-radius) / var(--mainWidth));
   background: #FFFFFF;
   box-shadow: var(--box__shadow-4);
+}
+
+.contact-map-card__tablet__flex {
+  display: flex;
+  justify-content: space-between;
+
+  margin: calc(100vw * var(--contact-map-card__tablet__flex-marginTop) / var(--mainWidth)) calc(100vw * var(--contact-map-card__tablet__flex-marginRightLeft) / var(--mainWidth)) calc(100vw * var(--contact-map-card__tablet__flex-marginBottom) / var(--mainWidth));
+}
+
+.contact-map-card__tablet__phoneBox {
+  display: flex;
+  align-items: center;
+
+  gap: calc(100vw * var(--contact-map-card__tablet__phoneBox-gap) / var(--mainWidth));
+}
+
+.contact-map-card__tablet__phoneBox img {
+  width: calc(100vw * var(--contact-map-card__tablet__icons-width) / var(--mainWidth));
+}
+
+.contact-map-card__tablet__phoneBox-text p {
+  color: #7E7E87;
 }
 
 .map-container {
@@ -1364,19 +1388,27 @@ textarea::placeholder {
 }
 
 .call {
+  display: none;
   width: calc(100vw * var(--contact-switch-width) / var(--mainWidth));
   margin: calc(100vw * var(--contact-map__btn-marginTop) / var(--mainWidth)) calc(100vw * var(--contact-map__btn-marginLeftRight) / var(--mainWidth)) calc(100vw * var(--contact-map__btn-marginBottom) / var(--mainWidth));
 }
 
 .contact-info {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  flex-direction: row;
 
-  margin-bottom: calc(100vw * var(--padding-2) / var(--mainWidth));
+  margin-bottom: 0;
   gap: calc(100vw * var(--padding-2) / var(--mainWidth));;
 }
 
+.contact-info img {
+  width: calc(100vw * var(--contact-map-card__tablet__icons-width) / var(--mainWidth));
+}
+
 .phone {
+  margin-top: calc(100vw * var(--contact-phone-marginTop) / var(--mainWidth));
+  
   font-size: calc(100vw * var(--p2) / var(--mainWidth));
   font-weight: 700;
   text-decoration: none;

@@ -424,6 +424,10 @@ h3 {
     --contact-map__btn-marginTop: 16;
     --contact-map__btn-marginLeftRight: 9;
     --contact-map__btn-marginBottom: 14;
+    --contact-map-card__tablet__flex-marginTop: 14;
+    --contact-map-card__tablet__flex-marginRightLeft: 11;
+    --contact-map-card__tablet__flex-marginBottom: 9;
+    --contact-phone-marginTop: 4;
     --footer-description-marginTop: 14;
     --footer-nav-marginTop: 20;
     --footer-divider-marginTopBottom: 20;
@@ -477,6 +481,8 @@ h3 {
 
     --review__tablet-gap: 7;
 
+    --contact-map-card__tablet__phoneBox-gap: 4;
+
     --faq-contact-gap: 13;
     --footer-nav-gap: 65;
     --footer-bottom-gap: 10;
@@ -501,9 +507,11 @@ h3 {
     --faq-item__line-width: 310;
     --faq-icon-width: 18;
     --faq-icon__font__size-width: 13;
+
     --contact-card-width: 325;
     --contact-icon-width: 45;
     --contact-switch-width: 293;
+    --contact-map-card__tablet__icons-width: 18;
     --checkmark-width: 11;
     --review-header__width: 39;
     --map-container-width: 582;
