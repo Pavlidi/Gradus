@@ -171,7 +171,7 @@ h3 {
   --hero__name-margin: 267;
   --hero__title-margin: 17;
   --hero__btn-margin: 23;
-  --hero__universities-margin: 157;
+  --hero__universities-margin: 224;
   --hero__univer__marquee-margin: 18;
   --courses__main__Quote-marginLeft: 14;
   --format-card__bkg-marginTop: 10;
@@ -221,7 +221,7 @@ h3 {
   --padding-2: 7;
   --header-desktop-paddingTop: 50;
   --header__nav-bar-padding: 6;
-  --hero__univer__track__img-paddingRight: 88;
+  --hero__univer__track__img-paddingRight: 33;
   --courses__main-paddingTop: 16;
   --courses__format-card-paddingTop: 13;
   --courses__format-card-paddingRight: 10;
@@ -263,7 +263,7 @@ h3 {
   /*  Widths - Begin  */
   --header__nav-bar-width: 566;
   --hero__univer__marquee-width: 100vw;
-  --hero__univer__track__img-width: 1394;
+  --hero__univer__track__img-width: 724;
   --format-card__list__li__before-width: 11;
   --course-card-width: 332;
   --subject-switch-width: 188;
@@ -284,7 +284,7 @@ h3 {
 
 
   /*  Heights - Begin  */
-  --hero__univer__track-height: 108;
+  --hero__univer__track-height: 63;
   --hero__univer__bkg-height: 81;
   --faq-line-height: 2;
   --map-container-height: 223;
@@ -504,13 +504,13 @@ h3 {
     --main_font_size: calc(100vw * 14 / var(--mainWidth));
     /*  Текст, который пишется вне p, h1, h2, h3, a  */
 
-    --h__1: 40;
-    --h__2-M: 25;
+    --h__1: 36;
+    --h__2-M: 18;
     --h__2: 27;
     --h__3: 18;
     --h__1-margin: 50;
     --p1: 30;
-    --p2: 19;
+    --p2: 16;
     --p3: 17;
     --p4: 17;
     --p5: 15;
@@ -518,10 +518,10 @@ h3 {
     /*  Размеры шрифтов указаны в px, если изменить тут значения - они автоматически изменятся и в vw  */
 
         /*  Margins - Begin  */
-    --hero__name-margin: 151;
-    --hero__title-margin: 35;
-    --hero__btn-margin: 46;
-    --hero__universities-margin: 157;
+    --hero__name-margin: 121;
+    --hero__title-margin: 22;
+    --hero__btn-margin: 25;
+    --hero__universities-margin: 146;
     --hero__univer__marquee-margin: 20;
     --courses__main__Quote-marginLeft: 35;
     --format-card__bkg-marginTop: 13;
@@ -558,8 +558,10 @@ h3 {
     --padding-1: 26;
     --padding-2: 13;
 
-    --header-desktop-paddingTop: 20;
+    --header-desktop-paddingTop: 25;
     --header__nav-bar-padding: 6;
+
+    --hero__univer__track__img-paddingRight: 70;
 
     --courses__main-paddingTop: 23;
     --courses__format-card-paddingTop: 26;
@@ -586,7 +588,9 @@ h3 {
 
     /*  Widths - Begin  */
     --header__nav-bar-width: 566;
-    --logo__tablet-width: 115;
+    --logo__tablet-width: 70;
+    --hero__univer__marquee-width: 75vw;
+    --hero__univer__track__img-width: 1084;
     --format-card-trust-tablet-width: 686;
     --format-card-trust-photo-width: 180;
     --format-card__main-width: 234;
@@ -598,7 +602,8 @@ h3 {
 
 
     /*  Heights - Begin  */
-    --hero__univer__bkg-height: 100;
+    --hero__univer__bkg-height: 90;
+    --hero__univer__track-height: 70;
     --format-card-trust-photo-height: 208;
     --card__img-height: 162;
     --card__how__img-height: 244;
@@ -607,9 +612,9 @@ h3 {
 
 
     /*  Position - Begin  */
-    --hero__univer__bkg-top: 894;
-    --logo__tablet-top: 151;
-    --logo__tablet-left: 663;
+    --hero__univer__bkg-top: 616;
+    --logo__tablet-top: 143;
+    --logo__tablet-left: 685;
     --course-card__exam-switch-top: 14;
     --course-card__exam-switch-left: 214;
     /*  Position - End  */
@@ -629,11 +634,11 @@ h3 {
 
 
     /*  Button - Begin */
-    --btn__padding-top: calc(100vw * 12 / var(--mainWidth));
-    --btn__padding-right: calc(100vw * 14 / var(--mainWidth));
+    --btn__padding-top: calc(100vw * 11 / var(--mainWidth));
+    --btn__padding-right: calc(100vw * 16 / var(--mainWidth));
     --btn-thin__padding-top: calc(100vw * 8 / var(--mainWidth));
     --btn-thin__padding-right: calc(100vw * 12 / var(--mainWidth));
-    --btn__font-size: calc(100vw * 23 / var(--mainWidth));
+    --btn__font-size: calc(100vw * 18 / var(--mainWidth));
     --switch-btn-fontSize: 19;
     --switch-btn__active-fontSize: 17;
 

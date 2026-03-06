@@ -407,13 +407,14 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: calc(100vw * 321 / var(--mainWidth));
-    margin-left: calc(100vw * 22 / var(--mainWidth));
+    width: calc(100vw * 342 / var(--mainWidth));
+    margin-left: calc(100vw * 18 / var(--mainWidth));
     gap: calc(100vw * 27 / var(--mainWidth));
   }
 
   .nav-link {
-    font-size: calc(100vw * 15 / var(--mainWidth));
+    font-size: calc(100vw * 16 / var(--mainWidth));
+    line-height: 1;
     font-weight: 600;
     text-decoration: none;
     color: rgba(255,255,255,0.6);
@@ -437,10 +438,10 @@
     box-shadow: 0vw calc(100vw * 5 / var(--mainWidth)) calc(100vw * 10 / var(--mainWidth)) rgba(0, 0, 0, 0.20);
     color: #252532;
 
-    padding: calc(100vw * 9 / var(--mainWidth)) calc(100vw * 16 / var(--mainWidth));
+    padding: calc(100vw * 6 / var(--mainWidth)) calc(100vw * 16 / var(--mainWidth));
     border-radius: calc(100vw * 170 / var(--mainWidth));
 
-    font-size: calc(100vw * 19 / var(--mainWidth));
+    font-size: calc(100vw * 18 / var(--mainWidth));
 
     font-weight: 700;
     text-decoration: none;
