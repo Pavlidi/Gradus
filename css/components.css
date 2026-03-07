@@ -213,3 +213,38 @@
   /*                                                 Swiper - End                                          */
 }
 
+@media (min-width: 1024px) {
+/*                                                 Button and Switch - Begin                                          */
+
+  .thin {
+    padding: var(--btn-thin__padding-top) var(--btn-thin__padding-right);
+  }
+
+  .subject-switch {
+    margin-top: auto;
+    margin-right: calc(100vw * var(--subject-switch-marginRight) / var(--mainWidth));
+    margin-bottom: auto;
+    margin-left: auto;
+  }
+
+  .exam-switch {
+    position: absolute;
+    top: calc(100vw * var(--course-card__exam-switch-top) / var(--mainWidth));
+    left: calc(100vw * var(--course-card__exam-switch-left) / var(--mainWidth));
+  }
+  /*                                                 Button and Switch - End                                          */
+
+  /*                                                 Swiper - Begin                                          */
+  .swiper.mySwiper {
+    display: none;
+  }
+
+  .swiper.mySwiper2 {
+    display: none;
+  }
+
+  .swiper.mySwiper3 {
+    display: none;
+  }
+  /*                                                 Swiper - End                                          */
+}

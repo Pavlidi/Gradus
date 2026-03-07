@@ -104,6 +104,22 @@ document.querySelectorAll('.faq-question').forEach(button => {
   });
 });
 
+document.querySelectorAll('.faq-question-tablet').forEach(button => {
+  button.addEventListener('click', () => {
+
+    const item = button.parentElement;
+
+    // если хочешь чтобы был открыт только один пункт
+    document.querySelectorAll('.faq-item').forEach(el => {
+      if (el !== item) {
+        el.classList.remove('active');
+      }
+    });
+
+    item.classList.toggle('active');
+  });
+});
+
 
 updateCard();
 

@@ -51,6 +51,10 @@
   margin-top: calc(100vw * var(--hero__universities-margin) / var(--mainWidth));
 }
 
+.univer__dis {
+  display: none;
+}
+
 .univer__marquee {
   position: relative;  
   overflow: hidden;
@@ -340,6 +344,10 @@
   margin-left: calc(100vw * var(--trust__card__head-marginLeft) / var(--mainWidth));
 }
 
+.card__trust-text-tablet {
+  display: none;
+}
+
 .how__trust__tablet {
   display: none;
 }
@@ -411,6 +419,10 @@
   border: none;
   color: #252532;
   cursor: pointer;
+}
+
+.faq-question-tablet {
+  display: block;
 }
 
 .faq-icon {
@@ -793,8 +805,6 @@ textarea::placeholder {
 /*                                                 Courses - End                                          */
 
 /*                                                 Trust and How? - Begin                                          */
-
-
   .format-card-trust {
     display: none;
     flex-direction: column;
@@ -1129,6 +1139,19 @@ textarea::placeholder {
     margin-top: calc(100vw * var(--hero__universities-margin) / var(--mainWidth));
   }
 
+  .univer__dis {
+    display: block;
+    position: absolute;
+    z-index: 100;
+
+    margin-top: calc(100vw * 17 / var(--mainWidth));
+    left: calc(100vw * 180 / var(--mainWidth));
+    width: calc(100vw * 1084 / var(--mainWidth));
+    height: calc(100vw * 76 / var(--mainWidth));
+
+    background: linear-gradient(90deg, #FAF9F6 0%, rgba(250, 249, 246, 0.90) 5%, rgba(250, 249, 246, 0) 25%, rgba(250, 249, 246, 0) 75%, rgba(250, 249, 246, 0.90) 95%, #FAF9F6 100%);
+  }
+
   .univer__marquee {
     position: relative;  
     overflow: hidden;
@@ -1185,4 +1208,280 @@ textarea::placeholder {
     background: linear-gradient(0deg,rgba(250, 249, 246, 0.8) 0%,rgba(250, 249, 246, 1) 50%,rgba(250, 249, 246, 0.8) 100%);
   }
 /*                                                 Hero - End                                          */ 
+
+/*                                                 Courses - Begin                                          */
+  .courses__main {
+    display: none;
+  }  
+
+  .courses__main-tablet {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    width: max-content;
+    margin: calc(100vw * var(--margin__from-h1) / var(--mainWidth)) auto 0;
+    padding: calc(100vw * var(--courses__main-paddingTop) / var(--mainWidth)) calc(100vw * var(--padding-2) / var(--mainWidth)) calc(100vw * var(--padding-2) / var(--mainWidth));
+
+    border-radius: calc(100vw * var(--border__1-radius) / var(--mainWidth));
+    background-color: #fff;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.06);
+  }
+
+  .Quote__Subject {
+    display: flex;
+    align-items: center;
+  }
+
+  .format-card__bkg {
+    gap: calc(100vw * var(--format-card__bkg-gap) / var(--mainWidth));
+  }
+
+  .format-card {
+    padding-bottom: calc(100vw * var(--courses__format-card-paddingRight) / var(--mainWidth));
+    padding-left: calc(100vw * var(--courses__format-card-paddingTop) / var(--mainWidth));
+  }
+
+  .course-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    width: calc(100vw * var(--course-card-width) / var(--mainWidth));
+    margin: 0;
+    padding-top: calc(100vw * var(--courses__format-card-paddingTop) / var(--mainWidth));
+    padding-right: calc(100vw * var(--courses__format-card-paddingBottom) / var(--mainWidth));
+    padding-bottom: 0;
+    padding-left: calc(100vw * var(--courses__format-card-paddingTop) / var(--mainWidth));
+
+    border-radius: calc(100vw * var(--border__3-radius) / var(--mainWidth));
+    
+    background: #252532;
+    box-shadow: 5px 14px 40px -9px #3E3B56, 0px 8px 30px #2B2A35 inset;
+  }
+
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 0;
+  }
+
+  .btn.white {
+    position: relative;
+    margin-top: auto;
+    margin-right: calc(100vw * var(--btn__white-marginRight) / var(--mainWidth));
+    margin-bottom: calc(100vw * var(--btn__white-marginBottom) / var(--mainWidth));
+    margin-left: auto;
+  }
+/*                                                 Courses - End                                          */
+
+/*                                                 Trust and How? - Begin                                          */
+  .format-card-trust {
+    display: none;
+    flex-direction: column;
+    
+
+    padding: calc(100vw * var(--format-card-trust-text-padding) / var(--mainWidth));
+
+    border-width:  calc(100vw * var(--border__size_1) / var(--mainWidth));
+    border-color: #E2E2E2;
+    border-style: solid;
+    border-radius: calc(100vw * var(--border__3-radius) / var(--mainWidth));
+  }
+
+
+  .format-card-trust-tablet {
+    display: flex;
+    width: calc(100vw * var(--format-card-trust-tablet-width) / var(--mainWidth));
+
+    border-width:  calc(100vw * var(--border__size_1) / var(--mainWidth));
+    border-color: #E2E2E2;
+    border-style: solid;
+    border-radius: calc(100vw * var(--border__3-radius) / var(--mainWidth));
+  }
+
+  .format-card-trust-text {
+    display: flex;
+    flex-direction: column;
+
+    margin-top: calc(100vw * var(--format-card-trust-text-marginTop) / var(--mainWidth));
+    margin-right: calc(100vw * var(--format-card-trust-text-marginRight) / var(--mainWidth));
+    margin-bottom: calc(100vw * var(--format-card-trust-text-marginTop) / var(--mainWidth));
+    margin-left: calc(100vw * var(--format-card-trust-text-marginTop) / var(--mainWidth));
+    gap: calc(100vw * var(--format-card-trust-text-gap) / var(--mainWidth));
+  }
+
+
+  .format-card-trust-text h2 {
+    margin-bottom: calc(100vw * var(--format-card-trust-text__h2-marginBottom) / var(--mainWidth));
+  }
+
+  .format-card-trust-photo {
+    width: calc(100vw * var(--format-card-trust-photo-width) / var(--mainWidth));
+    height: calc(100vw * var(--format-card-trust-photo-height) / var(--mainWidth));
+    margin-top: calc(100vw * var(--format-card-trust-photo-marginTipRight) / var(--mainWidth));
+    margin-right: calc(100vw * var(--format-card-trust-photo-marginTipRight) / var(--mainWidth));
+    margin-bottom: calc(100vw * var(--format-card-trust-photo-marginTipRight) / var(--mainWidth));
+
+    border-radius: calc(100vw * var(--format-card-trust-photo-radius) / var(--mainWidth));
+  }
+
+  /* Стили карточки */
+  .card__trust-tablet {
+    display: flex;
+    justify-content: center;
+
+    margin-top: calc(100vw * var(--card__trust-tablet-marginTop) / var(--mainWidth));
+    gap: calc(100vw * var(--card__trust-tablet-gap) / var(--mainWidth));
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+
+    width: calc(100vw * var(--format-card__main-width) / var(--mainWidth));
+    padding: calc(100vw * var(--padding-2) / var(--mainWidth));
+
+    text-align: left;
+
+    border-radius: calc(100vw * 30 / var(--mainWidth));
+    background: #fff;
+    box-shadow: 0vw calc(100vw * 6 / var(--mainWidth)) calc(100vw * 30 / var(--mainWidth)) rgba(0, 0, 0, 0.06); 
+  }
+
+  .card img {
+    margin-bottom: calc(100vw * var(--trust__card__img-marginBottom) / var(--mainWidth));
+
+    height: calc(100vw * var(--card__img-height) / var(--mainWidth));
+    border-radius: calc(100vw * var(--border__4-radius) / var(--mainWidth));
+    border-width: calc(100vw * var(--border__size_2) / var(--mainWidth));
+    border-color: #E2E2E2;
+    border-style: solid;
+  }
+
+  .card__trust-text {
+    display: none;
+    margin-top: calc(100vw * var(--trust__card__text-marginTop) / var(--mainWidth));
+    margin-bottom: calc(100vw * var(--trust__card__text-marginBottom) / var(--mainWidth));
+    margin-left: calc(100vw * var(--trust__card__head-marginLeft) / var(--mainWidth));
+  }
+
+.card__trust-text-tablet {
+    display: block;
+    margin-top: calc(100vw * var(--trust__card__text-marginTop) / var(--mainWidth));
+    margin-bottom: calc(100vw * var(--trust__card__text-marginBottom) / var(--mainWidth));
+    margin-left: calc(100vw * var(--trust__card__head-marginLeft) / var(--mainWidth));
+  }
+
+  .how__trust__tablet {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-top: calc(100vw * var(--how__trust__tablet-marginTop) / var(--mainWidth));
+  }
+
+  .how__trust__tablet-first, .how__trust__tablet-second {
+    display: flex;
+
+    margin-top: calc(100vw * var(--how__trust__tablet-FirstSecond-marginTop) / var(--mainWidth));
+    gap: calc(100vw * var(--how__trust__tablet-gap) / var(--mainWidth));
+  }
+
+  .card.how {
+    width: calc(100vw * var(--format-card__how-width) / var(--mainWidth));
+  }
+
+  .card.how img {
+    height: calc(100vw * var(--card__how__img-height) / var(--mainWidth));
+  }
+/*                                                 Trust and How? - End                                          */
+
+/*                                                 FAQ - Begin                                          */
+  .faq-contact {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+
+    gap: calc(100vw * var(--faq-contact-gap) / var(--mainWidth))
+  }
+
+  .faq-group {
+    display: flex;
+
+    flex-direction: column;
+
+    margin-top: calc(100vw * var(--faq-group-marginTop) / var(--mainWidth));
+    margin-left: auto;
+    margin-right: 0;
+    /* margin-right: auto; */
+    
+    width: max-content;
+    padding: calc(100vw * var(--faq-group-paddingTop) / var(--mainWidth)) calc(100vw * var(--padding-2) / var(--mainWidth)) calc(100vw * var(--padding-2) / var(--mainWidth));
+
+    border-radius: calc(100vw * var(--border__5-radius) / var(--mainWidth));
+    background: #fff;
+    box-shadow: var(--box__shadow-3);
+  }
+
+  .faq-group__box {
+    display: flex;
+    flex-direction: column;
+
+    width: max-content;
+    padding: calc(100vw * var(--faq-group__box-paddintTop) / var(--mainWidth)) calc(100vw * var(--faq-group__box-paddingLeft) / var(--mainWidth));
+
+    background-color: #FAF9F6;
+    border-radius: calc(100vw * var(--contact-map-card__tablet-radius) / var(--mainWidth));
+  }
+
+  .faq-question {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+
+    width: calc(100vw * var(--faq-item__line-width) / var(--mainWidth));
+
+    background: none;
+    border: none;
+    color: #252532;
+    cursor: pointer;
+  }
+
+  .faq-question-tablet {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: calc(100vw * var(--faq-item__line-width) / var(--mainWidth));
+
+    background: none;
+    border: none;
+    color: #252532;
+    cursor: pointer;
+  }
+
+  /* Форма для вопросов */
+  .contact-card {
+    width: calc(100vw * var(--contact-card-width) / var(--mainWidth));
+
+    background: #fff;
+    margin-top: calc(100vw * var(--faq-group-marginTop) / var(--mainWidth));
+    /* margin-left: auto; */
+    margin-left: 0;
+    margin-right: auto;
+    padding: calc(100vw * var(--contact-card-paddingAll) / var(--mainWidth));
+    border-radius: calc(100vw * var(--border__5-radius) / var(--mainWidth));
+    box-shadow: var(--box__shadow-4);
+  }
+  /* поля */
+  .contact-form textarea {
+    padding-bottom: calc(100vw * var(--contact-form-textarea-paddingBottom) / var(--mainWidth));
+    border-radius: calc(100vw * var(--border__4-radius) / var(--mainWidth));
+    resize: none;
+  }
+/*                                                 FAQ - End                                          */
 }
