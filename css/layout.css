@@ -125,26 +125,10 @@
 
 .bkg-4 {
   position: absolute;
-  top: 813vw;
+  top: 995vw;
   width: 100vw;
   height: auto;
   z-index: -100;
-}
-
-.bkg-5 {
-  position: absolute;
-  top: 994vw;
-  width: 100vw;
-  height: auto;
-  z-index: -100;
-}
-
-.bkg-1-tablet, .bkg-2-tablet, .bkg-3-tablet, .bkg-4-tablet {
-  display: none;
-}
-
-.bkg-1-desktop, .bkg-2-desktop, .bkg-3-desktop, .bkg-4-desktop {
-  display: none;
 }
 /*                                                 Backgrounds-mobile - End                                                */
 
@@ -338,11 +322,7 @@
 /*                                                 Footer-tablet - End                                                */
 
 /*                                                 Backgrounds-tablet - Begin                                                */
-  .bkg-1, .bkg-2, .bkg-3, .bkg-4, .bkg-5 {
-    display: none;
-  }
-
-  .bkg-1-tablet {
+.bkg-1 {
     display: block;
     position: absolute;
     top: 200vw;
@@ -351,7 +331,7 @@
     z-index: -100;
   }
 
-  .bkg-2-tablet {
+  .bkg-2 {
     display: block;
     position: absolute;
     top: 288vw;
@@ -360,7 +340,7 @@
     z-index: -100;
   }
 
-  .bkg-3-tablet {
+  .bkg-3 {
     display: block;
     position: absolute;
     top: 388vw;
@@ -368,8 +348,8 @@
     height: auto;
     z-index: -100;
   }
-
-  .bkg-4-tablet {
+  
+  .bkg-4 {
     display: block;
     position: absolute;
     top: 526vw;
@@ -458,12 +438,8 @@
     transform: translateY(-0.1vw);
   }
 /*                                                 Header-desktop - End                                                */
-
-  .bkg-1-tablet, .bkg-2-tablet, .bkg-3-tablet, .bkg-4-tablet {
-      display: none;
-    }
-
-  .bkg-1-desktop {
+  
+  .bkg-1 {
     display: block;
     position: absolute;
     top: calc(100vw * 1344 / var(--mainWidth));
@@ -472,7 +448,7 @@
     z-index: -100;
   }
 
-  .bkg-2-desktop {
+  .bkg-2 {
     display: block;
     position: absolute;
     top: calc(100vw * 2140 / var(--mainWidth));
@@ -481,7 +457,7 @@
     z-index: -100;
   }
 
-  .bkg-3-desktop {
+  .bkg-3 {
     display: block;
     position: absolute;
     top: calc(100vw * 2950 / var(--mainWidth));
@@ -489,8 +465,8 @@
     height: auto;
     z-index: -100;
   }
-
-  .bkg-4-desktop {
+  
+  .bkg-4 {
     display: block;
     position: absolute;
     top: calc(100vw * 4300 / var(--mainWidth));

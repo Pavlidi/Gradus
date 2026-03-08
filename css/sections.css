@@ -864,10 +864,15 @@ textarea::placeholder {
   }
 
   .format-card-trust-photo {
+    display: block;
+    margin-top: auto;
+    margin-right: calc(100vw * var(--format-card-trust-photo-marginTipRight) / var(--mainWidth));
+    margin-bottom: auto;
+  }
+
+  .format-card-trust-photo img {
     width: calc(100vw * var(--format-card-trust-photo-width) / var(--mainWidth));
     height: calc(100vw * var(--format-card-trust-photo-height) / var(--mainWidth));
-    margin-top: calc(100vw * var(--format-card-trust-photo-marginTipRight) / var(--mainWidth));
-    margin-right: calc(100vw * var(--format-card-trust-photo-marginTipRight) / var(--mainWidth));
 
     border-radius: calc(100vw * var(--format-card-trust-photo-radius) / var(--mainWidth));
   }
@@ -1115,7 +1120,7 @@ textarea::placeholder {
   /*                                                 Contact Map - End                                          */
 }
 
-@media (min-width: 1024px) {  
+@media (min-width: 1024px) {
   .hero__name {
     display: block;
     position: relative;
@@ -1142,8 +1147,8 @@ textarea::placeholder {
     z-index: 100;
 
     margin-top: calc(100vw * 17 / var(--mainWidth));
-    left: calc(100vw * 180 / var(--mainWidth));
-    width: calc(100vw * 1084 / var(--mainWidth));
+    left: calc(100vw * 170 / var(--mainWidth));
+    width: calc(100vw * 1100 / var(--mainWidth));
     height: calc(100vw * 76 / var(--mainWidth));
 
     background: linear-gradient(90deg, #FAF9F6 0%, rgba(250, 249, 246, 0.90) 5%, rgba(250, 249, 246, 0) 25%, rgba(250, 249, 246, 0) 75%, rgba(250, 249, 246, 0.90) 95%, #FAF9F6 100%);
@@ -1320,11 +1325,15 @@ textarea::placeholder {
   }
 
   .format-card-trust-photo {
-    width: calc(100vw * var(--format-card-trust-photo-width) / var(--mainWidth));
-    height: calc(100vw * var(--format-card-trust-photo-height) / var(--mainWidth));
+    display: block;
     margin-top: calc(100vw * var(--format-card-trust-photo-marginTipRight) / var(--mainWidth));
     margin-right: calc(100vw * var(--format-card-trust-photo-marginTipRight) / var(--mainWidth));
     margin-bottom: calc(100vw * var(--format-card-trust-photo-marginTipRight) / var(--mainWidth));
+  }
+
+  .format-card-trust-photo img {
+    width: calc(100vw * var(--format-card-trust-photo-width) / var(--mainWidth));
+    height: calc(100vw * var(--format-card-trust-photo-height) / var(--mainWidth));
 
     border-radius: calc(100vw * var(--format-card-trust-photo-radius) / var(--mainWidth));
   }

@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="css/components.css">
-    <link rel="stylesheet" href="css/sections.css">
+    <link rel="stylesheet" href="css/base.css?v=1.3">
+    <link rel="stylesheet" href="css/layout.css?v=1.3">
+    <link rel="stylesheet" href="css/components.css?v=1.3">
+    <link rel="stylesheet" href="css/sections.css?v=1.3">
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-    <script src="js/main.js" defer></script>
+    <script src="js/main.js?v=1.3" defer></script>
     <title>Центр подготовки к ОГЭ и ЕГЭ «Градус»</title>
 </head>
 <body>
@@ -67,7 +67,7 @@
     <section class="hero">
         <picture class="logo__tablet">
             <source media="(min-width: 1024px)" srcset="image/logo-desktop.webp">
-            <img src="image/logo-tablet.webp" alt="">
+            <img src="image/logo-tablet.webp" alt="Солнечная система">
         </picture>
         <div class="hero__name">
             <h1>Подготовка<br>к ОГЭ и ЕГЭ по<br><span class="phys__grad">Физике</span> и <span class="math__grad">Математике</span></h1>
@@ -86,14 +86,8 @@
         <div class="univer__dis"></div>
        <div class="univer__marquee">
             <div class="univer__track">
-                <picture>
-                    <source media="(min-width: 768px)" srcset="image/univer-logo-tablet.webp">
-                    <img src="image/univer-logo-mobile.webp" alt="">
-                </picture>
-                <picture>
-                    <source media="(min-width: 768px)" srcset="image/univer-logo-tablet.webp">
-                    <img src="image/univer-logo-mobile.webp" alt="">
-                </picture>
+                <img src="image/univer-logo-mobile.webp" alt="Вузы выпускников">
+                <img src="image/univer-logo-mobile.webp" alt="Вузы выпускников">
             </div>
             <div class="univer__track-desktop">
                 <img src="image/univer-logo-desktop.webp" alt="Вузы выпускников">
@@ -211,9 +205,11 @@
     <!-- "Наши курсы" конец -->
 
     <!-- "Почему нам доверяют? начало" -->
-    <div><img src="image/bkg-mobile-1.webp" class="bkg-1" alt=""></div>
-    <div><img src="image/bkg-tablet-1.webp" class="bkg-1-tablet" alt=""></div>
-    <div><img src="image/bkg-desktop-1.webp" class="bkg-1-desktop" alt=""></div>
+    <picture class="bkg-1">
+        <source media="(min-width: 1024px)" srcset="image/bkg-desktop-1.webp">
+        <source media="(min-width: 768px)" srcset="image/bkg-tablet-1.webp">
+        <img src="image/bkg-mobile-1.webp" alt="Фон 1" loading="lazy">
+    </picture>
     <section class="trust">
         <div class="h1__grad">
             <h1>Почему нам доверяют?</h1>
@@ -221,7 +217,7 @@
         <div class="courses__main-trust">
             <div class="format-card__bkg-trust">
                 <div class="format-card-trust">
-                    <img src="image/logo-black.webp" class="format-card-trust_logo" alt="Градус">
+                    <img src="image/logo-black.webp" class="format-card-trust_logo" alt="Градус" loading="lazy">
                     <ul class="format-card__list">
                         <li class="liFirst"><div class="P2">Более 5 лет готовим к ОГЭ и ЕГЭ</div></li>
                         <li class="liFirst"><div class="P2">Очные занятия с преподавателем</div></li>
@@ -237,7 +233,11 @@
                         <p class="P2">Помогаем разобраться в физике и математике <b><strong>с нуля</strong></b> и выстроить прочную систему знаний. Сложные темы объясняем простыми словами — шаг за шагом, без спешки и формального заучивания.</p>
                         <p class="P2">Обучение идёт по чётко организованной программе, а задания подбираются под <b><strong>формат экзамена</strong></b>. Для этого используется собственная система генерации задач, максимально приближённых к ОГЭ и ЕГЭ.</p>
                     </div>
-                    <img src="image/photo-tablet.webp" class="format-card-trust-photo" alt="Фотография основателя центра">
+                    <!-- <img src="image/photo-tablet.webp" class="format-card-trust-photo" alt="Фотография основателя центра"> -->
+                     <picture class="format-card-trust-photo">
+                        <source media="(min-width: 1024px)" srcset="image/photo-desktop.webp">
+                        <img src="image/photo-tablet.webp" alt="Фотография основателя центра" loading="lazy">
+                    </picture>
                 </div>
             </div>
         </div>
@@ -246,7 +246,7 @@
                 <!-- Карточка 1 -->
                 <div class="swiper-slide">
                     <div class="card">
-                        <img src="image/trust-1.webp" alt="Контроль">
+                        <img src="image/trust-1.webp" alt="Контроль" loading="lazy">
                         <div class="card__trust-head"><h2>Контроль</h2></div>
                         <div class="card__trust-text"><p class="P4">Посещаемость, успеваемость, динамика  — вся информация доступна в одном месте.</p></div>
                     </div>
@@ -254,7 +254,7 @@
                 <!-- Карточка 2 -->
                 <div class="swiper-slide">
                     <div class="card">
-                        <img src="image/trust-2.webp" alt="Спокойствие">
+                        <img src="image/trust-2.webp" alt="Спокойствие" loading="lazy">
                         <div class="card__trust-head"><h2>Спокойствие</h2></div>
                         <div class="card__trust-text"><p class="P4">Подготовка проходит без спешки<br> и хаоса, с понятным планом<br>и регулярной обратной связью.</p></div>
                     </div>
@@ -262,7 +262,7 @@
                 <!-- Карточка 3 -->
                 <div class="swiper-slide">
                     <div class="card">
-                        <img src="image/trust-3.webp" alt="Надёжность">
+                        <img src="image/trust-3.webp" alt="Надёжность" loading="lazy">
                         <div class="card__trust-head"><h2>Надёжность</h2></div>
                         <div class="card__trust-text"><p class="P4">Мы отслеживаем прогресс<br>и корректируем процесс по мере необходимости.</p></div>
                     </div>
@@ -274,21 +274,21 @@
         <div class="card__trust-tablet">
         <!-- Карточка 1 -->
             <div class="card">
-                <img src="image/trust-2.webp" alt="Спокойствие">
+                <img src="image/trust-2.webp" alt="Спокойствие" loading="lazy">
                 <div class="card__trust-head"><h2>Спокойствие</h2></div>
                 <div class="card__trust-text"><p class="P4">Подготовка проходит без спешки<br> и хаоса, с понятным планом<br>и регулярной обратной связью.</p></div>
                 <div class="card__trust-text-tablet"><p class="P4">Подготовка проходит без спешки<br> и хаоса, с понятным планом<br>и регулярной обратной связью.</p></div>
             </div>
         <!-- Карточка 2 -->
             <div class="card">
-                <img src="image/trust-1.webp" alt="Контроль">
+                <img src="image/trust-1.webp" alt="Контроль" loading="lazy">
                 <div class="card__trust-head"><h2>Контроль</h2></div>
                 <div class="card__trust-text"><p class="P4">Посещаемость, успеваемость, динамика  — вся информация доступна в одном месте.</p></div>
                 <div class="card__trust-text-tablet"><p class="P4">Посещаемость, домашние задания, динамика — вся информация доступна родителю в одном месте.</p></div>
             </div>
         <!-- Карточка 3 -->
             <div class="card">
-                <img src="image/trust-3.webp" alt="Надёжность">
+                <img src="image/trust-3.webp" alt="Надёжность" loading="lazy">
                 <div class="card__trust-head"><h2>Надёжность</h2></div>
                 <div class="card__trust-text"><p class="P4">Мы отслеживаем прогресс<br>и корректируем процесс по мере необходимости.</p></div>
                 <div class="card__trust-text-tablet"><p class="P4">Мы отслеживаем прогресс ученика<br>и корректируем процесс по мере необходимости.</p></div>
@@ -298,9 +298,11 @@
     <!-- "Почему нам доверяют? конец" -->
 
      <!-- "Как проходят занятия начало" -->
-    <div><img src="image/bkg-mobile-2.webp" class="bkg-2" alt=""></div>
-    <div><img src="image/bkg-tablet-2.webp" class="bkg-2-tablet" alt=""></div>
-    <div><img src="image/bkg-desktop-2.webp" class="bkg-2-desktop" alt=""></div>
+    <picture class="bkg-2">
+        <source media="(min-width: 1024px)" srcset="image/bkg-desktop-2.webp">
+        <source media="(min-width: 768px)" srcset="image/bkg-tablet-2.webp">
+        <img src="image/bkg-mobile-2.webp" alt="Фон 2" loading="lazy">
+    </picture>
     <section class="trust">
         <div class="h1__grad">
             <h1>Как проходят занятия</h1>
@@ -310,7 +312,7 @@
                 <!-- Фото 1 -->
                 <div class="swiper-slide">
                     <div class="card how">
-                        <img src="image/how-mobile-1.webp" alt="Спокойствие">
+                        <img src="image/how-mobile-1.webp" alt="Лично помогаем каждому ученику" loading="lazy">
                         <div class="card__trust-head"><h2>Лично помогаем каждому</h2></div>
                         <div class="card__trust-text"><p class="P3">Преподаватель всегда объяснит, поможет разобраться, если что-то не понятно.</p></div>
                     </div>
@@ -318,7 +320,7 @@
                 <!-- Фото 2 -->
                 <div class="swiper-slide">
                     <div class="card how">
-                        <img src="image/how-mobile-2.webp" alt="Надёжность">
+                        <img src="image/how-mobile-2.webp" alt="Занимаемся в мини-группах" loading="lazy">
                         <div class="card__trust-head"><h2>Занимаемся в мини-группах</h2></div>
                         <div class="card__trust-text"><p class="P3">Каждая группа до 8 человек. Спокойная, рабочая атмосфера, без лишнего шума.</p></div>
                     </div>
@@ -326,7 +328,7 @@
                 <!-- Фото 3 -->
                 <div class="swiper-slide">
                     <div class="card how">
-                        <img src="image/how-mobile-3.webp" alt="">
+                        <img src="image/how-mobile-3.webp" alt="Учимся рассуждать" loading="lazy">
                         <div class="card__trust-head"><h2>Учимся рассуждать</h2></div>
                         <div class="card__trust-text"><p class="P3">Ученики учатся строить ход мысли, искать ошибки и понимать, откуда берется ответ.</p></div>
                     </div>
@@ -334,7 +336,7 @@
                 <!-- Фото 4 -->
                 <div class="swiper-slide">
                     <div class="card how">
-                        <img src="image/how-mobile-4.webp" alt="">
+                        <img src="image/how-mobile-4.webp" alt="Регулярно пишем пробники" loading="lazy">
                         <div class="card__trust-head"><h2>Регулярно пишем пробники</h2></div>
                         <div class="card__trust-text"><p class="P3">Пробуем свои силы на тестировании формата ОГЭ и ЕГЭ.</p></div>
                     </div>
@@ -347,14 +349,14 @@
             <div class="how__trust__tablet-first">
                 <!-- Фото 1 -->
                 <div class="card how">
-                    <img src="image/how-mobile-2.webp" alt="">
+                    <img src="image/how-mobile-2.webp" alt="Занимаемся в мини-группах" loading="lazy">
                     <div class="card__trust-head"><h2>Занимаемся в мини-группах</h2></div>
                     <div class="card__trust-text"><p class="P3">Каждая группа до 8 человек. Спокойная, рабочая атмосфера, без лишнего шума.</p></div>
                     <div class="card__trust-text-tablet"><p class="P3">Каждая группа до 8 человек. Спокойная, рабочая атмосфера, без лишнего шума.</p></div>
                 </div>
                 <!-- Фото 2 -->
                 <div class="card how">
-                    <img src="image/how-mobile-1.webp" alt="">
+                    <img src="image/how-mobile-1.webp" alt="Лично помогаем каждому ученику" loading="lazy">
                     <div class="card__trust-head"><h2>Лично помогаем каждому</h2></div>
                     <div class="card__trust-text"><p class="P3">Преподаватель всегда объяснит, поможет разобраться, если что-то не понятно.</p></div>
                     <div class="card__trust-text-tablet"><p class="P3">Преподаватель всегда объяснит, поможет разобраться, если что-то не понятно.</p></div>
@@ -363,14 +365,14 @@
             <div class="how__trust__tablet-second">
                 <!-- Фото 3 -->
                  <div class="card how">
-                    <img src="image/how-mobile-3.webp" alt="">
+                    <img src="image/how-mobile-3.webp" alt="Учимся рассуждать" loading="lazy">
                     <div class="card__trust-head"><h2>Учимся рассуждать</h2></div>
                     <div class="card__trust-text"><p class="P3">Ученики учатся строить ход мысли, искать ошибки и понимать, откуда берется ответ.</p></div>
                     <div class="card__trust-text-tablet"><p class="P3">Ученики учатся строить ход мысли, искать ошибки и понимать, откуда берется ответ.</p></div>
                 </div>
                 <!-- Фото 4 -->
                  <div class="card how">
-                    <img src="image/how-mobile-4.webp" alt="">
+                    <img src="image/how-mobile-4.webp" alt="Регулярно пишем пробники" loading="lazy">
                     <div class="card__trust-head"><h2>Регулярно пишем пробники</h2></div>
                     <div class="card__trust-text"><p class="P3">Пробуем свои силы на тестировании<br>формата ОГЭ и ЕГЭ, смотрим на результаты<br>и корректируем подготовку.</p></div>
                     <div class="card__trust-text-tablet"><p class="P3">Пробуем свои силы на тестировании формата ОГЭ и ЕГЭ.</p></div>
@@ -381,10 +383,11 @@
     <!-- "Как проходят занятия конец" -->
 
     <!-- "Вопросы и ответы - начало" -->
-    <div><img src="image/bkg-mobile-3.webp" class="bkg-3" alt=""></div>
-    <div><img src="image/bkg-mobile-4.webp" class="bkg-4" alt=""></div>
-    <div><img src="image/bkg-tablet-3.webp" class="bkg-3-tablet" alt=""></div>
-    <div><img src="image/bkg-desktop-3.webp" class="bkg-3-desktop" alt=""></div>
+    <picture class="bkg-3">
+        <source media="(min-width: 1024px)" srcset="image/bkg-desktop-3.webp">
+        <source media="(min-width: 768px)" srcset="image/bkg-tablet-3.webp">
+        <img src="image/bkg-mobile-3.webp" alt="Фон 3" loading="lazy">
+    </picture>
     <section class="faq">
             <div class="h1__grad">
                 <h1>Вопросы и ответы</h1>
@@ -535,8 +538,8 @@
                 </div>
                 <div class="contact-card">
                     <div class="contact-header">
-                        <div class="contact-icon"><img src="image/phone-mobile.webp" alt=""></div>
-                        <div class="contact-icon-desktop"><img src="image/phone-desktop.webp" alt=""></div>
+                        <div class="contact-icon"><img src="image/phone-mobile.webp" alt="Ответим на ваши вопросы" loading="lazy"></div>
+                        <div class="contact-icon-desktop"><img src="image/phone-desktop.webp" alt="Отетим на ваши вопросы" loading="lazy"></div>
                         <div class="contact-header-hp">
                             <h2>Остались вопросы?</h2>
                             <p class="P5">Заполните форму, мы свяжемся с вами<br>в ближайшее время.</p>
@@ -586,7 +589,7 @@
                 <div class="swiper-slide">
                     <div class="card-review">
                         <div class="review-header">
-                            <img src="image/parent1-mobile.webp"  alt="">
+                            <img src="image/parent1-mobile.webp"  alt="Отзыв родителя" loading="lazy">
                             <div>
                                 <h3 class="H3">Любимова Светлана</h3>
                                 <p class="P2">Родитель</p>
@@ -605,7 +608,7 @@
                     <div class="card-review">
                         <span><a href="">2ГИС</a></span>
                         <div class="review-header">
-                            <img src="image/parent2-mobile.webp" alt="">
+                            <img src="image/parent2-mobile.webp" alt="Отзыв родителя" loading="lazy">
                             <div>
                                 <h3 class="H3">Самсонюк Алёна</h3>
                                 <p class="P2">Родитель</p>
@@ -622,7 +625,7 @@
                 <div class="swiper-slide">
                     <div class="card-review">
                         <div class="review-header">
-                            <img src="image/parent3-mobile.webp" alt="">
+                            <img src="image/parent3-mobile.webp" alt="Отзыв ученика" loading="lazy">
                             <div>
                                 <h3 class="H3">Некрасов Алексей</h3>
                                 <p class="P2">Ученик</p>
@@ -639,7 +642,7 @@
                 <div class="swiper-slide">
                     <div class="card-review">
                         <div class="review-header">
-                            <img src="image/parent4-mobile.webp" alt="">
+                            <img src="image/parent4-mobile.webp" alt="Отзыв ученика" loading="lazy">
                             <div>
                                 <h3 class="H3">Тресков Илья</h3>
                                 <p class="P2">Ученик</p>
@@ -661,7 +664,7 @@
                 <!-- Отзыв 1 -->
                 <div class="card-review">
                     <div class="review-header">
-                        <img src="image/parent1-mobile.webp"  alt="">
+                        <img src="image/parent1-mobile.webp"  alt="Отзыв родителя" loading="lazy">
                         <div>
                             <h3 class="H3">Любимова Светлана</h3>
                             <p class="P2">Родитель</p>
@@ -678,7 +681,7 @@
                 <!-- Отзыв 3 -->
                 <div class="card-review">
                     <div class="review-header">
-                        <img src="image/parent3-mobile.webp" alt="">
+                        <img src="image/parent3-mobile.webp" alt="Отзыв ученика" loading="lazy">
                         <div>
                             <h3 class="H3">Некрасов Алексей</h3>
                             <p class="P2">Ученик</p>
@@ -696,7 +699,7 @@
                 <div class="card-review">
                     <span><a href="">2ГИС</a></span>
                     <div class="review-header">
-                        <img src="image/parent2-mobile.webp" alt="">
+                        <img src="image/parent2-mobile.webp" alt="Отзыв родителя" loading="lazy">
                         <div>
                             <h3 class="H3">Самсонюк Алёна</h3>
                             <p class="P2">Родитель</p>
@@ -713,7 +716,7 @@
                 <!-- Отзыв 4 -->
                 <div class="card-review">
                     <div class="review-header">
-                        <img src="image/parent4-mobile.webp" alt="">
+                        <img src="image/parent4-mobile.webp" alt="Отзыв ученика" loading="lazy">
                         <div>
                             <h3 class="H3">Тресков Илья</h3>
                             <p class="P2">Ученик</p>
@@ -732,15 +735,17 @@
     <!-- "Отзывы - конец" -->
 
     <!-- "Контакты - начало" -->
-     <div><img src="image/bkg-mobile-5.webp" class="bkg-5" alt=""></div>
-     <div><img src="image/bkg-tablet-4.webp" class="bkg-4-tablet" alt=""></div>
-     <div><img src="image/bkg-desktop-4.webp" class="bkg-4-desktop" alt=""></div>
+     <picture class="bkg-4">
+        <source media="(min-width: 1024px)" srcset="image/bkg-desktop-4.webp">
+        <source media="(min-width: 768px)" srcset="image/bkg-tablet-4.webp">
+        <img src="image/bkg-mobile-4.webp" alt="Фон 4" loading="lazy">
+    </picture>
      <section class="contact-map">
         <div class="contact-map-card">
 
             <!-- Карта -->
             <div class="map-container">
-            <iframe id="map_648979627" frameborder="0" src="https://makemap.2gis.ru/widget?data=eJw1jkFvgzAMhf-Ld42qkDQU-AGdduut0qYeEPG2SAFHwZXaIf77TNh8st6zv_cWoOwxo39FGpFzwBm6jwX4mRA6OGPP94ygIGVKmLn4CwwUKYv_ok1TfRrxOXDcPmT1OA85JA407cLP2-TxAV2l_2dV8LUHPjfcX9qFwsRyP5CUClPPpUxjDq3RprLKuYO2trY3eQ9-452O603B2KcLzWEPXCD2DF25rWrjXG3apjpaBXGzC00UfWqcrdumlXpEo8CcUKU4xXj9RozvReV8x_UXvH1ZGA" sandbox="allow-modals allow-forms allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
+            <iframe id="map_648979627" frameborder="0" src="https://makemap.2gis.ru/widget?data=eJw1jkFvgzAMhf-Ld42qkDQU-AGdduut0qYeEPG2SAFHwZXaIf77TNh8st6zv_cWoOwxo39FGpFzwBm6jwX4mRA6OGPP94ygIGVKmLn4CwwUKYv_ok1TfRrxOXDcPmT1OA85JA407cLP2-TxAV2l_2dV8LUHPjfcX9qFwsRyP5CUClPPpUxjDq3RprLKuYO2trY3eQ9-452O603B2KcLzWEPXCD2DF25rWrjXG3apjpaBXGzC00UfWqcrdumlXpEo8CcUKU4xXj9RozvReV8x_UXvH1ZGA" sandbox="allow-modals allow-forms allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation" loading="lazy"></iframe>
             </div>
 
             <!-- Кнопка -->
@@ -760,7 +765,7 @@
          <div class="contact-map-card__tablet">
             <!-- Карта -->
             <div class="map-container">
-                <iframe id="map_937652176" frameborder="0" width="582px" height="279px" src="https://makemap.2gis.ru/widget?data=eJw1jkFOxDAMRe9ittGoySQ07QFA7GaHBJpF1RiIlNZR6pEYqt4dp4WsIn_7_bcClYAFwzPShFwiLtC_r8D3jNDDEw58KwgKcqGMhfd8hZESFckfGuP1h5GcI6d6Id-Ay1hi5kjzMfh5mQN-Q6-b_7cp-DwK7xX313ahOLPsjyRScR54l_Hm1Omu81Y5d2rOZ9faq9zHUIHOb1cF05AvtMSjcYU0MPT7sm6td1Z3jW2NglTjijPW2_ZR3K01TvyIJoE5oYo5pfT6hZje9imXG26_FktZVA" sandbox="allow-modals allow-forms allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
+                <iframe id="map_937652176" frameborder="0" width="582px" height="279px" src="https://makemap.2gis.ru/widget?data=eJw1jkFOxDAMRe9ittGoySQ07QFA7GaHBJpF1RiIlNZR6pEYqt4dp4WsIn_7_bcClYAFwzPShFwiLtC_r8D3jNDDEw58KwgKcqGMhfd8hZESFckfGuP1h5GcI6d6Id-Ay1hi5kjzMfh5mQN-Q6-b_7cp-DwK7xX313ahOLPsjyRScR54l_Hm1Omu81Y5d2rOZ9faq9zHUIHOb1cF05AvtMSjcYU0MPT7sm6td1Z3jW2NglTjijPW2_ZR3K01TvyIJoE5oYo5pfT6hZje9imXG26_FktZVA" sandbox="allow-modals allow-forms allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation" loading="lazy"></iframe>
             </div>
             <div class="contact-map-card__tablet__flex">
                 <!-- Контакты -->
