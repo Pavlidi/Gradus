@@ -7,19 +7,7 @@
   z-index: -100;
 }
 
-.orbits__tablet {
-  display: none;
-}
-
-.orbits__desktop {
-  display: none;
-}
-
 .logo__tablet {
-  display: none;
-}
-
-.logo__desktop {
   display: none;
 }
 
@@ -27,7 +15,7 @@
   display: block;
   position: relative;
   margin-top: calc(100vw * var(--hero__name-margin) / var(--mainWidth));
-} 
+}
 
 .h1__grad {
   display: flex;
@@ -56,7 +44,7 @@
 }
 
 .univer__marquee {
-  position: relative;  
+  position: relative;
   overflow: hidden;
 
   width: var(--hero__univer__marquee-width);
@@ -64,12 +52,12 @@
 }
 
 .univer__track {
-    display: flex;
-    width: max-content;
+  display: flex;
+  width: max-content;
 
-    height: calc(100vw * var(--hero__univer__track-height) / var(--mainWidth));
+  height: calc(100vw * var(--hero__univer__track-height) / var(--mainWidth));
 
-    animation: univer__track 20s linear infinite;
+  animation: univer__track 20s linear infinite;
 }
 
 .univer__track-desktop {
@@ -77,20 +65,22 @@
 }
 
 .univer__track img {
-    display: block;
+  display: block;
 
-    flex: 0 0 calc(100vw * var(--hero__univer__track__img-width) / var(--mainWidth));
-    padding-right: calc(100vw * var(--hero__univer__track__img-paddingRight) / var(--mainWidth));
+  flex: 0 0 calc(100vw * var(--hero__univer__track__img-width) / var(--mainWidth));
+  padding-right: calc(100vw * var(--hero__univer__track__img-paddingRight) / var(--mainWidth));
 
-    backface-visibility: hidden;
-    transform: translateZ(0);
-    will-change: transform;;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  will-change: transform;
+  ;
 }
 
 @keyframes univer__track {
   from {
     transform: translate3d(0, 0, 0);
   }
+
   to {
     transform: translate3d(calc(-1 * 100vw * (var(--hero__univer__track__img-width) + var(--hero__univer__track__img-paddingRight)) / var(--mainWidth)), 0, 0);
   }
@@ -103,8 +93,9 @@
   top: calc(100vw * var(--hero__univer__bkg-top) / var(--mainWidth));
   z-index: -90;
   box-shadow: 0vw -9.7436vw 25.641vw 1.2821vw #faf9f6, 0vw 9.7436vw 25.641vw 1.2821vw #faf9f6;
-  background: linear-gradient(0deg,rgba(250, 249, 246, 0.8) 0%,rgba(250, 249, 246, 1) 50%,rgba(250, 249, 246, 0.8) 100%);
+  background: linear-gradient(0deg, rgba(250, 249, 246, 0.8) 0%, rgba(250, 249, 246, 1) 50%, rgba(250, 249, 246, 0.8) 100%);
 }
+
 /*                                                 Hero - End                                               */
 
 
@@ -163,8 +154,8 @@
   padding-right: calc(100vw * var(--courses__format-card-paddingRight) / var(--mainWidth));
   padding-bottom: calc(100vw * var(--courses__format-card-paddingBottom) / var(--mainWidth));
   padding-left: calc(100vw * var(--courses__format-card-paddingLeft) / var(--mainWidth));
-  
-  border-width:  calc(100vw * var(--border__size_1) / var(--mainWidth));
+
+  border-width: calc(100vw * var(--border__size_1) / var(--mainWidth));
   border-color: #E2E2E2;
   border-style: solid;
   border-radius: calc(100vw * var(--border__3-radius) / var(--mainWidth));
@@ -189,6 +180,7 @@
   position: relative;
   padding-left: calc(100vw * var(--format-card__list__li-paddingLeft) / var(--mainWidth));
 }
+
 /* Галочка */
 .format-card__list li::before {
   content: "";
@@ -207,7 +199,7 @@
 
 .btn.format-card__btn {
   position: relative;
-  
+
   width: max-content;
   margin-top: calc(100vw * var(--format-card__btn-marginTop) / var(--mainWidth));
   margin-left: auto;
@@ -227,7 +219,7 @@
   padding-left: calc(100vw * var(--courses__format-card-paddingLeft) / var(--mainWidth));
 
   border-radius: calc(100vw * var(--border__3-radius) / var(--mainWidth));
-  
+
   background: #252532;
   box-shadow: 1.28205vw 3.5897vw 10.2564vw -2.30769vw #3d3a56, inset 0vw 2.05128vw 7.6923vw #2a2a34;
 }
@@ -240,7 +232,8 @@
   margin-top: calc(100vw * var(--card-header-marginTop) / var(--mainWidth));
 }
 
-.course-card h2, .course-card p {
+.course-card h2,
+.course-card p {
   color: #fff;
 }
 
@@ -259,6 +252,7 @@
   margin-top: calc(100vw * var(--btn__white-marginTop) / var(--mainWidth));
   margin-left: auto;
 }
+
 /*                                                 Courses - End                                          */
 
 
@@ -288,11 +282,11 @@
 .format-card-trust {
   display: flex;
   flex-direction: column;
-  
+
 
   padding: calc(100vw * var(--format-card-trust-text-padding) / var(--mainWidth));
 
-  border-width:  calc(100vw * var(--border__size_1) / var(--mainWidth));
+  border-width: calc(100vw * var(--border__size_1) / var(--mainWidth));
   border-color: #E2E2E2;
   border-style: solid;
   border-radius: calc(100vw * var(--border__3-radius) / var(--mainWidth));
@@ -355,6 +349,7 @@
 .card.how {
   width: calc(100vw * var(--format-card__how-width) / var(--mainWidth));
 }
+
 /*                                                 Trust and How? - End                                          */
 
 
@@ -375,7 +370,7 @@
   margin-top: calc(100vw * var(--faq-group-marginTop) / var(--mainWidth));
   margin-left: auto;
   margin-right: auto;
-  
+
   width: max-content;
   padding: calc(100vw * var(--faq-group-paddingTop) / var(--mainWidth)) calc(100vw * var(--padding-2) / var(--mainWidth)) calc(100vw * var(--padding-2) / var(--mainWidth));
 
@@ -422,7 +417,7 @@
 }
 
 .faq-question-tablet {
-  display: block;
+  display: none;
 }
 
 .faq-icon {
@@ -433,10 +428,11 @@
   height: calc(100vw * var(--faq-icon-width) / var(--mainWidth));
   border-radius: 50%;
 
-  padding-bottom: calc(100vw * 2 / var(--mainWidth)); /* Костыль для того чтобы плюс был ровно по центру */
-  
-  
-  font-size: calc(100vw *  var(--faq-icon__font__size-width) / var(--mainWidth));
+  padding-bottom: calc(100vw * 2 / var(--mainWidth));
+  /* Костыль для того чтобы плюс был ровно по центру */
+
+
+  font-size: calc(100vw * var(--faq-icon__font__size-width) / var(--mainWidth));
   color: white;
 
   background: #252532;
@@ -458,7 +454,7 @@
   height: calc(100vw * var(--faq-line-height) / var(--mainWidth));
   margin-top: calc(100vw * var(--faq-line-marginTop) / var(--mainWidth));
   margin-bottom: calc(100vw * var(--faq-line-marginBottom) / var(--mainWidth));
-  
+
   background-color: #E2E2E2;
 }
 
@@ -471,6 +467,7 @@
 .faq-item.active .faq-icon {
   transform: rotate(45deg);
 }
+
 /* Форма для вопросов */
 
 .contact-card {
@@ -493,8 +490,19 @@
   width: calc(100vw * var(--contact-icon-width) / var(--mainWidth));
 }
 
+.contact-icon-desktop {
+  display: none;
+}
+
 .contact-icon img {
-  object-fit: contain; /* или cover если нужно заполнить полностью */
+  object-fit: contain;
+  /* или cover если нужно заполнить полностью */
+  display: block;
+}
+
+.contact-icon-desktop img {
+  object-fit: contain;
+  /* или cover если нужно заполнить полностью */
   display: block;
 }
 
@@ -504,13 +512,14 @@
 
   gap: calc(100vw * var(--contact-header-hp-gap) / var(--mainWidth));
 }
+
 /* поля */
 .contact-form input,
 .contact-form textarea {
   width: calc(100vw * var(--contact-switch-width) / var(--mainWidth));
   margin-top: calc(100vw * var(--contact-form_input_textareat-marginTop) / var(--mainWidth));
   padding: calc(100vw * var(--contact-form_input_textareat-paddingTop) / var(--mainWidth)) calc(100vw * var(--contact-form_input_textareat-paddingLeftRight) / var(--mainWidth)) calc(100vw * var(--contact-form_input_textareat-paddingButtom) / var(--mainWidth));
-  
+
   border-radius: calc(100vw * var(--border__1-radius) / var(--mainWidth));
   border-width: calc(100vw * var(--border__size_2) / var(--mainWidth));
   border-style: solid;
@@ -524,6 +533,8 @@
 }
 
 .contact-form textarea {
+  padding-top: calc(100vw * 11 / var(--mainWidth));
+  ;
   padding-bottom: calc(100vw * var(--contact-form-textarea-paddingBottom) / var(--mainWidth));
   border-radius: calc(100vw * var(--border__3-radius) / var(--mainWidth));
   resize: none;
@@ -561,11 +572,11 @@ textarea::placeholder {
   flex-shrink: 0;
 }
 
-.checkbox input:checked + .checkmark {
+.checkbox input:checked+.checkmark {
   background: #2F2E2D;
 }
 
-.checkbox input:checked + .checkmark::after {
+.checkbox input:checked+.checkmark::after {
   content: "";
   width: calc(100vw * var(--checkmark-width) / var(--mainWidth));
   height: calc(100vw * var(--checkmark-width) / var(--mainWidth));
@@ -575,7 +586,8 @@ textarea::placeholder {
   background-position: center;
   position: absolute;
   color: #fff;
-  font-size: calc(100vw * var(--p2) / var(--mainWidth));;
+  font-size: calc(100vw * var(--p2) / var(--mainWidth));
+  ;
 
 }
 
@@ -588,6 +600,11 @@ textarea::placeholder {
   margin-top: calc(100vw * var(--contact-form__btn-marginTop) / var(--mainWidth));
   margin-left: calc(100vw * var(--contact-form__btn-marginLeft) / var(--mainWidth));
 }
+
+.br-desktop {
+  display: none;
+}
+
 /*                                                 FAQ - End                                          */
 
 
@@ -648,6 +665,7 @@ textarea::placeholder {
   flex-direction: column;
   gap: calc(100vw * var(--card__review-text-gap) / var(--mainWidth));
 }
+
 /*                                                 Review - End                                          */
 
 
@@ -661,7 +679,7 @@ textarea::placeholder {
   justify-content: center;
 
   margin-top: calc(100vw * var(--contact-map-marginTop) / var(--mainWidth));
-  margin-bottom: calc(100vw * var(--contact-map-marginBottom)  / var(--mainWidth));
+  margin-bottom: calc(100vw * var(--contact-map-marginBottom) / var(--mainWidth));
 }
 
 .contact-map-card {
@@ -696,7 +714,8 @@ textarea::placeholder {
   flex-direction: column;
 
   margin-bottom: calc(100vw * var(--padding-2) / var(--mainWidth));
-  gap: calc(100vw * var(--padding-2) / var(--mainWidth));;
+  gap: calc(100vw * var(--padding-2) / var(--mainWidth));
+  ;
 }
 
 .phone {
@@ -705,26 +724,14 @@ textarea::placeholder {
   text-decoration: none;
   color: #1e1f2a;
 }
+
 /*                                                 Contact Map - End                                          */
 
 /* Test*/
 
 @media (min-width: 768px) {
-/*                                                 Hero - Begin                                          */ 
-  .orbits {
-    display: none;
-  }
 
-  .orbits__tablet {
-    position: absolute;
-    top: 0;
-    display: block;
-
-    width: 100vw;
-    height: auto;
-    z-index: -100;
-  }
-
+  /*                                                 Hero - Begin                                          */
   .logo__tablet {
     position: absolute;
     top: calc(100vw * var(--logo__tablet-top) / var(--mainWidth));
@@ -734,12 +741,23 @@ textarea::placeholder {
     width: calc(100vw * var(--logo__tablet-width) / var(--mainWidth));
     height: auto;
   }
-/*                                                 Hero - End                                          */ 
 
-/*                                                 Courses - Begin                                          */
+  .logo {
+    position: absolute;
+    top: calc(100vw * var(--logo__tablet-top) / var(--mainWidth));
+    left: calc(100vw * var(--logo__tablet-left) / var(--mainWidth));
+    display: none;
+
+    width: calc(100vw * var(--logo__tablet-width) / var(--mainWidth));
+    height: auto;
+  }
+
+  /*                                                 Hero - End                                          */
+
+  /*                                                 Courses - Begin                                          */
   .courses__main {
     display: none;
-  }  
+  }
 
   .courses__main-tablet {
     position: relative;
@@ -782,7 +800,7 @@ textarea::placeholder {
     padding-left: calc(100vw * var(--courses__format-card-paddingTop) / var(--mainWidth));
 
     border-radius: calc(100vw * var(--border__3-radius) / var(--mainWidth));
-    
+
     background: #252532;
     box-shadow: 5px 14px 40px -9px #3E3B56, 0px 8px 30px #2B2A35 inset;
   }
@@ -802,17 +820,18 @@ textarea::placeholder {
     margin-bottom: calc(100vw * var(--btn__white-marginBottom) / var(--mainWidth));
     margin-left: auto;
   }
-/*                                                 Courses - End                                          */
 
-/*                                                 Trust and How? - Begin                                          */
+  /*                                                 Courses - End                                          */
+
+  /*                                                 Trust and How? - Begin                                          */
   .format-card-trust {
     display: none;
     flex-direction: column;
-    
+
 
     padding: calc(100vw * var(--format-card-trust-text-padding) / var(--mainWidth));
 
-    border-width:  calc(100vw * var(--border__size_1) / var(--mainWidth));
+    border-width: calc(100vw * var(--border__size_1) / var(--mainWidth));
     border-color: #E2E2E2;
     border-style: solid;
     border-radius: calc(100vw * var(--border__3-radius) / var(--mainWidth));
@@ -823,7 +842,7 @@ textarea::placeholder {
     display: flex;
     width: calc(100vw * var(--format-card-trust-tablet-width) / var(--mainWidth));
 
-    border-width:  calc(100vw * var(--border__size_1) / var(--mainWidth));
+    border-width: calc(100vw * var(--border__size_1) / var(--mainWidth));
     border-color: #E2E2E2;
     border-style: solid;
     border-radius: calc(100vw * var(--border__3-radius) / var(--mainWidth));
@@ -873,7 +892,7 @@ textarea::placeholder {
 
     border-radius: calc(100vw * 30 / var(--mainWidth));
     background: #fff;
-    box-shadow: 0vw calc(100vw * 6 / var(--mainWidth)) calc(100vw * 30 / var(--mainWidth)) rgba(0, 0, 0, 0.06); 
+    box-shadow: 0vw calc(100vw * 6 / var(--mainWidth)) calc(100vw * 30 / var(--mainWidth)) rgba(0, 0, 0, 0.06);
   }
 
   .card img {
@@ -894,7 +913,8 @@ textarea::placeholder {
     margin-top: calc(100vw * var(--how__trust__tablet-marginTop) / var(--mainWidth));
   }
 
-  .how__trust__tablet-first, .how__trust__tablet-second {
+  .how__trust__tablet-first,
+  .how__trust__tablet-second {
     display: flex;
 
     margin-top: calc(100vw * var(--how__trust__tablet-FirstSecond-marginTop) / var(--mainWidth));
@@ -908,9 +928,10 @@ textarea::placeholder {
   .card.how img {
     height: calc(100vw * var(--card__how__img-height) / var(--mainWidth));
   }
-/*                                                 Trust and How? - End                                          */
 
-/*                                                 FAQ - Begin                                          */
+  /*                                                 Trust and How? - End                                          */
+
+  /*                                                 FAQ - Begin                                          */
   .faq-contact {
     display: flex;
     flex-direction: row;
@@ -929,7 +950,7 @@ textarea::placeholder {
     margin-left: auto;
     margin-right: 0;
     /* margin-right: auto; */
-    
+
     width: max-content;
     padding: calc(100vw * var(--faq-group-paddingTop) / var(--mainWidth)) calc(100vw * var(--padding-2) / var(--mainWidth)) calc(100vw * var(--padding-2) / var(--mainWidth));
 
@@ -948,6 +969,7 @@ textarea::placeholder {
     background-color: #FAF9F6;
     border-radius: calc(100vw * var(--contact-map-card__tablet-radius) / var(--mainWidth));
   }
+
   /* Форма для вопросов */
   .contact-card {
     width: calc(100vw * var(--contact-card-width) / var(--mainWidth));
@@ -961,15 +983,17 @@ textarea::placeholder {
     border-radius: calc(100vw * var(--border__5-radius) / var(--mainWidth));
     box-shadow: var(--box__shadow-4);
   }
+
   /* поля */
   .contact-form textarea {
     padding-bottom: calc(100vw * var(--contact-form-textarea-paddingBottom) / var(--mainWidth));
     border-radius: calc(100vw * var(--border__4-radius) / var(--mainWidth));
     resize: none;
   }
-/*                                                 FAQ - End                                          */
 
-/*                                                 Review - Begin                                          */
+  /*                                                 FAQ - End                                          */
+
+  /*                                                 Review - Begin                                          */
   .review__tablet {
     display: flex;
     justify-content: center;
@@ -978,7 +1002,8 @@ textarea::placeholder {
     gap: calc(100vw * var(--review__tablet-gap) / var(--mainWidth));
   }
 
-  .review__tablet__first, .review__tablet__second {
+  .review__tablet__first,
+  .review__tablet__second {
     display: flex;
     flex-direction: column;
 
@@ -1010,9 +1035,10 @@ textarea::placeholder {
     background-color: #fff;
     box-shadow: var(--box__shadow-4);
   }
-/*                                                 Review - End                                          */
 
-/*                                                 Contact Map - Begin                                          */
+  /*                                                 Review - End                                          */
+
+  /*                                                 Contact Map - Begin                                          */
   .contact-map-card {
     display: none;
   }
@@ -1069,7 +1095,8 @@ textarea::placeholder {
     flex-direction: row;
 
     margin-bottom: 0;
-    gap: calc(100vw * var(--padding-2) / var(--mainWidth));;
+    gap: calc(100vw * var(--padding-2) / var(--mainWidth));
+    ;
   }
 
   .contact-info img {
@@ -1078,52 +1105,22 @@ textarea::placeholder {
 
   .phone {
     margin-top: calc(100vw * var(--contact-phone-marginTop) / var(--mainWidth));
-    
+
     font-size: calc(100vw * var(--p2) / var(--mainWidth));
     font-weight: 700;
     text-decoration: none;
     color: #1e1f2a;
   }
-/*                                                 Contact Map - End                                          */
+
+  /*                                                 Contact Map - End                                          */
 }
 
-@media (min-width: 1024px) {
-  .orbits {
-    display: none;
-  }
-
-  .orbits__tablet {
-  display: none;
-  }
-
-  .orbits__desktop {
-    display: block;
-    position: absolute;
-    top: 0;
-    width: 100vw;
-    height: auto;
-    z-index: -100;
-  }
-
-  .logo__tablet {
-    display: none;
-  }
-
-  .logo__desktop {
-    display: block;
-    position: absolute;
-    top: calc(100vw * var(--logo__tablet-top) / var(--mainWidth));
-    left: calc(100vw * var(--logo__tablet-left) / var(--mainWidth));
-
-    width: calc(100vw * var(--logo__tablet-width) / var(--mainWidth));
-    height: auto;
-  }
-
+@media (min-width: 1024px) {  
   .hero__name {
-  display: block;
-  position: relative;
-  margin-top: calc(100vw * var(--hero__name-margin) / var(--mainWidth));
-} 
+    display: block;
+    position: relative;
+    margin-top: calc(100vw * var(--hero__name-margin) / var(--mainWidth));
+  }
 
   .hero__title {
     margin-top: calc(100vw * var(--hero__title-margin) / var(--mainWidth));
@@ -1153,7 +1150,7 @@ textarea::placeholder {
   }
 
   .univer__marquee {
-    position: relative;  
+    position: relative;
     overflow: hidden;
 
     width: var(--hero__univer__marquee-width);
@@ -1163,37 +1160,39 @@ textarea::placeholder {
   }
 
   .univer__track {
-      display: none;
+    display: none;
   }
 
   .univer__track-desktop {
-      display: flex;
-      width: max-content;
+    display: flex;
+    width: max-content;
 
-      height: calc(100vw * var(--hero__univer__track-height) / var(--mainWidth));
+    height: calc(100vw * var(--hero__univer__track-height) / var(--mainWidth));
 
-      animation: univer__track 20s linear infinite;
+    animation: univer__track 20s linear infinite;
   }
 
   .univer__track-desktop img {
-      display: block;
+    display: block;
 
-      flex: 0 0 calc(100vw * var(--hero__univer__track__img-width) / var(--mainWidth));
-      padding-right: calc(100vw * var(--hero__univer__track__img-paddingRight) / var(--mainWidth));
+    flex: 0 0 calc(100vw * var(--hero__univer__track__img-width) / var(--mainWidth));
+    padding-right: calc(100vw * var(--hero__univer__track__img-paddingRight) / var(--mainWidth));
 
-      backface-visibility: hidden;
-      transform: translateZ(0);
-      will-change: transform;;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    will-change: transform;
+    ;
+  }
+
+  @keyframes univer__track {
+    from {
+      transform: translate3d(0, 0, 0);
     }
 
-    @keyframes univer__track {
-      from {
-        transform: translate3d(0, 0, 0);
-      }
-      to {
-        transform: translate3d(calc(-1 * 100vw * (var(--hero__univer__track__img-width) + var(--hero__univer__track__img-paddingRight)) / var(--mainWidth)), 0, 0);
-      }
+    to {
+      transform: translate3d(calc(-1 * 100vw * (var(--hero__univer__track__img-width) + var(--hero__univer__track__img-paddingRight)) / var(--mainWidth)), 0, 0);
     }
+  }
 
   .univer__bkg {
     width: 100vw;
@@ -1205,14 +1204,15 @@ textarea::placeholder {
     margin-left: auto;
     z-index: -90;
     box-shadow: 0px -38px 100px 5px #faf9f6, 0px 38px 100px 5px #faf9f6;
-    background: linear-gradient(0deg,rgba(250, 249, 246, 0.8) 0%,rgba(250, 249, 246, 1) 50%,rgba(250, 249, 246, 0.8) 100%);
+    background: linear-gradient(0deg, rgba(250, 249, 246, 0.8) 0%, rgba(250, 249, 246, 1) 50%, rgba(250, 249, 246, 0.8) 100%);
   }
-/*                                                 Hero - End                                          */ 
 
-/*                                                 Courses - Begin                                          */
+  /*                                                 Hero - End                                          */
+
+  /*                                                 Courses - Begin                                          */
   .courses__main {
     display: none;
-  }  
+  }
 
   .courses__main-tablet {
     position: relative;
@@ -1255,7 +1255,7 @@ textarea::placeholder {
     padding-left: calc(100vw * var(--courses__format-card-paddingTop) / var(--mainWidth));
 
     border-radius: calc(100vw * var(--border__3-radius) / var(--mainWidth));
-    
+
     background: #252532;
     box-shadow: 5px 14px 40px -9px #3E3B56, 0px 8px 30px #2B2A35 inset;
   }
@@ -1275,17 +1275,18 @@ textarea::placeholder {
     margin-bottom: calc(100vw * var(--btn__white-marginBottom) / var(--mainWidth));
     margin-left: auto;
   }
-/*                                                 Courses - End                                          */
 
-/*                                                 Trust and How? - Begin                                          */
+  /*                                                 Courses - End                                          */
+
+  /*                                                 Trust and How? - Begin                                          */
   .format-card-trust {
     display: none;
     flex-direction: column;
-    
+
 
     padding: calc(100vw * var(--format-card-trust-text-padding) / var(--mainWidth));
 
-    border-width:  calc(100vw * var(--border__size_1) / var(--mainWidth));
+    border-width: calc(100vw * var(--border__size_1) / var(--mainWidth));
     border-color: #E2E2E2;
     border-style: solid;
     border-radius: calc(100vw * var(--border__3-radius) / var(--mainWidth));
@@ -1296,7 +1297,7 @@ textarea::placeholder {
     display: flex;
     width: calc(100vw * var(--format-card-trust-tablet-width) / var(--mainWidth));
 
-    border-width:  calc(100vw * var(--border__size_1) / var(--mainWidth));
+    border-width: calc(100vw * var(--border__size_1) / var(--mainWidth));
     border-color: #E2E2E2;
     border-style: solid;
     border-radius: calc(100vw * var(--border__3-radius) / var(--mainWidth));
@@ -1348,7 +1349,7 @@ textarea::placeholder {
 
     border-radius: calc(100vw * 30 / var(--mainWidth));
     background: #fff;
-    box-shadow: 0vw calc(100vw * 6 / var(--mainWidth)) calc(100vw * 30 / var(--mainWidth)) rgba(0, 0, 0, 0.06); 
+    box-shadow: 0vw calc(100vw * 6 / var(--mainWidth)) calc(100vw * 30 / var(--mainWidth)) rgba(0, 0, 0, 0.06);
   }
 
   .card img {
@@ -1368,7 +1369,7 @@ textarea::placeholder {
     margin-left: calc(100vw * var(--trust__card__head-marginLeft) / var(--mainWidth));
   }
 
-.card__trust-text-tablet {
+  .card__trust-text-tablet {
     display: block;
     margin-top: calc(100vw * var(--trust__card__text-marginTop) / var(--mainWidth));
     margin-bottom: calc(100vw * var(--trust__card__text-marginBottom) / var(--mainWidth));
@@ -1383,7 +1384,8 @@ textarea::placeholder {
     margin-top: calc(100vw * var(--how__trust__tablet-marginTop) / var(--mainWidth));
   }
 
-  .how__trust__tablet-first, .how__trust__tablet-second {
+  .how__trust__tablet-first,
+  .how__trust__tablet-second {
     display: flex;
 
     margin-top: calc(100vw * var(--how__trust__tablet-FirstSecond-marginTop) / var(--mainWidth));
@@ -1397,9 +1399,10 @@ textarea::placeholder {
   .card.how img {
     height: calc(100vw * var(--card__how__img-height) / var(--mainWidth));
   }
-/*                                                 Trust and How? - End                                          */
 
-/*                                                 FAQ - Begin                                          */
+  /*                                                 Trust and How? - End                                          */
+
+  /*                                                 FAQ - Begin                                          */
   .faq-contact {
     display: flex;
     flex-direction: row;
@@ -1418,7 +1421,7 @@ textarea::placeholder {
     margin-left: auto;
     margin-right: 0;
     /* margin-right: auto; */
-    
+
     width: max-content;
     padding: calc(100vw * var(--faq-group-paddingTop) / var(--mainWidth)) calc(100vw * var(--padding-2) / var(--mainWidth)) calc(100vw * var(--padding-2) / var(--mainWidth));
 
@@ -1432,7 +1435,7 @@ textarea::placeholder {
     flex-direction: column;
 
     width: max-content;
-    padding: calc(100vw * var(--faq-group__box-paddintTop) / var(--mainWidth)) calc(100vw * var(--faq-group__box-paddingLeft) / var(--mainWidth));
+    padding: calc(100vw * var(--faq-group__box-paddingLeft) / var(--mainWidth));
 
     background-color: #FAF9F6;
     border-radius: calc(100vw * var(--contact-map-card__tablet-radius) / var(--mainWidth));
@@ -1477,11 +1480,119 @@ textarea::placeholder {
     border-radius: calc(100vw * var(--border__5-radius) / var(--mainWidth));
     box-shadow: var(--box__shadow-4);
   }
+
+  .contact-icon {
+    display: none;
+  }
+
+  .contact-icon-desktop {
+    display: block;
+    width: calc(100vw * var(--contact-icon-width) / var(--mainWidth));
+    height: calc(100vw * var(--contact-icon-height) / var(--mainWidth));
+  }
+
+  .contact-icon img {
+    object-fit: contain;
+    /* или cover если нужно заполнить полностью */
+    display: block;
+  }
+
+  .contact-icon-desktop img {
+    object-fit: contain;
+    /* или cover если нужно заполнить полностью */
+    display: block;
+  }
+
   /* поля */
   .contact-form textarea {
     padding-bottom: calc(100vw * var(--contact-form-textarea-paddingBottom) / var(--mainWidth));
     border-radius: calc(100vw * var(--border__4-radius) / var(--mainWidth));
     resize: none;
   }
-/*                                                 FAQ - End                                          */
+
+  .br__phone {
+    display: none;
+  }
+
+  .br__desktop {
+    display: inline;
+  }
+
+  /*                                                 FAQ - End                                          */
+
+  /*                                                 Contact Map - Begin                                          */
+  .contact-map-card {
+    display: none;
+  }
+
+  .contact-map-card__tablet {
+    display: block;
+    padding: calc(100vw * var(--padding-2) / var(--mainWidth));
+    text-align: center;
+
+    border-radius: calc(100vw * var(--contact-map-card__tablet-radius) / var(--mainWidth));
+    background: #FFFFFF;
+    box-shadow: var(--box__shadow-4);
+  }
+
+  .contact-map-card__tablet__flex {
+    display: flex;
+    justify-content: space-between;
+
+    margin: calc(100vw * var(--contact-map-card__tablet__flex-marginTop) / var(--mainWidth)) calc(100vw * var(--contact-map-card__tablet__flex-marginRightLeft) / var(--mainWidth)) calc(100vw * var(--contact-map-card__tablet__flex-marginBottom) / var(--mainWidth));
+  }
+
+  .contact-map-card__tablet__phoneBox {
+    display: flex;
+    align-items: center;
+
+    gap: calc(100vw * var(--contact-map-card__tablet__phoneBox-gap) / var(--mainWidth));
+  }
+
+  .contact-map-card__tablet__phoneBox img {
+    width: calc(100vw * var(--contact-map-card__tablet__icons-width) / var(--mainWidth));
+  }
+
+  .contact-map-card__tablet__phoneBox-text p {
+    color: #7E7E87;
+  }
+
+  .map-container {
+    width: calc(100vw * var(--map-container-width) / var(--mainWidth));
+    height: calc(100vw * var(--map-container-height) / var(--mainWidth));
+
+    border-radius: calc(100vw * var(--contact-map-card__tablet-map-radius) / var(--mainWidth));
+    overflow: hidden;
+  }
+
+  .call {
+    display: block;
+    width: calc(100vw * 240 / var(--mainWidth));
+    margin: 0;
+  }
+
+  .contact-info {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+
+    margin-bottom: 0;
+    gap: calc(100vw * var(--padding-2) / var(--mainWidth));
+    ;
+  }
+
+  .contact-info img {
+    width: calc(100vw * var(--contact-map-card__tablet__icons-width) / var(--mainWidth));
+  }
+
+  .phone {
+    margin-top: calc(100vw * var(--contact-phone-marginTop) / var(--mainWidth));
+
+    font-size: calc(100vw * var(--p2) / var(--mainWidth));
+    font-weight: 700;
+    text-decoration: none;
+    color: #1e1f2a;
+  }
+
+  /*                                                 Contact Map - End                                          */
 }

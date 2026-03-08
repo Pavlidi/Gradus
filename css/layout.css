@@ -142,6 +142,10 @@
 .bkg-1-tablet, .bkg-2-tablet, .bkg-3-tablet, .bkg-4-tablet {
   display: none;
 }
+
+.bkg-1-desktop, .bkg-2-desktop, .bkg-3-desktop, .bkg-4-desktop {
+  display: none;
+}
 /*                                                 Backgrounds-mobile - End                                                */
 
 /*                                                 Footer-mobile - Begin                                                */
@@ -454,4 +458,44 @@
     transform: translateY(-0.1vw);
   }
 /*                                                 Header-desktop - End                                                */
+
+  .bkg-1-tablet, .bkg-2-tablet, .bkg-3-tablet, .bkg-4-tablet {
+      display: none;
+    }
+
+  .bkg-1-desktop {
+    display: block;
+    position: absolute;
+    top: calc(100vw * 1344 / var(--mainWidth));
+    width: 100vw;
+    height: auto;
+    z-index: -100;
+  }
+
+  .bkg-2-desktop {
+    display: block;
+    position: absolute;
+    top: calc(100vw * 2140 / var(--mainWidth));
+    width: 100vw;
+    height: auto;
+    z-index: -100;
+  }
+
+  .bkg-3-desktop {
+    display: block;
+    position: absolute;
+    top: calc(100vw * 2950 / var(--mainWidth));
+    width: 100vw;
+    height: auto;
+    z-index: -100;
+  }
+
+  .bkg-4-desktop {
+    display: block;
+    position: absolute;
+    top: calc(100vw * 4300 / var(--mainWidth));
+    width: 100vw;
+    height: auto;
+    z-index: -100;
+  }
 }

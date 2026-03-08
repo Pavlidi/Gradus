@@ -17,7 +17,7 @@
         <!-- Mobile header -->
     <header class="header">
         <div class="container header__inner">
-            <img src="image/logo-mobile.png" class="logo" alt="Градус">
+            <img src="image/logo-mobile.webp" class="logo" alt="">
 
             <button class="burger" id="burger">
                 <span></span>
@@ -57,12 +57,18 @@
 
 
     <!--    Hero - Begin    -->
-    <div><img  class="orbits" src="image/orbits-mobile.webp" alt=""></div>
-    <div><img  class="orbits__tablet" src="image/orbits-tablet.webp" alt=""></div>
-    <div><img  class="orbits__desktop" src="image/orbits-desktop.webp" alt=""></div>
+    <div>
+        <picture class="orbits">
+            <source media="(min-width: 1024px)" srcset="image/orbits-desktop.webp">
+            <source media="(min-width: 768px)" srcset="image/orbits-tablet.webp">
+            <img src="image/orbits-mobile.webp" alt="">
+        </picture>
+    </div>
     <section class="hero">
-        <div><img  class="logo__tablet" src="image/logo-tablet.webp" alt=""></div>
-        <div><img  class="logo__desktop" src="image/logo-desktop.webp" alt=""></div>
+        <picture class="logo__tablet">
+            <source media="(min-width: 1024px)" srcset="image/logo-desktop.webp">
+            <img src="image/logo-tablet.webp" alt="">
+        </picture>
         <div class="hero__name">
             <h1>Подготовка<br>к ОГЭ и ЕГЭ по<br><span class="phys__grad">Физике</span> и <span class="math__grad">Математике</span></h1>
         </div>
@@ -80,8 +86,14 @@
         <div class="univer__dis"></div>
        <div class="univer__marquee">
             <div class="univer__track">
-                <img src="image/univer-logo-mobile.webp" alt="Вузы выпускников">
-                <img src="image/univer-logo-mobile.webp" alt="Вузы выпускников">
+                <picture>
+                    <source media="(min-width: 768px)" srcset="image/univer-logo-tablet.webp">
+                    <img src="image/univer-logo-mobile.webp" alt="">
+                </picture>
+                <picture>
+                    <source media="(min-width: 768px)" srcset="image/univer-logo-tablet.webp">
+                    <img src="image/univer-logo-mobile.webp" alt="">
+                </picture>
             </div>
             <div class="univer__track-desktop">
                 <img src="image/univer-logo-desktop.webp" alt="Вузы выпускников">
@@ -201,6 +213,7 @@
     <!-- "Почему нам доверяют? начало" -->
     <div><img src="image/bkg-mobile-1.webp" class="bkg-1" alt=""></div>
     <div><img src="image/bkg-tablet-1.webp" class="bkg-1-tablet" alt=""></div>
+    <div><img src="image/bkg-desktop-1.webp" class="bkg-1-desktop" alt=""></div>
     <section class="trust">
         <div class="h1__grad">
             <h1>Почему нам доверяют?</h1>
@@ -287,6 +300,7 @@
      <!-- "Как проходят занятия начало" -->
     <div><img src="image/bkg-mobile-2.webp" class="bkg-2" alt=""></div>
     <div><img src="image/bkg-tablet-2.webp" class="bkg-2-tablet" alt=""></div>
+    <div><img src="image/bkg-desktop-2.webp" class="bkg-2-desktop" alt=""></div>
     <section class="trust">
         <div class="h1__grad">
             <h1>Как проходят занятия</h1>
@@ -370,6 +384,7 @@
     <div><img src="image/bkg-mobile-3.webp" class="bkg-3" alt=""></div>
     <div><img src="image/bkg-mobile-4.webp" class="bkg-4" alt=""></div>
     <div><img src="image/bkg-tablet-3.webp" class="bkg-3-tablet" alt=""></div>
+    <div><img src="image/bkg-desktop-3.webp" class="bkg-3-desktop" alt=""></div>
     <section class="faq">
             <div class="h1__grad">
                 <h1>Вопросы и ответы</h1>
@@ -521,6 +536,7 @@
                 <div class="contact-card">
                     <div class="contact-header">
                         <div class="contact-icon"><img src="image/phone-mobile.webp" alt=""></div>
+                        <div class="contact-icon-desktop"><img src="image/phone-desktop.webp" alt=""></div>
                         <div class="contact-header-hp">
                             <h2>Остались вопросы?</h2>
                             <p class="P5">Заполните форму, мы свяжемся с вами<br>в ближайшее время.</p>
@@ -654,7 +670,8 @@
                     </div>
                     <div class="card__review-text">
                         <p class="P3">Благодарим преподавателя Сергея,<br>за проделанную им работу.</p>
-                        <p class="P3">Подготовил ребёнка к ЕГЭ очень быстро<br>и понятно. </p>
+                        <p class="P3 br__phone">Подготовил ребёнка к ЕГЭ очень быстро<br> и понятно. </p>
+                        <p class="P3 br__desktop">Подготовил ребёнка к ЕГЭ очень быстро и понятно. </p>
                         <p class="P3">Успехов в дальнейшей работе!</p>
                     </div>
                 </div>
@@ -686,8 +703,10 @@
                         </div>
                     </div>
                     <div class="card__review-text">
-                        <p class="P3">Благодаря Сергею Юрьевичу, сын полюбил<br>математику, сдал ОГЭ.</p>
-                        <p class="P3">Сергей Юрьевич всегда идет на контакт с<br>родителями, объяснит что у ребенка получается,<br>что не получается, находит подход.</p>
+                        <p class="P3 br__phone">Благодаря Сергею Юрьевичу, сын полюбил<br>математику, сдал ОГЭ.</p>
+                        <p class="P3 br__desktop">Благодаря Сергею Юрьевичу, сын полюбил математику,<br>сдал ОГЭ.</p>
+                        <p class="P3 br__phone">Сергей Юрьевич всегда идет на контакт с<br>родителями, объяснит что у ребенка получается,<br>что не получается, находит подход.</p>
+                        <p class="P3 br__desktop">Сергей Юрьевич всегда идет на контакт с родителями,<br>объяснит что у ребенка получается, что не получается,<br>находит подход.</p>
                         <p class="P3">Дети с большим удовольствиям идут на занятия.<br>Спасибо большое!</p>
                     </div>
                 </div>
@@ -715,6 +734,7 @@
     <!-- "Контакты - начало" -->
      <div><img src="image/bkg-mobile-5.webp" class="bkg-5" alt=""></div>
      <div><img src="image/bkg-tablet-4.webp" class="bkg-4-tablet" alt=""></div>
+     <div><img src="image/bkg-desktop-4.webp" class="bkg-4-desktop" alt=""></div>
      <section class="contact-map">
         <div class="contact-map-card">
 

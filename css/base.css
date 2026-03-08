@@ -544,15 +544,21 @@ h3 {
     --format-card-trust-text__h2-marginBottom: 10;
     --format-card-trust-photo-marginTipRight: 26;
 
+    --faq-group__title-marginBottom: 13;
     --faq-group-marginTop: 20;
+    --faq-line-marginTop: 13;
+    --faq-line-marginBottom: 13;
 
     --review__tablet-marginTop: 16;
 
+    --contact-header-marginBottom: 26;
     --contact-map-marginTop: 60;
     --contact-map-marginBottom: 55;
     --contact-map-card__tablet__flex-marginTop: 14;
     --contact-map-card__tablet__flex-marginRightLeft: 11;
     --contact-map-card__tablet__flex-marginBottom: 9;
+    --contact-form_input_textareat-marginTop: 13;
+    --checkbox-marginLeft: 7;
     --contact-phone-marginTop: 4;
     /*  Margins - End  */
 
@@ -573,7 +579,11 @@ h3 {
     --courses__format-card-paddingLeft: 26;
     --format-card__btn-marginTop: 16;
 
-    --card-review__tablet-padding: 14;
+    --contact-card-paddingAll: 26;
+    
+    
+
+    --card-review__tablet-padding: 20;
     /*  Paddings - End  */
 
 
@@ -584,9 +594,10 @@ h3 {
 
     --how__trust__tablet-gap: 13;
 
-    --review__tablet-gap: 7;
+    --review__tablet-gap: 13;
 
     --contact-map-card__tablet__phoneBox-gap: 4;
+    --contact-header-gap: 13;
 
     --faq-contact-gap: 13;
     /*  Gapps - End  */
@@ -607,9 +618,12 @@ h3 {
     --format-card__how-width: 399;
 
     --faq-item__line-width: 545;
+    --contact-card-width: 377;
+    --contact-switch-width: 325;
+    --contact-icon-width: 69;
 
     --contact-map-card__tablet__icons-width: 18;
-    --map-container-width: 582;
+    --map-container-width: 1026;
     /*  Widths - End  */
 
 
@@ -619,7 +633,8 @@ h3 {
     --format-card-trust-photo-height: 276;
     --card__img-height: 196;
     --card__how__img-height: 271;
-    --map-container-height: 279;
+    --contact-icon-height: 59;
+    --map-container-height: 479;
     /*  Heights - End  */
 
 
