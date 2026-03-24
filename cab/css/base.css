@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: var(--text-md);
+  background-color: #FAF9F6;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+h1, h2, h3, p, a {
+  font-family: 'Inter', sans-serif;
+  text-align: center;
+}
+
+/*                                                 Переменные величины - Begin                                                 */
+:root {
+  /*  Layout tokens  */
+  --container-width: 390;
+  --container-padding: calc(100vw * 16 / var(--container-width));
+  --section-padding: calc(100vw * 32 / var(--container-width));
+
+
+  /*  Spacing Tokens  */
+  --space-4xs: calc(100vw * 2 / var(--container-width));
+  --space-3xs: calc(100vw * 4 / var(--container-width));
+  --space-2xs: calc(100vw * 6 / var(--container-width));
+  --space-xs: calc(100vw * 8 / var(--container-width));
+  --space-sm: calc(100vw * 12 / var(--container-width));
+  --space-md: calc(100vw * 16 / var(--container-width));
+  --space-lg: calc(100vw * 24 / var(--container-width));
+  --space-xl: calc(100vw * 32 / var(--container-width));
+  --space-2xl: calc(100vw * 40 / var(--container-width));
+  --space-3xl: calc(100vw * 48 / var(--container-width));
+  --space-4xl: calc(100vw * 62 / var(--container-width));
+
+
+  /*  Size Tokens  */
+  --size-2xs: calc(100vw * 10 / var(--container-width));
+  --size-xs: calc(100vw * 12 / var(--container-width));
+  --size-sm: calc(100vw * 14 / var(--container-width));
+  --size-md: calc(100vw * 16 / var(--container-width));
+  --size-lg: calc(100vw * 18 / var(--container-width));
+  --size-xl: calc(100vw * 20 / var(--container-width));
+
+
+  /*  Radius Tokens  */
+  --radius-xs: calc(100vw * 2 / var(--container-width));
+  --radius-sm: calc(100vw * 4 / var(--container-width));
+  --radius-md: calc(100vw * 6 / var(--container-width));
+  --radius-lg: calc(100vw * 8 / var(--container-width));
+  --radius-xl: calc(100vw * 12 / var(--container-width));
+  --radius-card-s: calc(100vw * 20 / var(--container-width));
+  --radius-card: calc(100vw * 25 / var(--container-width));
+  --radius-round: calc(100vw * 100 / var(--container-width));
+
+
+  /*  Border Tokens  */
+  --border-width: calc(100vw * 1 / var(--container-width));
+  --border-width-thick: calc(100vw * 2 / var(--container-width));
+
+
+  /*  Text sizes  */
+  --text-xs: calc(100vw * 12 / var(--container-width));
+  --text-sm: calc(100vw * 13 / var(--container-width));
+  --text-md: calc(100vw * 15 / var(--container-width));
+  --text-lg: calc(100vw * 19 / var(--container-width));
+  --text-xl: calc(100vw * 24 / var(--container-width));
+  --text-2xl: calc(100vw * 30 / var(--container-width));
+  --text-3xl: calc(100vw * 37 / var(--container-width));
+
+
+  /*  Line-heights  */
+  --line-height-sm: calc(100vw * 1.4 / var(--container-width));
+  --line-height-md: calc(100vw * 1.5 / var(--container-width));
+  --line-height-lg: calc(100vw * 1.6 / var(--container-width));
+
+
+  /*  Colors  */
+  --color-text: #252532;
+  --color-text: #FFFFFF;
+  --color-text: #BABABA;
+  --color-text: #5C5C64;
+  --color-text: #FAF9F6;
+  --color-text: #FFFFFF;
+  --color-text: #FAF9F6;
+  --color-text: #E2E2E2;
+  --color-text: #32303E;
+  --color-text: #F8F8F8;
+  --color-text: #252532;
+  --color-text: #E9E9EB;
+  --color-text: #DBEFFE;
+  --color-text: #F64F59;
+  --color-text: #92FE9D;
+
+}
+
+/*                                                 Переменные величины - End                                                 */
+
+
+/*                                                 Постоянные величины - Begin                                                 */
+:root {
+  /*  Backgrounds - Begin */
+  --btn__background: linear-gradient(180deg, #3B3A4E 0%, #272733 100%);
+  /*  Backgrounds - End */
+
+  /*  BoxShadow - Begin */
+  --box__shadow-1: 0vw 0.7692vw 1.28205vw #0000000f, 0vw 0.7692vw 2.05128vw #00000026;
+  --box__shadow-2: 0vw 0.7692vw 0.2564vw #0000000f, 0vw 0.7692vw 2.05128vw #00000026;
+  --box__shadow-3: 0vw 1.53846vw 7.6923vw rgba(0, 0, 0, 0.06);
+  --box__shadow-4: 0vw 1.5385vw 7.6923vw rgba(0, 0, 0, 0.06);
+  /*  BoxShadow - End */
+}
+
+/*                                                 Постоянные величины - Begin                                                 */
+
+
+@media (min-width: 768px) {
+
+  * {
+    line-height: 1;
+  }
+
+  /*                                                 Переменные величины - Begin                                                 */
+  :root {
+    /*  Layout tokens  */
+    --container-width: 768;
+    --container-padding: calc(100vw * 24 / var(--container-width));
+    --section-padding: calc(100vw * 48 / var(--container-width));
+
+
+    /*  Spacing Tokens  */
+    --space-4xs: calc(100vw * 2 / var(--container-width));
+    --space-3xs: calc(100vw * 4 / var(--container-width));
+    --space-2xs: calc(100vw * 8 / var(--container-width));
+    --space-xs: calc(100vw * 10 / var(--container-width));
+    --space-sm: calc(100vw * 16 / var(--container-width));
+    --space-md: calc(100vw * 20 / var(--container-width));
+    --space-lg: calc(100vw * 32 / var(--container-width));
+    --space-xl: calc(100vw * 40 / var(--container-width));
+    --space-2xl: calc(100vw * 52 / var(--container-width));
+    --space-3xl: calc(100vw * 64 / var(--container-width));
+    --space-4xl: calc(100vw * 80 / var(--container-width));
+
+
+    /*  Size Tokens  */
+    --size-2xs: calc(100vw * 12 / var(--container-width));
+    --size-xs: calc(100vw * 14 / var(--container-width));
+    --size-sm: calc(100vw * 16 / var(--container-width));
+    --size-md: calc(100vw * 18 / var(--container-width));
+    --size-lg: calc(100vw * 20 / var(--container-width));
+    --size-xl: calc(100vw * 24 / var(--container-width));
+
+
+    /*  Radius Tokens  */
+    --radius-xs: calc(100vw * 2 / var(--container-width));
+    --radius-sm: calc(100vw * 4 / var(--container-width));
+    --radius-md: calc(100vw * 8 / var(--container-width));
+    --radius-lg: calc(100vw * 10 / var(--container-width));
+    --radius-xl: calc(100vw * 14 / var(--container-width));
+    --radius-card-s: calc(100vw * 22 / var(--container-width));
+    --radius-card: calc(100vw * 28 / var(--container-width));
+    --radius-round: calc(100vw * 100 / var(--container-width));
+
+
+    /*  Text sizes  */
+    --text-xs: calc(100vw * 13 / var(--container-width));
+    --text-sm: calc(100vw * 14 / var(--container-width));
+    --text-md: calc(100vw * 16 / var(--container-width));
+    --text-lg: calc(100vw * 20 / var(--container-width));
+    --text-xl: calc(100vw * 26 / var(--container-width));
+    --text-2xl: calc(100vw * 34 / var(--container-width));
+    --text-3xl: calc(100vw * 42 / var(--container-width));
+  }
+
+  /*                                                 Переменные величины - End                                                 */
+
+  /*                                                 Постоянные величины - Begin                                                 */
+  :root {
+    /*  Backgrounds - Begin */
+    --btn__background: linear-gradient(180deg, #3B3A4E 0%, #272733 100%);
+    /*  Backgrounds - End */
+  }
+
+  /*                                                 Постоянные величины - Begin                                                 */
+}
+
+@media (min-width: 1024px) {
+
+  * {
+    line-height: 1;
+  }
+
+  /*                                                 Переменные величины - Begin                                                 */
+  :root {
+    /*  Layout tokens  */
+    --container-width: 1440;
+    --container-padding: calc(100vw * 24 / var(--container-width));
+    --section-padding: calc(100vw * 64 / var(--container-width));
+
+
+    /*  Spacing Tokens  */
+    --space-4xs: calc(100vw * 2 / var(--container-width));
+    --space-3xs: calc(100vw * 4 / var(--container-width));
+    --space-2xs: calc(100vw * 8 / var(--container-width));
+    --space-xs: calc(100vw * 10 / var(--container-width));
+    --space-sm: calc(100vw * 12 / var(--container-width));
+    --space-md: calc(100vw * 24 / var(--container-width));
+    --space-lg: calc(100vw * 32 / var(--container-width));
+    --space-xl: calc(100vw * 48 / var(--container-width));
+    --space-2xl: calc(100vw * 56 / var(--container-width));
+    --space-3xl: calc(100vw * 64 / var(--container-width));
+    --space-4xl: calc(100vw * 80 / var(--container-width));
+
+
+    /*  Size Tokens  */
+    --size-2xs: calc(100vw * 12 / var(--container-width));
+    --size-xs: calc(100vw * 14 / var(--container-width));
+    --size-sm: calc(100vw * 16 / var(--container-width));
+    --size-md: calc(100vw * 20 / var(--container-width));
+    --size-lg: calc(100vw * 24 / var(--container-width));
+    --size-xl: calc(100vw * 28 / var(--container-width));
+
+
+    /*  Text sizes  */
+    --text-xs: calc(100vw * 13 / var(--container-width));
+    --text-sm: calc(100vw * 14 / var(--container-width));
+    --text-md: calc(100vw * 17 / var(--container-width));
+    --text-lg: calc(100vw * 21 / var(--container-width));
+    --text-xl: calc(100vw * 28 / var(--container-width));
+    --text-2xl: calc(100vw * 34 / var(--container-width));
+    --text-3xl: calc(100vw * 44 / var(--container-width));
+  }
+
+  /*                                                 Переменные величины - End                                                 */
+
+  /*                                                 Постоянные величины - Begin                                                 */
+  :root {
+    /*  Backgrounds - Begin */
+    --btn__background: linear-gradient(180deg, #3B3A4E 0%, #272733 100%);
+    /*  Backgrounds - End */
+  }
+
+  /*                                                 Постоянные величины - Begin                                                 */
+}
