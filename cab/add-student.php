@@ -19,7 +19,7 @@
             <nav class="main-nav">
                 <ul class="nav-list">
                     <li class="nav-item">
-                        <a href="#" class="nav-link active lg">Ученики</a>
+                        <a href="index.php" class="nav-link lg">Ученики</a>
                     </li>
                     <li class="nav-item">
                         <a href="check-works.php" class="nav-link lg">Проверить</a>
@@ -31,7 +31,7 @@
             </nav>
 
             <!-- Правая часть: Кнопка "Новый ученик" -->
-            <a href="add-student.php" class="nav-link lg">Новый ученик</a>
+            <a href="#" class="nav-link active lg">Новый ученик</a>
         </div>
     </header>
 </body>

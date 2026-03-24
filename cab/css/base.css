@@ -20,6 +20,11 @@ img {
 h1, h2, h3, p, a {
   font-family: 'Inter', sans-serif;
   text-align: center;
+  color: var(--color-text);
+}
+
+.lg {
+  font-size: var(--text-lg);
 }
 
 /*                                                 Переменные величины - Begin                                                 */
@@ -87,20 +92,20 @@ h1, h2, h3, p, a {
 
   /*  Colors  */
   --color-text: #252532;
-  --color-text: #FFFFFF;
-  --color-text: #BABABA;
-  --color-text: #5C5C64;
-  --color-text: #FAF9F6;
-  --color-text: #FFFFFF;
-  --color-text: #FAF9F6;
-  --color-text: #E2E2E2;
-  --color-text: #32303E;
-  --color-text: #F8F8F8;
-  --color-text: #252532;
-  --color-text: #E9E9EB;
-  --color-text: #DBEFFE;
-  --color-text: #F64F59;
-  --color-text: #92FE9D;
+  --color-text-light: #FFFFFF;
+  --color-text-secondary: #BABABA;
+  --color-text-secondary-dark: #5C5C64;
+  --color-bg: #FAF9F6;
+  --color-surface: #FFFFFF;
+  --color-surface-light: #FAF9F6;
+  --color-border: #E2E2E2;
+  --color-border-dark: #32303E;
+  --color-border-light: #F8F8F8;
+  --color-primary: #252532;
+  --color-primary-light: #E9E9EB;
+  --color-status-new: #DBEFFE;
+  --color-status-fail: #F64F59;
+  --color-status-complete: #92FE9D;
 
 }
 

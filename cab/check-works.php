@@ -19,10 +19,10 @@
             <nav class="main-nav">
                 <ul class="nav-list">
                     <li class="nav-item">
-                        <a href="#" class="nav-link active lg">Ученики</a>
+                        <a href="index.php" class="nav-link lg">Ученики</a>
                     </li>
                     <li class="nav-item">
-                        <a href="check-works.php" class="nav-link lg">Проверить</a>
+                        <a href="#" class="nav-link active lg">Проверить</a>
                     </li>
                     <li class="nav-item">
                         <a href="add-task.php" class="nav-link lg">Добавить</a>

@@ -1,0 +1,39 @@
+/*                                                 Header - Begin                                               */
+.main-header {
+    background-color: var(--color-surface);
+    border-bottom-right-radius: var(--radius-xl);
+    border-bottom-left-radius: var(--radius-xl);
+
+}
+
+.header-content-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: var(--space-xs) var(--space-md);
+}
+.header-content-wrapper a {
+    text-decoration: none;
+
+    font-weight: 600;
+    color: var(--color-text-secondary);
+}
+
+.header-logo {
+    width: calc(100vw * 64 / var(--container-width));
+    height: calc(100vw * 16 / var(--container-width));
+}
+
+.main-nav ul {
+    list-style: none;
+}
+
+.nav-list{
+    display: flex;
+    gap: var(--space-md);
+}
+
+.header-content-wrapper .active {
+    color: var(--color-text);
+}
