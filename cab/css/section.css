@@ -1,4 +1,4 @@
-/*                                                 Header - Begin                                               */
+/* ====== Header - Begin ======= */
 .main-header {
     background-color: var(--color-surface);
     border-bottom-right-radius: var(--radius-xl);
@@ -37,3 +37,14 @@
 .header-content-wrapper .active {
     color: var(--color-text);
 }
+/* ====== Header - End ======= */
+
+/* ====== Add-student - Begin ======= */
+
+#add-student {
+    padding-right: calc(100vw * 400 / var(--container-width));
+    padding-left: calc(100vw * 400 / var(--container-width));
+
+}
+
+/* ====== Add-student - End ======= */

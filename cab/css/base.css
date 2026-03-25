@@ -27,6 +27,10 @@ h1, h2, h3, p, a {
   font-size: var(--text-lg);
 }
 
+.md {
+  font-size: var(--text-md);
+}
+
 /*                                                 Переменные величины - Begin                                                 */
 :root {
   /*  Layout tokens  */
