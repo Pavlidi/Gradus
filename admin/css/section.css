@@ -48,3 +48,13 @@
 }
 
 /* ====== Add-student - End ======= */
+
+
+/* ====== Student-list - Begin ======= */
+
+h1.lg {
+    padding-left: var(--space-xs);
+    padding-right: var(--space-xs);
+}
+
+/* ====== Student-listt - End ======= */

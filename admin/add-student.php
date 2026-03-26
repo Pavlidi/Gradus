@@ -101,13 +101,8 @@
                     </div>
                     <div class="under-line"></div>
                     <div class="line">
-                        <h2 class="md">Предмет 1</h2>
+                        <h2 class="md">Предмет</h2>
                         <input type="text" name="subject_1" id="subject_1" placeholder="Введите предмет">
-                    </div>
-                    <div class="under-line"></div>
-                    <div class="line">
-                        <h2 class="md">Предмет 2</h2>
-                        <input type="text" name="subject_2" id="subject_2" placeholder="Введите предмет">
                     </div>
                 </div>
                 <button type="submit" name="submit">Создать</button>

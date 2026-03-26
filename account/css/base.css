@@ -136,7 +136,7 @@ h1, h2, h3, p, a {
 @media (min-width: 768px) {
 
   * {
-    line-height: 1;
+    line-height: 1.5;
   }
 
   /*                                                 Переменные величины - Begin                                                 */
@@ -206,7 +206,7 @@ h1, h2, h3, p, a {
 @media (min-width: 1024px) {
 
   * {
-    line-height: 1;
+    line-height: 1.5;
   }
 
   /*                                                 Переменные величины - Begin                                                 */

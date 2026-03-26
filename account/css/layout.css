@@ -1,0 +1,21 @@
+/*      ======= Header - Begin ======       */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.header__container {
+    display: flex;
+}
+
+.menu {
+    display: flex;
+}
+
+.menu__inside-first {
+    display: flex;
+}
+
+/*      ======= Header - End ======       */

@@ -22,6 +22,9 @@
 
   background-color: var(--color-bg);
 
+  border-width: calc(100vw * var(--border-width) / var(--container-width));
+  border-color: var(--color-border);
+  border-style: solid;
   border-radius: var(--radius-card-s);
 }
 
@@ -35,6 +38,17 @@
   justify-content: space-between;
 
   width: 100%;
+  height: max-content;
+}
+
+.column {
+  display: flex;
+
+  width: max-content;
+
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-3xs);
 }
 
 .under-line {
@@ -42,6 +56,15 @@
 
   width: 100%;
   height: var(--border-width);
+
+  background-color: var(--color-border);
+}
+
+.vert-line {
+  display: block;
+
+  width: var(--border-width-thick);
+  align-self: stretch;
 
   background-color: var(--color-border);
 }
