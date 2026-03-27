@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/sections.css">
     <title>Личный кабинет</title>
 </head>
 
@@ -24,20 +25,54 @@
             <nav class="menu">
 
                 <div class="menu__inside-first">
-                    <p>Задания</p>
-                    <p>Стат</p>
-                    <p>Мат</p>
+                    <div class="menu-item active" data-tab="tasks">
+                        <img class="icon-default" src="image/tasks_logo_mobile.png">
+                        <img class="icon-active" src="image/tasks_logo_mobile-active.png">
+                        <span class="sm">Задания</span>
+                    </div>
+
+                    <div class="menu-item" data-tab="statistics">
+                        <img class="icon-default" src="image/statistics_logo_mobile.png">
+                        <img class="icon-active" src="image/statistics_logo_mobile-active.png">
+                        <span class="sm">Статистика</span>
+                    </div>
+
+                    <div class="menu-item" data-tab="materials">
+                        <img class="icon-default" src="image/materials_logo_mobile.png">
+                        <img class="icon-active" src="image/materials_logo_mobile-active.png">
+                        <span class="sm">Материалы</span>
+                    </div>
                 </div>
-                
+
                 <div class="menu__inside-second">
-                    <p>Проф</p>
+                    <div class="menu-item profile__logo" data-tab="profile">
+                        <img class="icon-default" src="image/profile_logo_mobile.png" alt="Профиль">
+                        <img class="icon-active" src="image/profile_logo_mobile-active.png" alt="Профиль">
+                    </div>
                 </div>
 
             </nav>
 
         </div>
     </header>
-    <div style="display: block; width: 50px; height: 3000px; background-color: red;"></div>
+
+
+    <!--    Subject-Swiper - Begin   -->
+    <section class="subject__swiper">
+        <div class="subjects">
+
+            <div class="subject active">
+                Математика
+            </div>
+
+            <div class="subject">
+                Физика
+            </div>
+
+        </div>
+    </section>
+
+    <script src="js/main.js"></script>
 </body>
 
 </html>

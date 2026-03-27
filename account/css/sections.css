@@ -1,0 +1,41 @@
+/*      ======= Subject-Swiper - Begin ======       */
+.subject__swiper {
+    margin-top: var(--space-lg);
+    margin-right: var(--space-md);
+    margin-left: var(--space-md);
+}
+
+.subjects {
+  display: flex;
+
+  padding: var(--space-3xs);
+  border-radius: var(--radius-round);
+
+  background: var(--color-text-light);
+}
+
+/* кнопка */
+.subject {
+  flex: 1;
+
+  text-align: center;
+  padding: var(--space-4xs) var(--space-xl);
+
+  border-radius: var(--radius-round);
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  font-size: var(--text-lg);
+  font-weight: 700;
+  line-height: 1.6;
+  color: var(--color-text-secondary-dark);
+}
+
+/* активная */
+.subject.active {
+  background: var(--color-bg);
+  border: solid var(--color-border) var(--border-width);
+  color: var(--color-text);
+}
+/*      ======= Subject-Swiper - End ======       */

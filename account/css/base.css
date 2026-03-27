@@ -31,6 +31,11 @@ h1, h2, h3, p, a {
   font-size: var(--text-md);
 }
 
+.sm {
+  font-size: var(--text-sm);
+  line-height: 1.5;
+}
+
 /*                                                 Переменные величины - Begin                                                 */
 :root {
   /*  Layout tokens  */
@@ -110,6 +115,10 @@ h1, h2, h3, p, a {
   --color-status-new: #DBEFFE;
   --color-status-fail: #F64F59;
   --color-status-complete: #92FE9D;
+
+  /*  Box-shadows  */
+  --box-shadows-sm: 0px 2px 8px rgba(0, 0, 0, 0.15);
+  --box-shadows-md:  0px 6px 30px rgba(0, 0, 0, 0.06);
 
 }
 

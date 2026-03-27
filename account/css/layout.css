@@ -1,21 +1,149 @@
 /*      ======= Header - Begin ======       */
 .header {
-    position: fixed;
-    top: 0;
-    left: 0;
     width: 100%;
 }
 
 .header__container {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-xs);
+    padding-left: var(--space-md);
+    background-color: var(--color-surface);
+    border-bottom-left-radius: var(--radius-xl);
+    border-bottom-right-radius: var(--radius-xl);
+}
+
+.header__logo {
+    height: calc(100vw * 16 / var(--container-width));
+    width: calc(100vw * 64 / var(--container-width));
 }
 
 .menu {
     display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: var(--space-md);
+}
+
+.menu img {
+
+    width: var(--size-md);
+    height: var(--size-md);
 }
 
 .menu__inside-first {
     display: flex;
+    align-items: center;
+    gap: var(--space-md);
+
+    background: var(--color-primary);
+    padding: var(--space-3xs);
+    border-radius: var(--radius-round);
 }
 
+/* обычный пункт */
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+
+    padding: var(--space-3xs);
+    border-radius: var(--radius-round);
+
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* ===== TASKS (первый элемент) ===== */
+
+/* неактивный */
+.menu__inside-first .menu-item:first-child {
+  margin-left: var(--space-sm);
+}
+
+/* активный */
+.menu__inside-first .menu-item:first-child.active {
+  margin-left: 0px;
+}
+
+
+/* ===== MATERIALS (последний элемент) ===== */
+
+/* неактивный */
+.menu__inside-first .menu-item:last-child {
+  margin-right: var(--space-sm);
+}
+
+/* активный */
+.menu__inside-first .menu-item:last-child.active {
+  margin-right: 0px;
+}
+
+/* текст скрыт по умолчанию */
+.menu-item span {
+    display: none;
+    color: #2B2B3A;
+    font-weight: 500;
+}
+
+/* активный пункт */
+.menu-item.active {
+  background: #fff;
+}
+
+/* и задаём отдельно */
+.menu__inside-first .menu-item.active {
+  padding: var(--space-3xs) var(--space-md);
+}
+
+.menu__inside-second .menu-item.active {
+  padding: var(--space-2xs);
+}
+
+/* показываем текст */
+.menu-item.active span {
+    display: inline;
+}
+
+
+/* по умолчанию */
+.icon-active {
+  display: none;
+}
+
+/* когда активна */
+.menu-item.active .icon-default {
+  display: none;
+}
+
+.menu-item.active .icon-active {
+  display: block;
+}
+
+
+.menu__inside-second {
+    display: block;
+
+    padding: var(--space-3xs);
+
+    background-color: var(--color-primary);
+    border-radius: var(--radius-round);
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.profile__logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: max-content;
+    height: max-content;
+
+    padding: var(--space-2xs);
+
+    background-color: var(--color-primary);
+    border-radius: var(--radius-round);
+}
 /*      ======= Header - End ======       */
