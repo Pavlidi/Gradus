@@ -1,0 +1,65 @@
+/*      ======= Cards - Begin ======       */
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-3xs);
+
+    width: 100%;
+
+    padding: var(--space-xs);
+
+    background-color: var(--color-surface);
+    border-radius: var(--radius-card);
+
+    box-shadow: var(--box-shadows-md);
+}
+
+.Title {
+    margin-left: var(--space-xs);
+}
+
+.s {
+    padding: var(--space-sm) var(--space-md);
+    background-color: var(--color-bg);
+    
+    border: solid var(--color-border) var(--border-width);
+    border-radius: var(--radius-card-s);
+}
+
+.hwc__line-first {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+}
+
+.hwc-status {
+    padding: 0 var(--space-3xs);
+
+    background-color: var(--color-status-new);
+    border-radius: var(--radius-md);
+
+    color: var(--color-text-secondary-dark);
+}
+
+.hwc-date {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+}
+
+.hw-date-icon {
+    width: var(--size-xs);
+    height: auto;
+}
+
+.line__horizontal {
+    display: block;
+
+    background-color: var(--color-border);
+
+    width: 100%;
+    height: var(--border-width);
+}
