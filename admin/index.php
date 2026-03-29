@@ -10,7 +10,28 @@ if ($conn->connect_error) {
     die("Ошибка подключения: " . $conn->connect_error);
 }
 
-// Сортируем сразу в SQL
+// СОХРАНЕНИЕ
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+    $stmt = $conn->prepare("
+        UPDATE users_info 
+        SET lessons_total = ?, attendance = ?, homeworks_total = ?, homeworks_done = ?
+        WHERE id = ?
+    ");
+
+    $stmt->bind_param(
+        "iiiii",
+        $_POST['lessons_total'],
+        $_POST['attendance'],
+        $_POST['homeworks_total'],
+        $_POST['homeworks_done'],
+        $_POST['student_id']
+    );
+
+    $stmt->execute();
+}
+
+// ПОЛУЧЕНИЕ
 $sql = "SELECT * FROM users_info 
         ORDER BY study_format, group_number, student_lastname";
 
@@ -40,51 +61,54 @@ while ($row = $result->fetch_assoc()) {
     <link rel="stylesheet" href="css/section.css">
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/components.css">
-    <title>Document</title>
+    <title>Ученики</title>
 </head>
 
 <body>
+
     <header class="main-header">
         <div class="header-content-wrapper">
-            <!-- Левая часть: Логотип -->
             <a href="/" class="header-logo">
-                <img src="image/logo-tablet.webp" alt="Логотип Градус">
+                <img src="image/logo-tablet.webp">
             </a>
 
-            <!-- Центральная часть: Навигация -->
             <nav class="main-nav">
                 <ul class="nav-list">
-                    <li class="nav-item">
-                        <a href="#" class="nav-link active lg">Ученики</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="check-works.php" class="nav-link lg">Проверить</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="add-task.php" class="nav-link lg">Добавить</a>
-                    </li>
+                    <li><a href="#" class="nav-link active lg">Ученики</a></li>
+                    <li><a href="check-works.php" class="nav-link lg">Проверить</a></li>
+                    <li><a href="add-task.php" class="nav-link lg">Добавить</a></li>
                 </ul>
             </nav>
 
-            <!-- Правая часть: Кнопка "Новый ученик" -->
             <a href="add-student.php" class="nav-link lg">Новый ученик</a>
         </div>
     </header>
 
-    <!-- Таблицы с учениками из групп -->
+    <!-- ================= ГРУППЫ ================= -->
+
     <?php foreach ($groups as $groupNumber => $students): ?>
         <section class="container">
-            </div>
+
             <div class="card">
                 <div class="line">
                     <h1 class="lg">Группа <?= $groupNumber ?></h1>
                 </div>
 
-                <!-- ОДНА карточка на всю группу -->
                 <div class="card s">
-
-                    <!-- Заголовки (один раз!) -->
                     <div class="line">
+
+                        <div class="column">
+                            <h2 class="md">№</h2>
+                            <?php $i = 1; ?>
+                            <?php foreach ($students as $student): ?>
+                                <p>
+                                    <?= $i++ ?>
+                                </p>
+                            <?php endforeach; ?>
+                        </div>
+
+                        <div class="vert-line"></div>
+                        <!-- ФИО -->
                         <div class="column">
                             <h2 class="md">Ф.И.О.</h2>
                             <?php foreach ($students as $student): ?>
@@ -97,6 +121,7 @@ while ($row = $result->fetch_assoc()) {
 
                         <div class="vert-line"></div>
 
+                        <!-- Класс -->
                         <div class="column">
                             <h2 class="md">Класс</h2>
                             <?php foreach ($students as $student): ?>
@@ -106,20 +131,49 @@ while ($row = $result->fetch_assoc()) {
 
                         <div class="vert-line"></div>
 
+                        <!-- Предмет -->
                         <div class="column">
                             <h2 class="md">Предмет</h2>
                             <?php foreach ($students as $student): ?>
                                 <p><?= $student['subject_1'] ?: '-' ?></p>
                             <?php endforeach; ?>
                         </div>
-                    </div>
 
+                        <div class="vert-line"></div>
+
+                        <!-- СТАТИСТИКА -->
+                        <div class="column">
+                            <h2 class="md">Статистика (Зан, Пос, ДЗ, Сд) </h2>
+
+                            <?php foreach ($students as $student): ?>
+                                <form method="POST" style="margin-bottom: var(--space-3xs);">
+
+                                    <input type="hidden" name="student_id" value="<?= $student['id'] ?>">
+
+                                    <input type="number" name="lessons_total" value="<?= $student['lessons_total'] ?>"
+                                        style="width:50px;">
+                                    <input type="number" name="attendance" value="<?= $student['attendance'] ?>"
+                                        style="width:50px;">
+                                    <input type="number" name="homeworks_total" value="<?= $student['homeworks_total'] ?>"
+                                        style="width:50px;">
+                                    <input type="number" name="homeworks_done" value="<?= $student['homeworks_done'] ?>"
+                                        style="width:50px;">
+
+                                    <button type="submit">✔</button>
+
+                                </form>
+                            <?php endforeach; ?>
+
+                        </div>
+
+                    </div>
                 </div>
 
             </div>
         </section>
     <?php endforeach; ?>
 
+    <!-- ================= ИНДИВИДУАЛЬНЫЕ ================= -->
 
     <section class="container">
         <?php if (!empty($individuals)): ?>
@@ -133,6 +187,18 @@ while ($row = $result->fetch_assoc()) {
                     <div class="line">
 
                         <div class="column">
+                            <h2 class="md">№</h2>
+                            <?php $i = 1; ?>
+                            <?php foreach ($individuals as $student): ?>
+                                <p>
+                                    <?= $i++ ?>
+                                </p>
+                            <?php endforeach; ?>
+                        </div>
+
+                        <div class="vert-line"></div>
+                        <!-- ФИО -->
+                        <div class="column">
                             <h2 class="md">Ф.И.О.</h2>
                             <?php foreach ($individuals as $student): ?>
                                 <p>
@@ -144,6 +210,7 @@ while ($row = $result->fetch_assoc()) {
 
                         <div class="vert-line"></div>
 
+                        <!-- Класс -->
                         <div class="column">
                             <h2 class="md">Класс</h2>
                             <?php foreach ($individuals as $student): ?>
@@ -153,11 +220,39 @@ while ($row = $result->fetch_assoc()) {
 
                         <div class="vert-line"></div>
 
+                        <!-- Предмет -->
                         <div class="column">
                             <h2 class="md">Предмет</h2>
                             <?php foreach ($individuals as $student): ?>
                                 <p><?= $student['subject_1'] ?: '-' ?></p>
                             <?php endforeach; ?>
+                        </div>
+
+                        <div class="vert-line"></div>
+
+                        <!-- СТАТИСТИКА -->
+                        <div class="column">
+                            <h2 class="md">Статистика (Зан, Пос, ДЗ, Сд)</h2>
+
+                            <?php foreach ($individuals as $student): ?>
+                                <form method="POST" style="margin-bottom:var(--space-3xs);">
+
+                                    <input type="hidden" name="student_id" value="<?= $student['id'] ?>">
+
+                                    <input type="number" name="lessons_total" value="<?= $student['lessons_total'] ?>"
+                                        style="width:50px;">
+                                    <input type="number" name="attendance" value="<?= $student['attendance'] ?>"
+                                        style="width:50px;">
+                                    <input type="number" name="homeworks_total" value="<?= $student['homeworks_total'] ?>"
+                                        style="width:50px;">
+                                    <input type="number" name="homeworks_done" value="<?= $student['homeworks_done'] ?>"
+                                        style="width:50px;">
+
+                                    <button type="submit">✔</button>
+
+                                </form>
+                            <?php endforeach; ?>
+
                         </div>
 
                     </div>
@@ -166,8 +261,8 @@ while ($row = $result->fetch_assoc()) {
             </div>
 
         <?php endif; ?>
-
     </section>
+
 </body>
 
 </html>

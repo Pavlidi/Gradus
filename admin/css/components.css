@@ -41,6 +41,14 @@
   height: max-content;
 }
 
+.card.card.s.individ  {
+  align-items: flex-start;
+}
+
+.card.card.s.individ form {
+  width: 100%;
+}
+
 .column {
   display: flex;
 
@@ -49,6 +57,34 @@
   flex-direction: column;
   align-items: flex-start;
   gap: var(--space-3xs);
+}
+
+/* выравнивание строк */
+.column p,
+.column form {
+    height: 60px;              /* фикс высоты строки */
+    display: flex;
+    align-items: center;       /* вертикально по центру */
+    justify-content: center;   /* горизонтально по центру */
+    margin: 0;
+}
+
+/* чтобы формы не ломались */
+.column form {
+    gap: 5px;
+}
+
+/* уменьшаем поля input */
+.column input {
+    height: 30px;
+    padding: 2px;
+}
+
+/* кнопка */
+.column button {
+    height: 30px;
+    width:  30px;
+    cursor: pointer;
 }
 
 .under-line {
@@ -69,4 +105,25 @@
   background-color: var(--color-border);
 }
 
+/* ===== Кнопка ===== */
+
+button {
+  background: #1A1A1A;
+  color: white;
+
+  border: none;
+  border-radius: 8px;
+
+  padding: 8px 14px;
+  font-size: 13px;
+
+
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #333;
+}
 /* ======= Card - End ======= */
+

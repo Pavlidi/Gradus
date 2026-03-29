@@ -125,6 +125,9 @@ h1, h2, h3, p, a {
   --color-status-fail: #F64F59;
   --color-status-complete: #92FE9D;
 
+  /*  Gradients */
+  --gradient-btn: linear-gradient(180deg, #3B3A4E 0%, #272733 100%);
+
   /*  Box-shadows  */
   --box-shadows-sm: 0px 2px 8px rgba(0, 0, 0, 0.15);
   --box-shadows-md:  0px 6px 30px rgba(0, 0, 0, 0.06);
