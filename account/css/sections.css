@@ -2,6 +2,23 @@
   display: block;
 }
 
+.section-books {
+  display: none;
+}
+
+.section-materials {
+  display: none;
+}
+
+.section-student {
+  display: none;
+}
+
+.section-parent {
+  display: none;
+}
+
+
 
 /*      ======= Subject-Swiper - Begin ======       */
 .subject__swiper {

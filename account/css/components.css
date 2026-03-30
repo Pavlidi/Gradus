@@ -173,6 +173,36 @@
         0 5px 10px rgba(0, 0, 0, 0.3),
         inset 0 2px 4px rgba(0, 0, 0, 0.3);
 }
+
+.btn__group {
+    display: flex;
+    gap: var(--space-3xs);
+}
+
+.btn__books {
+    flex: 1;
+    padding: var(--space-xs);
+    border: solid var(--border-width) var(--color-border);
+    border-radius: var(--radius-round);
+
+    font-size: var(--text-xs);
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--color-text);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    cursor: pointer;
+
+    /* Градиент как в макете */
+    background-color: var(--color-bg);
+
+    transition: all 0.25s ease;
+}
+
 /*      ======= Cards - End ======       */
 
 

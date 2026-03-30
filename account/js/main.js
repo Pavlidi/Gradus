@@ -33,6 +33,9 @@ subjects.forEach(subject => {
     });
 });
 
+
+
+
 function openTasks()
 {
     var subjectSwiper = document.getElementsByClassName('subject__swiper');
@@ -45,6 +48,25 @@ function openTasks()
         sectionTask[i].style.display = "block";
     }
 
+    var sectionBooks = document.getElementsByClassName('section-books');
+    for (let i = 0; i < sectionBooks.length; i++) {
+        sectionBooks[i].style.display = "none";
+    }
+
+    var sectionMaterials = document.getElementsByClassName('section-materials');
+    for (let i = 0; i < sectionMaterials.length; i++) {
+        sectionMaterials[i].style.display = "none";
+    }
+
+    var sectionStudent = document.getElementsByClassName('section-student');
+    for (let i = 0; i < sectionStudent.length; i++) {
+        sectionStudent[i].style.display = "none";
+    }
+
+    var sectionParent = document.getElementsByClassName('section-parent');
+    for (let i = 0; i < sectionParent.length; i++) {
+        sectionParent[i].style.display = "none";
+    }
 }
 
 function openStatistics()
@@ -57,6 +79,26 @@ function openStatistics()
     var sectionTask = document.getElementsByClassName('section-task');
     for (let i = 0; i < sectionTask.length; i++) {
         sectionTask[i].style.display = "none";
+    }
+
+    var sectionBooks = document.getElementsByClassName('section-books');
+    for (let i = 0; i < sectionBooks.length; i++) {
+        sectionBooks[i].style.display = "none";
+    }
+
+    var sectionMaterials = document.getElementsByClassName('section-materials');
+    for (let i = 0; i < sectionMaterials.length; i++) {
+        sectionMaterials[i].style.display = "none";
+    }
+
+    var sectionStudent = document.getElementsByClassName('section-student');
+    for (let i = 0; i < sectionStudent.length; i++) {
+        sectionStudent[i].style.display = "none";
+    }
+
+    var sectionParent = document.getElementsByClassName('section-parent');
+    for (let i = 0; i < sectionParent.length; i++) {
+        sectionParent[i].style.display = "none";
     }
 }
 
@@ -71,6 +113,26 @@ function openMaterials()
     for (let i = 0; i < sectionTask.length; i++) {
         sectionTask[i].style.display = "none";
     }
+
+    var sectionBooks = document.getElementsByClassName('section-books');
+    for (let i = 0; i < sectionBooks.length; i++) {
+        sectionBooks[i].style.display = "block";
+    }
+
+    var sectionMaterials = document.getElementsByClassName('section-materials');
+    for (let i = 0; i < sectionMaterials.length; i++) {
+        sectionMaterials[i].style.display = "block";
+    }
+
+    var sectionStudent = document.getElementsByClassName('section-student');
+    for (let i = 0; i < sectionStudent.length; i++) {
+        sectionStudent[i].style.display = "none";
+    }
+
+    var sectionParent = document.getElementsByClassName('section-parent');
+    for (let i = 0; i < sectionParent.length; i++) {
+        sectionParent[i].style.display = "none";
+    }
 }
 
 function openProfile()
@@ -83,5 +145,25 @@ function openProfile()
     var sectionTask = document.getElementsByClassName('section-task');
     for (let i = 0; i < sectionTask.length; i++) {
         sectionTask[i].style.display = "none";
+    }
+
+    var sectionBooks = document.getElementsByClassName('section-books');
+    for (let i = 0; i < sectionBooks.length; i++) {
+        sectionBooks[i].style.display = "none";
+    }
+
+    var sectionMaterials = document.getElementsByClassName('section-materials');
+    for (let i = 0; i < sectionMaterials.length; i++) {
+        sectionMaterials[i].style.display = "none";
+    }
+
+    var sectionStudent = document.getElementsByClassName('section-student');
+    for (let i = 0; i < sectionStudent.length; i++) {
+        sectionStudent[i].style.display = "block";
+    }
+
+    var sectionParent = document.getElementsByClassName('section-parent');
+    for (let i = 0; i < sectionParent.length; i++) {
+        sectionParent[i].style.display = "block";
     }
 }
