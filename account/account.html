@@ -26,26 +26,26 @@
             <nav class="menu">
 
                 <div class="menu__inside-first">
-                    <div class="menu-item active" data-tab="tasks">
+                    <div class="menu-item active" data-tab="tasks" onclick="openTasks()">
                         <img class="icon-default" src="image/tasks_logo_mobile.png">
                         <img class="icon-active" src="image/tasks_logo_mobile-active.png">
                         <span class="sm">Задания</span>
                     </div>
 
-                    <div class="menu-item" data-tab="statistics">
+                    <div class="menu-item" data-tab="statistics" onclick="openStatistics()">
                         <img class="icon-default" src="image/statistics_logo_mobile.png">
                         <img class="icon-active" src="image/statistics_logo_mobile-active.png">
                         <span class="sm">Статистика</span>
                     </div>
 
-                    <div class="menu-item" data-tab="materials">
+                    <div class="menu-item" data-tab="materials" onclick="openMaterials()">
                         <img class="icon-default" src="image/materials_logo_mobile.png">
                         <img class="icon-active" src="image/materials_logo_mobile-active.png">
                         <span class="sm">Материалы</span>
                     </div>
                 </div>
 
-                <div class="menu__inside-second">
+                <div class="menu__inside-second" onclick="openProfile()">
                     <div class="menu-item profile__logo" data-tab="profile">
                         <img class="icon-default" src="image/profile_logo_mobile.png" alt="Профиль">
                         <img class="icon-active" src="image/profile_logo_mobile-active.png" alt="Профиль">
@@ -74,8 +74,10 @@
     </section>
     <!--    Subject-Swiper - End   -->
 
+
+
     <!--    Home-Work-current - Begin   -->
-    <section class="container">
+    <section class="container section-task">
         <div class="card">
             <div class="Title">
                 <h1 class="lg">Домашняя работа</h1>
@@ -100,16 +102,229 @@
                 <div class="hwc__line-third">
                     <button class="btn-dark download">
                         <img class="hw-date-icon" src="image/download.png">
-                        Скачать задание
+                        Скачать
                     </button>
                     <button class="btn-dark upload">
                         <img class="hw-date-icon" src="image/upload.png">
-                        Загрузить работу
+                        Загрузить
                     </button>
                 </div>
             </div>
         </div>
     </section>
+    <!--    Home-Work-current - End   -->
+
+    <!--    Home-Work-history - Begin   -->
+    <section class="container  section-task">
+        <div class="card">
+            <div class="Title">
+                <h1 class="lg">Прошлые задания</h1>
+            </div>
+            <!-- Крайняя домашка -->
+            <div class="card s">
+                <div class="hwc__line-first">
+                    <p class="md">Закон сохранения импульса</p>
+                    <p class="xs">10 марта</p>
+                </div>
+                <div class="hw__line-progress">
+                    <div class="progress__line">
+                        <div class="progress__line-active">
+                            <div class="progress__line-background"></div>
+                        </div>
+                    </div>
+                    <p class="xs-bold">90%</p>
+                </div>
+                <div class="hw__line-third">
+                    <div class="hw__result-status">
+                        <div class="hw__result-status-indicator complete"></div>
+                        <p class="xs">Выполнено</p>
+                    </div>
+                    <button class="btn-light">
+                        Посмотреть
+                    </button>
+                </div>
+            </div>
+
+            <!-- Прошлая домашка -->
+            <div class="card s">
+                <div class="hwc__line-first">
+                    <p class="md">Второй закон Ньютона</p>
+                    <p class="xs">5 марта</p>
+                </div>
+                <div class="hw__line-progress">
+                    <div class="progress__line">
+                        <div class="progress__line-active" style="width: 40%;">
+                            <div class="progress__line-background" style="width: 250%;"></div>
+                        </div>
+                    </div>
+                    <p class="xs-bold">40%</p>
+                </div>
+                <div class="hw__line-third">
+                    <div class="hw__result-status">
+                        <div class="hw__result-status-indicator fail"></div>
+                        <p class="xs">Выполнено</p>
+                    </div>
+                    <button class="btn-light">
+                        Посмотреть
+                    </button>
+                </div>
+            </div>
+
+            <!-- Позапрошлая домашка -->
+            <div class="card s">
+                <div class="hwc__line-first">
+                    <p class="md">Сила Архимеда</p>
+                    <p class="xs">1 марта</p>
+                </div>
+                <div class="hw__line-progress">
+                    <div class="progress__line">
+                        <div class="progress__line-active" style="width: 75%;">
+                            <div class="progress__line-background" style="width: 133%;"></div>
+                        </div>
+                    </div>
+                    <p class="xs-bold">75%</p>
+                </div>
+                <div class="hw__line-third">
+                    <div class="hw__result-status">
+                        <div class="hw__result-status-indicator complete"></div>
+                        <p class="xs">Выполнено</p>
+                    </div>
+                    <button class="btn-light">
+                        Посмотреть
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!--    Home-Work-history - End   -->
+
+
+
+
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="footer-container">
+
+            <!-- Верхняя часть -->
+            <div class="footer-top">
+
+                <!-- Лого + описание -->
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="image/logo-black.webp" class="footer-logo__img" alt="">
+                    </div>
+                    <p class="footer-description">
+                    Центр подготовки к ОГЭ и ЕГЭ по физике и математике
+                    </p>
+                </div>
+
+                <!-- Навигация -->
+                <div class="footer-nav">
+
+                    <!-- Курсы -->
+                    <div class="footer-column">
+                    <h3 class="H3">Курсы</h3>
+                    <ul>
+                        <li><a href="#">ЕГЭ по математике</a></li>
+                        <li><a href="#">ЕГЭ по физике</a></li>
+                        <li><a href="#">ОГЭ по математике</a></li>
+                        <li><a href="#">ОГЭ по физике</a></li>
+                    </ul>
+                    </div>
+
+                    <!-- О центре -->
+                    <div class="footer-column">
+                    <h3 class="H3">О центре</h3>
+                    <ul>
+                        <li><a href="#">Сведения об организации</a></li>
+                        <li><a href="#">Акции</a></li>
+                        <li><a href="#">Telegram</a></li>
+                        <li><a href="#">WhatsApp</a></li>
+                        <li><a href="#">Instagram</a></li>
+                    </ul>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Разделительная линия -->
+            <div class="footer-divider"></div>
+
+            <!-- Нижняя часть -->
+            <div class="footer-bottom">
+                <div class="footer-links">
+                    <a href="#">Политика конфиденциальности</a>
+                    <a href="#">Пользовательское соглашение</a>
+                </div>
+
+                <div class="footer-copy">
+                    ©2026 Образовательный центр «Градус».<br>
+                    Все права защищены.
+                </div>
+            </div>
+
+        </div>
+        <div class="footer-container-tablet">
+
+            <!-- Верхняя часть -->
+            <div class="footer-top">
+
+                <!-- Лого + описание -->
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="image/logo-black.webp" class="footer-logo__img" alt="">
+                    </div>
+                    <p class="footer-description">
+                    Центр подготовки к ОГЭ и ЕГЭ по физике и математике
+                    </p>
+                </div>
+
+
+                    <!-- Курсы -->
+                    <div class="footer-column">
+                    <h3 class="H3">Курсы</h3>
+                    <ul>
+                        <li><a href="#">ЕГЭ по математике</a></li>
+                        <li><a href="#">ЕГЭ по физике</a></li>
+                        <li><a href="#">ОГЭ по математике</a></li>
+                        <li><a href="#">ОГЭ по физике</a></li>
+                    </ul>
+                    </div>
+
+                    <!-- О центре -->
+                    <div class="footer-column">
+                    <h3 class="H3">О центре</h3>
+                    <ul>
+                        <li><a href="#">Сведения об организации</a></li>
+                        <li><a href="#">Акции</a></li>
+                        <li><a href="#">Telegram</a></li>
+                        <li><a href="#">WhatsApp</a></li>
+                        <li><a href="#">Instagram</a></li>
+                    </ul>
+                    </div>
+            </div>
+
+            <!-- Разделительная линия -->
+            <div class="footer-divider"></div>
+
+            <!-- Нижняя часть -->
+            <div class="footer-bottom">
+                <div class="footer-links">
+                    <a href="#">Политика конфиденциальности</a>
+                    <a href="#">Пользовательское соглашение</a>
+                </div>
+
+                <div class="footer-copy">
+                    ©2026 Образовательный центр «Градус».<br>
+                    Все права защищены.
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
 
     <script src="js/main.js"></script>
 </body>

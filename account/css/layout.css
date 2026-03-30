@@ -153,3 +153,145 @@
 }
 
 /*      ======= Header - End ======       */
+
+
+
+/*                                                 Footer-mobile - Begin                                                */
+.footer {
+  margin-top: var(--section-padding);
+  padding: var(--space-2xl) var(--space-md);
+}
+
+.footer-container-tablet {
+  display: none;
+}
+
+.footer,
+.footer p,
+.footer a {
+  font-size: var(--text-sm);
+  font-weight: 300;
+  color: var(--color-text-secondary);
+}
+
+/* ===== Верхняя часть ===== */
+.footer-top {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Бренд */
+.footer-brand {
+  max-width: 100%;
+}
+
+.footer-logo {
+  width: calc(100vw * 74 / var(--container-width));
+  height: var(--size-xl);
+}
+
+.footer-description {
+  margin-top: var(--space-sm);
+}
+
+/* ===== Навигация ===== */
+.footer-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+
+  margin-top: var(--space-sm);
+  width: 100%;
+}
+
+.footer-column ul {
+  list-style: none;
+}
+
+.footer-column h3 {
+  text-align: start;
+}
+
+.footer-column li {
+  margin-top: var(--space-xs);
+  line-height: 1.1;
+}
+
+.footer-column a {
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.footer-column a:hover {
+  color: #2c2c34;
+}
+
+/* ===== Разделитель ===== */
+.footer-divider {
+  margin-top: var(--space-sm);
+  margin-bottom: var(--space-sm);
+
+  width: 100%;
+  height: var(--border-width);
+  background-color: var(--color-border);
+}
+
+/* ===== Нижняя часть ===== */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: space-between;
+
+  width: 100%;
+
+  font-size: calc(100vw * 11 / var(--container-width));
+  line-height: 1.1;
+}
+
+.footer-links a,
+.footer-copy {
+  font-size: calc(100vw * 11 / var(--container-width));
+  text-decoration: none;
+}
+
+/*                                                 Footer-mobile - End                                                */
+
+/*                                                 Footer-tablet - Begin                                                */
+@media (min-width: 768px) {
+  .footer-container {
+    display: none;
+  }
+
+  .footer-container-tablet {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ===== Верхняя часть ===== */
+  .footer-logo {
+    width: calc(100vw * 74 / var(--container-width));
+    height: calc(100vw * 20 / var(--container-width));
+  }
+
+  .footer-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  /* ===== Разделитель ===== */
+  .footer-divider {
+    height: var(--border-width);
+  }
+}
+
+/*                                                 Footer-tablet - End                                                */

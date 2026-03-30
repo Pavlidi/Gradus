@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: var(--space-3xs);
+    gap: var(--space-xs);
 
     width: 100%;
 
@@ -25,6 +25,8 @@
     
     border: solid var(--color-border) var(--border-width);
     border-radius: var(--radius-card-s);
+
+    box-shadow: none;
 }
 
 .hwc__line-first {
@@ -35,14 +37,17 @@
     width: 100%;
 }
 
+.hwc__line-first .xs, .hwc__line-first .xs-bold  {
+    color: var(--color-text-secondary-dark);
+}
+
 .hwc-status {
     padding: 0 var(--space-3xs);
 
     background-color: var(--color-status-new);
     border-radius: var(--radius-md);
-
-    color: var(--color-text-secondary-dark);
 }
+
 
 .hwc-date {
     display: flex;
@@ -74,6 +79,33 @@
     padding: var(--space-3xs) 0;
 }
 
+.hw__line-third {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-4xs);
+
+    width: 100%;
+}
+
+.hw__line-progress {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: var(--space-sm);
+
+    width: 100%;
+}
+
+.hw__result-status {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: var(--space-xs);
+
+    width: 100%;
+}
+
 .btn-dark {
     flex: 1;
     padding: var(--space-xs) var(--space-md);
@@ -88,7 +120,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: var(--space-3xs);
+    gap: var(--space-sm);
 
 
     cursor: pointer;
@@ -98,6 +130,30 @@
 
     /* Тень */
     box-shadow:var(--box-shadows-sm);
+
+    transition: all 0.25s ease;
+}
+
+.btn-light {
+    flex: 1;
+    padding: var(--space-3xs) var(--space-sm);
+    border: solid var(--border-width) var(--color-border);
+    border-radius: var(--radius-round);
+
+    font-size: var(--text-xs);
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--color-text);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    cursor: pointer;
+
+    /* Градиент как в макете */
+    background-color: var(--color-bg);
 
     transition: all 0.25s ease;
 }
@@ -116,4 +172,56 @@
     box-shadow: 
         0 5px 10px rgba(0, 0, 0, 0.3),
         inset 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+/*      ======= Cards - End ======       */
+
+
+/*      ======= Progress__line - Begin ======       */
+.progress__line {
+    display: block;
+
+    width: 100%;
+    height: var(--space-xs);
+
+    background-color: var(--color-border);
+    border-radius: var(--radius-round);
+}
+
+.progress__line-active {
+    display: block;
+    overflow: hidden;
+
+    width: 90%;
+    height: var(--space-xs);
+
+    border-radius: var(--radius-round);
+}
+
+.progress__line-background {
+    display: block;
+
+    width: 111%;
+    height: var(--space-xs);
+
+    background: var(--gradient-green);
+    border-radius: var(--radius-round);
+}
+/*      ======= Progress__line - End ======       */
+
+/*      ======= Indicators - Begin ======       */
+.hw__result-status-indicator {
+    display: block;
+
+    width: var(--size-2xs);
+    height: var(--size-2xs);
+
+    border-radius: var(--radius-round);
+}
+
+.complete {
+    background-color: var(--color-status-complete);
+}
+
+.fail {
+    background-color: var(--color-status-fail);
 }

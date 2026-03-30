@@ -45,6 +45,14 @@ h1, h2, h3, p, a {
   line-height: 1.4;
 }
 
+.xs-bold {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  line-height: 1.4;
+
+  color: var(--color-text-secondary-dark);
+}
+
 /*                                                 Переменные величины - Begin                                                 */
 :root {
   /*  Layout tokens  */
@@ -127,6 +135,7 @@ h1, h2, h3, p, a {
 
   /*  Gradients */
   --gradient-btn: linear-gradient(180deg, #3B3A4E 0%, #272733 100%);
+  --gradient-green: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%);
 
   /*  Box-shadows  */
   --box-shadows-sm: 0px 2px 8px rgba(0, 0, 0, 0.15);
