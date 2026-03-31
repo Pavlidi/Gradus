@@ -29,6 +29,24 @@
     box-shadow: none;
 }
 
+.grades {
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+
+    width: 100%;
+
+    padding: var(--space-sm) var(--space-md);
+
+    background-color: var(--color-bg);
+    border: solid var(--color-border) var(--border-width);
+    border-radius: var(--radius-card-s);
+
+    font-size: var(--text-sm);
+
+    box-shadow: none;
+}
+
 .hwc__line-first {
     display: flex;
     justify-content: space-between;
@@ -67,6 +85,15 @@
 
     width: 100%;
     height: var(--border-width);
+}
+
+.line__vertical {
+    display: block;
+
+    background-color: var(--color-border);
+
+    width: var(--border-width);
+
 }
 
 .hwc__line-third {
@@ -221,16 +248,17 @@
     display: block;
     overflow: hidden;
 
-    width: 90%;
+    width: 0;
     height: var(--space-xs);
 
     border-radius: var(--radius-round);
+
+    transition: width 0.8s ease; /* 🔥 магия */
 }
 
 .progress__line-background {
     display: block;
 
-    width: 111%;
     height: var(--space-xs);
 
     background: var(--gradient-green);

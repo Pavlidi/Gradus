@@ -2,6 +2,18 @@
   display: block;
 }
 
+.section-demotest {
+  display: none;
+}
+
+.section-performance {
+  display: none;
+}
+
+.section-progress {
+  display: none;
+}
+
 .section-books {
   display: none;
 }
@@ -22,9 +34,9 @@
 
 /*      ======= Subject-Swiper - Begin ======       */
 .subject__swiper {
-    margin-top: var(--space-lg);
-    margin-right: var(--space-md);
-    margin-left: var(--space-md);
+  margin-top: var(--space-lg);
+  margin-right: var(--space-md);
+  margin-left: var(--space-md);
 }
 
 .subjects {
@@ -60,4 +72,143 @@
   border: solid var(--color-border) var(--border-width);
   color: var(--color-text);
 }
+
 /*      ======= Subject-Swiper - End ======       */
+
+
+
+/*      ======= Demo-test - Begin ======       */
+.chart-grades {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: var(--space-3xs);
+  width: 100%;
+}
+
+.chart-grades p {
+  text-align: center;
+  width: calc(100vw * 29 / var(--container-width));
+}
+
+
+.card.s {
+    position: relative; /* 🔥 обязательно */
+}
+
+
+
+.chart-overlay {
+    position: absolute;
+    left: var(--space-2xl); /* 🔥 отступ под цифры слева */
+    right: 0;
+    bottom: calc(100vw * 8 / var(--container-width));
+
+    height: 92%; /* регулирует максимальную высоту столбцов */
+
+    pointer-events: none; /* чтобы свайп работал ниже */
+}
+
+.chart-container {
+    width: 100%;
+    height: 100%;
+
+    overflow-x: auto;
+    pointer-events: auto; /* возвращаем взаимодействие */
+}
+/* Убираем скроллбар */
+.chart-container::-webkit-scrollbar {
+  display: none;
+}
+
+
+.chart {
+    display: flex;
+    align-items: flex-end;
+    gap: var(--space-sm);
+
+    height: 100%;
+    padding: 0 var(--space-sm);
+
+    min-width: calc(100vw * 800 / var(--container-width));
+}
+
+/* Столбец */
+.bar {
+    width: calc(100vw * 72 / var(--container-width));
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+/* Градиент */
+.bar-fill {
+  width: 100%;
+  height: 0;
+  border-top-left-radius: var(--space-sm);
+  border-top-right-radius: var(--space-sm);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+
+
+  display: flex;
+  align-items: start;
+  justify-content: center;
+
+  color: white;
+  font-weight: 700;
+
+  background: var(--gradient-green-vert);
+
+  transition: height 0.6s ease;
+}
+
+.bar-fill span {
+  margin-top: var(--space-sm);
+  font-size: var(--text-xl);
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.bar p {
+  margin-top: var(--space-xs);
+}
+/*      ======= Demo-test - End ======       */
+
+/*      ======= Progress - Begin ======       */
+.progress__tasks {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+}
+
+.progress__task {
+  display: block;
+
+  width: var(--size-2xs);
+  height: var(--size-2xs);
+
+  background-color: var(--color-border);
+  border-radius: var(--radius-round);
+}
+
+.done {
+  background-color: var(--color-progress-done);
+}
+
+.now {
+  background-color: var(--color-progress-active);
+}
+
+@media (min-width: 1024px) {
+.bar {
+    width: calc(100vw * 140 / var(--container-width));
+    height: 100%;
+}
+}
+
+/*      ======= Progress - End ======       */

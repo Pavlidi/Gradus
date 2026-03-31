@@ -35,6 +35,33 @@ subjects.forEach(subject => {
 
 
 
+//          ======= Анимация заполнения прогресса - Begin ======
+document.querySelectorAll('.progress__line-active').forEach(el => {
+    const targetWidth = el.getAttribute('data-width'); // 👈 переносим из style
+
+    setTimeout(() => {
+        el.style.width = targetWidth;
+    }, 200);
+});
+//          ======= Анимация заполнения прогресса - End ======
+
+
+
+
+
+//          ======= Demo-test - Begin ======
+document.querySelectorAll('.bar').forEach(bar => {
+    const value = bar.dataset.value;
+    const fill = bar.querySelector('.bar-fill');
+
+    // 100 = вся высота блока
+    fill.style.height = value + "%";
+});
+//          ======= Demo-test - End ======
+
+
+
+
 
 function openTasks()
 {
@@ -42,10 +69,25 @@ function openTasks()
     for (let i = 0; i < subjectSwiper.length; i++) {
         subjectSwiper[i].style.display = "block";
     }
-    
+
     var sectionTask = document.getElementsByClassName('section-task');
     for (let i = 0; i < sectionTask.length; i++) {
         sectionTask[i].style.display = "block";
+    }
+
+    var sectionDemotest = document.getElementsByClassName('section-demotest');
+    for (let i = 0; i < sectionDemotest.length; i++) {
+        sectionDemotest[i].style.display = "none";
+    }
+
+    var sectionPerformance = document.getElementsByClassName('section-performance');
+    for (let i = 0; i < sectionPerformance.length; i++) {
+        sectionPerformance[i].style.display = "none";
+    }
+
+    var sectionProgress = document.getElementsByClassName('section-progress');
+    for (let i = 0; i < sectionProgress.length; i++) {
+        sectionProgress[i].style.display = "none";
     }
 
     var sectionBooks = document.getElementsByClassName('section-books');
@@ -81,6 +123,21 @@ function openStatistics()
         sectionTask[i].style.display = "none";
     }
 
+    var sectionDemotest = document.getElementsByClassName('section-demotest');
+    for (let i = 0; i < sectionDemotest.length; i++) {
+        sectionDemotest[i].style.display = "block";
+    }
+
+    var sectionPerformance = document.getElementsByClassName('section-performance');
+    for (let i = 0; i < sectionPerformance.length; i++) {
+        sectionPerformance[i].style.display = "block";
+    }
+
+    var sectionProgress = document.getElementsByClassName('section-progress');
+    for (let i = 0; i < sectionProgress.length; i++) {
+        sectionProgress[i].style.display = "block";
+    }
+
     var sectionBooks = document.getElementsByClassName('section-books');
     for (let i = 0; i < sectionBooks.length; i++) {
         sectionBooks[i].style.display = "none";
@@ -114,6 +171,21 @@ function openMaterials()
         sectionTask[i].style.display = "none";
     }
 
+    var sectionDemotest = document.getElementsByClassName('section-demotest');
+    for (let i = 0; i < sectionDemotest.length; i++) {
+        sectionDemotest[i].style.display = "none";
+    }
+
+    var sectionPerformance = document.getElementsByClassName('section-performance');
+    for (let i = 0; i < sectionPerformance.length; i++) {
+        sectionPerformance[i].style.display = "none";
+    }
+
+    var sectionProgress = document.getElementsByClassName('section-progress');
+    for (let i = 0; i < sectionProgress.length; i++) {
+        sectionProgress[i].style.display = "none";
+    }
+
     var sectionBooks = document.getElementsByClassName('section-books');
     for (let i = 0; i < sectionBooks.length; i++) {
         sectionBooks[i].style.display = "block";
@@ -142,6 +214,21 @@ function openProfile()
         subjectSwiper[i].style.display = "none";
     }
 
+    var sectionDemotest = document.getElementsByClassName('section-demotest');
+    for (let i = 0; i < sectionDemotest.length; i++) {
+        sectionDemotest[i].style.display = "none";
+    }
+
+    var sectionPerformance = document.getElementsByClassName('section-performance');
+    for (let i = 0; i < sectionPerformance.length; i++) {
+        sectionPerformance[i].style.display = "none";
+    }
+
+    var sectionProgress = document.getElementsByClassName('section-progress');
+    for (let i = 0; i < sectionProgress.length; i++) {
+        sectionProgress[i].style.display = "none";
+    }
+
     var sectionTask = document.getElementsByClassName('section-task');
     for (let i = 0; i < sectionTask.length; i++) {
         sectionTask[i].style.display = "none";
@@ -167,3 +254,5 @@ function openProfile()
         sectionParent[i].style.display = "block";
     }
 }
+
+

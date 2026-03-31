@@ -1,0 +1,107 @@
+.login {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: var(--space-md);
+}
+
+/* контейнер */
+.login__container {
+    width: 100%;
+    max-width: 420px;
+}
+
+/* логотип */
+.login__logo {
+    width: calc(100vw * 90 / var(--container-width));
+    margin: 0 auto var(--space-lg);
+}
+
+/* карточка */
+.login__card {
+    width: 100%;
+}
+
+/* input блок */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3xs);
+    width: 100%;
+}
+
+/* input */
+.input-group input {
+    width: 100%;
+    padding: var(--space-xs) var(--space-sm);
+
+    border-radius: var(--radius-md);
+    border: solid var(--border-width) var(--color-border);
+
+    font-size: var(--text-md);
+    background-color: var(--color-surface);
+
+    outline: none;
+    transition: 0.2s ease;
+}
+
+/* фокус */
+.input-group input:focus {
+    border-color: var(--color-primary);
+}
+
+/* кнопки */
+.login__actions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+
+    margin-top: var(--space-sm);
+}
+
+.btn-dark.loading {
+  opacity: 0.7;
+}
+
+.password-wrapper {
+    position: relative;
+}
+
+.toggle-password {
+    position: absolute;
+    right: var(--space-sm);
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+/* modal */
+.modal {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0,0,0,0.3);
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    padding: var(--space-md);
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal__content {
+    width: 100%;
+    max-width: 420px;
+}
+
+/* loading */
+.btn-dark.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
