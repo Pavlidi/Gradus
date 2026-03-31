@@ -256,3 +256,135 @@ function openProfile()
 }
 
 
+//          ======= Registration - Begin ======
+// =====================
+// 📱 МАСКА ТЕЛЕФОНА +7
+// =====================
+function formatPhoneInput(input) {
+
+    input.addEventListener("input", () => {
+        let digits = input.value.replace(/\D/g, "");
+
+        // всегда начинается с 7
+        if (!digits.startsWith("7")) {
+            digits = "7" + digits;
+        }
+
+        digits = digits.substring(0, 11);
+
+        let formatted = "+7";
+
+        if (digits.length > 1) formatted += " (" + digits.substring(1,4);
+        if (digits.length >= 4) formatted += ") " + digits.substring(4,7);
+        if (digits.length >= 7) formatted += "-" + digits.substring(7,9);
+        if (digits.length >= 9) formatted += "-" + digits.substring(9,11);
+
+        input.value = formatted;
+    });
+}
+
+
+// =====================
+// 📞 ПРИМЕНЕНИЕ К INPUT
+// =====================
+document.addEventListener("DOMContentLoaded", () => {
+
+    const phone = document.getElementById("phone");
+    const regPhone = document.getElementById("regPhone");
+
+    if (phone) formatPhoneInput(phone);
+    if (regPhone) formatPhoneInput(regPhone);
+
+});
+
+
+// =====================
+// 🧹 ФОРМАТ ДЛЯ БД
+// =====================
+function getCleanPhone(value) {
+    return "+" + value.replace(/\D/g, "");
+}
+
+
+// =====================
+// 👁️ ПОКАЗ ПАРОЛЯ
+// =====================
+function togglePassword() {
+    const input = document.getElementById("password");
+
+    if (!input) return;
+
+    input.type = input.type === "password" ? "text" : "password";
+}
+
+
+// =====================
+// 🔐 ЛОГИН + LOADING
+// =====================
+document.addEventListener("DOMContentLoaded", () => {
+
+    const loginBtn = document.getElementById("loginBtn");
+
+    if (!loginBtn) return;
+
+    loginBtn.addEventListener("click", function () {
+
+        const btn = this;
+        const phoneInput = document.getElementById("phone");
+        const passwordInput = document.getElementById("password");
+
+        const phone = getCleanPhone(phoneInput.value);
+        const password = passwordInput.value;
+
+        // валидация
+        if (phone.length < 12) {
+            alert("Введите корректный номер");
+            return;
+        }
+
+        if (!password) {
+            alert("Введите пароль");
+            return;
+        }
+
+        // loading
+        btn.classList.add("loading");
+        btn.innerText = "Вход...";
+
+        setTimeout(() => {
+            btn.classList.remove("loading");
+            btn.innerText = "Войти";
+        }, 1500);
+    });
+
+});
+
+
+// =====================
+// 🪟 МОДАЛКА РЕГИСТРАЦИИ
+// =====================
+function openModal() {
+    const modal = document.getElementById("modal");
+    if (modal) modal.classList.add("active");
+}
+
+function closeModal() {
+    const modal = document.getElementById("modal");
+    if (modal) modal.classList.remove("active");
+}
+
+
+// =====================
+// ❌ ЗАКРЫТИЕ ПО КЛИКУ ВНЕ
+// =====================
+document.addEventListener("click", (e) => {
+    const modal = document.getElementById("modal");
+
+    if (!modal) return;
+
+    if (e.target === modal) {
+        modal.classList.remove("active");
+    }
+});
+//          ======= Registration - End ======
+

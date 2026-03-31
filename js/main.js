@@ -1,171 +1,390 @@
-const burger = document.getElementById("burger");
-const menu = document.getElementById("menu");
-const closeMenu = document.getElementById("closeMenu");
+const tabs = document.querySelectorAll('.menu-item');
+const contents = document.querySelectorAll('.tab-content');
 
-burger.addEventListener("click", () => {
-  menu.classList.add("open");
+tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+
+        const target = tab.dataset.tab;
+
+        // активная кнопка
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        // активный контент
+        contents.forEach(c => {
+            c.classList.remove('active');
+
+            if (c.id === target) {
+                c.classList.add('active');
+            }
+        });
+
+    });
 });
 
-closeMenu.addEventListener("click", () => {
-  menu.classList.remove("open");
+const subjects = document.querySelectorAll('.subject');
+
+subjects.forEach(subject => {
+    subject.addEventListener('click', () => {
+
+        subjects.forEach(t => t.classList.remove('active'));
+        subject.classList.add('active');
+
+    });
 });
 
 
 
-// Таблица "Все курсы"
-const content = {
-  math: {
-    ege: {
-      title: "Математика",
-      text: "ЕГЭ по профильной математике — один из\nсамых сложных школьных экзаменов,\nтребующий глубокого понимания тем\nи умения логически рассуждать.\n\nМы уделяем внимание не только решению\nзадач, но и правильному оформлению,\nработе с критериями и распределению\nвремени на экзамене."
-    },
-    oge: {
-      title: "Математика",
-      text: "ОГЭ по математике закладывает основу дальнейшего обучения и во многом определяет уверенность ученика в предмете.\n\nНа занятиях мы системно закрываем пробелы, формируем устойчивые навыки решения типовых заданий и постепенно приучаем ученика к экзаменационному формату."
+//          ======= Анимация заполнения прогресса - Begin ======
+document.querySelectorAll('.progress__line-active').forEach(el => {
+    const targetWidth = el.getAttribute('data-width'); // 👈 переносим из style
+
+    setTimeout(() => {
+        el.style.width = targetWidth;
+    }, 200);
+});
+//          ======= Анимация заполнения прогресса - End ======
+
+
+
+
+
+//          ======= Demo-test - Begin ======
+document.querySelectorAll('.bar').forEach(bar => {
+    const value = bar.dataset.value;
+    const fill = bar.querySelector('.bar-fill');
+
+    // 100 = вся высота блока
+    fill.style.height = value + "%";
+});
+//          ======= Demo-test - End ======
+
+
+
+
+
+function openTasks()
+{
+    var subjectSwiper = document.getElementsByClassName('subject__swiper');
+    for (let i = 0; i < subjectSwiper.length; i++) {
+        subjectSwiper[i].style.display = "block";
     }
-  },
-  physics: {
-    ege: {
-      title: "Физика",
-      text: "ЕГЭ по физике требует понимания физических процессов, аккуратных вычислений и грамотного анализа условий задач.\n\nМы учим выстраивать решение шаг за шагом, работать с графиками и экспериментальными данными, а также избегать распространённых ошибок, которые часто возникают из-за спешки или непонимания сути задачи."
-    },
-    oge: {
-      title: "Физика",
-      text: "ОГЭ по физике требует понимания основных законов, умения читать графики и применять формулы в стандартных ситуациях.\n\nМы помогаем ученикам разобраться в ключевых темах, научиться правильно рассуждать и уверенно выполнять задания экзаменационного формата без лишнего стресса."
+
+    var sectionTask = document.getElementsByClassName('section-task');
+    for (let i = 0; i < sectionTask.length; i++) {
+        sectionTask[i].style.display = "block";
     }
-  }
-};
 
-let currentSubject = "math";
-let currentExam = "ege";
+    var sectionDemotest = document.getElementsByClassName('section-demotest');
+    for (let i = 0; i < sectionDemotest.length; i++) {
+        sectionDemotest[i].style.display = "none";
+    }
 
-const cardTitles = document.querySelectorAll(".cardTitle");
-const cardTexts = document.querySelectorAll(".cardText");
+    var sectionPerformance = document.getElementsByClassName('section-performance');
+    for (let i = 0; i < sectionPerformance.length; i++) {
+        sectionPerformance[i].style.display = "none";
+    }
 
-const subjectButtons = document.querySelectorAll("[data-subject]");
-const examButtons = document.querySelectorAll("[data-exam]");
-const roleButtons = document.querySelectorAll("[data-role]");
+    var sectionProgress = document.getElementsByClassName('section-progress');
+    for (let i = 0; i < sectionProgress.length; i++) {
+        sectionProgress[i].style.display = "none";
+    }
 
-function updateCard() {
-  const data = content[currentSubject][currentExam];
-  cardTitles.forEach(title => {
-    title.textContent = data.title;
-  });
+    var sectionBooks = document.getElementsByClassName('section-books');
+    for (let i = 0; i < sectionBooks.length; i++) {
+        sectionBooks[i].style.display = "none";
+    }
 
-  cardTexts.forEach(text => {
-    text.textContent = data.text;
-  });
+    var sectionMaterials = document.getElementsByClassName('section-materials');
+    for (let i = 0; i < sectionMaterials.length; i++) {
+        sectionMaterials[i].style.display = "none";
+    }
+
+    var sectionStudent = document.getElementsByClassName('section-student');
+    for (let i = 0; i < sectionStudent.length; i++) {
+        sectionStudent[i].style.display = "none";
+    }
+
+    var sectionParent = document.getElementsByClassName('section-parent');
+    for (let i = 0; i < sectionParent.length; i++) {
+        sectionParent[i].style.display = "none";
+    }
 }
 
-function setActive(buttons, activeButton) {
-  buttons.forEach(btn => btn.classList.remove("active"));
-  activeButton.classList.add("active");
+function openStatistics()
+{
+    var subjectSwiper = document.getElementsByClassName('subject__swiper');
+    for (let i = 0; i < subjectSwiper.length; i++) {
+        subjectSwiper[i].style.display = "block";
+    }
+
+    var sectionTask = document.getElementsByClassName('section-task');
+    for (let i = 0; i < sectionTask.length; i++) {
+        sectionTask[i].style.display = "none";
+    }
+
+    var sectionDemotest = document.getElementsByClassName('section-demotest');
+    for (let i = 0; i < sectionDemotest.length; i++) {
+        sectionDemotest[i].style.display = "block";
+    }
+
+    var sectionPerformance = document.getElementsByClassName('section-performance');
+    for (let i = 0; i < sectionPerformance.length; i++) {
+        sectionPerformance[i].style.display = "block";
+    }
+
+    var sectionProgress = document.getElementsByClassName('section-progress');
+    for (let i = 0; i < sectionProgress.length; i++) {
+        sectionProgress[i].style.display = "block";
+    }
+
+    var sectionBooks = document.getElementsByClassName('section-books');
+    for (let i = 0; i < sectionBooks.length; i++) {
+        sectionBooks[i].style.display = "none";
+    }
+
+    var sectionMaterials = document.getElementsByClassName('section-materials');
+    for (let i = 0; i < sectionMaterials.length; i++) {
+        sectionMaterials[i].style.display = "none";
+    }
+
+    var sectionStudent = document.getElementsByClassName('section-student');
+    for (let i = 0; i < sectionStudent.length; i++) {
+        sectionStudent[i].style.display = "none";
+    }
+
+    var sectionParent = document.getElementsByClassName('section-parent');
+    for (let i = 0; i < sectionParent.length; i++) {
+        sectionParent[i].style.display = "none";
+    }
 }
 
-subjectButtons.forEach(btn => {
-  btn.addEventListener("click", () => {
-    currentSubject = btn.dataset.subject;
-    setActive(subjectButtons, btn);
-    updateCard();
-  });
+function openMaterials()
+{
+    var subjectSwiper = document.getElementsByClassName('subject__swiper');
+    for (let i = 0; i < subjectSwiper.length; i++) {
+        subjectSwiper[i].style.display = "none";
+    }
+    
+    var sectionTask = document.getElementsByClassName('section-task');
+    for (let i = 0; i < sectionTask.length; i++) {
+        sectionTask[i].style.display = "none";
+    }
+
+    var sectionDemotest = document.getElementsByClassName('section-demotest');
+    for (let i = 0; i < sectionDemotest.length; i++) {
+        sectionDemotest[i].style.display = "none";
+    }
+
+    var sectionPerformance = document.getElementsByClassName('section-performance');
+    for (let i = 0; i < sectionPerformance.length; i++) {
+        sectionPerformance[i].style.display = "none";
+    }
+
+    var sectionProgress = document.getElementsByClassName('section-progress');
+    for (let i = 0; i < sectionProgress.length; i++) {
+        sectionProgress[i].style.display = "none";
+    }
+
+    var sectionBooks = document.getElementsByClassName('section-books');
+    for (let i = 0; i < sectionBooks.length; i++) {
+        sectionBooks[i].style.display = "block";
+    }
+
+    var sectionMaterials = document.getElementsByClassName('section-materials');
+    for (let i = 0; i < sectionMaterials.length; i++) {
+        sectionMaterials[i].style.display = "block";
+    }
+
+    var sectionStudent = document.getElementsByClassName('section-student');
+    for (let i = 0; i < sectionStudent.length; i++) {
+        sectionStudent[i].style.display = "none";
+    }
+
+    var sectionParent = document.getElementsByClassName('section-parent');
+    for (let i = 0; i < sectionParent.length; i++) {
+        sectionParent[i].style.display = "none";
+    }
+}
+
+function openProfile()
+{
+    var subjectSwiper = document.getElementsByClassName('subject__swiper');
+    for (let i = 0; i < subjectSwiper.length; i++) {
+        subjectSwiper[i].style.display = "none";
+    }
+
+    var sectionDemotest = document.getElementsByClassName('section-demotest');
+    for (let i = 0; i < sectionDemotest.length; i++) {
+        sectionDemotest[i].style.display = "none";
+    }
+
+    var sectionPerformance = document.getElementsByClassName('section-performance');
+    for (let i = 0; i < sectionPerformance.length; i++) {
+        sectionPerformance[i].style.display = "none";
+    }
+
+    var sectionProgress = document.getElementsByClassName('section-progress');
+    for (let i = 0; i < sectionProgress.length; i++) {
+        sectionProgress[i].style.display = "none";
+    }
+
+    var sectionTask = document.getElementsByClassName('section-task');
+    for (let i = 0; i < sectionTask.length; i++) {
+        sectionTask[i].style.display = "none";
+    }
+
+    var sectionBooks = document.getElementsByClassName('section-books');
+    for (let i = 0; i < sectionBooks.length; i++) {
+        sectionBooks[i].style.display = "none";
+    }
+
+    var sectionMaterials = document.getElementsByClassName('section-materials');
+    for (let i = 0; i < sectionMaterials.length; i++) {
+        sectionMaterials[i].style.display = "none";
+    }
+
+    var sectionStudent = document.getElementsByClassName('section-student');
+    for (let i = 0; i < sectionStudent.length; i++) {
+        sectionStudent[i].style.display = "block";
+    }
+
+    var sectionParent = document.getElementsByClassName('section-parent');
+    for (let i = 0; i < sectionParent.length; i++) {
+        sectionParent[i].style.display = "block";
+    }
+}
+
+
+//          ======= Registration - Begin ======
+// =====================
+// 📱 МАСКА ТЕЛЕФОНА +7
+// =====================
+function formatPhoneInput(input) {
+
+    input.addEventListener("input", () => {
+        let digits = input.value.replace(/\D/g, "");
+
+        // всегда начинается с 7
+        if (!digits.startsWith("7")) {
+            digits = "7" + digits;
+        }
+
+        digits = digits.substring(0, 11);
+
+        let formatted = "+7";
+
+        if (digits.length > 1) formatted += " (" + digits.substring(1,4);
+        if (digits.length >= 4) formatted += ") " + digits.substring(4,7);
+        if (digits.length >= 7) formatted += "-" + digits.substring(7,9);
+        if (digits.length >= 9) formatted += "-" + digits.substring(9,11);
+
+        input.value = formatted;
+    });
+}
+
+
+// =====================
+// 📞 ПРИМЕНЕНИЕ К INPUT
+// =====================
+document.addEventListener("DOMContentLoaded", () => {
+
+    const phone = document.getElementById("phone");
+    const regPhone = document.getElementById("regPhone");
+
+    if (phone) formatPhoneInput(phone);
+    if (regPhone) formatPhoneInput(regPhone);
+
 });
 
-examButtons.forEach(btn => {
-  btn.addEventListener("click", () => {
-    currentExam = btn.dataset.exam;
-    setActive(examButtons, btn);
-    updateCard();
-  });
-});
 
-roleButtons.forEach(btn => {
-  btn.addEventListener("click", () => {
-    currentRole = btn.dataset.role;
-    setActive(roleButtons, btn);
-    updateCard();
-  });
-});
+// =====================
+// 🧹 ФОРМАТ ДЛЯ БД
+// =====================
+function getCleanPhone(value) {
+    return "+" + value.replace(/\D/g, "");
+}
 
 
-// Вопросы и ответы
-document.querySelectorAll('.faq-question').forEach(button => {
-  button.addEventListener('click', () => {
+// =====================
+// 👁️ ПОКАЗ ПАРОЛЯ
+// =====================
+function togglePassword() {
+    const input = document.getElementById("password");
 
-    const item = button.parentElement;
+    if (!input) return;
 
-    // если хочешь чтобы был открыт только один пункт
-    document.querySelectorAll('.faq-item').forEach(el => {
-      if (el !== item) {
-        el.classList.remove('active');
-      }
+    input.type = input.type === "password" ? "text" : "password";
+}
+
+
+// =====================
+// 🔐 ЛОГИН + LOADING
+// =====================
+document.addEventListener("DOMContentLoaded", () => {
+
+    const loginBtn = document.getElementById("loginBtn");
+
+    if (!loginBtn) return;
+
+    loginBtn.addEventListener("click", function () {
+
+        const btn = this;
+        const phoneInput = document.getElementById("phone");
+        const passwordInput = document.getElementById("password");
+
+        const phone = getCleanPhone(phoneInput.value);
+        const password = passwordInput.value;
+
+        // валидация
+        if (phone.length < 12) {
+            alert("Введите корректный номер");
+            return;
+        }
+
+        if (!password) {
+            alert("Введите пароль");
+            return;
+        }
+
+        // loading
+        btn.classList.add("loading");
+        btn.innerText = "Вход...";
+
+        setTimeout(() => {
+            btn.classList.remove("loading");
+            btn.innerText = "Войти";
+        }, 1500);
     });
 
-    item.classList.toggle('active');
-  });
-});
-
-document.querySelectorAll('.faq-question-tablet').forEach(button => {
-  button.addEventListener('click', () => {
-
-    const item = button.parentElement;
-
-    // если хочешь чтобы был открыт только один пункт
-    document.querySelectorAll('.faq-item').forEach(el => {
-      if (el !== item) {
-        el.classList.remove('active');
-      }
-    });
-
-    item.classList.toggle('active');
-  });
 });
 
 
-updateCard();
+// =====================
+// 🪟 МОДАЛКА РЕГИСТРАЦИИ
+// =====================
+function openModal() {
+    const modal = document.getElementById("modal");
+    if (modal) modal.classList.add("active");
+}
 
-// Переключение карточек через свайп
-const swiper = new Swiper(".mySwiper", {
-  slidesPerView: 1.6,                           // Автоматическая ширина (настроили в CSS 80%)
-  centeredSlides: true,                             // Активная карточка строго по центру
-  initialSlide: 1,                                  // ← Открываем вторую
-  //spaceBetween: window.innerWidth * 0.025641,       // Расстояние между карточками
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,                                // Чтобы можно было кликать на точки
-  },
+function closeModal() {
+    const modal = document.getElementById("modal");
+    if (modal) modal.classList.remove("active");
+}
+
+
+// =====================
+// ❌ ЗАКРЫТИЕ ПО КЛИКУ ВНЕ
+// =====================
+document.addEventListener("click", (e) => {
+    const modal = document.getElementById("modal");
+
+    if (!modal) return;
+
+    if (e.target === modal) {
+        modal.classList.remove("active");
+    }
 });
+//          ======= Registration - End ======
 
-const swiper2 = new Swiper(".mySwiper2", {
-  slidesPerView: 1.1526,                           // Автоматическая ширина (настроили в CSS 80%)
-  centeredSlides: true,                             // Активная карточка строго по центру
-  initialSlide: 1,                                  // ← Открываем вторую
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,                                // Чтобы можно было кликать на точки
-  },
-});
-
-const swiper3 = new Swiper(".mySwiper3", {
-  slidesPerView: 1,                           // Автоматическая ширина (настроили в CSS 80%)
-  centeredSlides: true,                             // Активная карточка строго по центру
-  initialSlide: 1,                                  // ← Открываем вторую
-  //spaceBetween: window.innerWidth * 0.2,       // Расстояние между карточками
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,                                // Чтобы можно было кликать на точки
-  },
-});
-
-const navLinks = document.querySelectorAll('.nav-link');
-
-navLinks.forEach(link => {
-  link.addEventListener('click', function() {
-    
-    // Убираем active у всех
-    navLinks.forEach(l => l.classList.remove('active'));
-    
-    // Добавляем текущему
-    this.classList.add('active');
-    
-  });
-});

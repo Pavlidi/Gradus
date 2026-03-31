@@ -1,250 +1,285 @@
-/*                                                 Button and Switch - Begin                                          */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+/*      ======= Cards - Begin ======       */
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-xs);
 
-  padding:  var(--btn__padding-top)  var(--btn__padding-right);
-  border: none;
-  border-radius: var(--btn__border-radius);
+    width: 100%;
 
-  font-family: 'Inter';
-  font-size: var(--btn__font-size);
-  font-weight: 700;
-  line-height: 1;
-  color: #fff;
+    padding: var(--space-xs);
 
-  cursor: pointer;
+    background-color: var(--color-surface);
+    border-radius: var(--radius-card);
 
-  background: var(--btn__background);
-  box-shadow: 0vw 1.2821vw 1.0256vw #424151 inset, 0vw 1.0256vw 3.8462vw rgba(15, 14, 23, 0.20);
+    box-shadow: var(--box-shadows-md);
 }
 
-.btn.white {
-  color: #252532;
-
-  background: linear-gradient(180deg,rgba(251, 251, 251, 1) 0%,rgba(240, 240, 240, 1) 100%);
-  box-shadow: 0vw 1.28205vw 2.5641vw rgba(0, 0, 0, 0.20);
+.Title {
+    margin-left: var(--space-xs);
 }
 
-.switch {
-  display: inline-flex;
+.s {
+    padding: var(--space-sm) var(--space-md);
+    background-color: var(--color-bg);
+    
+    border: solid var(--color-border) var(--border-width);
+    border-radius: var(--radius-card-s);
 
-  justify-content: space-between;
-
-  border-radius: var(--btn__border-radius);
-  border-width: calc(100vw * var(--border__size_2) / var(--mainWidth));
-  border-style:  solid;
-  border-color: #32303e;
-
-  background-color: #252532;
+    box-shadow: none;
 }
 
-.subject-switch {
-  width: calc(100vw * var(--subject-switch-width) / var(--mainWidth));
-  margin-top: calc(100vw * var(--subject-switch-marginTop) / var(--mainWidth));
-  margin-left: calc(100vw * var(--subject-switch-marginLeft) / var(--mainWidth));
+.grades {
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+
+    width: 100%;
+
+    padding: var(--space-sm) var(--space-md);
+
+    background-color: var(--color-bg);
+    border: solid var(--color-border) var(--border-width);
+    border-radius: var(--radius-card-s);
+
+    font-size: var(--text-sm);
+
+    box-shadow: none;
 }
 
-.exam-switch {
-  width: calc(100vw * var(--exam-switch-width) / var(--mainWidth));
-  border-color: #F8F8F8;
-  background-color: #E9E9EB;
+.hwc__line-first {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
 }
 
-.contact-switch {
-  width: calc(100vw * var(--contact-switch-width) / var(--mainWidth));
+.hwc__line-first .xs, .hwc__line-first .xs-bold  {
+    color: var(--color-text-secondary-dark);
 }
 
-.switch-btn {
-  border: none;
+.hwc-status {
+    padding: 0 var(--space-3xs);
 
-  font-size: calc(100vw * var(--switch-btn-fontSize) / var(--mainWidth));
-  font-weight: 600;
-  color: #B0B0B0;
-
-  cursor: pointer;
-  background: transparent;
+    background-color: var(--color-status-new);
+    border-radius: var(--radius-md);
 }
 
-.switch-btn.exam {
-  color: #5C5C64;
+
+.hwc-date {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
 }
 
-.switch-btn.left {
-  padding-left: calc(100vw * var(--switch-btn-paddingLeftRight) / var(--mainWidth));
+.hw-date-icon {
+    width: var(--size-xs);
+    height: auto;
 }
 
-.switch-btn.right {
-  padding-right: calc(100vw * var(--switch-btn-paddingLeftRight) / var(--mainWidth));
+.line__horizontal {
+    display: block;
+
+    background-color: var(--color-border);
+
+    width: 100%;
+    height: var(--border-width);
 }
 
-.switch-btn.role.left {
-  padding-left: calc(100vw * var(--switch-btn_role-paddingLeftRight) / var(--mainWidth));
+.line__vertical {
+    display: block;
+
+    background-color: var(--color-border);
+
+    width: var(--border-width);
+
 }
 
-.switch-btn.role.right {
-  padding-right: calc(100vw * var(--switch-btn_role-paddingLeftRight) / var(--mainWidth));
+.hwc__line-third {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-4xs);
+
+    width: 100%;
+    padding: var(--space-3xs) 0;
 }
 
-.switch .active {
-  display: block;
-  
-  margin: calc(100vw * var(--switch__active-margin) / var(--mainWidth));
-  padding: calc(100vw * var(--switch__active-paddingTop) / var(--mainWidth)) calc(100vw * var(--switch__active-paddingLeft) / var(--mainWidth));
+.hw__line-third {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-4xs);
 
-  border-radius: var(--btn__border-radius);
-
-  font-size: calc(100vw * var(--switch-btn__active-fontSize) / var(--mainWidth));
-  color: #fff;
-
-  background: var(--btn__background);
-  box-shadow: var(--box__shadow-2);
+    width: 100%;
 }
 
-.exam-switch .active {
-  color: #252532;
+.hw__line-progress {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: var(--space-sm);
 
-  background: linear-gradient(180deg,rgba(251, 251, 251, 1) 0%,rgba(240, 240, 240, 1) 100%);
+    width: 100%;
 }
 
-.contact-switch .active {
-  padding: calc(100vw * var(--switch__active-paddingTop) / var(--mainWidth)) calc(100vw * var(--switch__role__active-paddingLeft) / var(--mainWidth));
-}
-/*                                                 Button and Switch - End                                          */
+.hw__result-status {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: var(--space-xs);
 
-/*                                                 Swiper - Begin                                          */
-.swiper {
-  position: relative;
-  margin-top:  calc(100vw * var(--course-card-marginTop) / var(--mainWidth));
-  width: 100vw;
+    width: 100%;
 }
 
-.swiper-slide {
-  display: flex;
-  justify-items: center;
+.btn-dark {
+    flex: 1;
+    padding: var(--space-xs) var(--space-md);
+    border: none;
+    border-radius: var(--radius-xl);
+
+    font-size: var(--text-xs);
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--color-text-light);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+
+
+    cursor: pointer;
+
+    /* Градиент как в макете */
+    background: var(--gradient-btn);
+
+    /* Тень */
+    box-shadow:var(--box-shadows-sm);
+
+    transition: all 0.25s ease;
 }
 
-[class*="mySwiper"] .swiper-pagination {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.btn-light {
+    flex: 1;
+    padding: var(--space-3xs) var(--space-sm);
+    border: solid var(--border-width) var(--color-border);
+    border-radius: var(--radius-round);
 
-  margin-top: calc(100vw * var(--swiper-pagination-marginTop) / var(--mainWidth));
-  gap: calc(100vw * var(--swiper-pagination-gap) / var(--mainWidth));
+    font-size: var(--text-xs);
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--color-text);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    cursor: pointer;
+
+    /* Градиент как в макете */
+    background-color: var(--color-bg);
+
+    transition: all 0.25s ease;
 }
 
-/* Стилизация индикаторов (Dots) */
-[class*="mySwiper"] .swiper-pagination-bullet {
-  width: calc(100vw * var(--swiper-pagination_Dots-width) / var(--mainWidth));
-  height: calc(100vw * var(--swiper-pagination_Dots-width) / var(--mainWidth));
-  background: #BABABA;
-  opacity: 1;
-  transition: all 0.3s ease; /* Плавное удлинение */
+/* Hover эффект */
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 
+        0 15px 30px rgba(0, 0, 0, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
 }
 
-/* Активная точка превращается в длинную */
-[class*="mySwiper"] .swiper-pagination-bullet-active {
-  width: calc(100vw * var(--swiper-pagination_Active-width) / var(--mainWidth));
-  height: calc(100vw * var(--swiper-pagination_Active-height) / var(--mainWidth));
-  border-radius: calc(100vw * var(--swiper-pagination_Active-radius) / var(--mainWidth));
-  background: #BABABA; /* Цвет как на скрине */
+/* Нажатие */
+.btn:active {
+    transform: translateY(1px);
+    box-shadow: 
+        0 5px 10px rgba(0, 0, 0, 0.3),
+        inset 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-/* Левое затемнение */
-.swiper::before,
-.swiper::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  
-  width: calc(100vw * var(--swiper-pagination_shadow-width) / var(--mainWidth)); /* ширина затемнения */
-  height: 100%;
-  z-index: 10;
-  pointer-events: none; /* ВАЖНО! */
+.btn__group {
+    display: flex;
+    gap: var(--space-3xs);
 }
 
-/* Левый градиент */
-.swiper::before {
-  left: 0;
-  background: linear-gradient(90deg, #FAF9F6 0%, rgba(250, 249, 246, 0) 100%)
+.btn__books {
+    flex: 1;
+    padding: var(--space-xs);
+    border: solid var(--border-width) var(--color-border);
+    border-radius: var(--radius-round);
+
+    font-size: var(--text-xs);
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--color-text);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    cursor: pointer;
+
+    /* Градиент как в макете */
+    background-color: var(--color-bg);
+
+    transition: all 0.25s ease;
 }
 
-/* Правый градиент */
-.swiper::after {
-  right: 0;
-  background: linear-gradient(90deg, rgba(250, 249, 246, 0) 0%, #FAF9F6 100%)
+/*      ======= Cards - End ======       */
+
+
+/*      ======= Progress__line - Begin ======       */
+.progress__line {
+    display: block;
+
+    width: 100%;
+    height: var(--space-xs);
+
+    background-color: var(--color-border);
+    border-radius: var(--radius-round);
 }
 
-@media (min-width: 768px) {
-/*                                                 Button and Switch - Begin                                          */
+.progress__line-active {
+    display: block;
+    overflow: hidden;
 
-  .thin {
-    padding: var(--btn-thin__padding-top) var(--btn-thin__padding-right);
-  }
+    width: 0;
+    height: var(--space-xs);
 
-  .subject-switch {
-    margin-top: auto;
-    margin-right: calc(100vw * var(--subject-switch-marginRight) / var(--mainWidth));
-    margin-bottom: auto;
-    margin-left: auto;
-  }
+    border-radius: var(--radius-round);
 
-  .exam-switch {
-    position: absolute;
-    top: calc(100vw * var(--course-card__exam-switch-top) / var(--mainWidth));
-    left: calc(100vw * var(--course-card__exam-switch-left) / var(--mainWidth));
-  }
-  /*                                                 Button and Switch - End                                          */
-
-  /*                                                 Swiper - Begin                                          */
-  .swiper.mySwiper {
-    display: none;
-  }
-
-  .swiper.mySwiper2 {
-    display: none;
-  }
-
-  .swiper.mySwiper3 {
-    display: none;
-  }
-  /*                                                 Swiper - End                                          */
+    transition: width 0.8s ease; /* 🔥 магия */
 }
 
-@media (min-width: 1024px) {
-/*                                                 Button and Switch - Begin                                          */
+.progress__line-background {
+    display: block;
 
-  .thin {
-    padding: var(--btn-thin__padding-top) var(--btn-thin__padding-right);
-  }
+    height: var(--space-xs);
 
-  .subject-switch {
-    margin-top: auto;
-    margin-right: calc(100vw * var(--subject-switch-marginRight) / var(--mainWidth));
-    margin-bottom: auto;
-    margin-left: auto;
-  }
+    background: var(--gradient-green);
+    border-radius: var(--radius-round);
+}
+/*      ======= Progress__line - End ======       */
 
-  .exam-switch {
-    position: absolute;
-    top: calc(100vw * var(--course-card__exam-switch-top) / var(--mainWidth));
-    left: calc(100vw * var(--course-card__exam-switch-left) / var(--mainWidth));
-  }
-  /*                                                 Button and Switch - End                                          */
+/*      ======= Indicators - Begin ======       */
+.hw__result-status-indicator {
+    display: block;
 
-  /*                                                 Swiper - Begin                                          */
-  .swiper.mySwiper {
-    display: none;
-  }
+    width: var(--size-2xs);
+    height: var(--size-2xs);
 
-  .swiper.mySwiper2 {
-    display: none;
-  }
+    border-radius: var(--radius-round);
+}
 
-  .swiper.mySwiper3 {
-    display: none;
-  }
-  /*                                                 Swiper - End                                          */
+.complete {
+    background-color: var(--color-status-complete);
+}
+
+.fail {
+    background-color: var(--color-status-fail);
 }
