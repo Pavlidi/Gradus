@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: localhost:8889
--- Время создания: Мар 31 2026 г., 13:07
+-- Время создания: Апр 01 2026 г., 17:10
 -- Версия сервера: 8.0.44
 -- Версия PHP: 8.3.30
 
@@ -29,11 +29,11 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `homeworks` (
   `id` int NOT NULL,
-  `title` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `homework_date` date DEFAULT NULL,
-  `file_path` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `target_type` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `target_value` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `file_path` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `target_type` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `target_value` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -61,8 +61,8 @@ INSERT INTO `homeworks` (`id`, `title`, `homework_date`, `file_path`, `target_ty
 CREATE TABLE `homework_submissions` (
   `id` int NOT NULL,
   `homework_id` int DEFAULT NULL,
-  `student_name` varchar(100) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `status` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `student_name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `status` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `completed_tasks` int DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -91,8 +91,8 @@ INSERT INTO `homework_submissions` (`id`, `homework_id`, `student_name`, `status
 CREATE TABLE `submission_files` (
   `id` int NOT NULL,
   `submission_id` int DEFAULT NULL,
-  `file_path` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `file_type` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `file_path` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `file_type` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -176,7 +176,9 @@ INSERT INTO `users_info` (`id`, `parent_lastname`, `parent_firstname`, `parent_m
 (11, '', '', '', '', 'Вова', 'Вова', '', '', 0, 'Группа', 2, 'Физика', NULL, NULL, '314159265', 10, 8, 9, 4),
 (12, '', '', '', '', 'Гоша', 'Гоша', '', '', 0, 'Группа', 2, 'Математика', NULL, NULL, '314159265', 0, 0, 0, 0),
 (13, '', '', '', '', 'Ященко', 'Ященко', '', '', 0, 'Индивидуально', 0, 'Математика', NULL, NULL, '314159265', 0, 0, 0, 0),
-(14, '', '', '', '', 'Наби', 'Наби', '', '', 0, 'Индивидуально', 0, 'Математика', NULL, NULL, '314159265', 0, 0, 0, 0);
+(14, '', '', '', '', 'Наби', 'Наби', '', '', 0, 'Индивидуально', 0, 'Математика', NULL, NULL, '314159265', 0, 0, 0, 0),
+(18, 'Павлидий', 'Сергей', 'Юрьевич', '+79681748319', 'Павлидий', 'Карина', 'Вадимовна', '+79965450493', NULL, NULL, NULL, NULL, 'PussyRiot', 'N98k9818285012±', '314159265', 0, 0, 0, 0),
+(20, 'Мать', 'Всего', 'Живущего', '+7777', NULL, NULL, NULL, '+7999', NULL, NULL, NULL, NULL, 'c01000010', NULL, '314159265', 0, 0, 0, 0);
 
 --
 -- Индексы сохранённых таблиц
@@ -232,7 +234,7 @@ ALTER TABLE `submission_files`
 -- AUTO_INCREMENT для таблицы `users_info`
 --
 ALTER TABLE `users_info`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

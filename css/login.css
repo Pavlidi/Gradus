@@ -118,3 +118,9 @@
     opacity: 0.6;
     pointer-events: none;
 }
+
+@media (min-width: 2220px) {
+    .modal__content{
+        max-width: 800px;
+    }
+}
