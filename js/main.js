@@ -388,3 +388,27 @@ document.addEventListener("click", (e) => {
 });
 //          ======= Registration - End ======
 
+
+// Переключатель предмета в ЛК
+function changeSubject(subject) {
+    const currentHash = window.location.hash || '#tasks';
+    window.location.href = "?subject=" + subject + currentHash;
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    const hash = window.location.hash;
+
+    if (hash === '#statistics') {
+        openStatistics();
+
+        document.querySelectorAll('.menu-item').forEach(t => t.classList.remove('active'));
+        document.querySelector('[data-tab="statistics"]').classList.add('active');
+
+    } else {
+        openTasks();
+
+        document.querySelectorAll('.menu-item').forEach(t => t.classList.remove('active'));
+        document.querySelector('[data-tab="tasks"]').classList.add('active');
+    }
+});
+

@@ -20,17 +20,19 @@ foreach ($_FILES['photos']['tmp_name'] as $key => $tmpName) {
     if (empty($_FILES['photos']['name'][$key])) continue;
 
     $fileName = uniqid() . "_" . $_FILES['photos']['name'][$key];
-    $path = "uploads/solutions/" . $fileName;
 
-    move_uploaded_file($tmpName, "../" . $path);
+    $serverPath = "../uploads/solutions/" . $fileName;
+    $dbPath = "uploads/solutions/" . $fileName;
+
+    move_uploaded_file($tmpName, $serverPath);
 
     $stmt = $conn->prepare("
         INSERT INTO submission_files (submission_id, file_path, file_type)
         VALUES (?, ?, 'solution')
     ");
-    $stmt->bind_param("is", $submission_id, $path);
+    $stmt->bind_param("is", $submission_id, $dbPath);
     $stmt->execute();
 }
 
-header("Location: ../dashboard.php");
+header("Location: ../account.php");
 exit();

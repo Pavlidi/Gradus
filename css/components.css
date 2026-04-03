@@ -109,11 +109,25 @@
 .hw__line-third {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
+    
     gap: var(--space-4xs);
 
     width: 100%;
 }
+
+#DOWN {
+    flex: 0.8;
+}
+
+#UPL {
+    flex: 1;
+}
+
+form .btn-dark {
+    width: 100%;
+}
+
 
 .hw__line-progress {
     display: flex;
@@ -160,6 +174,8 @@
 
     transition: all 0.25s ease;
 }
+
+
 
 .btn-light {
     flex: 1;
@@ -283,3 +299,5 @@
 .fail {
     background-color: var(--color-status-fail);
 }
+
+

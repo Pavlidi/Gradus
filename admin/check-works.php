@@ -74,9 +74,10 @@ while ($row = $result->fetch_assoc()) {
             JOIN homeworks h ON hs.homework_id = h.id
             WHERE hs.student_name = ?
             AND hs.status = 'не проверено'
+            AND h.subject = ?
             ORDER BY h.homework_date DESC
         ");
-        $stmt->bind_param("s", $fullName);
+        $stmt->bind_param("ss", $fullName, $subject);
         $stmt->execute();
         $submissions = $stmt->get_result();
         ?>
@@ -104,7 +105,7 @@ while ($row = $result->fetch_assoc()) {
                         ?>
 
                         <?php while ($file = $files->fetch_assoc()): ?>
-                            <a href="<?= $file['file_path'] ?>" target="_blank">Скачать</a><br>
+                            <a href="../<?= $file['file_path'] ?>" target="_blank">Скачать</a><br>
                         <?php endwhile; ?>
 
                         <form action="php/check-homework.php" method="POST" enctype="multipart/form-data">
@@ -149,9 +150,10 @@ while ($row = $result->fetch_assoc()) {
         JOIN homeworks h ON hs.homework_id = h.id
         WHERE hs.student_name = ?
         AND hs.status = 'не проверено'
+        AND h.subject = ?
         ORDER BY h.homework_date DESC
     ");
-    $stmt->bind_param("s", $fullName);
+    $stmt->bind_param("ss", $fullName, $subject);
     $stmt->execute();
     $submissions = $stmt->get_result();
     ?>
@@ -178,7 +180,7 @@ while ($row = $result->fetch_assoc()) {
                     ?>
 
                     <?php while ($file = $files->fetch_assoc()): ?>
-                        <a href="<?= $file['file_path'] ?>" target="_blank">Скачать</a><br>
+                        <a href="../<?= $file['file_path'] ?>" target="_blank">Скачать</a><br>
                     <?php endwhile; ?>
 
                     <form action="php/check-homework.php" method="POST" enctype="multipart/form-data">

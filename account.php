@@ -1,3 +1,133 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['student_id'])) {
+    header("Location: login.php");
+    exit();
+}
+
+$conn = new mysqli("localhost", "root", "root", "test");
+
+$student_id = $_SESSION['student_id'];
+
+// 👉 текущий выбранный предмет (по умолчанию математика)
+$subject = $_GET['subject'] ?? 'Математика';
+
+
+// 👉 сначала получаем телефон пользователя
+$stmt = $conn->prepare("
+    SELECT student_phone, parent_phone 
+    FROM users_info 
+    WHERE id = ?
+    LIMIT 1
+");
+$stmt->bind_param("i", $student_id);
+$stmt->execute();
+$userData = $stmt->get_result()->fetch_assoc();
+
+$phone = $userData['student_phone'] ?: $userData['parent_phone'];
+
+
+// 👉 теперь получаем нужную запись по предмету
+$stmt = $conn->prepare("
+    SELECT * FROM users_info 
+    WHERE (student_phone = ? OR parent_phone = ?)
+    AND subject_1 = ?
+    LIMIT 1
+");
+$stmt->bind_param("sss", $phone, $phone, $subject);
+$stmt->execute();
+$student = $stmt->get_result()->fetch_assoc();
+
+
+// 👉 основные данные
+$fullName = $student['student_lastname'] . ' ' . $student['student_firstname'];
+$group = $student['group_number'];
+
+
+// ====== ДАННЫЕ ДЛЯ ГРАФИКА ======
+$stmt = $conn->prepare("
+    SELECT lines_count, step 
+    FROM test_results
+    WHERE student_lastname = ? 
+    AND student_firstname = ?
+    AND subject = ?
+    LIMIT 1
+");
+
+$lastname = $student['student_lastname'];
+$firstname = $student['student_firstname'];
+
+$stmt->bind_param("sss", $lastname, $firstname, $subject);
+$stmt->execute();
+
+$resultChart = $stmt->get_result()->fetch_assoc();
+
+$linesCount = $resultChart['lines_count'] ?? 10;
+$step = $resultChart['step'] ?? 10;
+
+$stmt = $conn->prepare("
+    SELECT * 
+    FROM test_results
+    WHERE student_lastname = ? 
+    AND student_firstname = ?
+    AND subject = ?
+    LIMIT 1
+");
+
+$stmt->bind_param("sss", $lastname, $firstname, $subject);
+$stmt->execute();
+
+$testData = $stmt->get_result()->fetch_assoc();
+
+
+// 👉 проверяем, есть ли у ученика математика и физика
+$hasMath = false;
+$hasPhysics = false;
+
+$stmt = $conn->prepare("
+    SELECT subject_1 FROM users_info 
+    WHERE student_phone = ? OR parent_phone = ?
+");
+$stmt->bind_param("ss", $phone, $phone);
+$stmt->execute();
+
+$result = $stmt->get_result();
+
+while ($row = $result->fetch_assoc()) {
+    if ($row['subject_1'] === "Математика") {
+        $hasMath = true;
+    }
+    if ($row['subject_1'] === "Физика") {
+        $hasPhysics = true;
+    }
+}
+
+
+// 👉 функция форматирования даты
+function formatDateRu($date) {
+    $months = [
+        '01' => 'января',
+        '02' => 'февраля',
+        '03' => 'марта',
+        '04' => 'апреля',
+        '05' => 'мая',
+        '06' => 'июня',
+        '07' => 'июля',
+        '08' => 'августа',
+        '09' => 'сентября',
+        '10' => 'октября',
+        '11' => 'ноября',
+        '12' => 'декабря'
+    ];
+
+    $day = date('j', strtotime($date));
+    $month = date('m', strtotime($date));
+
+    return $day . ' ' . $months[$month];
+}
+?>
+
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -12,6 +142,7 @@
 </head>
 
 <body>
+
     <header class="header">
         <div class="header__container">
 
@@ -26,13 +157,14 @@
             <nav class="menu">
 
                 <div class="menu__inside-first">
-                    <div class="menu-item active" data-tab="tasks" onclick="openTasks()">
+                    <div class="menu-item active" data-tab="tasks" onclick="window.location.hash='tasks'; openTasks()">
                         <img class="icon-default" src="image/tasks_logo_mobile.png">
                         <img class="icon-active" src="image/tasks_logo_mobile-active.png">
                         <span class="sm">Задания</span>
                     </div>
 
-                    <div class="menu-item" data-tab="statistics" onclick="openStatistics()">
+                    <div class="menu-item" data-tab="statistics"
+                        onclick="window.location.hash='statistics'; openStatistics()">
                         <img class="icon-default" src="image/statistics_logo_mobile.png">
                         <img class="icon-active" src="image/statistics_logo_mobile-active.png">
                         <span class="sm">Статистика</span>
@@ -57,148 +189,221 @@
         </div>
     </header>
 
-
     <!--    Subject-Swiper - Begin   -->
+    <?php if ($hasMath && $hasPhysics): ?>
     <section class="subject__swiper">
         <div class="subjects">
 
-            <div class="subject active">
+            <div class="subject <?= $subject == 'Математика' ? 'active' : '' ?>" onclick="changeSubject('Математика')">
                 Математика
             </div>
 
-            <div class="subject">
+            <div class="subject <?= $subject == 'Физика' ? 'active' : '' ?>" onclick="changeSubject('Физика')">
                 Физика
             </div>
 
         </div>
     </section>
+    <?php endif; ?>
     <!--    Subject-Swiper - End   -->
 
 
-
     <!--    Home-Work-current - Begin   -->
-    <section class="container section-task">
+    <section class="container section-task current-task">
         <div class="card">
             <div class="Title">
                 <h1 class="lg">Домашняя работа</h1>
             </div>
+            <?php
+                    $active = $conn->prepare("
+                    SELECT * FROM homeworks h
+                    WHERE 
+                        (
+                            (h.target_type = 'student' AND h.target_value = ?)
+                            OR
+                            (h.target_type = 'group' AND h.target_value = ?)
+                        )
+                        AND h.subject = ?
+                        AND NOT EXISTS (
+                            SELECT 1 FROM homework_submissions hs
+                            WHERE hs.homework_id = h.id
+                            AND hs.student_name = ?
+                        )
+                    ORDER BY h.homework_date ASC
+                ");
+
+                    $active->bind_param("ssss", $fullName, $group, $subject, $fullName);
+                    $active->execute();
+                    $activeResult = $active->get_result();
+                ?>
+
+            <?php if ($activeResult->num_rows > 0): ?>
+            <?php while ($hw = $activeResult->fetch_assoc()): ?>
             <div class="card s">
                 <div class="hwc__line-first">
-                    <p class="md">Закон сохранения энергии</p>
-                    <div class="hwc-status">
-                        <p class="xs">Новое</p>
-                    </div>
+                    <p class="md">
+                        <?= $hw['title'] ?>
+                    </p>
+                    <!-- <div class="hwc-status">
+                                <p class="xs">Новое</p>
+                            </div> -->
                 </div>
 
                 <div class="hwc__line-second">
                     <div class="hwc-date">
                         <img class="hw-date-icon" src="image/hw_date.png">
-                        <p class="xs">До 12 марта</p>
+                        <p class="xs">До
+                            <?= formatDateRu($hw['homework_date']) ?>
+                        </p>
                     </div>
                 </div>
 
                 <div class="line__horizontal"></div>
 
                 <div class="hwc__line-third">
-                    <button class="btn-dark download">
+                    <?php if (!empty($hw['file_path'])): ?>
+
+                    <a href="<?= $hw['file_path'] ?>" download class="btn-dark download" style="text-decoration: none;"
+                        id="DOWN">
                         <img class="hw-date-icon" src="image/download.png">
                         Скачать
-                    </button>
-                    <button class="btn-dark upload">
-                        <img class="hw-date-icon" src="image/upload.png">
-                        Загрузить
-                    </button>
+                    </a>
+
+                    <?php endif; ?>
+
+                    <form action="php/upload-solution.php" method="POST" enctype="multipart/form-data" class="upload"
+                        id="UPL">
+
+                        <input type="hidden" name="homework_id" value="<?= $hw['id'] ?>">
+                        <input type="hidden" name="student_name" value="<?= $fullName ?>">
+
+                        <!-- скрытый input -->
+                        <input type="file" name="photos[]" id="fileInput<?= $hw['id'] ?>" multiple hidden
+                            onchange="this.form.submit()">
+
+                        <!-- твоя кнопка -->
+                        <button type="button" class="btn-dark"
+                            onclick="document.getElementById('fileInput<?= $hw['id'] ?>').click()">
+
+                            <img class="hw-date-icon" src="image/upload.png">
+                            Загрузить
+                        </button>
+                    </form>
                 </div>
             </div>
+            <?php endwhile; ?>
+            <?php else: ?>
+            <!-- <script>
+                var sectionCurrentTask = document.getElementsByClassName('current-task');
+                for (let i = 0; i < sectionCurrentTask.length; i++) {
+                    sectionCurrentTask[i].style.display = "none";
+                }
+            </script> -->
+            <p class="md" style="margin-left: var(--space-xs);">Текущих заданий нет.</p>
+            <?php endif; ?>
         </div>
     </section>
     <!--    Home-Work-current - End   -->
-
     <!--    Home-Work-history - Begin   -->
     <section class="container  section-task">
         <div class="card">
             <div class="Title">
                 <h1 class="lg">Прошлые задания</h1>
             </div>
+            <?php
+                $archive = $conn->prepare("
+                    SELECT hs.*, h.title, h.homework_date
+                    FROM homework_submissions hs
+                    JOIN homeworks h ON hs.homework_id = h.id
+                    WHERE hs.student_name = ?
+                    AND h.subject = ?
+                    ORDER BY hs.id DESC
+                    LIMIT 3
+                ");
+
+                $archive->bind_param("ss", $fullName, $subject);
+                $archive->execute();
+                $archiveResult = $archive->get_result();
+                ?>
             <!-- Крайняя домашка -->
-            <div class="card s">
-                <div class="hwc__line-first">
-                    <p class="md">Закон сохранения импульса</p>
-                    <p class="xs">10 марта</p>
-                </div>
-                <div class="hw__line-progress">
-                    <div class="progress__line">
-                        <div class="progress__line-active" data-width="90%">
-                            <div class="progress__line-background" style="width: 111%;"></div>
-                        </div>
-                    </div>
-                    <p class="xs-bold">90%</p>
-                </div>
-                <div class="hw__line-third">
-                    <div class="hw__result-status">
-                        <div class="hw__result-status-indicator complete"></div>
-                        <p class="xs">Выполнено</p>
-                    </div>
-                    <button class="btn-light">
-                        Посмотреть
-                    </button>
-                </div>
-            </div>
 
-            <!-- Прошлая домашка -->
-            <div class="card s">
-                <div class="hwc__line-first">
-                    <p class="md">Второй закон Ньютона</p>
-                    <p class="xs">5 марта</p>
-                </div>
-                <div class="hw__line-progress">
-                    <div class="progress__line">
-                        <div class="progress__line-active" data-width="40%">
-                            <div class="progress__line-background" style="width: 250%;"></div>
-                        </div>
-                    </div>
-                    <p class="xs-bold">40%</p>
-                </div>
-                <div class="hw__line-third">
-                    <div class="hw__result-status">
-                        <div class="hw__result-status-indicator fail"></div>
-                        <p class="xs">Выполнено</p>
-                    </div>
-                    <button class="btn-light">
-                        Посмотреть
-                    </button>
-                </div>
-            </div>
+            <?php if ($archiveResult->num_rows > 0): ?>
+            <?php while ($item = $archiveResult->fetch_assoc()): ?>
 
-            <!-- Позапрошлая домашка -->
             <div class="card s">
                 <div class="hwc__line-first">
-                    <p class="md">Сила Архимеда</p>
-                    <p class="xs">1 марта</p>
+                    <p class="md">
+                        <?= $item['title'] ?>
+                    </p>
+                    <p class="xs">
+                        <?= formatDateRu($item['homework_date']) ?>
+                    </p>
                 </div>
-                <div class="hw__line-progress">
-                    <div class="progress__line">
-                        <div class="progress__line-active" data-width="75%">
-                            <div class="progress__line-background" style="width: 133%;"></div>
-                        </div>
-                    </div>
-                    <p class="xs-bold">75%</p>
-                </div>
-                <div class="hw__line-third">
-                    <div class="hw__result-status">
-                        <div class="hw__result-status-indicator complete"></div>
-                        <p class="xs">Выполнено</p>
-                    </div>
-                    <button class="btn-light">
-                        Посмотреть
-                    </button>
-                </div>
+                <?php
+                $status = $item['status'];
+
+                if ($status == 'не проверено') {
+                    echo "<div class=\"hw__line-third\">
+                            <div class=\"hw__result-status\">
+                                <div class=\"hw__result-status-indicator\" style=\"background-color: #FFE400;\"></div>
+                                <p class=\"xs\">На проверке</p>
+                            </div>
+                           </div>";
+                } elseif ($status == 'проверено') {
+
+                    $percent = $item['completed_tasks'];
+                    $widthBG = 10000 / $percent;
+
+                    echo "<div class=\"hw__line-progress\">
+                            <div class=\"progress__line\">
+                                <div class=\"progress__line-active\" data-width=\"" . $percent . "%\">
+                                    <div class=\"progress__line-background\" style=\"width: " . $widthBG . "%;\"></div>
+                                </div>
+                            </div>
+                            <p class=\"xs-bold\">" . $percent . "%</p>
+                           </div>";
+
+                    echo "<div class=\"hw__line-third\">
+                            <div class=\"hw__result-status\">";
+                    if ($percent >= 50) {
+                        echo "<div class=\"hw__result-status-indicator complete\"></div>
+                                <p class=\"xs\">Выполнено</p>";
+                    } else {
+                        echo "<div class=\"hw__result-status-indicator fail\"></div>
+                                <p class=\"xs\">Не выполнено</p>";
+                    }
+                    // echo "</div>
+                    //         <button class=\"btn-light\">
+                    //             Посмотреть
+                    //         </button>
+                    //     </div>";
+                    
+                     echo "</div>
+                            <a href=\"php/download-checked.php?submission_id=" . $item['id'] . "\" 
+   class=\"btn-light\" 
+   style=\"text-decoration: none;\">
+    
+    Посмотреть
+
+</a>
+                        </div>";
+                }
+                ?>
+
             </div>
+            <?php endwhile; ?>
+            <?php else: ?>
+            <p class="md" style="margin-left: var(--space-xs);">История пустая</p>
+            <?php endif; ?>
+
+
+
+
+
 
         </div>
     </section>
     <!--    Home-Work-history - End   -->
-
 
 
 
@@ -209,100 +414,52 @@
                 <h1 class="lg">Пробные экзамены</h1>
             </div>
             <div class="card s" style="padding-bottom: var(--space-lg);">
+                <?php
+                    $maxValue = $step * ($linesCount - 1);
+
+                    for ($i = $maxValue; $i >= 0; $i -= $step):
+                    ?>
                 <div class="chart-grades">
-                    <p class="md">100</p>
+                    <p class="md">
+                        <?= $i ?>
+                    </p>
                     <div class="line__horizontal"></div>
                 </div>
-                <div class="chart-grades">
-                    <p class="md">90</p>
-                    <div class="line__horizontal"></div>
-                </div>
-                <div class="chart-grades">
-                    <p class="md">80</p>
-                    <div class="line__horizontal"></div>
-                </div>
-                <div class="chart-grades">
-                    <p class="md">70</p>
-                    <div class="line__horizontal"></div>
-                </div>
-                <div class="chart-grades">
-                    <p class="md">60</p>
-                    <div class="line__horizontal"></div>
-                </div>
-                <div class="chart-grades">
-                    <p class="md">50</p>
-                    <div class="line__horizontal"></div>
-                </div>
-                <div class="chart-grades">
-                    <p class="md">40</p>
-                    <div class="line__horizontal"></div>
-                </div>
-                <div class="chart-grades">
-                    <p class="md">30</p>
-                    <div class="line__horizontal"></div>
-                </div>
-                <div class="chart-grades">
-                    <p class="md">20</p>
-                    <div class="line__horizontal"></div>
-                </div>
-                <div class="chart-grades">
-                    <p class="md">10</p>
-                    <div class="line__horizontal"></div>
-                </div>
-                <div class="chart-grades">
-                    <p class="md">0</p>
-                    <div class="line__horizontal"></div>
-                </div>
+                <?php endfor; ?>
 
                 <div class="chart-overlay">
 
                     <div class="chart-container" id="chart">
                         <div class="chart">
 
-                            <div class="bar" data-value="32">
-                                <div class="bar-fill"><span>32</span></div>
-                                <p>Сентябрь</p>
-                            </div>
+                            <?php
+                                $months = [
+                                    'september' => 'Сентябрь',
+                                    'october' => 'Октябрь',
+                                    'november' => 'Ноябрь',
+                                    'december' => 'Декабрь',
+                                    'january' => 'Январь',
+                                    'february' => 'Февраль',
+                                    'march' => 'Март',
+                                    'april' => 'Апрель',
+                                    'may' => 'Май'
+                                ];
 
-                            <div class="bar" data-value="100">
-                                <div class="bar-fill"><span>100</span></div>
-                                <p>Октябрь</p>
-                            </div>
+                                foreach ($months as $key => $label):
 
-                            <div class="bar" data-value="68">
-                                <div class="bar-fill"><span>68</span></div>
-                                <p>Ноябрь</p>
+                                    $value = $testData[$key] ?? 0;
+                                ?>
+                            <div class="bar" data-value="<?= $value ?>">
+                                <div class="bar-fill">
+                                    <span>
+                                        <?= $value ?>
+                                    </span>
+                                </div>
+                                <p>
+                                    <?= $label ?>
+                                </p>
                             </div>
-
-                            <div class="bar" data-value="75">
-                                <div class="bar-fill"><span>75</span></div>
-                                <p>Декабрь</p>
-                            </div>
-
-                            <div class="bar" data-value="81">
-                                <div class="bar-fill"><span>81</span></div>
-                                <p>Январь</p>
-                            </div>
-
-                            <div class="bar" data-value="0">
-                                <div class="bar-fill"><span>81</span></div>
-                                <p>Февраль</p>
-                            </div>
-
-                            <div class="bar" data-value="0">
-                                <div class="bar-fill"><span>81</span></div>
-                                <p>Март</p>
-                            </div>
-
-                            <div class="bar" data-value="0">
-                                <div class="bar-fill"><span>81</span></div>
-                                <p>Апрель</p>
-                            </div>
-
-                            <div class="bar" data-value="0">
-                                <div class="bar-fill"><span>81</span></div>
-                                <p>Май</p>
-                            </div>
+                            <?php endforeach; ?>
 
                         </div>
                     </div>
@@ -335,6 +492,11 @@
             </div>
         </div>
     </section>
+
+
+
+
+
     <section class="container section-performance">
         <div class="card">
             <div class="Title">
@@ -452,211 +614,12 @@
 
 
 
-    <!--    Books - Begin   -->
-    <section class="container section-books">
-        <div class="card">
-            <div class="Title">
-                <h1 class="lg">Учебники</h1>
-            </div>
-            <div class="card s">
-                <div class="hwc__line-first">
-                    <p class="md">Математика ЕГЭ</p>
-                    <div class="btn__group">
-                        <button class="btn__books">
-                            <img class="hw-date-icon" src="image/preview.png">
-                        </button>
-                        <button class="btn__books">
-                            <img class="hw-date-icon" src="image/download-dark.png">
-                        </button>
-                    </div>
-                </div>
-
-                <div class="line__horizontal"></div>
-
-                <div class="hwc__line-first">
-                    <p class="md">Физика ЕГЭ</p>
-                    <div class="btn__group">
-                        <button class="btn__books">
-                            <img class="hw-date-icon" src="image/preview.png">
-                        </button>
-                        <button class="btn__books">
-                            <img class="hw-date-icon" src="image/download-dark.png">
-                        </button>
-                    </div>
-                </div>
-
-                <div class="line__horizontal"></div>
-
-                <div class="hwc__line-first">
-                    <p class="md">Математика ОГЭ</p>
-                    <div class="btn__group">
-                        <button class="btn__books">
-                            <img class="hw-date-icon" src="image/preview.png">
-                        </button>
-                        <button class="btn__books">
-                            <img class="hw-date-icon" src="image/download-dark.png">
-                        </button>
-                    </div>
-                </div>
-
-                <div class="line__horizontal"></div>
-
-                <div class="hwc__line-first">
-                    <p class="md">Физика ОГЭ</p>
-                    <div class="btn__group">
-                        <button class="btn__books">
-                            <img class="hw-date-icon" src="image/preview.png">
-                        </button>
-                        <button class="btn__books">
-                            <img class="hw-date-icon" src="image/download-dark.png">
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--    Books - End   -->
-    <!--    Materials - Begin   -->
-    <section class="container section-materials">
-        <div class="card">
-            <div class="Title">
-                <h1 class="lg">Справочные материалы</h1>
-            </div>
-            <div class="card s">
-                <div class="hwc__line-first">
-                    <p class="md">Физика ЕГЭ</p>
-                    <div class="btn__group">
-                        <button class="btn__books">
-                            <img class="hw-date-icon" src="image/preview.png">
-                        </button>
-                        <button class="btn__books">
-                            <img class="hw-date-icon" src="image/download-dark.png">
-                        </button>
-                    </div>
-                </div>
-
-                <div class="line__horizontal"></div>
-
-                <div class="hwc__line-first">
-                    <p class="md">Математика ОГЭ</p>
-                    <div class="btn__group">
-                        <button class="btn__books">
-                            <img class="hw-date-icon" src="image/preview.png">
-                        </button>
-                        <button class="btn__books">
-                            <img class="hw-date-icon" src="image/download-dark.png">
-                        </button>
-                    </div>
-                </div>
-
-                <div class="line__horizontal"></div>
-
-                <div class="hwc__line-first">
-                    <p class="md">Физика ОГЭ</p>
-                    <div class="btn__group">
-                        <button class="btn__books">
-                            <img class="hw-date-icon" src="image/preview.png">
-                        </button>
-                        <button class="btn__books">
-                            <img class="hw-date-icon" src="image/download-dark.png">
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--    Materials - End   -->
 
 
 
 
 
-    <!--    Student - Begin   -->
-    <section class="container section-student">
-        <div class="card">
-            <div class="Title">
-                <h1 class="lg">Ученик</h1>
-            </div>
-            <div class="card s">
-                <div class="hwc__line-first">
-                    <p class="md">Фамилия:</p>
-                    <p class="md">Павлидий</p>
-                </div>
 
-                <div class="line__horizontal"></div>
-
-                <div class="hwc__line-first">
-                    <p class="md">Имя:</p>
-                    <p class="md">Сергей</p>
-                </div>
-
-                <div class="line__horizontal"></div>
-
-                <div class="hwc__line-first">
-                    <p class="md">Отчество:</p>
-                    <p class="md">Юрьевич</p>
-                </div>
-
-                <div class="line__horizontal"></div>
-
-                <div class="hwc__line-first">
-                    <p class="md">Телефон:</p>
-                    <p class="md">+7 (968) 174-83-19</p>
-                </div>
-
-                <div class="line__horizontal"></div>
-
-                <div class="hwc__line-first">
-                    <p class="md">Класс:</p>
-                    <p class="md">11</p>
-                </div>
-
-                <div class="line__horizontal"></div>
-
-                <div class="hwc__line-first">
-                    <p class="md">Предмет:</p>
-                    <p class="md">Математика, физика</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--    Student - End   -->
-    <!--    Parent - Begin   -->
-    <section class="container section-parent">
-        <div class="card">
-            <div class="Title">
-                <h1 class="lg">Родитель</h1>
-            </div>
-            <div class="card s">
-                <div class="hwc__line-first">
-                    <p class="md">Фамилия:</p>
-                    <p class="md">Павлидий</p>
-                </div>
-
-                <div class="line__horizontal"></div>
-
-                <div class="hwc__line-first">
-                    <p class="md">Имя:</p>
-                    <p class="md">Карина</p>
-                </div>
-
-                <div class="line__horizontal"></div>
-
-                <div class="hwc__line-first">
-                    <p class="md">Отчество:</p>
-                    <p class="md">Вадимовна</p>
-                </div>
-
-                <div class="line__horizontal"></div>
-
-                <div class="hwc__line-first">
-                    <p class="md">Телефон:</p>
-                    <p class="md">+7 (996) 545-04-93</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--    Parent - End   -->
 
 
 
@@ -783,8 +746,13 @@
     </footer>
 
 
+    <form action="logout.php" method="POST">
+        <button>Выйти</button>
+    </form>
+
+    <hr>
+
     <script src="js/main.js"></script>
 </body>
 
 </html>
-

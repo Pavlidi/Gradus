@@ -19,21 +19,19 @@ foreach ($_FILES['checked_files']['tmp_name'] as $key => $tmpName) {
 
     if (empty($_FILES['checked_files']['name'][$key])) continue;
 
-    $fileName = uniqid() . "_" . $_FILES['checked_files']['name'][$key];
+    $fileName = time() . "_" . $_FILES['checked_files']['name'][$key];
+    $path = "uploads/checked/" . $fileName;
 
-    $serverPath = "../../uploads/checked/" . $fileName;
-    $dbPath = "uploads/checked/" . $fileName;
+    move_uploaded_file($tmpName, "../" . $path);
 
-    move_uploaded_file($tmpName, $serverPath);
-
-    // ✅ ВСТАВКА В БД
     $stmt = $conn->prepare("
         INSERT INTO submission_files (submission_id, file_path, file_type)
         VALUES (?, ?, 'checked')
     ");
 
-    $stmt->bind_param("is", $submission_id, $dbPath);
+    $stmt->bind_param("is", $submission_id, $path);
     $stmt->execute();
+
 }
     header("Location: ../check-works.php");
     exit();

@@ -25,10 +25,32 @@ h1, h2, h3, p, a {
 
 .lg {
   font-size: var(--text-lg);
+  line-height: 1.5;
 }
 
 .md {
   font-size: var(--text-md);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.sm {
+  font-size: var(--text-sm);
+  line-height: 1.5;
+}
+
+.xs {
+  font-size: var(--text-sm);
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+.xs-bold {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  line-height: 1.4;
+
+  color: var(--color-text-secondary-dark);
 }
 
 /*                                                 Переменные величины - Begin                                                 */
@@ -110,6 +132,17 @@ h1, h2, h3, p, a {
   --color-status-new: #DBEFFE;
   --color-status-fail: #F64F59;
   --color-status-complete: #92FE9D;
+  --color-progress-done: #00C9FF;
+  --color-progress-active: #92FE9E;
+
+  /*  Gradients */
+  --gradient-btn: linear-gradient(180deg, #3B3A4E 0%, #272733 100%);
+  --gradient-green: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%);
+  --gradient-green-vert: linear-gradient(360deg, #00C9FF 0%, #6BF0B8 100%);
+
+  /*  Box-shadows  */
+  --box-shadows-sm: 0px 2px 8px rgba(0, 0, 0, 0.15);
+  --box-shadows-md:  0px 6px 30px rgba(0, 0, 0, 0.06);
 
 }
 

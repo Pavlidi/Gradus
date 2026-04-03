@@ -62,7 +62,7 @@ if (isset($_POST['login'])) {
 
                 $_SESSION['student_id'] = $user['id'];
 
-                header("Location: dashboard.php");
+                header("Location: account.php");
                 exit();
             } else {
                 $error = "Неверный пароль";
@@ -172,7 +172,7 @@ if (isset($_POST['register'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Вход</title>
-
+    <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/sections.css">
