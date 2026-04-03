@@ -10,42 +10,36 @@ $conn = new mysqli("localhost", "root", "root", "test");
 
 $student_id = $_SESSION['student_id'];
 
-// 👉 текущий выбранный предмет (по умолчанию математика)
-$subject = $_GET['subject'] ?? 'Математика';
-
-
-// 👉 сначала получаем телефон пользователя
+// 👉 получаем пользователя по ID (самый надежный способ)
 $stmt = $conn->prepare("
-    SELECT student_phone, parent_phone 
-    FROM users_info 
+    SELECT * FROM users_info 
     WHERE id = ?
     LIMIT 1
 ");
 $stmt->bind_param("i", $student_id);
 $stmt->execute();
-$userData = $stmt->get_result()->fetch_assoc();
 
-$phone = $userData['student_phone'] ?: $userData['parent_phone'];
-
-
-// 👉 теперь получаем нужную запись по предмету
-$stmt = $conn->prepare("
-    SELECT * FROM users_info 
-    WHERE (student_phone = ? OR parent_phone = ?)
-    AND subject_1 = ?
-    LIMIT 1
-");
-$stmt->bind_param("sss", $phone, $phone, $subject);
-$stmt->execute();
 $student = $stmt->get_result()->fetch_assoc();
 
+// ❗ защита
+if (!$student) {
+    echo "Ошибка: пользователь не найден";
+    exit();
+}
 
-// 👉 основные данные
-$fullName = $student['student_lastname'] . ' ' . $student['student_firstname'];
-$group = $student['group_number'];
+// 👉 базовые данные
+$fullName = ($student['student_lastname'] ?? '') . ' ' . ($student['student_firstname'] ?? '');
+$group = $student['group_number'] ?? 0;
 
+// 👉 subject: либо из URL, либо из БД
+$subject = $_GET['subject'] ?? $student['subject_1'] ?? 'Математика';
 
 // ====== ДАННЫЕ ДЛЯ ГРАФИКА ======
+
+$lastname = $student['student_lastname'];
+$firstname = $student['student_firstname'];
+
+// 👉 получаем настройки графика
 $stmt = $conn->prepare("
     SELECT lines_count, step 
     FROM test_results
@@ -55,17 +49,20 @@ $stmt = $conn->prepare("
     LIMIT 1
 ");
 
-$lastname = $student['student_lastname'];
-$firstname = $student['student_firstname'];
-
 $stmt->bind_param("sss", $lastname, $firstname, $subject);
 $stmt->execute();
 
 $resultChart = $stmt->get_result()->fetch_assoc();
 
-$linesCount = $resultChart['lines_count'] ?? 10;
-$step = $resultChart['step'] ?? 10;
+if (!$resultChart) {
+    $linesCount = 10;
+    $step = 10;
+} else {
+    $linesCount = $resultChart['lines_count'];
+    $step = $resultChart['step'];
+}
 
+// 👉 получаем результаты тестов
 $stmt = $conn->prepare("
     SELECT * 
     FROM test_results
@@ -78,10 +75,9 @@ $stmt = $conn->prepare("
 $stmt->bind_param("sss", $lastname, $firstname, $subject);
 $stmt->execute();
 
-$testData = $stmt->get_result()->fetch_assoc();
+$testData = $stmt->get_result()->fetch_assoc() ?? [];
 
-
-// 👉 проверяем, есть ли у ученика математика и физика
+// 👉 проверяем предметы
 $hasMath = false;
 $hasPhysics = false;
 
@@ -89,6 +85,9 @@ $stmt = $conn->prepare("
     SELECT subject_1 FROM users_info 
     WHERE student_phone = ? OR parent_phone = ?
 ");
+
+$phone = $student['student_phone'] ?: $student['parent_phone'];
+
 $stmt->bind_param("ss", $phone, $phone);
 $stmt->execute();
 
@@ -103,9 +102,10 @@ while ($row = $result->fetch_assoc()) {
     }
 }
 
-
-// 👉 функция форматирования даты
+// 👉 функция даты
 function formatDateRu($date) {
+    if (!$date) return '';
+
     $months = [
         '01' => 'января',
         '02' => 'февраля',
@@ -124,7 +124,7 @@ function formatDateRu($date) {
     $day = date('j', strtotime($date));
     $month = date('m', strtotime($date));
 
-    return $day . ' ' . $months[$month];
+    return $day . ' ' . ($months[$month] ?? '');
 }
 ?>
 
@@ -385,7 +385,7 @@ function formatDateRu($date) {
     
     Посмотреть
 
-</a>
+            </a>
                         </div>";
                 }
                 ?>
@@ -413,7 +413,7 @@ function formatDateRu($date) {
             <div class="Title">
                 <h1 class="lg">Пробные экзамены</h1>
             </div>
-            <div class="card s" style="padding-bottom: var(--space-lg);">
+            <div class="card s hight-result" style="padding-bottom: var(--space-lg);" id="hight-result">
                 <?php
                     $maxValue = $step * ($linesCount - 1);
 
@@ -430,7 +430,7 @@ function formatDateRu($date) {
                 <div class="chart-overlay">
 
                     <div class="chart-container" id="chart">
-                        <div class="chart">
+                        <div class="chart" data-max="<?= $maxValue ?>">
 
                             <?php
                                 $months = [

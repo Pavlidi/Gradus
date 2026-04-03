@@ -50,13 +50,16 @@ document.querySelectorAll('.progress__line-active').forEach(el => {
 
 
 //          ======= Demo-test - Begin ======
-document.querySelectorAll('.bar').forEach(bar => {
-    const value = bar.dataset.value;
-    const fill = bar.querySelector('.bar-fill');
 
-    // 100 = вся высота блока
-    fill.style.height = value + "%";
-});
+
+
+// document.querySelectorAll('.bar').forEach(bar => {
+//     const value = bar.dataset.value;
+//     const fill = bar.querySelector('.bar-fill');
+
+//     // 100 = вся высота блока
+//     fill.style.height =  value + "%";
+// });
 //          ======= Demo-test - End ======
 
 
@@ -157,6 +160,33 @@ function openStatistics()
     for (let i = 0; i < sectionParent.length; i++) {
         sectionParent[i].style.display = "none";
     }
+
+    const block = document.getElementById('hight-result');
+
+    // форсим перерисовку
+    block.style.display = "flex";
+
+    const maxValue = document.querySelector('.chart').dataset.max;
+    console.log(maxValue);
+
+    const blockChart = document.getElementById('hight-result');
+    const styles = window.getComputedStyle(blockChart);
+    const paddingTop = parseFloat(styles.paddingTop);
+    const paddingBottom = parseFloat(styles.paddingBottom);
+    const contentHeight = blockChart.offsetHeight - paddingTop - paddingBottom;
+    console.log(contentHeight);
+
+    const chartGrades = document.querySelector('.chart-grades').offsetHeight;
+    console.log(chartGrades);
+
+    document.querySelectorAll('.bar').forEach(bar => {
+    const value = Number(bar.dataset.value);
+    const fill = bar.querySelector('.bar-fill');
+
+    const heightPx = (value / maxValue) * (contentHeight - chartGrades);
+
+    fill.style.height = heightPx + "px";
+});
 }
 
 function openMaterials()

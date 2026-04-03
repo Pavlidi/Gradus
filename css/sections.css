@@ -102,9 +102,9 @@
     position: absolute;
     left: var(--space-2xl); /* 🔥 отступ под цифры слева */
     right: 0;
-    bottom: calc(100vw * 8 / var(--container-width));
+    bottom: calc((var(--space-sm) + var(--space-xs))/2);
 
-    height: 92%; /* регулирует максимальную высоту столбцов */
+    height: 100%; /* регулирует максимальную высоту столбцов */
 
     pointer-events: none; /* чтобы свайп работал ниже */
 }
@@ -169,7 +169,7 @@
 }
 
 .bar-fill span {
-  margin-top: var(--space-sm);
+  margin-top: 0;
   font-size: var(--text-xl);
   font-weight: 500;
   line-height: 1.6;
