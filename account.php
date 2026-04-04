@@ -10,16 +10,47 @@ $conn = new mysqli("localhost", "root", "root", "test");
 
 $student_id = $_SESSION['student_id'];
 
-// 👉 получаем пользователя по ID (самый надежный способ)
+// 1. Сначала получаем ЛЮБУЮ запись пользователя (чтобы взять телефон)
 $stmt = $conn->prepare("
-    SELECT * FROM users_info 
+    SELECT student_phone, parent_phone 
+    FROM users_info 
     WHERE id = ?
     LIMIT 1
 ");
 $stmt->bind_param("i", $student_id);
 $stmt->execute();
 
+$temp = $stmt->get_result()->fetch_assoc();
+
+if (!$temp) {
+    echo "Ошибка: пользователь не найден";
+    exit();
+}
+
+// 2. Определяем телефон (ключ пользователя)
+$phone = $temp['student_phone'] ?: $temp['parent_phone'];
+
+// 3. Определяем предмет (из URL или по умолчанию)
+$subject = $_GET['subject'] ?? 'Математика';
+
+// 4. Получаем НУЖНУЮ запись по предмету
+$stmt = $conn->prepare("
+    SELECT * FROM users_info 
+    WHERE (student_phone = ? OR parent_phone = ?)
+    AND subject_1 = ?
+    LIMIT 1
+");
+
+$stmt->bind_param("sss", $phone, $phone, $subject);
+$stmt->execute();
+
 $student = $stmt->get_result()->fetch_assoc();
+
+// ❗ защита
+if (!$student) {
+    echo "Ошибка: данные по предмету не найдены";
+    exit();
+}
 
 // ❗ защита
 if (!$student) {
@@ -126,6 +157,46 @@ function formatDateRu($date) {
 
     return $day . ' ' . ($months[$month] ?? '');
 }
+
+$grades = [];
+$showGrades = true;
+
+// 👉 определяем класс (например 9, 10, 11)
+$class = (int)$group;
+
+if ($class == 9) {
+
+    if ($subject == 'Математика') {
+        $grades = [
+            ['2', '0 - 7'],
+            ['3', '8 - 14'],
+            ['4', '15 - 21'],
+            ['5', '22 - 31'],
+        ];
+    }
+
+    if ($subject == 'Физика') {
+        $grades = [
+            ['2', '0 - 9'],
+            ['3', '10 - 19'],
+            ['4', '20 - 29'],
+            ['5', '30 - 39'],
+        ];
+    }
+
+} elseif ($class != 9) {
+    $showGrades = false;
+}
+
+
+// Успеваемость - Начало
+$hwTotal = (int)($student['homeworks_total'] ?? 0);
+$hwDone  = (int)($student['homeworks_done'] ?? 0);
+
+$lessonTotal = (int)($student['lessons_total'] ?? 0);
+$lessonDone = (int)($student['attendance'] ?? 0);
+
+
 ?>
 
 <!DOCTYPE html>
@@ -466,30 +537,20 @@ function formatDateRu($date) {
 
                 </div>
             </div>
-            <div class="grades">
-                <div>
-                    <p>«2»</p>
-                    <p>0 - 26</p>
-                </div>
-                <div class="line__vertical"></div>
-
-                <div>
-                    <p>«3»</p>
-                    <p>27 - 49</p>
-                </div>
-                <div class="line__vertical"></div>
-
-                <div>
-                    <p>«4»</p>
-                    <p>50 - 67</p>
-                </div>
-                <div class="line__vertical"></div>
-
-                <div>
-                    <p>«5»</p>
-                    <p>68 - 100</p>
-                </div>
+            <?php if ($showGrades): ?>
+    <div class="grades">
+        <?php foreach ($grades as $index => $grade): ?>
+            <div>
+                <p>«<?= $grade[0] ?>»</p>
+                <p><?= $grade[1] ?></p>
             </div>
+
+            <?php if ($index < count($grades) - 1): ?>
+                <div class="line__vertical"></div>
+            <?php endif; ?>
+        <?php endforeach; ?>
+    </div>
+<?php endif; ?>
         </div>
     </section>
 
@@ -505,44 +566,80 @@ function formatDateRu($date) {
             <div class="card s">
                 <div class="hwc__line-first">
                     <p class="md">Выполнение домашних работ</p>
-                    <p class="xs">7/13</p>
+                    <p class="xs"><?= $hwDone ?>/<?= $hwTotal ?></p>
                 </div>
                 <div class="hw__line-progress">
+                    <?php
+                        $percent = 0;
+
+                        if ($hwTotal > 0) {
+                            $percent = round(($hwDone / $hwTotal) * 100);
+                        }
+
+                        $widthBG = $percent > 0 ? round(10000 / $percent) : 0;
+                    ?>
                     <div class="progress__line">
-                        <div class="progress__line-active" data-width="54%">
-                            <div class="progress__line-background" style="width: 185%;"></div>
+                        <div class="progress__line-active" data-width="<?= $percent ?>%">
+                            <div class="progress__line-background" style="width: <?= $widthBG ?>%;"></div>
                         </div>
                     </div>
-                    <p class="xs-bold">54%</p>
+                    <p class="xs-bold"><?= $percent ?>%</p>
                 </div>
 
                 <div class="line__horizontal"></div>
+                <?php
+                    $stmt = $conn->prepare("
+                        SELECT AVG(completed_tasks) as avg_value
+                        FROM homework_submissions
+                        WHERE student_name = ?
+                        AND subject = ?
+                        AND status = 'проверено'
+                    ");
 
+                    $stmt->bind_param("ss", $fullName, $subject);
+                    $stmt->execute();
+
+                    $result = $stmt->get_result()->fetch_assoc();
+
+                    $avgQuality = round($result['avg_value'] ?? 0);
+
+                    $widthBG = $percent > 0 ? round(10000 / $avgQuality) : 0;
+                    $stmt->close();
+                ?>
                 <div class="hwc__line-first">
                     <p class="md">Среднее качество домашних работ</p>
                 </div>
                 <div class="hw__line-progress">
                     <div class="progress__line">
-                        <div class="progress__line-active" data-width="70%">
-                            <div class="progress__line-background" style="width: 143%;"></div>
+                        <div class="progress__line-active" data-width="<?= $avgQuality ?>%">
+                            <div class="progress__line-background" style="width: <?= $widthBG ?>%;"></div>
                         </div>
                     </div>
-                    <p class="xs-bold">70%</p>
+                    <p class="xs-bold"><?= $avgQuality ?>%</p>
                 </div>
 
                 <div class="line__horizontal"></div>
 
                 <div class="hwc__line-first">
                     <p class="md">Посещаемость</p>
-                    <p class="xs">11/12</p>
+                    <p class="xs"><?= $lessonDone ?>/<?= $lessonTotal ?></p>
                 </div>
                 <div class="hw__line-progress">
+                    <?php
+                        $percent = 0;
+
+                        if ($lessonTotal > 0) {
+                            $percent = round(($lessonDone / $lessonTotal) * 100);
+                        }
+
+                        $widthBG = $percent > 0 ? round(10000 / $percent) : 0;
+                    ?>
                     <div class="progress__line">
-                        <div class="progress__line-active" data-width="92%">
-                            <div class="progress__line-background" style="width: 109%;"></div>
+                        <div class="progress__line-active" data-width="<?= $percent ?>%">
+                            <div class="progress__line-background" style="width: <?= $widthBG ?>%;"></div>
                         </div>
                     </div>
-                    <p class="xs-bold">92%</p>
+                    <p class="xs-bold"><?= $percent ?>%</p>
                 </div>
             </div>
         </div>
@@ -608,7 +705,11 @@ function formatDateRu($date) {
             </div>
         </div>
     </section>
-    <!--    Statisticsooks - End   -->
+    <!--    Statistics - End   -->
+
+
+
+
 
 
 

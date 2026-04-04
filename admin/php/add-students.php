@@ -1,35 +1,26 @@
 <?php
 // ================================
-// 1. Проверяем, была ли отправлена форма
+// 1. Проверка отправки формы
 // ================================
 if (!isset($_POST['submit'])) {
-    // Если кто-то открыл файл напрямую — отправляем назад
     header("Location: ../add-student.php");
     exit();
 }
 
 
 // ================================
-// 2. Подключение к базе данных
+// 2. Подключение к БД
 // ================================
-$host = "localhost";
-$user = "root";
-$password = "root";
-$dbname = "test";
+$conn = new mysqli("localhost", "root", "root", "test");
 
-// Создаем соединение
-$conn = new mysqli($host, $user, $password, $dbname);
-
-// Проверяем подключение
 if ($conn->connect_error) {
     die("Ошибка подключения: " . $conn->connect_error);
 }
 
 
 // ================================
-// 3. Получаем данные из формы
+// 3. Получение данных
 // ================================
-// htmlspecialchars защищает от XSS
 $parent_lastname   = htmlspecialchars($_POST['parent_lastname']);
 $parent_firstname  = htmlspecialchars($_POST['parent_firstname']);
 $parent_middlename = htmlspecialchars($_POST['parent_middlename']);
@@ -39,7 +30,7 @@ $student_lastname   = htmlspecialchars($_POST['student_lastname']);
 $student_firstname  = htmlspecialchars($_POST['student_firstname']);
 $student_middlename = htmlspecialchars($_POST['student_middlename']);
 $student_phone      = htmlspecialchars($_POST['student_phone']);
-$student_class = !empty($_POST['student_class']) ? (int)$_POST['student_class'] : 0;
+$student_class      = !empty($_POST['student_class']) ? (int)$_POST['student_class'] : 0;
 
 $study_format = htmlspecialchars($_POST['study_format']);
 $group_number = !empty($_POST['group_number']) ? (int)$_POST['group_number'] : 0;
@@ -47,17 +38,16 @@ $group_number = !empty($_POST['group_number']) ? (int)$_POST['group_number'] : 0
 $subject_1 = htmlspecialchars($_POST['subject_1']);
 
 
-
 // ================================
-// 4. Проверка (пример базовой валидации)
+// 4. Валидация
 // ================================
-if (empty($student_firstname)) {
+if (empty($student_firstname) || empty($student_lastname)) {
     die("Ошибка: имя и фамилия ученика обязательны");
 }
 
 
 // ================================
-// 5. Подготовленный SQL запрос (ВАЖНО — защита от SQL-инъекций)
+// 5. Добавление ученика
 // ================================
 $stmt = $conn->prepare("
     INSERT INTO users_info (
@@ -76,10 +66,6 @@ $stmt = $conn->prepare("
     ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
 ");
 
-
-// ================================
-// 6. Привязка параметров
-// ================================
 $stmt->bind_param(
     "ssssssssssss",
     $parent_lastname,
@@ -98,11 +84,43 @@ $stmt->bind_param(
 
 
 // ================================
-// 7. Выполнение запроса
+// 6. Выполнение
 // ================================
 if ($stmt->execute()) {
 
-    // Успех — редиректим (например на список учеников)
+    // ID нового ученика
+    $student_id = $stmt->insert_id;
+
+    // ФИО
+    $student_name = $student_lastname . ' ' . $student_firstname;
+    $student_name = $conn->real_escape_string($student_name);
+
+    // ================================
+    // 7. Определяем таблицу
+    // ================================
+    $isEge = $student_class > 9;
+
+    if ($isEge && $subject_1 == 'Математика') {
+        $table = 'ege_math';
+    } elseif ($isEge) {
+        $table = 'ege_physics';
+    } elseif ($subject_1 == 'Математика') {
+        $table = 'oge_math';
+    } else {
+        $table = 'oge_physics';
+    }
+
+    // ================================
+    // 8. Создаём запись заданий
+    // ================================
+    $conn->query("
+        INSERT INTO $table (student_id, student_name)
+        VALUES ($student_id, '$student_name')
+    ");
+
+    // ================================
+    // 9. Редирект
+    // ================================
     header("Location: ../index.php");
     exit();
 
@@ -112,7 +130,8 @@ if ($stmt->execute()) {
 
 
 // ================================
-// 8. Закрытие соединений
+// 10. Закрытие
 // ================================
 $stmt->close();
 $conn->close();
+?>

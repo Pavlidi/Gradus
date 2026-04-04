@@ -127,3 +127,60 @@ button:hover {
 }
 /* ======= Card - End ======= */
 
+
+/* ======= Progress-tasks - Begin =======*/
+.tasks-grid {
+    display: grid;
+    grid-template-columns: max-content max-content max-content 1fr;
+    gap: 20px;
+    align-items: start;
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="checkbox"]:checked {
+    background: linear-gradient(90deg, #00C9FF, #92FE9D);
+    border: none;
+}
+
+.tasks-table {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.tasks-row {
+    display: grid;
+    grid-template-columns: max-content max-content max-content 1fr auto;
+    gap: 15px;
+    align-items: center;
+}
+
+.tasks-header {
+    font-weight: 600;
+    color: #888;
+}
+
+.column form {
+    display: flex;
+    align-items: center;
+}
+
+.column p,
+.column form {
+    height: 32px;
+    display: flex;
+    align-items: center;
+}
+
+
+
+/* ======= Progress-tasks - End =======*/
+

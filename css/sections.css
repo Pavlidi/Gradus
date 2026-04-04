@@ -102,7 +102,7 @@
     position: absolute;
     left: var(--space-2xl); /* 🔥 отступ под цифры слева */
     right: 0;
-    bottom: calc((var(--space-sm) + var(--space-xs))/2);
+    bottom: var(--space-xs);
 
     height: 100%; /* регулирует максимальную высоту столбцов */
 
@@ -114,6 +114,9 @@
     height: 100%;
 
     overflow-x: auto;
+    overflow-y: hidden;
+
+    touch-action: pan-x; /* 🔥 только горизонтальные свайпы */
     pointer-events: auto; /* возвращаем взаимодействие */
 }
 /* Убираем скроллбар */
