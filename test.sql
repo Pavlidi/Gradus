@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: localhost:8889
--- Время создания: Апр 04 2026 г., 14:31
+-- Время создания: Апр 06 2026 г., 08:25
 -- Версия сервера: 8.0.44
 -- Версия PHP: 8.3.30
 
@@ -60,7 +60,7 @@ CREATE TABLE `ege_math` (
 
 INSERT INTO `ege_math` (`id`, `student_id`, `student_name`, `subject`, `total_tasks`, `task_1`, `task_2`, `task_3`, `task_4`, `task_5`, `task_6`, `task_7`, `task_8`, `task_9`, `task_10`, `task_11`, `task_12`, `task_13`, `task_14`, `task_15`, `task_16`, `task_17`, `task_18`, `task_19`) VALUES
 (4, 8, 'Иванов Иван', 'Математика ЕГЭ', 19, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(5, 21, 'Петров Даниилка', 'Математика ЕГЭ', 19, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+(5, 21, 'Петров Даниилка', 'Математика ЕГЭ', 19, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -107,7 +107,7 @@ CREATE TABLE `ege_physics` (
 --
 
 INSERT INTO `ege_physics` (`id`, `student_id`, `student_name`, `subject`, `total_tasks`, `task_1`, `task_2`, `task_3`, `task_4`, `task_5`, `task_6`, `task_7`, `task_8`, `task_9`, `task_10`, `task_11`, `task_12`, `task_13`, `task_14`, `task_15`, `task_16`, `task_17`, `task_18`, `task_19`, `task_20`, `task_21`, `task_22`, `task_23`, `task_24`, `task_25`, `task_26`) VALUES
-(2, 24, 'Петров Даниилка', 'Физика ЕГЭ', 26, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(2, 24, 'Петров Даниилка', 'Физика ЕГЭ', 26, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0),
 (3, 27, 'Добавляем Прогресс', 'Физика ЕГЭ', 26, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
@@ -151,7 +151,8 @@ INSERT INTO `homeworks` (`id`, `title`, `homework_date`, `file_path`, `target_ty
 (38, 'Посмотрим', '2026-04-10', 'uploads/homeworks/1775204179_Домашнее задание 1-ИИ.pdf', 'student', 'Петров Даниилка', '2026-04-03 08:16:19', 'Математика'),
 (39, 'А если несколько файлов?', '2026-04-04', 'uploads/homeworks/1775204239_Домашнее задание 1-ИИ.pdf', 'student', 'Петров Даниилка', '2026-04-03 08:17:19', 'Математика'),
 (40, 'Калькулятор', '2026-04-07', 'uploads/homeworks/1775282959_1775199419_Домашнее задание 1-ИИ (1).pdf', 'student', 'Петров Даниилка', '2026-04-04 06:09:19', 'Математика'),
-(41, 'Черные дыры', '2026-04-15', 'uploads/homeworks/1775283504_Домашнее задание 1-51.pdf', 'student', 'Петров Даниилка', '2026-04-04 06:18:24', 'Физика');
+(41, 'Черные дыры', '2026-04-15', 'uploads/homeworks/1775283504_Домашнее задание 1-51.pdf', 'student', 'Петров Даниилка', '2026-04-04 06:18:24', 'Физика'),
+(42, 'Тригонометрия', '2026-04-08', 'uploads/homeworks/1775457687_Домашнее задание 1-50.pdf', 'student', 'Петров Даниилка', '2026-04-06 06:41:27', 'Математика');
 
 -- --------------------------------------------------------
 
@@ -519,7 +520,7 @@ ALTER TABLE `users_info`
 -- AUTO_INCREMENT для таблицы `ege_math`
 --
 ALTER TABLE `ege_math`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT для таблицы `ege_physics`
@@ -531,7 +532,7 @@ ALTER TABLE `ege_physics`
 -- AUTO_INCREMENT для таблицы `homeworks`
 --
 ALTER TABLE `homeworks`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT для таблицы `homework_submissions`

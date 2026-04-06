@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$conn = new mysqli("localhost", "root", "root", "test");
+$conn = new mysqli("localhost", "u3414210_default", "77tiLOpwb6aF5koW", "u3414210_default");
 
 $error = "";
 $success = "";
@@ -132,6 +132,7 @@ if (isset($_POST['register'])) {
                     $success = "Регистрация родителя завершена";
                 }
             }
+            
 
             // 🔥 если ученик
             if ($isStudent) {
@@ -140,6 +141,14 @@ if (isset($_POST['register'])) {
                     $error = "Вы уже зарегистрированы";
                 } else {
 
+                    // 👉 сохраняем СТАРЫЕ данные
+                    $old_lastname = $user['student_lastname'];
+                    $old_firstname = $user['student_firstname'];
+                    $subject = $user['subject_1'];  
+
+                    // ================================
+                    // 1. Обновляем users_info
+                    // ================================
                     $stmt = $conn->prepare("
                         UPDATE users_info 
                         SET student_lastname = ?, student_firstname = ?, student_middlename = ?, student_password = ?
@@ -156,6 +165,65 @@ if (isset($_POST['register'])) {
                     );
 
                     $stmt->execute();
+
+
+                    // ================================
+                    // 2. Обновляем test_results
+                    // ================================
+                    $stmt2 = $conn->prepare("
+                        UPDATE test_results
+                        SET student_lastname = ?, student_firstname = ?
+                        WHERE student_lastname = ?
+                        AND student_firstname = ?
+                        AND subject = ?
+                    ");
+
+                    $stmt2->bind_param(
+                        "sssss",
+                        $lastname,
+                        $firstname,
+                        $old_lastname,
+                        $old_firstname,
+                        $subject
+                    );
+
+                    $stmt2->execute();
+
+                    // ================================
+                    // 🔄 ОБНОВЛЯЕМ student_name В ПРОГРЕССЕ
+                    // ================================
+
+                    $old_fullname = trim($old_lastname . ' ' . $old_firstname);
+                    $new_fullname = trim($lastname . ' ' . $firstname);
+
+                    // 👉 определяем класс
+                    $class = (int)($user['student_class'] ?? 0);
+
+                    // 👉 тип экзамена
+                    $examType = ($class >= 10) ? 'ege' : 'oge';
+
+                    // 👉 предмет → таблица
+                    $subjectTable = ($subject == 'Математика') ? 'math' : 'physics';
+
+                    // 👉 итоговая таблица
+                    $table = $examType . '_' . $subjectTable;
+
+                    // 👉 защита (чтобы не было SQL-инъекции)
+                    $allowedTables = ['ege_math', 'ege_physics', 'oge_math', 'oge_physics'];
+
+                    if (in_array($table, $allowedTables)) {
+
+                        $stmt3 = $conn->prepare("
+                            UPDATE $table
+                            SET student_name = ?
+                            WHERE student_name = ?
+                        ");
+
+                        $stmt3->bind_param("ss", $new_fullname, $old_fullname);
+                        $stmt3->execute();
+                        $stmt3->close();
+                    }
+
 
                     $success = "Регистрация ученика завершена";
                 }

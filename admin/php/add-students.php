@@ -11,7 +11,7 @@ if (!isset($_POST['submit'])) {
 // ================================
 // 2. Подключение к БД
 // ================================
-$conn = new mysqli("localhost", "root", "root", "test");
+$conn = new mysqli("localhost", "u3414210_default", "77tiLOpwb6aF5koW", "u3414210_default");
 
 if ($conn->connect_error) {
     die("Ошибка подключения: " . $conn->connect_error);
@@ -117,6 +117,19 @@ if ($stmt->execute()) {
         INSERT INTO $table (student_id, student_name)
         VALUES ($student_id, '$student_name')
     ");
+
+    // ================================
+    // 🔥 8. Создаём запись в test_results
+    // ================================
+
+    $stmt2 = $conn->prepare("
+        INSERT INTO test_results (student_lastname, student_firstname, subject)
+        VALUES (?, ?, ?)
+    ");
+
+    $stmt2->bind_param("sss", $student_lastname, $student_firstname, $subject_1);
+    $stmt2->execute();
+    $stmt2->close();
 
     // ================================
     // 9. Редирект

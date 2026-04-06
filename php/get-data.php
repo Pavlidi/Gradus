@@ -8,7 +8,7 @@ if (!isset($_SESSION['student_id'])) {
     exit();
 }
 
-$conn = new mysqli("localhost", "root", "root", "test");
+$conn = new mysqli("localhost", "u3414210_default", "77tiLOpwb6aF5koW", "u3414210_default");
 
 $student_id = $_SESSION['student_id'];
 

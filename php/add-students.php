@@ -13,9 +13,9 @@ if (!isset($_POST['submit'])) {
 // 2. Подключение к базе данных
 // ================================
 $host = "localhost";
-$user = "root";
-$password = "root";
-$dbname = "test";
+$user = "u3414210_default";
+$password = "77tiLOpwb6aF5koW";
+$dbname = "u3414210_default";
 
 // Создаем соединение
 $conn = new mysqli($host, $user, $password, $dbname);

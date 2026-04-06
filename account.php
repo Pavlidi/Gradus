@@ -6,7 +6,7 @@ if (!isset($_SESSION['student_id'])) {
     exit();
 }
 
-$conn = new mysqli("localhost", "root", "root", "test");
+$conn = new mysqli("localhost", "u3414210_default", "77tiLOpwb6aF5koW", "u3414210_default");
 
 $student_id = $_SESSION['student_id'];
 
@@ -197,6 +197,82 @@ $lessonTotal = (int)($student['lessons_total'] ?? 0);
 $lessonDone = (int)($student['attendance'] ?? 0);
 
 
+// ============================
+// 📊 ПРОГРЕСС ПО ЗАДАНИЯМ
+// ============================
+
+// 1. Тип экзамена
+$class = (int)($student['student_class'] ?? 0);
+
+$examType = ($class >= 10) ? 'ege' : 'oge';
+
+// 2. Таблица
+$table = $examType . '_' . ($subject == 'Математика' ? 'math' : 'physics');
+
+// 3. Получаем строку ученика
+$stmt = $conn->prepare("
+    SELECT * FROM $table
+    WHERE student_name = ?
+    LIMIT 1
+");
+
+$stmt->bind_param("s", $fullName);
+$stmt->execute();
+
+
+
+$row = $stmt->get_result()->fetch_assoc();
+
+$totalTasks = 0;
+$doneTasks = 0;
+
+if ($row) {
+    // общее количество
+    $totalTasks = (int)$row['total_tasks'];
+
+    // считаем выполненные
+    foreach ($row as $key => $value) {
+        if (strpos($key, 'task_') === 0 && $value == 1) {
+            $doneTasks++;
+        }
+    }
+}
+$percentStat = $totalTasks > 0 
+    ? round(100 * $doneTasks / $totalTasks) 
+    : 0;
+
+if ($examType == 'ege' && $subject == 'Математика') {
+    $parts = [
+        'part1' => 12,
+        'part2' => 7
+    ];
+}
+
+if ($examType == 'oge' && $subject == 'Математика') {
+    $parts = [
+        'part1' => 19,
+        'part2' => 6
+    ];
+}
+
+if ($examType == 'ege' && $subject == 'Физика') {
+    // пример — подстрой под свою структуру
+    $parts = [
+        'part1' => 20,
+        'part2' => 6
+    ];
+}
+
+if ($examType == 'oge' && $subject == 'Физика') {
+    // пример — подстрой под свою структуру
+    $parts = [
+        'part1' => 16,
+        'part2' => 6
+    ];
+}
+
+$stmt->close();
+
 ?>
 
 <!DOCTYPE html>
@@ -334,7 +410,7 @@ $lessonDone = (int)($student['attendance'] ?? 0);
                 <div class="hwc__line-third">
                     <?php if (!empty($hw['file_path'])): ?>
 
-                    <a href="<?= $hw['file_path'] ?>" download class="btn-dark download" style="text-decoration: none;"
+                    <a href="<?= $hw['file_path'] ?>" target="_blank" class="btn-dark download" style="text-decoration: none;"
                         id="DOWN">
                         <img class="hw-date-icon" src="image/download.png">
                         Скачать
@@ -538,26 +614,25 @@ $lessonDone = (int)($student['attendance'] ?? 0);
                 </div>
             </div>
             <?php if ($showGrades): ?>
-    <div class="grades">
-        <?php foreach ($grades as $index => $grade): ?>
-            <div>
-                <p>«<?= $grade[0] ?>»</p>
-                <p><?= $grade[1] ?></p>
-            </div>
+            <div class="grades">
+                <?php foreach ($grades as $index => $grade): ?>
+                <div>
+                    <p>«
+                        <?= $grade[0] ?>»
+                    </p>
+                    <p>
+                        <?= $grade[1] ?>
+                    </p>
+                </div>
 
-            <?php if ($index < count($grades) - 1): ?>
+                <?php if ($index < count($grades) - 1): ?>
                 <div class="line__vertical"></div>
+                <?php endif; ?>
+                <?php endforeach; ?>
+            </div>
             <?php endif; ?>
-        <?php endforeach; ?>
-    </div>
-<?php endif; ?>
         </div>
     </section>
-
-
-
-
-
     <section class="container section-performance">
         <div class="card">
             <div class="Title">
@@ -566,7 +641,10 @@ $lessonDone = (int)($student['attendance'] ?? 0);
             <div class="card s">
                 <div class="hwc__line-first">
                     <p class="md">Выполнение домашних работ</p>
-                    <p class="xs"><?= $hwDone ?>/<?= $hwTotal ?></p>
+                    <p class="xs">
+                        <?= $hwDone ?>/
+                        <?= $hwTotal ?>
+                    </p>
                 </div>
                 <div class="hw__line-progress">
                     <?php
@@ -583,7 +661,9 @@ $lessonDone = (int)($student['attendance'] ?? 0);
                             <div class="progress__line-background" style="width: <?= $widthBG ?>%;"></div>
                         </div>
                     </div>
-                    <p class="xs-bold"><?= $percent ?>%</p>
+                    <p class="xs-bold">
+                        <?= $percent ?>%
+                    </p>
                 </div>
 
                 <div class="line__horizontal"></div>
@@ -615,14 +695,19 @@ $lessonDone = (int)($student['attendance'] ?? 0);
                             <div class="progress__line-background" style="width: <?= $widthBG ?>%;"></div>
                         </div>
                     </div>
-                    <p class="xs-bold"><?= $avgQuality ?>%</p>
+                    <p class="xs-bold">
+                        <?= $avgQuality ?>%
+                    </p>
                 </div>
 
                 <div class="line__horizontal"></div>
 
                 <div class="hwc__line-first">
                     <p class="md">Посещаемость</p>
-                    <p class="xs"><?= $lessonDone ?>/<?= $lessonTotal ?></p>
+                    <p class="xs">
+                        <?= $lessonDone ?>/
+                        <?= $lessonTotal ?>
+                    </p>
                 </div>
                 <div class="hw__line-progress">
                     <?php
@@ -639,7 +724,9 @@ $lessonDone = (int)($student['attendance'] ?? 0);
                             <div class="progress__line-background" style="width: <?= $widthBG ?>%;"></div>
                         </div>
                     </div>
-                    <p class="xs-bold"><?= $percent ?>%</p>
+                    <p class="xs-bold">
+                        <?= $percent ?>%
+                    </p>
                 </div>
             </div>
         </div>
@@ -652,15 +739,15 @@ $lessonDone = (int)($student['attendance'] ?? 0);
             <div class="card s">
                 <div class="hwc__line-first">
                     <p class="md">Общий прогресс</p>
-                    <p class="xs">10/19</p>
+                    <p class="xs"><?= $doneTasks ?>/<?= $totalTasks ?></p>
                 </div>
                 <div class="hw__line-progress">
                     <div class="progress__line">
-                        <div class="progress__line-active" data-width="53%">
-                            <div class="progress__line-background" style="width: 189%;"></div>
+                        <div class="progress__line-active" data-width="<?= $percentStat ?>%">
+                            <div class="progress__line-background" style="width:<?= $percentStat > 0 ? round(10000/$percentStat) : 0 ?>%;"></div>
                         </div>
                     </div>
-                    <p class="xs-bold">53%</p>
+                    <p class="xs-bold"><?= $percentStat ?>%</p>
                 </div>
             </div>
             <div class="card s">
@@ -669,20 +756,34 @@ $lessonDone = (int)($student['attendance'] ?? 0);
                 </div>
                 <div class="hw__line-progress">
                     <div class="progress__tasks">
-                        <div class="progress__task done"></div>
-                        <div class="progress__task done"></div>
-                        <div class="progress__task done"></div>
-                        <div class="progress__task done"></div>
-                        <div class="progress__task done"></div>
-                        <div class="progress__task done"></div>
-                        <div class="progress__task done"></div>
-                        <div class="progress__task"></div>
-                        <div class="progress__task done"></div>
-                        <div class="progress__task done"></div>
-                        <div class="progress__task now"></div>
-                        <div class="progress__task"></div>
+                    <?php
+                    $done1 = 0;
+                    $maxPerRow = 12;
+
+                    for ($i = 1; $i <= $parts['part1']; $i++) {
+
+                        // 🔁 перенос строки
+                        if (($i - 1) % $maxPerRow == 0 && $i != 1) {
+                            echo '</div></div><div class="hw__line-progress"><div class="progress__tasks">';
+                        }
+                        $isDone = ($row["task_$i"] ?? 0) == 1;
+
+                        if ($isDone) $done1++;
+
+                        $class = $isDone ? 'progress__task done' : 'progress__task';
+
+                        echo "<div class=\"$class\"></div>";
+                    }
+                    ?>
                     </div>
-                    <p class="xs-bold">83%</p>
+
+                    <?php
+                    $percent1 = $parts['part1'] > 0 
+                        ? round($done1 / $parts['part1'] * 100) 
+                        : 0;
+                    ?>
+
+                    <p class="xs-bold"><?= $percent1 ?>%</p>
                 </div>
 
                 <div class="line__horizontal"></div>
@@ -692,15 +793,32 @@ $lessonDone = (int)($student['attendance'] ?? 0);
                 </div>
                 <div class="hw__line-progress">
                     <div class="progress__tasks">
-                        <div class="progress__task"></div>
-                        <div class="progress__task"></div>
-                        <div class="progress__task"></div>
-                        <div class="progress__task"></div>
-                        <div class="progress__task"></div>
-                        <div class="progress__task"></div>
-                        <div class="progress__task"></div>
+                    <?php
+                    $done2 = 0;
+
+                    $start = $parts['part1'] + 1;
+                    $end = $parts['part1'] + $parts['part2'];
+
+                    for ($i = $start; $i <= $end; $i++) {
+
+                        $isDone = ($row["task_$i"] ?? 0) == 1;
+
+                        if ($isDone) $done2++;
+
+                        $class = $isDone ? 'progress__task done' : 'progress__task';
+
+                        echo "<div class=\"$class\"></div>";
+                    }
+                    ?>
                     </div>
-                    <p class="xs-bold">0%</p>
+
+                    <?php
+                    $percent2 = $parts['part2'] > 0 
+                        ? round($done2 / $parts['part2'] * 100) 
+                        : 0;
+                    ?>
+
+                    <p class="xs-bold"><?= $percent2 ?>%</p>
                 </div>
             </div>
         </div>
@@ -709,11 +827,239 @@ $lessonDone = (int)($student['attendance'] ?? 0);
 
 
 
+    <!--    Books - Begin   -->
+    <section class="container section-books">
+        <div class="card">
+            <div class="Title">
+                <h1 class="lg">Учебники</h1>
+            </div>
+            <div class="card s">
+                <div class="hwc__line-first">
+                    <p class="md">Математика ЕГЭ</p>
+                    <div class="btn__group">
+                        <!-- preview -->
+                        <a href="uploads/books/math_ege.pdf" target="_blank" class="btn__books">
+                            <img class="hw-date-icon" src="image/preview.png">
+                        </a>
+
+                        <!-- download -->
+                        <a href="uploads/books/math_ege.pdf" download class="btn__books">
+                            <img class="hw-date-icon" src="image/download-dark.png">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="line__horizontal"></div>
+
+                <div class="hwc__line-first">
+                    <p class="md">Физика ЕГЭ</p>
+                    <div class="btn__group">
+                        <!-- preview -->
+                        <a href="uploads/books/phys_ege.pdf" target="_blank" class="btn__books">
+                            <img class="hw-date-icon" src="image/preview.png">
+                        </a>
+
+                        <!-- download -->
+                        <a href="uploads/books/phys_ege.pdf" download class="btn__books">
+                            <img class="hw-date-icon" src="image/download-dark.png">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="line__horizontal"></div>
+
+                <div class="hwc__line-first">
+                    <p class="md">Математика ОГЭ</p>
+                    <div class="btn__group">
+                        <!-- preview -->
+                        <a href="uploads/books/math_oge.pdf" target="_blank" class="btn__books">
+                            <img class="hw-date-icon" src="image/preview.png">
+                        </a>
+
+                        <!-- download -->
+                        <a href="uploads/books/math_oge.pdf" download class="btn__books">
+                            <img class="hw-date-icon" src="image/download-dark.png">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="line__horizontal"></div>
+
+                <div class="hwc__line-first">
+                    <p class="md">Физика ОГЭ</p>
+                    <div class="btn__group">
+                        <!-- preview -->
+                        <a href="uploads/books/phys_oge.pdf" target="_blank" class="btn__books">
+                            <img class="hw-date-icon" src="image/preview.png">
+                        </a>
+
+                        <!-- download -->
+                        <a href="uploads/books/phys_oge.pdf" download class="btn__books">
+                            <img class="hw-date-icon" src="image/download-dark.png">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--    Books - End   -->
+    <!--    Materials - Begin   -->
+    <section class="container section-materials">
+        <div class="card">
+            <div class="Title">
+                <h1 class="lg">Справочные материалы</h1>
+            </div>
+            <div class="card s">
+                <div class="hwc__line-first">
+                    <p class="md">Физика ЕГЭ</p>
+                    <div class="btn__group">
+                        <!-- preview -->
+                        <a href="uploads/books/phys_ege-sprav.pdf" target="_blank" class="btn__books">
+                            <img class="hw-date-icon" src="image/preview.png">
+                        </a>
+
+                        <!-- download -->
+                        <a href="uploads/books/phys_ege-sprav.pdf" download class="btn__books">
+                            <img class="hw-date-icon" src="image/download-dark.png">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="line__horizontal"></div>
+
+                <div class="hwc__line-first">
+                    <p class="md">Математика ОГЭ</p>
+                    <div class="btn__group">
+                        <!-- preview -->
+                        <a href="uploads/books/math_oge-sprav.pdf" target="_blank" class="btn__books">
+                            <img class="hw-date-icon" src="image/preview.png">
+                        </a>
+
+                        <!-- download -->
+                        <a href="uploads/books/math_oge-sprav.pdf" download class="btn__books">
+                            <img class="hw-date-icon" src="image/download-dark.png">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="line__horizontal"></div>
+
+                <div class="hwc__line-first">
+                    <p class="md">Физика ОГЭ</p>
+                    <div class="btn__group">
+                        <!-- preview -->
+                        <a href="uploads/books/phys_oge-sprav.pdf" target="_blank" class="btn__books">
+                            <img class="hw-date-icon" src="image/preview.png">
+                        </a>
+
+                        <!-- download -->
+                        <a href="uploads/books/phys_oge-sprav.pdf" download class="btn__books">
+                            <img class="hw-date-icon" src="image/download-dark.png">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--    Materials - End   -->
 
 
 
 
 
+    <!--    Student - Begin   -->
+    <section class="container section-student">
+        <div class="card">
+            <div class="Title">
+                <h1 class="lg">Ученик</h1>
+            </div>
+            <div class="card s">
+                <div class="hwc__line-first">
+                    <p class="md">Фамилия:</p>
+                    <p class="md"><?= $student['student_lastname'] ?></p>
+                </div>
+
+                <div class="line__horizontal"></div>
+
+                <div class="hwc__line-first">
+                    <p class="md">Имя:</p>
+                    <p class="md"><?= $student['student_firstname'] ?></p>
+                </div>
+
+                <div class="line__horizontal"></div>
+
+                <div class="hwc__line-first">
+                    <p class="md">Отчество:</p>
+                    <p class="md"><?= $student['student_middlename'] ?: '—' ?></p>
+                </div>
+
+                <div class="line__horizontal"></div>
+
+                <div class="hwc__line-first">
+                    <p class="md">Телефон:</p>
+                    <p class="md"><?= $student['student_phone'] ?></p>
+                </div>
+
+                <div class="line__horizontal"></div>
+
+                <div class="hwc__line-first">
+                    <p class="md">Класс:</p>
+                    <p class="md"><?= $student['student_class'] ?></p>
+                </div>
+
+                <div class="line__horizontal"></div>
+
+                <div class="hwc__line-first">
+                    <p class="md">Предмет:</p>
+                    <p class="md"><?= $student['subject_1'] ?></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--    Student - End   -->
+    <!--    Parent - Begin   -->
+    <section class="container section-parent">
+        <div class="card">
+            <div class="Title">
+                <h1 class="lg">Родитель</h1>
+            </div>
+            <div class="card s">
+                <div class="hwc__line-first">
+                    <p class="md">Фамилия:</p>
+                    <p class="md"><?= $student['parent_lastname'] ?></p>
+                </div>
+
+                <div class="line__horizontal"></div>
+
+                <div class="hwc__line-first">
+                    <p class="md">Имя:</p>
+                    <p class="md"><?= $student['parent_firstname'] ?></p>
+                </div>
+
+                <div class="line__horizontal"></div>
+
+                <div class="hwc__line-first">
+                    <p class="md">Отчество:</p>
+                    <p class="md"><?= $student['parent_middlename'] ?></p>
+                </div>
+
+                <div class="line__horizontal"></div>
+
+                <div class="hwc__line-first">
+                    <p class="md">Телефон:</p>
+                    <p class="md"><?= $student['parent_phone'] ?></p>
+                </div>
+            </div>
+        </div>
+        <div class="card s" style="padding: var(--space-xs); margin-top: var(--space-xs);">
+    <form action="logout.php" method="POST" style="width: 100%;">
+        <button class="btn-dark" style="width: 100%;">
+            Выйти из аккаунта
+        </button>
+    </form>
+</div>
+    </section>
+    <!--    Parent - End   -->
 
 
 
@@ -847,11 +1193,6 @@ $lessonDone = (int)($student['attendance'] ?? 0);
     </footer>
 
 
-    <form action="logout.php" method="POST">
-        <button>Выйти</button>
-    </form>
-
-    <hr>
 
     <script src="js/main.js"></script>
 </body>

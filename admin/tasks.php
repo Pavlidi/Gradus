@@ -1,5 +1,5 @@
 <?php
-$conn = new mysqli("localhost", "root", "root", "test");
+$conn = new mysqli("localhost", "u3414210_default", "77tiLOpwb6aF5koW", "u3414210_default");
 
 $students = $conn->query("SELECT * FROM users_info ORDER BY student_lastname");
 

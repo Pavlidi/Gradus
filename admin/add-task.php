@@ -4,7 +4,7 @@ $user = "root";
 $password = "root";
 $dbname = "test";
 
-$conn = new mysqli($host, $user, $password, $dbname);
+$conn = new mysqli("localhost", "u3414210_default", "77tiLOpwb6aF5koW", "u3414210_default");
 
 if ($conn->connect_error) {
     die("Ошибка подключения: " . $conn->connect_error);
