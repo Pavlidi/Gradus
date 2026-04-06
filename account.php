@@ -410,8 +410,8 @@ $stmt->close();
                 <div class="hwc__line-third">
                     <?php if (!empty($hw['file_path'])): ?>
 
-                    <a href="<?= $hw['file_path'] ?>" target="_blank" class="btn-dark download" style="text-decoration: none;"
-                        id="DOWN">
+                    <a href="<?= $hw['file_path'] ?>" target="_blank" class="btn-dark download"
+                        style="text-decoration: none;" id="DOWN">
                         <img class="hw-date-icon" src="image/download.png">
                         Скачать
                     </a>
@@ -683,7 +683,7 @@ $stmt->close();
 
                     $avgQuality = round($result['avg_value'] ?? 0);
 
-                    $widthBG = $percent > 0 ? round(10000 / $avgQuality) : 0;
+                    $widthBG = $avgQuality > 0 ? round(10000 / $avgQuality) : 0;
                     $stmt->close();
                 ?>
                 <div class="hwc__line-first">
@@ -739,15 +739,21 @@ $stmt->close();
             <div class="card s">
                 <div class="hwc__line-first">
                     <p class="md">Общий прогресс</p>
-                    <p class="xs"><?= $doneTasks ?>/<?= $totalTasks ?></p>
+                    <p class="xs">
+                        <?= $doneTasks ?>/
+                        <?= $totalTasks ?>
+                    </p>
                 </div>
                 <div class="hw__line-progress">
                     <div class="progress__line">
                         <div class="progress__line-active" data-width="<?= $percentStat ?>%">
-                            <div class="progress__line-background" style="width:<?= $percentStat > 0 ? round(10000/$percentStat) : 0 ?>%;"></div>
+                            <div class="progress__line-background"
+                                style="width:<?= $percentStat > 0 ? round(10000/$percentStat) : 0 ?>%;"></div>
                         </div>
                     </div>
-                    <p class="xs-bold"><?= $percentStat ?>%</p>
+                    <p class="xs-bold">
+                        <?= $percentStat ?>%
+                    </p>
                 </div>
             </div>
             <div class="card s">
@@ -756,7 +762,7 @@ $stmt->close();
                 </div>
                 <div class="hw__line-progress">
                     <div class="progress__tasks">
-                    <?php
+                        <?php
                     $done1 = 0;
                     $maxPerRow = 12;
 
@@ -783,7 +789,9 @@ $stmt->close();
                         : 0;
                     ?>
 
-                    <p class="xs-bold"><?= $percent1 ?>%</p>
+                    <p class="xs-bold">
+                        <?= $percent1 ?>%
+                    </p>
                 </div>
 
                 <div class="line__horizontal"></div>
@@ -793,7 +801,7 @@ $stmt->close();
                 </div>
                 <div class="hw__line-progress">
                     <div class="progress__tasks">
-                    <?php
+                        <?php
                     $done2 = 0;
 
                     $start = $parts['part1'] + 1;
@@ -818,7 +826,9 @@ $stmt->close();
                         : 0;
                     ?>
 
-                    <p class="xs-bold"><?= $percent2 ?>%</p>
+                    <p class="xs-bold">
+                        <?= $percent2 ?>%
+                    </p>
                 </div>
             </div>
         </div>
@@ -976,42 +986,54 @@ $stmt->close();
             <div class="card s">
                 <div class="hwc__line-first">
                     <p class="md">Фамилия:</p>
-                    <p class="md"><?= $student['student_lastname'] ?></p>
+                    <p class="md">
+                        <?= $student['student_lastname'] ?>
+                    </p>
                 </div>
 
                 <div class="line__horizontal"></div>
 
                 <div class="hwc__line-first">
                     <p class="md">Имя:</p>
-                    <p class="md"><?= $student['student_firstname'] ?></p>
+                    <p class="md">
+                        <?= $student['student_firstname'] ?>
+                    </p>
                 </div>
 
                 <div class="line__horizontal"></div>
 
                 <div class="hwc__line-first">
                     <p class="md">Отчество:</p>
-                    <p class="md"><?= $student['student_middlename'] ?: '—' ?></p>
+                    <p class="md">
+                        <?= $student['student_middlename'] ?: '—' ?>
+                    </p>
                 </div>
 
                 <div class="line__horizontal"></div>
 
                 <div class="hwc__line-first">
                     <p class="md">Телефон:</p>
-                    <p class="md"><?= $student['student_phone'] ?></p>
+                    <p class="md">
+                        <?= $student['student_phone'] ?>
+                    </p>
                 </div>
 
                 <div class="line__horizontal"></div>
 
                 <div class="hwc__line-first">
                     <p class="md">Класс:</p>
-                    <p class="md"><?= $student['student_class'] ?></p>
+                    <p class="md">
+                        <?= $student['student_class'] ?>
+                    </p>
                 </div>
 
                 <div class="line__horizontal"></div>
 
                 <div class="hwc__line-first">
                     <p class="md">Предмет:</p>
-                    <p class="md"><?= $student['subject_1'] ?></p>
+                    <p class="md">
+                        <?= $student['subject_1'] ?>
+                    </p>
                 </div>
             </div>
         </div>
@@ -1026,38 +1048,46 @@ $stmt->close();
             <div class="card s">
                 <div class="hwc__line-first">
                     <p class="md">Фамилия:</p>
-                    <p class="md"><?= $student['parent_lastname'] ?></p>
+                    <p class="md">
+                        <?= $student['parent_lastname'] ?>
+                    </p>
                 </div>
 
                 <div class="line__horizontal"></div>
 
                 <div class="hwc__line-first">
                     <p class="md">Имя:</p>
-                    <p class="md"><?= $student['parent_firstname'] ?></p>
+                    <p class="md">
+                        <?= $student['parent_firstname'] ?>
+                    </p>
                 </div>
 
                 <div class="line__horizontal"></div>
 
                 <div class="hwc__line-first">
                     <p class="md">Отчество:</p>
-                    <p class="md"><?= $student['parent_middlename'] ?></p>
+                    <p class="md">
+                        <?= $student['parent_middlename'] ?>
+                    </p>
                 </div>
 
                 <div class="line__horizontal"></div>
 
                 <div class="hwc__line-first">
                     <p class="md">Телефон:</p>
-                    <p class="md"><?= $student['parent_phone'] ?></p>
+                    <p class="md">
+                        <?= $student['parent_phone'] ?>
+                    </p>
                 </div>
             </div>
         </div>
         <div class="card s" style="padding: var(--space-xs); margin-top: var(--space-xs);">
-    <form action="logout.php" method="POST" style="width: 100%;">
-        <button class="btn-dark" style="width: 100%;">
-            Выйти из аккаунта
-        </button>
-    </form>
-</div>
+            <form action="logout.php" method="POST" style="width: 100%;">
+                <button class="btn-dark" style="width: 100%;">
+                    Выйти из аккаунта
+                </button>
+            </form>
+        </div>
     </section>
     <!--    Parent - End   -->
 
