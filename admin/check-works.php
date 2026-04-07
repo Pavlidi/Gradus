@@ -95,18 +95,14 @@ while ($row = $result->fetch_assoc()) {
                         <p>Тема: <?= $submission['title'] ?></p>
                         <p>Дата: <?= $submission['homework_date'] ?></p>
 
-                        <!-- файлы ученика -->
-                        <?php
-                        $files = $conn->query("
-                            SELECT * FROM submission_files 
-                            WHERE submission_id = {$submission['id']} 
-                            AND file_type = 'solution'
-                        ");
-                        ?>
-
-                        <?php while ($file = $files->fetch_assoc()): ?>
-                            <a href="../<?= $file['file_path'] ?>" target="_blank">Скачать</a><br>
-                        <?php endwhile; ?>
+                        <!-- PDF кнопка -->
+                        <form action="php/download-pdf.php" method="POST" style="margin-bottom:10px;">
+                            <input type="hidden" name="submission_id" value="<?= $submission['id'] ?>">
+                            <input type="hidden" name="student_name" value="<?= $fullName ?>">
+                            <input type="hidden" name="subject" value="<?= $subject ?>">
+                            <input type="hidden" name="title" value="<?= $submission['title'] ?>">
+                            <button type="submit">📄 Скачать PDF</button>
+                        </form>
 
                         <form action="php/check-homework.php" method="POST" enctype="multipart/form-data">
 
@@ -171,17 +167,14 @@ while ($row = $result->fetch_assoc()) {
                     <p>Тема: <?= $submission['title'] ?></p>
                     <p>Дата: <?= $submission['homework_date'] ?></p>
 
-                    <?php
-                    $files = $conn->query("
-                        SELECT * FROM submission_files 
-                        WHERE submission_id = {$submission['id']} 
-                        AND file_type = 'solution'
-                    ");
-                    ?>
-
-                    <?php while ($file = $files->fetch_assoc()): ?>
-                        <a href="../<?= $file['file_path'] ?>" target="_blank">Скачать</a><br>
-                    <?php endwhile; ?>
+                    <!-- PDF кнопка -->
+                    <form action="php/download-pdf.php" method="POST" style="margin-bottom:10px;">
+                        <input type="hidden" name="submission_id" value="<?= $submission['id'] ?>">
+                        <input type="hidden" name="student_name" value="<?= $fullName ?>">
+                        <input type="hidden" name="subject" value="<?= $subject ?>">
+                        <input type="hidden" name="title" value="<?= $submission['title'] ?>">
+                        <button type="submit">📄 Скачать PDF</button>
+                    </form>
 
                     <form action="php/check-homework.php" method="POST" enctype="multipart/form-data">
 

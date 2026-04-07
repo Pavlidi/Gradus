@@ -1,10 +1,15 @@
 <?php
 $conn = new mysqli("localhost", "u3414210_default", "77tiLOpwb6aF5koW", "u3414210_default");
 
-$submission_id = $_GET['submission_id'];
+if (!isset($_GET['submission_id'])) {
+    die('Ошибка');
+}
+
+$submission_id = (int)$_GET['submission_id'];
 
 $result = $conn->query("
-    SELECT * FROM submission_files
+    SELECT file_path 
+    FROM submission_files
     WHERE submission_id = $submission_id
     AND file_type = 'checked'
 ");
@@ -12,33 +17,51 @@ $result = $conn->query("
 $files = [];
 
 while ($row = $result->fetch_assoc()) {
-    $files[] = "../" . $row['file_path'];
+    $files[] = __DIR__ . "/../" . $row['file_path'];
 }
 
-// если один файл — просто скачать
+// если нет файлов
+if (empty($files)) {
+    die('Файлы не найдены');
+}
+
+// ==========================
+// ✅ ЕСЛИ 1 ФАЙЛ → ОТКРЫТЬ
+// ==========================
 if (count($files) == 1) {
+
     $file = $files[0];
 
-    header('Content-Type: application/octet-stream');
-    header('Content-Disposition: attachment; filename="' . basename($file) . '"');
+    if (!file_exists($file)) {
+        die('Файл не найден');
+    }
+
+    header('Content-Type: application/pdf');
+    header('Content-Disposition: inline; filename="checked.pdf"');
+
     readfile($file);
-    exit();
+    exit;
 }
 
-// если несколько — архив
+// ==========================
+// ⚠️ ЕСЛИ НЕСКОЛЬКО → ZIP
+// ==========================
 $zip = new ZipArchive();
-$zipName = "checked_" . $submission_id . ".zip";
+$zipName = __DIR__ . "/checked_" . $submission_id . ".zip";
 
 $zip->open($zipName, ZipArchive::CREATE);
 
 foreach ($files as $file) {
-    $zip->addFile($file, basename($file));
+    if (file_exists($file)) {
+        $zip->addFile($file, basename($file));
+    }
 }
 
 $zip->close();
 
 header('Content-Type: application/zip');
-header('Content-Disposition: attachment; filename="' . $zipName . '"');
-readfile($zipName);
+header('Content-Disposition: attachment; filename="checked_'.$submission_id.'.zip"');
 
+readfile($zipName);
 unlink($zipName);
+exit;

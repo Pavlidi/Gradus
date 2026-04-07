@@ -1,6 +1,17 @@
 <?php
 session_start();
+// если уже есть сессия → сразу в кабинет
+if (isset($_SESSION['student_id'])) {
+    header("Location: account.php");
+    exit();
+}
 
+// если есть cookie → восстанавливаем сессию
+if (isset($_COOKIE['student_id'])) {
+    $_SESSION['student_id'] = $_COOKIE['student_id'];
+    header("Location: account.php");
+    exit();
+}
 $conn = new mysqli("localhost", "u3414210_default", "77tiLOpwb6aF5koW", "u3414210_default");
 
 $error = "";
@@ -61,7 +72,7 @@ if (isset($_POST['login'])) {
                     $user['student_lastname'] . ' ' . $user['student_firstname'];
 
                 $_SESSION['student_id'] = $user['id'];
-
+                setcookie("student_id", $user['id'], time() + (86400 * 30), "/");
                 header("Location: account.php");
                 exit();
             } else {

@@ -31,7 +31,7 @@ if (!$temp) {
 $phone = $temp['student_phone'] ?: $temp['parent_phone'];
 
 // 3. Определяем предмет (из URL или по умолчанию)
-$subject = $_GET['subject'] ?? 'Математика';
+$subject = $_GET['subject'] ?? null;
 
 // 4. Получаем НУЖНУЮ запись по предмету
 $stmt = $conn->prepare("
@@ -45,6 +45,25 @@ $stmt->bind_param("sss", $phone, $phone, $subject);
 $stmt->execute();
 
 $student = $stmt->get_result()->fetch_assoc();
+
+// если предмет не передан — пробуем взять ЛЮБОЙ предмет
+if (!$student && !$subject) {
+
+    $stmt = $conn->prepare("
+        SELECT * FROM users_info 
+        WHERE (student_phone = ? OR parent_phone = ?)
+        LIMIT 1
+    ");
+
+    $stmt->bind_param("ss", $phone, $phone);
+    $stmt->execute();
+
+    $student = $stmt->get_result()->fetch_assoc();
+
+    if ($student) {
+        $subject = $student['subject_1'];
+    }
+}
 
 // ❗ защита
 if (!$student) {
