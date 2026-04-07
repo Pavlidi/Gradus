@@ -1,4 +1,6 @@
 <?php
+ob_start();
+
 $conn = new mysqli("localhost", "u3414210_default", "77tiLOpwb6aF5koW", "u3414210_default");
 
 if (!isset($_GET['submission_id'])) {
@@ -7,6 +9,7 @@ if (!isset($_GET['submission_id'])) {
 
 $submission_id = (int)$_GET['submission_id'];
 
+// получаем файлы
 $result = $conn->query("
     SELECT file_path 
     FROM submission_files
@@ -14,54 +17,39 @@ $result = $conn->query("
     AND file_type = 'checked'
 ");
 
-$files = [];
+$images = [];
 
 while ($row = $result->fetch_assoc()) {
-    $files[] = __DIR__ . "/../" . $row['file_path'];
+    $images[] = __DIR__ . "/../" . $row['file_path'];
 }
 
 // если нет файлов
-if (empty($files)) {
+if (empty($images)) {
     die('Файлы не найдены');
 }
 
-// ==========================
-// ✅ ЕСЛИ 1 ФАЙЛ → ОТКРЫТЬ
-// ==========================
-if (count($files) == 1) {
+// подключаем FPDF
+require_once(__DIR__ . '/../admin/php/lib/fpdf.php');
 
-    $file = $files[0];
+$pdf = new FPDF();
 
-    if (!file_exists($file)) {
-        die('Файл не найден');
-    }
+foreach ($images as $img) {
 
-    header('Content-Type: application/pdf');
-    header('Content-Disposition: inline; filename="checked.pdf"');
+    if (!file_exists($img)) continue;
 
-    readfile($file);
-    exit;
+    $pdf->AddPage();
+    $pdf->Image($img, 10, 10, 190);
 }
 
-// ==========================
-// ⚠️ ЕСЛИ НЕСКОЛЬКО → ZIP
-// ==========================
-$zip = new ZipArchive();
-$zipName = __DIR__ . "/checked_" . $submission_id . ".zip";
+// генерируем PDF
+$pdfContent = $pdf->Output('S');
 
-$zip->open($zipName, ZipArchive::CREATE);
+// 🔥 открываем в браузере (НЕ скачиваем)
+header('Content-Type: application/pdf');
+header('Content-Disposition: inline; filename="checked_homework.pdf"');
+header('Content-Length: ' . strlen($pdfContent));
 
-foreach ($files as $file) {
-    if (file_exists($file)) {
-        $zip->addFile($file, basename($file));
-    }
-}
+echo $pdfContent;
 
-$zip->close();
-
-header('Content-Type: application/zip');
-header('Content-Disposition: attachment; filename="checked_'.$submission_id.'.zip"');
-
-readfile($zipName);
-unlink($zipName);
+ob_end_flush();
 exit;
