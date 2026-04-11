@@ -17,34 +17,72 @@ $result = $conn->query("
     AND file_type = 'checked'
 ");
 
-$images = [];
+$files = [];
 
 while ($row = $result->fetch_assoc()) {
-    $images[] = __DIR__ . "/../" . $row['file_path'];
+    $files[] = __DIR__ . "/../" . $row['file_path'];
 }
 
 // если нет файлов
-if (empty($images)) {
+if (empty($files)) {
     die('Файлы не найдены');
 }
 
+// ==========================
+// 🔥 ЕСЛИ 1 ФАЙЛ И ЭТО PDF → ОТКРЫВАЕМ
+// ==========================
+if (count($files) == 1) {
+
+    $file = $files[0];
+
+    if (!file_exists($file)) {
+        die('Файл не найден');
+    }
+
+    $ext = strtolower(pathinfo($file, PATHINFO_EXTENSION));
+
+    if ($ext === 'pdf') {
+        header('Content-Type: application/pdf');
+        header('Content-Disposition: inline; filename="checked.pdf"');
+        readfile($file);
+        exit;
+    }
+}
+
+// ==========================
+// 📸 СОБИРАЕМ PDF ИЗ КАРТИНОК
+// ==========================
+
 // подключаем FPDF
-require_once(__DIR__ . '/../admin/php/lib/fpdf.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/admin/php/lib/fpdf.php');
 
 $pdf = new FPDF();
 
-foreach ($images as $img) {
+$hasImages = false;
 
-    if (!file_exists($img)) continue;
+foreach ($files as $file) {
+
+    if (!file_exists($file)) continue;
+
+    $ext = strtolower(pathinfo($file, PATHINFO_EXTENSION));
+
+    if (!in_array($ext, ['jpg', 'jpeg', 'png'])) continue;
+
+    $hasImages = true;
 
     $pdf->AddPage();
-    $pdf->Image($img, 10, 10, 190);
+    $pdf->Image($file, 10, 10, 190);
+}
+
+// если нет изображений → fallback
+if (!$hasImages) {
+    die('Нет поддерживаемых изображений');
 }
 
 // генерируем PDF
 $pdfContent = $pdf->Output('S');
 
-// 🔥 открываем в браузере (НЕ скачиваем)
+// открываем в браузере
 header('Content-Type: application/pdf');
 header('Content-Disposition: inline; filename="checked_homework.pdf"');
 header('Content-Length: ' . strlen($pdfContent));

@@ -606,8 +606,8 @@ h3 {
     /*  Widths - Begin  */
     --header__nav-bar-width: 566;
     --logo__tablet-width: 70;
-    --hero__univer__marquee-width: 75vw;
-    --hero__univer__track__img-width: 1084;
+    --hero__univer__marquee-width: calc(100vw * 1085 / 1440);
+    --hero__univer__track__img-width: 1085;
 
     --subject-switch-width: 208;
     --exam-switch-width: 111;

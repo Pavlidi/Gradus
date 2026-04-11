@@ -1172,6 +1172,8 @@ textarea::placeholder {
     display: flex;
     width: max-content;
 
+    gap: calc(100vw * var(--hero__univer__track__img-paddingRight) / var(--mainWidth));
+
     height: calc(100vw * var(--hero__univer__track-height) / var(--mainWidth));
 
     animation: univer__track 20s linear infinite;
@@ -1181,7 +1183,7 @@ textarea::placeholder {
     display: block;
 
     flex: 0 0 calc(100vw * var(--hero__univer__track__img-width) / var(--mainWidth));
-    padding-right: calc(100vw * var(--hero__univer__track__img-paddingRight) / var(--mainWidth));
+    /* padding-right: calc(100vw * var(--hero__univer__track__img-paddingRight) / var(--mainWidth)); */
 
     backface-visibility: hidden;
     transform: translateZ(0);
