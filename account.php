@@ -510,11 +510,18 @@ $stmt->close();
 
                 if ($status == 'не проверено') {
                     echo "<div class=\"hw__line-third\">
-                            <div class=\"hw__result-status\">
-                                <div class=\"hw__result-status-indicator\" style=\"background-color: #FFE400;\"></div>
-                                <p class=\"xs\">На проверке</p>
-                            </div>
-                           </div>";
+                        <div class=\"hw__result-status\">
+                            <div class=\"hw__result-status-indicator\" style=\"background-color: #FFE400;\"></div>
+                            <p class=\"xs\">На проверке</p>
+                        </div>
+
+                        <form action=\"php/cancel-homework.php\" method=\"POST\" style=\"margin-top:8px;\">
+                            <input type=\"hidden\" name=\"submission_id\" value=\"" . $item['id'] . "\">
+                            <button class=\"btn-light\" style=\"color:red;\">
+                                Отменить отправку
+                            </button>
+                        </form>
+                    </div>";
                 } elseif ($status == 'проверено') {
 
                     $percent = $item['completed_tasks'];
