@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="css_second/base.css">
     <link rel="stylesheet" href="css_second/layout.css">
     <link rel="stylesheet" href="css_second/sections.css">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    
     <link rel="shortcut icon" href="/favicon.ico" />
     <script src="js/main_old.js" defer></script>
     <title>Курсы подготовки к ЕГЭ и ОГЭ по математике и физике в Новосибирске | Градус</title>
@@ -63,11 +64,131 @@
     <!--    Courses - Begin  -->
     <section class="courses__container">
         <div class="courses__header">
-            <div class="h1__grad">
+            <div class="h1__grad" style="text-align: center;">
                 <h1>Наши курсы</h1>
+                <p class="sm">Хороший план подготовки - залог хорошего результата.<br>Выберите курс и двигайтесь вперед
+                    шаг за шагом.</p>
             </div>
         </div>
-        
+        <div class="swiper coursesSwiper">
+            <div class="swiper-wrapper">
+
+                <!-- Карточка 1 -->
+                <div class="swiper-slide">
+                    <div class="card">
+                        <div class="course-card-header">
+                            <h2 class="lg">ЕГЭ по Математике</h2>
+                            <span class="xs">профильный уровень</span>
+                        </div>
+                        <div class="s">
+                            <p class="md course-desc">
+                                Комплексная подготовка к<br>профильному ЕГЭ по математике.<br>
+                                Постепенно проходим все задания:<br>от базового уровня к более сложным.
+                            </p>
+
+                            <ul class="course-list">
+                                <li>Полный разбор всех 19 заданий</li>
+                                <li>Практика с реальными вариантами</li>
+                                <li>Работа с критериями оценки</li>
+                                <li>Стратегия распределения времени</li>
+                            </ul>
+
+                            <div class="course-footer">
+                                <span>2 раза в неделю</span>
+                                <span>до 8 человек</span>
+                            </div>
+
+                            <button class="course-btn">Подробнее</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Карточка 2 -->
+                <div class="swiper-slide">
+                    <div class="course-card-new">
+                        <div class="course-card-header">
+                            <h3>ЕГЭ по Физике</h3>
+                        </div>
+
+                        <p class="course-desc">
+                            Комплексная подготовка к ЕГЭ по физике. От механики до квантовой физики.
+                        </p>
+
+                        <ul class="course-list">
+                            <li>Все разделы школьной физики</li>
+                            <li>Задачи повышенной сложности</li>
+                            <li>Формулы и методы решения</li>
+                            <li>Стратегия распределения времени</li>
+                        </ul>
+
+                        <div class="course-footer">
+                            <span>2 раза в неделю</span>
+                            <span>до 8 человек</span>
+                        </div>
+
+                        <button class="course-btn">Подробнее</button>
+                    </div>
+                </div>
+
+                <!-- Карточка 3 -->
+                <div class="swiper-slide">
+                    <div class="course-card-new">
+                        <div class="course-card-header">
+                            <h3>ОГЭ по Математике</h3>
+                        </div>
+
+                        <p class="course-desc">
+                            Подготовка к ОГЭ с акцентом на системность и понимание.
+                        </p>
+
+                        <ul class="course-list">
+                            <li>Алгебра и геометрия — с основ</li>
+                            <li>Разбор типичных ошибок</li>
+                            <li>Задания из реальных вариантов</li>
+                            <li>Пробники каждый месяц</li>
+                        </ul>
+
+                        <div class="course-footer">
+                            <span>2 раза в неделю</span>
+                            <span>до 8 человек</span>
+                        </div>
+
+                        <button class="course-btn">Подробнее</button>
+                    </div>
+                </div>
+
+                <!-- Карточка 4 -->
+                <div class="swiper-slide">
+                    <div class="course-card-new">
+                        <div class="course-card-header">
+                            <h3>ОГЭ по Физике</h3>
+                        </div>
+
+                        <p class="course-desc">
+                            Понимание явлений и решение задач экзаменационного формата.
+                        </p>
+
+                        <ul class="course-list">
+                            <li>Основы всех разделов</li>
+                            <li>Работа с графиками</li>
+                            <li>Экспериментальные задания</li>
+                            <li>Пробные тестирования</li>
+                        </ul>
+
+                        <div class="course-footer">
+                            <span>2 раза в неделю</span>
+                            <span>до 8 человек</span>
+                        </div>
+
+                        <button class="course-btn">Подробнее</button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Индикаторы -->
+            <div class="swiper-pagination"></div>
+        </div>
     </section>
     <!--    Courses - Begin  -->
 
@@ -195,6 +316,7 @@
         </div>
     </footer>
     <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </body>
 
 </html>

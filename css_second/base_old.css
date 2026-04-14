@@ -17,6 +17,7 @@ img {
 h1 {
   font-family: 'Montserrat', sans-serif;
   font-size: var(--text-xl);
+  line-height: 1.6;
   font-weight: 900;
   text-align: center;
 }

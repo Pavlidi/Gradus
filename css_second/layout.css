@@ -97,40 +97,63 @@
 }
 /*                                                 Header-mobile - End                                                */
 
-
-/*                                                 Backgrounds-mobile - Begin                                                */
-.bkg-1 {
-  position: absolute;
-  top: 420vw;
-  width: 100vw;
-  height: auto;
-  z-index: -100;
+/*                                                 Swiper - Begin                                                */
+/* ===== SWIPER SLIDE ===== */
+.coursesSwiper .swiper-slide {
+  width: max-content;
 }
 
-.bkg-2 {
-  position: absolute;
-  top: 569vw;
-  width: 100vw;
-  height: auto;
-  z-index: -100;
+/* ===== PAGINATION (как на главной) ===== */
+.coursesSwiper .swiper-pagination {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }
 
-.bkg-3 {
-  position: absolute;
-  top: 676vw;
-  width: 100vw;
-  height: auto;
-  z-index: -100;
+.coursesSwiper .swiper-pagination-bullet {
+  width: 6px;
+  height: 6px;
+  background: #ccc;
+  opacity: 1;
+  border-radius: 50%;
 }
 
-.bkg-4 {
-  position: absolute;
-  top: 995vw;
-  width: 100vw;
-  height: auto;
-  z-index: -100;
+.coursesSwiper .swiper-pagination-bullet-active {
+  width: 26px;
+  height: 8px;
+  border-radius: 20px;
+  background: #252532;
 }
-/*                                                 Backgrounds-mobile - End                                                */
+
+/* ===== courses swiper как на главной ===== */
+
+.coursesSwiper .swiper-pagination {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: calc(100vw * var(--swiper-pagination-marginTop) / var(--mainWidth));
+  gap: calc(100vw * var(--swiper-pagination-gap) / var(--mainWidth));
+}
+
+.coursesSwiper .swiper-pagination-bullet {
+  width: calc(100vw * var(--swiper-pagination_Dots-width) / var(--mainWidth));
+  height: calc(100vw * var(--swiper-pagination_Dots-width) / var(--mainWidth));
+  background: #BABABA;
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.coursesSwiper .swiper-pagination-bullet-active {
+  width: calc(100vw * var(--swiper-pagination_Active-width) / var(--mainWidth));
+  height: calc(100vw * var(--swiper-pagination_Active-height) / var(--mainWidth));
+  border-radius: calc(100vw * var(--swiper-pagination_Active-radius) / var(--mainWidth));
+  background: #BABABA;
+}
+/*                                                 Swiper - End                                                */
+
 
 /*                                                 Footer-mobile - Begin                                                */
 .footer {

@@ -156,6 +156,20 @@ const swiper3 = new Swiper(".mySwiper3", {
   },
 });
 
+new Swiper(".coursesSwiper", {
+  slidesPerView: "auto",
+  spaceBetween: 12,
+  centeredSlides: true,
+
+  speed: 600, // 🔥 плавность
+  grabCursor: true,
+
+  pagination: {
+    el: document.querySelector(".coursesSwiper .swiper-pagination"),
+    clickable: true,
+  },
+});
+
 const navLinks = document.querySelectorAll('.nav-link');
 
 navLinks.forEach(link => {
