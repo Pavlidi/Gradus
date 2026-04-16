@@ -142,6 +142,7 @@ h1, h2, h3, p, a {
   --gradient-btn: linear-gradient(180deg, #3B3A4E 0%, #272733 100%);
   --gradient-green: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%);
   --gradient-green-vert: linear-gradient(360deg, #00C9FF 0%, #6BF0B8 100%);
+  --gradient-blue: radial-gradient(ellipse 165.01% 165.01% at 16.25% 82.50%, #12C2E9 0%, #C471ED 100%);
 
   /*  Box-shadows  */
   --box-shadows-sm: 0px 2px 8px rgba(0, 0, 0, 0.15);

@@ -9,8 +9,9 @@
     <link rel="stylesheet" href="css_second/base.css">
     <link rel="stylesheet" href="css_second/layout.css">
     <link rel="stylesheet" href="css_second/sections.css">
+    <link rel="stylesheet" href="css_second/components.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-    
+
     <link rel="shortcut icon" href="/favicon.ico" />
     <script src="js/main_old.js" defer></script>
     <title>Курсы подготовки к ЕГЭ и ОГЭ по математике и физике в Новосибирске | Градус</title>
@@ -48,14 +49,14 @@
     <header class="header-desktop">
         <nav class="nav-bar">
             <!-- Ссылки меню -->
-            <div class="nav-bar__links">
-                <a href="#" class="nav-link active">О центре</a>
-                <a href="#" class="nav-link">Курсы</a>
+            <div class="nav-bar__links" style="line-height: 1;">
+                <a href="#" class="nav-link">О центре</a>
+                <a href="#" class="nav-link active">Курсы</a>
                 <a href="#" class="nav-link">Акции</a>
                 <a href="#" class="nav-link">Отзывы</a>
             </div>
             <!-- Кнопка ЛК -->
-            <a href="login.php" class="nav-login-btn">Личный кабинет</a>
+            <a href="login.php" class="nav-login-btn" style="line-height: 1;">Личный кабинет</a>
         </nav>
     </header>
     <!--    Header - End  -->
@@ -87,100 +88,153 @@
                             </p>
 
                             <ul class="course-list">
-                                <li>Полный разбор всех 19 заданий</li>
-                                <li>Практика с реальными вариантами</li>
-                                <li>Работа с критериями оценки</li>
-                                <li>Стратегия распределения времени</li>
+                                <li class="md">Полный разбор всех 19 заданий</li>
+                                <li class="md">Практика с реальными вариантами</li>
+                                <li class="md">Работа с критериями оценки</li>
+                                <li class="md">Стратегия распределения времени</li>
                             </ul>
 
+                            <div class="horizont__line"></div>
+
                             <div class="course-footer">
-                                <span>2 раза в неделю</span>
-                                <span>до 8 человек</span>
+                                <div class="courses-card__format">
+                                    <img src="image/course__format-time.png" alt="Количество занятий:">
+                                    <p class="sm">2 раза в неделю</p>
+                                </div>
+                                <div class="courses-card__format">
+                                    <img src="image/course__format-group.png" alt="Размер групп:">
+                                    <p class="sm">до 8 человек</p>
+                                </div>
                             </div>
 
-                            <button class="course-btn">Подробнее</button>
+                            <button class="course-btn">
+                                <img src="image/course__format-more.png" alt="Описание курса">
+                                Подробнее
+                            </button>
                         </div>
                     </div>
                 </div>
 
                 <!-- Карточка 2 -->
                 <div class="swiper-slide">
-                    <div class="course-card-new">
+                    <div class="card">
                         <div class="course-card-header">
-                            <h3>ЕГЭ по Физике</h3>
+                            <h2 class="lg">ЕГЭ по Физике</h2>
+                            <span class="xs">10-11 класс</span>
                         </div>
+                        <div class="s">
+                            <p class="md course-desc">
+                                Комплексная подготовка к ЕГЭ по<br>физике. От механики до квантовой<br>физики —
+                                объясняем понятным<br>языком.
+                            </p>
 
-                        <p class="course-desc">
-                            Комплексная подготовка к ЕГЭ по физике. От механики до квантовой физики.
-                        </p>
+                            <ul class="course-list">
+                                <li class="md">Все разделы школьной физики</li>
+                                <li class="md">Задачи повышенной сложности</li>
+                                <li class="md">Формулы и методы решения</li>
+                                <li class="md">Стратегия распределения времени</li>
+                            </ul>
 
-                        <ul class="course-list">
-                            <li>Все разделы школьной физики</li>
-                            <li>Задачи повышенной сложности</li>
-                            <li>Формулы и методы решения</li>
-                            <li>Стратегия распределения времени</li>
-                        </ul>
+                            <div class="horizont__line"></div>
 
-                        <div class="course-footer">
-                            <span>2 раза в неделю</span>
-                            <span>до 8 человек</span>
+                            <div class="course-footer">
+                                <div class="courses-card__format">
+                                    <img src="image/course__format-time.png" alt="Количество занятий:">
+                                    <p class="sm">2 раза в неделю</p>
+                                </div>
+                                <div class="courses-card__format">
+                                    <img src="image/course__format-group.png" alt="Размер групп:">
+                                    <p class="sm">до 8 человек</p>
+                                </div>
+                            </div>
+
+                            <button class="course-btn">
+                                <img src="image/course__format-more.png" alt="Описание курса">
+                                Подробнее
+                            </button>
                         </div>
-
-                        <button class="course-btn">Подробнее</button>
                     </div>
                 </div>
 
                 <!-- Карточка 3 -->
                 <div class="swiper-slide">
-                    <div class="course-card-new">
+                    <div class="card">
                         <div class="course-card-header">
-                            <h3>ОГЭ по Математике</h3>
+                            <h2 class="lg">ОГЭ по Математике</h2>
+                            <span class="xs">9 класс</span>
                         </div>
+                        <div class="s">
+                            <p class="md course-desc">
+                                Подготовка к ОГЭ с акцентом на<br>системность. Понимание, практика<br>и уверенность в
+                                каждом задании.
+                            </p>
 
-                        <p class="course-desc">
-                            Подготовка к ОГЭ с акцентом на системность и понимание.
-                        </p>
+                            <ul class="course-list">
+                                <li class="md">Алгебра и геометрия — с основ</li>
+                                <li class="md">Разбор типичных ошибок</li>
+                                <li class="md">Задания из реальных вариантов</li>
+                                <li class="md">Пробники каждый месяц</li>
+                            </ul>
 
-                        <ul class="course-list">
-                            <li>Алгебра и геометрия — с основ</li>
-                            <li>Разбор типичных ошибок</li>
-                            <li>Задания из реальных вариантов</li>
-                            <li>Пробники каждый месяц</li>
-                        </ul>
+                            <div class="horizont__line"></div>
 
-                        <div class="course-footer">
-                            <span>2 раза в неделю</span>
-                            <span>до 8 человек</span>
+                            <div class="course-footer">
+                                <div class="courses-card__format">
+                                    <img src="image/course__format-time.png" alt="Количество занятий:">
+                                    <p class="sm">2 раза в неделю</p>
+                                </div>
+                                <div class="courses-card__format">
+                                    <img src="image/course__format-group.png" alt="Размер групп:">
+                                    <p class="sm">до 8 человек</p>
+                                </div>
+                            </div>
+
+                            <button class="course-btn">
+                                <img src="image/course__format-more.png" alt="Описание курса">
+                                Подробнее
+                            </button>
                         </div>
-
-                        <button class="course-btn">Подробнее</button>
                     </div>
                 </div>
 
                 <!-- Карточка 4 -->
                 <div class="swiper-slide">
-                    <div class="course-card-new">
+                    <div class="card">
                         <div class="course-card-header">
-                            <h3>ОГЭ по Физике</h3>
+                            <h2 class="lg">ОГЭ по Физике</h2>
+                            <span class="xs">9 класс</span>
                         </div>
+                        <div class="s">
+                            <p class="md course-desc">
+                                Подготовка к ОГЭ по физике с<br>акцентом на понимание явлений<br>и умение решать задачи
+                                формата<br>экзамена.
+                            </p>
 
-                        <p class="course-desc">
-                            Понимание явлений и решение задач экзаменационного формата.
-                        </p>
+                            <ul class="course-list">
+                                <li class="md">Основы всех разделов</li>
+                                <li class="md">Работа с графиками</li>
+                                <li class="md">Экспериментальные задания</li>
+                                <li class="md">Пробные тестирования</li>
+                            </ul>
 
-                        <ul class="course-list">
-                            <li>Основы всех разделов</li>
-                            <li>Работа с графиками</li>
-                            <li>Экспериментальные задания</li>
-                            <li>Пробные тестирования</li>
-                        </ul>
+                            <div class="horizont__line"></div>
 
-                        <div class="course-footer">
-                            <span>2 раза в неделю</span>
-                            <span>до 8 человек</span>
+                            <div class="course-footer">
+                                <div class="courses-card__format">
+                                    <img src="image/course__format-time.png" alt="Количество занятий:">
+                                    <p class="sm">2 раза в неделю</p>
+                                </div>
+                                <div class="courses-card__format">
+                                    <img src="image/course__format-group.png" alt="Размер групп:">
+                                    <p class="sm">до 8 человек</p>
+                                </div>
+                            </div>
+
+                            <button class="course-btn">
+                                <img src="image/course__format-more.png" alt="Описание курса">
+                                Подробнее
+                            </button>
                         </div>
-
-                        <button class="course-btn">Подробнее</button>
                     </div>
                 </div>
 
@@ -189,8 +243,235 @@
             <!-- Индикаторы -->
             <div class="swiper-pagination"></div>
         </div>
+        <div class="courses__tablet">
+
+            <div class="courses__track">
+                <!-- Карточка 1 -->
+                <div class="card">
+                    <div class="course-card-header">
+                        <h2 class="lg">ЕГЭ по Математике</h2>
+                        <span class="xs">профильный уровень</span>
+                    </div>
+                    <div class="s">
+                        <p class="md course-desc">
+                            Комплексная подготовка к<br>профильному ЕГЭ по математике.<br>
+                            Постепенно проходим все задания:<br>от базового уровня к более сложным.
+                        </p>
+
+                        <ul class="course-list">
+                            <li class="md">Полный разбор всех 19 заданий</li>
+                            <li class="md">Практика с реальными вариантами</li>
+                            <li class="md">Работа с критериями оценки</li>
+                            <li class="md">Стратегия распределения времени</li>
+                        </ul>
+
+                        <div class="horizont__line"></div>
+
+                        <div class="course-footer">
+                            <div class="courses-card__format">
+                                <img src="image/course__format-time.png" alt="Количество занятий:">
+                                <p class="sm">2 раза в неделю</p>
+                            </div>
+                            <div class="courses-card__format">
+                                <img src="image/course__format-group.png" alt="Размер групп:">
+                                <p class="sm">до 8 человек</p>
+                            </div>
+                        </div>
+
+                        <button class="course-btn">
+                            <img src="image/course__format-more.png" alt="Описание курса">
+                            Подробнее
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Карточка 2 -->
+                    <div class="card">
+                        <div class="course-card-header">
+                            <h2 class="lg">ЕГЭ по Физике</h2>
+                            <span class="xs">10-11 класс</span>
+                        </div>
+                        <div class="s">
+                            <p class="md course-desc">
+                                Комплексная подготовка к ЕГЭ по<br>физике. От механики до квантовой<br>физики —
+                                объясняем понятным<br>языком.
+                            </p>
+
+                            <ul class="course-list">
+                                <li class="md">Все разделы школьной физики</li>
+                                <li class="md">Задачи повышенной сложности</li>
+                                <li class="md">Формулы и методы решения</li>
+                                <li class="md">Стратегия распределения времени</li>
+                            </ul>
+
+                            <div class="horizont__line"></div>
+
+                            <div class="course-footer">
+                                <div class="courses-card__format">
+                                    <img src="image/course__format-time.png" alt="Количество занятий:">
+                                    <p class="sm">2 раза в неделю</p>
+                                </div>
+                                <div class="courses-card__format">
+                                    <img src="image/course__format-group.png" alt="Размер групп:">
+                                    <p class="sm">до 8 человек</p>
+                                </div>
+                            </div>
+
+                            <button class="course-btn">
+                                <img src="image/course__format-more.png" alt="Описание курса">
+                                Подробнее
+                            </button>
+                        </div>
+                    </div>
+            </div>
+
+            <div class="courses__track">
+                <!-- Карточка 3 -->
+                <div class="card">
+                    <div class="course-card-header">
+                        <h2 class="lg">ОГЭ по Математике</h2>
+                        <span class="xs">9 класс</span>
+                    </div>
+                    <div class="s">
+                        <p class="md course-desc">
+                            Подготовка к ОГЭ с акцентом на<br>системность. Понимание, практика<br>и уверенность в
+                            каждом задании.
+                        </p>
+
+                        <ul class="course-list">
+                            <li class="md">Алгебра и геометрия — с основ</li>
+                            <li class="md">Разбор типичных ошибок</li>
+                            <li class="md">Задания из реальных вариантов</li>
+                            <li class="md">Пробники каждый месяц</li>
+                        </ul>
+
+                        <div class="horizont__line"></div>
+
+                        <div class="course-footer">
+                            <div class="courses-card__format">
+                                <img src="image/course__format-time.png" alt="Количество занятий:">
+                                <p class="sm">2 раза в неделю</p>
+                            </div>
+                            <div class="courses-card__format">
+                                <img src="image/course__format-group.png" alt="Размер групп:">
+                                <p class="sm">до 8 человек</p>
+                            </div>
+                        </div>
+
+                        <button class="course-btn">
+                            <img src="image/course__format-more.png" alt="Описание курса">
+                            Подробнее
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Карточка 4 -->
+                <div class="card">
+                    <div class="course-card-header">
+                        <h2 class="lg">ОГЭ по Физике</h2>
+                        <span class="xs">9 класс</span>
+                    </div>
+                    <div class="s">
+                        <p class="md course-desc">
+                            Подготовка к ОГЭ по физике с<br>акцентом на понимание явлений<br>и умение решать задачи
+                            формата<br>экзамена.
+                        </p>
+
+                        <ul class="course-list">
+                            <li class="md">Основы всех разделов</li>
+                            <li class="md">Работа с графиками</li>
+                            <li class="md">Экспериментальные задания</li>
+                            <li class="md">Пробные тестирования</li>
+                        </ul>
+
+                        <div class="horizont__line"></div>
+
+                        <div class="course-footer">
+                            <div class="courses-card__format">
+                                <img src="image/course__format-time.png" alt="Количество занятий:">
+                                <p class="sm">2 раза в неделю</p>
+                            </div>
+                            <div class="courses-card__format">
+                                <img src="image/course__format-group.png" alt="Размер групп:">
+                                <p class="sm">до 8 человек</p>
+                            </div>
+                        </div>
+
+                        <button class="course-btn">
+                            <img src="image/course__format-more.png" alt="Описание курса">
+                            Подробнее
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
-    <!--    Courses - Begin  -->
+    <!--    Courses - End  -->
+
+    <!--    Format - Begin  -->
+    <section class="format__container">
+        <div class="format__header">
+            <div class="h1__grad" style="text-align: center;">
+                <h1>Формат занятий</h1>
+                <p class="sm">Мы выстраиваем учебный процесс так,<br>чтобы каждый шаг работал на результат.</p>
+            </div>
+        </div>
+        <div class="format__grid">
+            <div class="format-card">
+                <div class="format-card__description">
+                    <div class="format-card-icon">
+                        <img src="image/course__description-group.png" alt="Размер групп">
+                    </div>
+                    <h2 class="md" style="font-weight: 700;">Мини группы</h2>
+                    <p class="sm">До 8 человек — преподаватель уделяет<br>внимание каждому ученику</p>
+                </div>
+            </div>
+            <div class="format-card">
+                <div class="format-card__description">
+                    <div class="format-card-icon">
+                        <img src="image/course__description-test.png" alt="Пробное тестирование">
+                    </div>
+                    <h2 class="md" style="font-weight: 700;">Тестирование</h2>
+                    <p class="sm">Ежемесячные пробники в формате<br>реального экзамена</p>
+                </div>
+            </div>
+            <div class="format-card">
+                <div class="format-card__description">
+                    <div class="format-card-icon">
+                        <img src="image/course__description-generator.png" alt="Генератор задач">
+                    </div>
+                    <h2 class="md" style="font-weight: 700;">Генерация задач</h2>
+                    <p class="sm">Собственная система подбора заданий,<br>максимально приближённых к экзамену</p>
+                </div>
+            </div>
+            <div class="format-card">
+                <div class="format-card__description">
+                    <div class="format-card-icon">
+                        <img src="image/course__description-offline.png" alt="Очные занятия">
+                    </div>
+                    <h2 class="md" style="font-weight: 700;">Очный формат</h2>
+                    <p class="sm">Живое общение с преподавателем,<br>мгновенная обратная связь</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--    Format - End  -->
+
+
+    <!--    CTA - Begin  -->
+    <section class="cta">
+        <div class="cta__container">
+            <div class="h1__grad cta__header" style="text-align: center; ">
+                <h1 style="line-height: 1;">Готовы начать<br>подготовку?</h1>
+                <p class="sm">Запишитесь на пробное занятие!</p>
+            </div>
+            <button class="cta-btn">
+                Записаться на занятия
+                <img src="image/course__cta.png" alt="Записаться">
+            </button>
+        </div>
+    </section>
+    <!--    CTA - End  -->
 
 
 

@@ -1,0 +1,8 @@
+.horizont__line {
+    display: block;
+
+    width: 100%;
+    height: var(--border-width);
+
+    background-color: var(--color-border);
+}
