@@ -115,7 +115,7 @@
   border: none;
   background: var(--gradient-btn);
   color: var(--color-text-light);
-  font-size: (--text-md);
+  font-size: var(--text-md);
   line-height: 1.5;
   font-weight: 700;
 
@@ -263,6 +263,12 @@
 
 
 @media (min-width: 768px) {
+  .top__background {
+    background-image: url('../image/courses__bkg-tablet-1.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
 
   /* ======= Courses - Begin ======= */
   .courses__container {
@@ -283,13 +289,90 @@
     /* 🔥 вместо 100vw */
   }
 
-  .courses__track {
-    display: flex;
-    width: 100%;
-    /* 🔥 вместо 100vw */
+  .courses__tablet {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: var(--space-xl) var(--space-2xl);
+    /* 🔥 */
+    gap: var(--space-md);
   }
 
   .card {
-    width: max-content;
+    width: 100%;
+    gap: var(--space-3xs);
+    /* 🔥 */
   }
+
+  .s {
+    width: 100%;
+    height: 100%;
+  }
+
+  .course-card-header span {
+    display: block;
+  }
+
+  /* ======= Courses - End ======= */
+
+
+  /* ======= Format - Begin ======= */
+  .format__container {
+    background-image: url('../image/courses__bkg-tablet-2.webp');
+  }
+
+  .format__grid {
+    display: grid;
+    padding: 0 var(--space-4xl);
+
+    grid-template-columns: repeat(2, 1fr);
+    /* 🔥 2x2 */
+    gap: var(--space-md);
+
+    width: 100%;
+    /* 🔥 важно */
+  }
+
+  /* ======= Format - End ======= */
+
+  /* ======= CTA - Begin ======= */
+  .cta__container {
+    background-image: url('../image/courses__bkg-tablet-3.webp');
+  }
+
+  /* ======= CTA - End ======= */
+}
+
+@media (min-width: 1024px) {
+  .top__background {
+    background-image: url('../image/courses__bkg-desktop-1.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  /* ======= Courses - Begin ======= */
+
+  .courses__tablet {
+    padding: var(--space-xl) var(--space-6xl);
+  }
+  /* ======= Courses - End ======= */
+
+
+  /* ======= Format - Begin ======= */
+  .format__container {
+    background-image: url('../image/courses__bkg-desktop-2.webp');
+  }
+
+  .format__grid {
+    padding: 0 var(--space-7xl);
+  }
+  /* ======= Format - End ======= */
+
+
+  /* ======= CTA - Begin ======= */
+  .cta__container {
+    background-image: url('../image/courses__bkg-desktop-3.webp');
+  }
+
+  /* ======= CTA - End ======= */
 }

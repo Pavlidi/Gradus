@@ -76,6 +76,8 @@ h1, h2, h3, p, a {
   --space-3xl: calc(100vw * 48 / var(--container-width));
   --space-4xl: calc(100vw * 62 / var(--container-width));
   --space-5xl: calc(100vw * 102 / var(--container-width));
+  --space-6xl: calc(100vw * 376 / var(--container-width));
+  --space-7xl: calc(100vw * 416 / var(--container-width));
 
 
   /*  Size Tokens  */
