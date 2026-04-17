@@ -239,7 +239,7 @@
   border: none;
   background: var(--gradient-btn);
   color: var(--color-text-light);
-  font-size: (--text-md);
+  font-size: var(--text-md);
   line-height: 1.5;
   font-weight: 700;
 
