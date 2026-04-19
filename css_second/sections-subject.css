@@ -1,0 +1,471 @@
+/* ======= Course - Begin ======= */
+.courses__container {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    /* padding: var(--space-5xl) var(--space-xl) var(--space-xl); */
+    padding: var(--space-5xl) 0 var(--space-xl);
+}
+
+.course-btn-back {
+    display: flex;
+    align-items: center;
+    /* 🔥 вертикальный центр */
+    gap: var(--space-4xs);
+
+    position: absolute;
+    top: calc(100vw * 64 / var(--container-width));
+    left: var(--space-xl);
+
+    background: none;
+    border: none;
+}
+
+.course-btn-back img {
+    width: var(--size-sm);
+    height: var(--size-sm);
+}
+
+.course-header {
+    padding: 0 var(--space-xl);
+}
+
+.course {
+    display: flex;
+    flex-direction: column;
+
+    padding: var(--space-md) var(--space-xl);
+    gap: var(--space-md);
+}
+
+.course__formats-container {
+    display: flex;
+    flex-direction: column;
+
+    gap: var(--space-xs);
+}
+
+.course__formats {
+    display: flex;
+
+    gap: var(--space-xs);
+}
+
+.course__format {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: var(--space-xs) var(--space-sm);
+    gap: var(--space-2xs);
+
+    border: solid var(--color-border) var(--border-width);
+    border-radius: var(--radius-lg);
+}
+
+.course__format img {
+    width: var(--size-xs);
+    height: var(--size-xs);
+}
+
+/* карточка */
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-xs);
+
+    margin: 0 auto;
+    padding: var(--space-xs);
+
+    background-color: var(--color-surface);
+    border-radius: var(--radius-card);
+
+    box-shadow: var(--box-shadows-md);
+}
+
+.s {
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-sm) var(--space-md);
+    background-color: var(--color-bg);
+    gap: var(--space-md);
+
+    border: solid var(--color-border) var(--border-width);
+    border-radius: var(--radius-card-s);
+
+    box-shadow: none;
+}
+
+/* описание */
+.course-desc {
+    color: var(--color-text-secondary-dark);
+}
+
+/* список */
+.course-list {
+    display: flex;
+    flex-direction: column;
+
+    gap: var(--space-xs);
+    list-style: none;
+}
+
+.course-list li {
+    position: relative;
+    padding-left: var(--space-lg);
+}
+
+.course-list li::before {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    /* 🔥 центрирование */
+
+    width: var(--size-xs);
+    height: var(--size-xs);
+
+    background-image: url("../image/check.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* футер */
+.course-footer {
+    display: flex;
+    justify-content: space-between;
+    color: var(--color-text-secondary-dark);
+}
+
+.courses-card__format {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2xs);
+}
+
+.courses-card__format img {
+    width: var(--size-xs);
+    height: var(--size-xs);
+}
+
+/* кнопка */
+.course-btn {
+    padding: var(--size-2xs) var(--size-xl);
+    border-radius: var(--radius-xl);
+    border: none;
+    background: var(--gradient-btn);
+    color: var(--color-text-light);
+    font-size: var(--text-md);
+    line-height: 1.5;
+    font-weight: 700;
+
+    display: flex;
+    /* 🔥 главное */
+    align-items: center;
+    /* вертикально по центру */
+    justify-content: center;
+    /* по центру */
+    gap: var(--space-2xs);
+    /* расстояние между иконкой и текстом */
+
+    box-shadow: var(--box-shadows-sm);
+}
+
+.course-btn img {
+    width: var(--size-md);
+    height: var(--size-md);
+}
+
+/* --- SWIPER - End --- */
+/* ======= Course - End ======= */
+
+
+/* ======= Stats - Begin ======= */
+.stats__container {
+    padding: var(--space-md) var(--space-xl);
+    background-color: var(--color-surface);
+}
+
+.stats {
+    display: flex;
+}
+
+.stats__list {
+    display: flex;
+    flex-direction: column;
+}
+
+.stats__item {
+    display: flex;
+    flex-direction: column;
+}
+
+.stats__item span {
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    background: var(--gradient-blue);
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+
+/* ======= Stats - End ======= */
+
+
+
+
+
+
+
+
+
+
+/* ======= Format - Begin ======= */
+.format__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: var(--space-xl);
+    gap: var(--space-md);
+
+    background-image: url('../image/courses__bkg-mobile-2.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.format__grid {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    width: max-content;
+
+    gap: var(--space-md);
+}
+
+.format-card {
+    display: block;
+
+    padding: var(--space-2xs);
+    width: 100%;
+    border-radius: var(--radius-card);
+
+    background-color: var(--color-surface);
+}
+
+.format-card__description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    padding: var(--space-sm);
+    gap: var(--space-2xs);
+
+    border: solid var(--color-border) var(--border-width);
+    border-radius: var(--radius-card-s);
+
+    background-color: var(--color-bg);
+    text-align: center;
+}
+
+.format-card-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: var(--space-xs);
+    width: max-content;
+    height: max-content;
+    border-radius: var(--space-xs);
+
+    background: var(--gradient-blue);
+}
+
+.format-card-icon img {
+    width: var(--space-lg);
+    height: var(--space-lg);
+}
+
+/* ======= Format - End ======= */
+
+
+
+/* ======= CTA - Begin ======= */
+.cta__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: var(--space-xl);
+    padding-bottom: var(--space-4xl);
+    gap: var(--space-sm);
+
+    background-image: url('../image/courses__bkg-mobile-3.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.cta__header {
+    display: flex;
+    flex-direction: column;
+
+    gap: var(--space-2xs);
+}
+
+.cta-btn {
+    padding: var(--size-2xs) var(--size-xl);
+    border-radius: var(--radius-xl);
+    border: none;
+    background: var(--gradient-btn);
+    color: var(--color-text-light);
+    font-size: var(--text-md);
+    line-height: 1.5;
+    font-weight: 700;
+
+    display: flex;
+    /* 🔥 главное */
+    align-items: center;
+    /* вертикально по центру */
+    justify-content: center;
+    /* по центру */
+    gap: var(--space-xs);
+    /* расстояние между иконкой и текстом */
+
+    box-shadow: var(--box-shadows-sm);
+}
+
+.cta-btn img {
+    width: var(--size-xl);
+    height: var(--size-xl);
+}
+
+/* ======= CTA - End ======= */
+
+
+
+@media (min-width: 768px) {
+    .top__background {
+        background-image: url('../image/courses__bkg-tablet-1.webp');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    /* ======= Courses - Begin ======= */
+    .courses__container {
+        padding-top: var(--space-xl);
+        background-image: none;
+    }
+
+    .swiper.coursesSwiper {
+        display: none;
+    }
+
+    .courses__tablet {
+        display: block;
+
+        padding-top: var(--space-xl);
+        padding-bottom: var(--space-xl);
+        width: 100%;
+        /* 🔥 вместо 100vw */
+    }
+
+    .courses__tablet {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding: var(--space-xl) var(--space-2xl);
+        /* 🔥 */
+        gap: var(--space-md);
+    }
+
+    .card {
+        width: 100%;
+        gap: var(--space-3xs);
+        /* 🔥 */
+    }
+
+    .s {
+        width: 100%;
+        height: 100%;
+    }
+
+    .course-card-header span {
+        display: block;
+    }
+
+    /* ======= Courses - End ======= */
+
+
+    /* ======= Format - Begin ======= */
+    .format__container {
+        background-image: url('../image/courses__bkg-tablet-2.webp');
+    }
+
+    .format__grid {
+        display: grid;
+        padding: 0 var(--space-4xl);
+
+        grid-template-columns: repeat(2, 1fr);
+        /* 🔥 2x2 */
+        gap: var(--space-md);
+
+        width: 100%;
+        /* 🔥 важно */
+    }
+
+    /* ======= Format - End ======= */
+
+    /* ======= CTA - Begin ======= */
+    .cta__container {
+        background-image: url('../image/courses__bkg-tablet-3.webp');
+    }
+
+    /* ======= CTA - End ======= */
+}
+
+@media (min-width: 1024px) {
+    .top__background {
+        background-image: url('../image/courses__bkg-desktop-1.webp');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    /* ======= Courses - Begin ======= */
+
+    .courses__tablet {
+        padding: var(--space-xl) var(--space-6xl);
+    }
+
+    /* ======= Courses - End ======= */
+
+
+    /* ======= Format - Begin ======= */
+    .format__container {
+        background-image: url('../image/courses__bkg-desktop-2.webp');
+    }
+
+    .format__grid {
+        padding: 0 var(--space-7xl);
+    }
+
+    /* ======= Format - End ======= */
+
+
+    /* ======= CTA - Begin ======= */
+    .cta__container {
+        background-image: url('../image/courses__bkg-desktop-3.webp');
+    }
+
+    /* ======= CTA - End ======= */
+}

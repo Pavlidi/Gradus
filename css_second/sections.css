@@ -127,6 +127,8 @@
   /* по центру */
   gap: var(--space-2xs);
   /* расстояние между иконкой и текстом */
+
+  box-shadow: var(--box-shadows-sm);
 }
 
 .course-btn img {
@@ -251,6 +253,8 @@
   /* по центру */
   gap: var(--space-xs);
   /* расстояние между иконкой и текстом */
+
+  box-shadow: var(--box-shadows-sm);
 }
 
 .cta-btn img {
