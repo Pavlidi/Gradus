@@ -129,6 +129,9 @@
   /* расстояние между иконкой и текстом */
 
   box-shadow: var(--box-shadows-sm);
+
+  text-decoration: none;
+
 }
 
 .course-btn img {

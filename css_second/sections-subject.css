@@ -4,8 +4,32 @@
     position: relative;
     flex-direction: column;
     justify-content: center;
-    /* padding: var(--space-5xl) var(--space-xl) var(--space-xl); */
     padding: var(--space-5xl) 0 var(--space-xl);
+
+    background-image: url('../image/courses-ege-math__bkg-mobile-1.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.courses__container-desktop {
+    display: none;
+}
+
+.course__format.tablet {
+    display: none;
+}
+
+.stats__item.tablet {
+    display: none;
+}
+
+.course__formats.tablet {
+    display: none;
+}
+
+.course__formats.desktop {
+    display: none;
 }
 
 .course-btn-back {
@@ -20,6 +44,9 @@
 
     background: none;
     border: none;
+
+    text-decoration: none;
+    color: inherit;
 }
 
 .course-btn-back img {
@@ -62,6 +89,8 @@
 
     border: solid var(--color-border) var(--border-width);
     border-radius: var(--radius-lg);
+
+    background-color: var(--color-bg);
 }
 
 .course__format img {
@@ -192,6 +221,8 @@
 
 .stats {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .stats__list {
@@ -202,6 +233,8 @@
 .stats__item {
     display: flex;
     flex-direction: column;
+    text-align: center;
+    padding: var(--space-sm);
 }
 
 .stats__item span {
@@ -215,14 +248,62 @@
     color: transparent;
 }
 
-
 /* ======= Stats - End ======= */
 
 
 
+/* ======= Programm - Begin ======= */
+.program__iner {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
 
+    width: 100%;
+    height: 100%;
+    padding: var(--space-md);
+    gap: var(--space-md);
 
+    border: solid var(--color-border) var(--border-width);
+    border-radius: var(--radius-card-s);
 
+    background-color: var(--color-bg);
+    text-align: center;
+}
+
+.program__item__header {
+    display: flex;
+    align-items: center;
+
+    margin-left: var(--space-xs);
+    gap: var(--space-3xs);
+}
+
+.program__item__header p {
+    background: var(--gradient-blue);
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+.program__features {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    gap: var(--space-xs);
+}
+
+.program__line {
+    display: flex;
+    align-items: center;
+
+    gap: var(--space-xs);
+}
+
+/* ======= Programm - End ======= */
 
 
 
@@ -235,7 +316,7 @@
     padding-top: var(--space-xl);
     gap: var(--space-md);
 
-    background-image: url('../image/courses__bkg-mobile-2.webp');
+    background-image: url('../image/courses-ege-math__bkg-mobile-2.webp');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -309,7 +390,7 @@
     padding-bottom: var(--space-4xl);
     gap: var(--space-sm);
 
-    background-image: url('../image/courses__bkg-mobile-3.webp');
+    background-image: url('../image/courses-ege-math__bkg-mobile-3.webp');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -354,8 +435,34 @@
 
 
 @media (min-width: 768px) {
+    .mobile {
+        display: none;
+    }
+
+    .stats__list.mobile {
+        display: none;
+    }
+
+    .program__line.mobile {
+        display: none;
+    }
+
+    .course__format.tablet {
+        display: flex;
+    }
+
+    .stats__item.tablet {
+        display: flex;
+    }
+
+    .course__formats.tablet {
+        display: flex;
+    }
+
+
+
     .top__background {
-        background-image: url('../image/courses__bkg-tablet-1.webp');
+        background-image: url('../image/courses-ege-math__bkg-tablet-1.webp');
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
@@ -363,8 +470,12 @@
 
     /* ======= Courses - Begin ======= */
     .courses__container {
-        padding-top: var(--space-xl);
+        padding-top: var(--space-4xl);
         background-image: none;
+    }
+
+    .course-btn-back {
+        top: calc(100vw * 24 / var(--container-width));
     }
 
     .swiper.coursesSwiper {
@@ -389,7 +500,9 @@
     }
 
     .card {
-        width: 100%;
+        margin-left: var(--space-xl);
+        margin-right: var(--space-xl);
+
         gap: var(--space-3xs);
         /* 🔥 */
     }
@@ -405,21 +518,97 @@
 
     /* ======= Courses - End ======= */
 
+    /* ======= Stats - Begin ======= */
+    .stats__container {
+        padding: var(--space-md) var(--space-xl);
+        background-color: var(--color-surface);
+    }
+
+    .stats {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .stats__list {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    /* ======= Stats - End ======= */
+
+
+    /* ======= Programm - Begin ======= */
+    .program__iner {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: start;
+
+        width: 100%;
+        height: 100%;
+        padding: var(--space-md);
+        gap: var(--space-md);
+
+        border: solid var(--color-border) var(--border-width);
+        border-radius: var(--radius-card-s);
+
+        background-color: var(--color-bg);
+        text-align: center;
+    }
+
+    .program__item__header {
+        display: flex;
+        align-items: center;
+
+        margin-left: var(--space-xs);
+        gap: var(--space-3xs);
+    }
+
+    .program__item__header p {
+        background: var(--gradient-blue);
+        -webkit-background-clip: text;
+        background-clip: text;
+
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+    }
+
+    .program__features {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        gap: var(--space-xs);
+    }
+
+    .program__line {
+        display: flex;
+        align-items: center;
+
+        gap: var(--space-xs);
+    }
+
+    /* ======= Programm - End ======= */
+
 
     /* ======= Format - Begin ======= */
     .format__container {
-        background-image: url('../image/courses__bkg-tablet-2.webp');
+        background-image: url('../image/courses-ege-math__bkg-tablet-2.webp');
     }
 
     .format__grid {
-        display: grid;
-        padding: 0 var(--space-4xl);
+        display: flex;
+        flex-direction: column;
+        padding: 0;
 
         grid-template-columns: repeat(2, 1fr);
         /* 🔥 2x2 */
         gap: var(--space-md);
 
-        width: 100%;
+        width: max-content;
         /* 🔥 важно */
     }
 
@@ -427,22 +616,49 @@
 
     /* ======= CTA - Begin ======= */
     .cta__container {
-        background-image: url('../image/courses__bkg-tablet-3.webp');
+        background-image: url('../image/courses-ege-math__bkg-tablet-3.webp');
     }
 
     /* ======= CTA - End ======= */
 }
 
 @media (min-width: 1024px) {
+    .program__line.desktop {
+        display: none;
+    }
+
+    .course__formats.desktop {
+        display: flex;
+    }
+
     .top__background {
-        background-image: url('../image/courses__bkg-desktop-1.webp');
+        background-image: url('../image/courses-ege-math__bkg-desktop-1.webp');
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
     }
 
-    /* ======= Courses - Begin ======= */
+    .courses__container {
+        display: none;
+    }
 
+    .courses__container-desktop {
+        display: flex;
+        justify-content: center;
+        margin-top: var(--space-4xl);
+        margin-bottom: var(--space-xl);
+    }
+
+    .container-desktop {
+        position: relative;
+    }
+
+    .course-btn-back {
+        top: calc(-100vw * 22 / var(--container-width));
+        left: var(--space-xl);
+    }
+
+    /* ======= Courses - Begin ======= */
     .courses__tablet {
         padding: var(--space-xl) var(--space-6xl);
     }
@@ -450,21 +666,40 @@
     /* ======= Courses - End ======= */
 
 
+    /* ======= Stats - Begin ======= */
+    .stats__container {
+        padding: var(--space-md) var(--space-5xl);
+        background-color: var(--color-surface);
+    }
+
+    .stats {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 var(--space-4xl);
+    }
+
+
+    /* ======= Stats - End ======= */
+
+
     /* ======= Format - Begin ======= */
     .format__container {
-        background-image: url('../image/courses__bkg-desktop-2.webp');
+        background-image: url('../image/courses-ege-math__bkg-desktop-2.webp');
     }
 
     .format__grid {
-        padding: 0 var(--space-7xl);
+        padding: 0;
+        width: max-content;
     }
 
+    
     /* ======= Format - End ======= */
 
 
     /* ======= CTA - Begin ======= */
     .cta__container {
-        background-image: url('../image/courses__bkg-desktop-3.webp');
+        background-image: url('../image/courses-ege-math__bkg-desktop-3.webp');
     }
 
     /* ======= CTA - End ======= */

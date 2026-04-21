@@ -66,10 +66,10 @@
         <!--    Course - Begin  -->
         <section class="courses__container">
 
-            <button class="course-btn-back">
+            <a href="courses.html" class="course-btn-back">
                 <img src="image/course/format-button-back.png" alt="Назад">
                 <p class="sm">Все курсы</p>
-            </button>
+            </a>
 
 
             <div class="course-header">
@@ -95,12 +95,92 @@
                             <img src="image/course/format-icon-calendar.png" alt="Продолжительность курса">
                             <p class="sm">сентябрь - май</p>
                         </div>
+                        <div class="course__format tablet">
+                            <img src="image/course/format-icon-group.png" alt="Размер группы">
+                            <p class="sm">до 8 человек</p>
+                        </div>
                     </div>
 
-                    <div class="course__formats">
+                    <div class="course__formats mobile">
                         <div class="course__format">
                             <img src="image/course/format-icon-group.png" alt="Размер группы">
                             <p class="sm">до 8 человек</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="s">
+                    <p class="xs course-desc">
+                        Стоимость <br> <span class="lg" style="color: var(--color-text);">7 500</span> руб./мес. <br> 8
+                        занятий по 60 минут
+                    </p>
+
+                    <button class="course-btn">
+                        Записаться на курс
+                        <img src="image/course/format-cta-button.png" alt="Записаться">
+                    </button>
+
+                    <button class="course-btn"
+                        style="background:none; background-color: var(--color-surface); color: var(--color-text);">
+                        Пробное занятие - бесплатно
+                    </button>
+
+                    <div class="horizont__line"></div>
+
+                    <ul class="course-list">
+                        <li class="md">Полный разбор всех 19 заданий</li>
+                        <li class="md">Практика с реальными вариантами</li>
+                        <li class="md">Работа с критериями оценки</li>
+                        <li class="md">Стратегия распределения времени</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="courses__container-desktop">
+
+            <div class="container-desktop">
+                <a href="courses.html" class="course-btn-back">
+                    <img src="image/course/format-button-back.png" alt="Назад">
+                    <p class="sm">Все курсы</p>
+                </a>
+
+
+                <div class="course-header">
+                    <h1 style="text-align: left; line-height: 1;">ЕГЭ по <span class="math__grad">Математике</span></h1>
+                    <p class="sm">Профильный уровень</p>
+                </div>
+
+                <div class="course">
+
+                    <p class="sm">ЕГЭ по профильной математике — один из самых сложных<br>школьных экзаменов.
+                        Он требует не только знания формул,<br>но и умения логически рассуждать, аккуратно
+                        оформлять решения<br>и работать в условиях ограниченного времени.
+                        Именно поэтому<br>эффективная подготовка должна быть системной и продуманной.
+                    </p>
+
+                    <div class="course__formats-container">
+                        <div class="course__formats">
+                            <div class="course__format">
+                                <img src="image/course/format-icon-time.png" alt="Количество занятий">
+                                <p class="sm">2 раза в неделю</p>
+                            </div>
+                            <div class="course__format">
+                                <img src="image/course/format-icon-calendar.png" alt="Продолжительность курса">
+                                <p class="sm">сентябрь - май</p>
+                            </div>
+                            <div class="course__format tablet">
+                                <img src="image/course/format-icon-group.png" alt="Размер группы">
+                                <p class="sm">до 8 человек</p>
+                            </div>
+                        </div>
+
+                        <div class="course__formats mobile">
+                            <div class="course__format">
+                                <img src="image/course/format-icon-group.png" alt="Размер группы">
+                                <p class="sm">до 8 человек</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -148,9 +228,15 @@
                 <div class="stats__item">
                     <h2 class="sm"><span>7</span><br>лет опыта</h2>
                 </div>
+                <div class="stats__item tablet">
+                    <h2 class="sm"><span>450+</span><br>выпускников</h2>
+                </div>
+                <div class="stats__item tablet">
+                    <h2 class="sm"><span>24/7</span><br>поддержка в чате</h2>
+                </div>
             </div>
 
-            <div class="stats__list">
+            <div class="stats__list mobile">
                 <div class="stats__item">
                     <h2 class="sm"><span>450+</span><br>выпускников</h2>
                 </div>
@@ -161,65 +247,296 @@
 
         </div>
     </section>
-
     <!--    Stats - End  -->
 
-    <!--    Format - Begin  -->
+    <!--    Programm - Begin  -->
     <section class="format__container">
         <div class="format__header">
             <div class="h1__grad" style="text-align: center;">
-                <h1>Формат занятий</h1>
-                <p class="sm">Мы выстраиваем учебный процесс так,<br>чтобы каждый шаг работал на результат.</p>
+                <h1>Программа курса</h1>
+                <p class="sm">Подготовка идёт последовательно: <br class="mobile">от основ к более сложным задачам.</p>
             </div>
         </div>
-        <div class="format__grid">
+        <div class="format__grid" style="gap: var(--space-sm);">
             <div class="format-card">
-                <div class="format-card__description">
-                    <div class="format-card-icon">
-                        <img src="image/course__description-group.png" alt="Размер групп">
+                <div class="program__iner">
+                    <div class="program__item__header">
+                        <p class="md" style="font-weight: 700;">1.</p>
+                        <h2 class="md" style="font-weight: 700;">Алгебра и начала анализа</h2>
                     </div>
-                    <h2 class="md" style="font-weight: 700;">Мини группы</h2>
-                    <p class="sm">До 8 человек — преподаватель уделяет<br>внимание каждому ученику</p>
+
+                    <div class="program__features">
+                        <div class="program__line">
+                            <div class="course__formats">
+                                <div class="course__format">
+                                    <p class="sm">Производная и её применение</p>
+                                </div>
+                            </div>
+                            <div class="course__formats tablet">
+                                <div class="course__format">
+                                    <p class="sm">Функции и их свойства</p>
+                                </div>
+                            </div>
+                            <div class="course__formats tablet">
+                                <div class="course__format">
+                                    <p class="sm">Уравнения и неравенства</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="program__line mobile">
+                            <div class="course__formats">
+                                <div class="course__format">
+                                    <p class="sm">Функции и их свойства</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="program__line mobile">
+                            <div class="course__formats">
+                                <div class="course__format">
+                                    <p class="sm">Уравнения и неравенства</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+
             <div class="format-card">
-                <div class="format-card__description">
-                    <div class="format-card-icon">
-                        <img src="image/course__description-test.png" alt="Пробное тестирование">
+                <div class="program__iner">
+                    <div class="program__item__header">
+                        <p class="md" style="font-weight: 700;">2.</p>
+                        <h2 class="md" style="font-weight: 700;">Геометрия</h2>
                     </div>
-                    <h2 class="md" style="font-weight: 700;">Тестирование</h2>
-                    <p class="sm">Ежемесячные пробники в формате<br>реального экзамена</p>
+
+                    <div class="program__features">
+                        <div class="program__line">
+                            <div class="course__formats">
+                                <div class="course__format">
+                                    <p class="sm">Планиметрия</p>
+                                </div>
+                            </div>
+
+                            <div class="course__formats">
+                                <div class="course__format">
+                                    <p class="sm">Стереометрия</p>
+                                </div>
+                            </div>
+
+                            <div class="course__formats tablet">
+                                <div class="course__format">
+                                    <p class="sm">Координатный метод</p>
+                                </div>
+                            </div>
+
+                            <div class="course__formats tablet">
+                                <div class="course__format">
+                                    <p class="sm">Векторы</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="program__line mobile">
+                            <div class="course__formats">
+                                <div class="course__format">
+                                    <p class="sm">Координатный метод</p>
+                                </div>
+                            </div>
+
+                            <div class="course__formats">
+                                <div class="course__format">
+                                    <p class="sm">Векторы</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+
             <div class="format-card">
-                <div class="format-card__description">
-                    <div class="format-card-icon">
-                        <img src="image/course__description-generator.png" alt="Генератор задач">
+                <div class="program__iner">
+                    <div class="program__item__header">
+                        <p class="md" style="font-weight: 700;">3.</p>
+                        <h2 class="md" style="font-weight: 700;">Текстовые задачи</h2>
                     </div>
-                    <h2 class="md" style="font-weight: 700;">Генерация задач</h2>
-                    <p class="sm">Собственная система подбора заданий,<br>максимально приближённых к экзамену</p>
+
+                    <div class="program__features">
+                        <div class="program__line">
+                            <div class="course__formats">
+                                <div class="course__format">
+                                    <p class="sm">Задачи на движение</p>
+                                </div>
+                            </div>
+
+                            <div class="course__formats tablet">
+                                <div class="course__format">
+                                    <p class="sm">Задачи на работу</p>
+                                </div>
+                            </div>
+
+                            <div class="course__formats tablet">
+                                <div class="course__format">
+                                    <p class="sm">Задачи на проценты и сплавы</p>
+                                </div>
+                            </div>
+
+                            <div class="course__formats desktop">
+                                <div class="course__format">
+                                    <p class="sm">Экономические задачи</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="program__line mobile">
+                            <div class="course__formats">
+                                <div class="course__format">
+                                    <p class="sm">Задачи на работу</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="program__line mobile">
+                            <div class="course__formats">
+                                <div class="course__format">
+                                    <p class="sm">Задачи на проценты и сплавы</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="program__line desktop">
+                            <div class="course__formats">
+                                <div class="course__format">
+                                    <p class="sm">Экономические задачи</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+
             <div class="format-card">
-                <div class="format-card__description">
-                    <div class="format-card-icon">
-                        <img src="image/course__description-offline.png" alt="Очные занятия">
+                <div class="program__iner">
+                    <div class="program__item__header">
+                        <p class="md" style="font-weight: 700;">4.</p>
+                        <h2 class="md" style="font-weight: 700;">Задачи с параметром</h2>
                     </div>
-                    <h2 class="md" style="font-weight: 700;">Очный формат</h2>
-                    <p class="sm">Живое общение с преподавателем,<br>мгновенная обратная связь</p>
+
+                    <div class="program__features">
+                        <div class="program__line">
+                            <div class="course__formats">
+                                <div class="course__format">
+                                    <p class="sm">Графический метод</p>
+                                </div>
+                            </div>
+
+                            <div class="course__formats tablet">
+                                <div class="course__format">
+                                    <p class="sm">Аналитический метод</p>
+                                </div>
+                            </div>
+
+                            <div class="course__formats tablet">
+                                <div class="course__format">
+                                    <p class="sm">Нестандартные приёмы</p>
+                                </div>
+                            </div>
+
+                            <div class="course__formats desktop">
+                                <div class="course__format">
+                                    <p class="sm">Свойства функций</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="program__line mobile">
+                            <div class="course__formats">
+                                <div class="course__format">
+                                    <p class="sm">Аналитический метод</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="program__line mobile">
+                            <div class="course__formats">
+                                <div class="course__format">
+                                    <p class="sm">Свойства функций</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="program__line desktop">
+                            <div class="course__formats">
+                                <div class="course__format">
+                                    <p class="sm">Свойства функций</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="format-card">
+                <div class="program__iner">
+                    <div class="program__item__header">
+                        <p class="md" style="font-weight: 700;">5.</p>
+                        <h2 class="md" style="font-weight: 700;">Теория чисел</h2>
+                    </div>
+
+                    <div class="program__features">
+                        <div class="program__line">
+                            <div class="course__formats">
+                                <div class="course__format">
+                                    <p class="sm">Делимость</p>
+                                </div>
+                            </div>
+
+                            <div class="course__formats">
+                                <div class="course__format">
+                                    <p class="sm">Оценка и примеры</p>
+                                </div>
+                            </div>
+
+                            <div class="course__formats tablet">
+                                <div class="course__format">
+                                    <p class="sm">Остатки</p>
+                                </div>
+                            </div>
+
+                            <div class="course__formats tablet">
+                                <div class="course__format">
+                                    <p class="sm">Олимпиадные идеи</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="program__line mobile">
+                            <div class="course__formats">
+                                <div class="course__format">
+                                    <p class="sm">Остатки</p>
+                                </div>
+                            </div>
+
+                            <div class="course__formats mobile">
+                                <div class="course__format">
+                                    <p class="sm">Олимпиадные идеи</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    <!--    Format - End  -->
-
+    <!--    Programm - End  -->
 
     <!--    CTA - Begin  -->
     <section class="cta">
         <div class="cta__container">
             <div class="h1__grad cta__header" style="text-align: center; ">
-                <h1 style="line-height: 1;">Готовы начать<br>подготовку?</h1>
-                <p class="sm">Запишитесь на пробное занятие!</p>
+                <h1 style="line-height: 1;">Начните подготовку<br class="mobile"> сегодня!</h1>
+                <p class="sm">Запишитесь на пробное занятие<br class="mobile"> познакомитесь с форматом и
+                    преподавателем.</p>
             </div>
             <button class="cta-btn">
                 Записаться на занятия
