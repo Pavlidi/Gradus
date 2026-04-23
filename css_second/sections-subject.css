@@ -32,6 +32,10 @@
     display: none;
 }
 
+.program__line.tablet {
+    display: none;
+}
+
 .course-btn-back {
     display: flex;
     align-items: center;
@@ -447,6 +451,10 @@
         display: none;
     }
 
+    .program__line.tablet {
+        display: flex;
+    }
+
     .course__format.tablet {
         display: flex;
     }
@@ -624,6 +632,10 @@
 
 @media (min-width: 1024px) {
     .program__line.desktop {
+        display: none;
+    }
+
+    .program__line.tablet {
         display: none;
     }
 

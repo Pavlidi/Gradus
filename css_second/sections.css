@@ -268,6 +268,33 @@
 /* ======= CTA - End ======= */
 
 
+/* ======= Promotions - Begin ======= */
+.promotions__container {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--space-5xl) 0 var(--space-xl);
+
+  background-image: url('../image/promotions__bkg-mobile.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+
+.promotions__tablet {
+  display: none;
+}
+
+.promotion__grid {
+  width: max-content;
+  margin: var(--space-2xs) auto var(--space-2xl);
+}
+
+/* ======= Promotions - End ======= */
+
+
 
 @media (min-width: 768px) {
   .top__background {
@@ -347,6 +374,42 @@
   }
 
   /* ======= CTA - End ======= */
+
+
+  /* ======= Promotions - Begin ======= */
+  .promotions__container {
+    background-image: none;
+  }
+
+  .top__background-prom {
+    background-image: url('../image/promotions__bkg-tablet.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .mobile {
+    display: none;
+  }
+
+  .promotions__tablet {
+    display: flex;
+    flex-direction: column;
+
+    margin: var(--space-md) var(--space-4xl) 0;
+  }
+
+  .promotion__cards {
+    display: flex;
+    gap: var(--space-xs);
+  }
+
+  .promotion__grid {
+    width: 100%;
+    margin: var(--space-xs) auto var(--space-2xl);
+  }
+
+  /* ======= Promotions - End ======= */
 }
 
 @media (min-width: 1024px) {
@@ -362,6 +425,7 @@
   .courses__tablet {
     padding: var(--space-xl) var(--space-6xl);
   }
+
   /* ======= Courses - End ======= */
 
 
@@ -373,6 +437,7 @@
   .format__grid {
     padding: 0 var(--space-7xl);
   }
+
   /* ======= Format - End ======= */
 
 
@@ -382,4 +447,18 @@
   }
 
   /* ======= CTA - End ======= */
+
+  /* ======= Promotions - Begin ======= */
+  .top__background-prom {
+    background-image: url('../image/promotions__bkg-desktop.webp');
+  }
+
+  .promotions__tablet {
+    display: flex;
+    flex-direction: column;
+
+    margin: var(--space-md) calc(100vw * 399 / var(--container-width));
+  }
+
+  /* ======= Promotions - End ======= */
 }
