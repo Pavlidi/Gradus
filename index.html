@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,15 +8,20 @@
     <link rel="stylesheet" href="css/layout_old.css?v=1.3">
     <link rel="stylesheet" href="css/components_old.css?v=1.3">
     <link rel="stylesheet" href="css/sections_old.css?v=1.3">
+
+    <link rel="stylesheet" href="css_second/components.css">
+
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <script src="js/main_old.js?v=1.3" defer></script>
     <title>Градус — подготовка к ОГЭ и ЕГЭ по математике и физике в Новосибирске</title>
-    <meta name="description" content="Градус — центр подготовки к ОГЭ и ЕГЭ по математике и физике в Новосибирске. Мини-группы, пробные экзамены, контроль успеваемости.">
+    <meta name="description"
+        content="Градус — центр подготовки к ОГЭ и ЕГЭ по математике и физике в Новосибирске. Мини-группы, пробные экзамены, контроль успеваемости.">
 </head>
+
 <body>
     <!--    Header - Begin  -->
-        <!-- Mobile header -->
+    <!-- Mobile header -->
     <header class="header">
         <div class="container header__inner">
             <img src="image/logo-mobile.webp" class="logo" alt="">
@@ -34,11 +40,11 @@
             <li><a href="index.html">О центре</a></li>
             <li><a href="courses.html">Курсы</a></li>
             <li><a href="promotions.html">Акции</a></li>
-            <li><a href="">Отзывы</a></li>
+            <li><a href="reviews.html">Отзывы</a></li>
         </ul>
-        </nav>
+    </nav>
 
-        <!-- Desktop header -->
+    <!-- Desktop header -->
     <header class="header-desktop">
         <nav class="nav-bar">
             <!-- Ссылки меню -->
@@ -46,7 +52,7 @@
                 <a href="index.html" class="nav-link active">О центре</a>
                 <a href="courses.html" class="nav-link">Курсы</a>
                 <a href="promotions.html" class="nav-link">Акции</a>
-                <a href="#" class="nav-link">Отзывы</a>
+                <a href="reviews.html" class="nav-link">Отзывы</a>
             </div>
             <!-- Кнопка ЛК -->
             <a href="login.php" class="nav-login-btn">Личный кабинет</a>
@@ -71,13 +77,14 @@
             <img src="image/logo-tablet.webp" alt="Солнечная система">
         </picture>
         <div class="hero__name">
-            <h1>Подготовка<br>к ОГЭ и ЕГЭ по<br><span class="phys__grad">Физике</span> и <span class="math__grad">Математике</span></h1>
+            <h1>Подготовка<br>к ОГЭ и ЕГЭ по<br><span class="phys__grad">Физике</span> и <span
+                    class="math__grad">Математике</span></h1>
         </div>
         <div class="hero__title">
             <p class="P4">Комплексная подготовка, проверенная годами.<br>Помогаем поступить в ведущие вузы России.</p>
         </div>
         <div class="hero__btn">
-            <button class="btn" id="hero-btn" type="button">
+            <button class="btn open-form" data-title="Записаться на занятия" id="hero-btn" type="button">
                 Записаться на занятия
             </button>
         </div>
@@ -85,7 +92,7 @@
     <section class="universities">
         <h2 class="h_2-M">Места поступления<br>выпускников:</h2>
         <div class="univer__dis"></div>
-       <div class="univer__marquee">
+        <div class="univer__marquee">
             <div class="univer__track">
                 <img src="image/univer-logo-mobile.webp" alt="Вузы выпускников">
                 <img src="image/univer-logo-mobile.webp" alt="Вузы выпускников">
@@ -100,17 +107,18 @@
     <!--    Hero - End  -->
 
 
-    
+
     <!-- "Наши курсы" начало -->
     <section class="courses">
         <div class="h1__grad">
             <h1>Наши курсы</h1>
         </div>
-        
+
         <div class="courses__main">
             <div class="Quote">
                 <p class="P1"><span class="Quote-color">Хороший</span> план подготовки<br>
-                <span class="Quote-color">залог хорошего</span> результата</p>
+                    <span class="Quote-color">залог хорошего</span> результата
+                </p>
             </div>
             <div class="format-card__bkg">
                 <div class="format-card">
@@ -127,7 +135,7 @@
                         <li class="P2">Материалы, адаптированные<br> под формат ОГЭ и ЕГЭ</li>
                     </ul>
 
-                    <button class="btn format-card__btn">
+                    <button class="btn format-card__btn open-form" data-title="Пройти тестирование">
                         Тестирование
                     </button>
                 </div>
@@ -150,9 +158,13 @@
                     </div>
                 </div>
 
-                <div class="textCourse"><p class="P2 cardText"></p></div>
+                <div class="textCourse">
+                    <p class="P2 cardText"></p>
+                </div>
 
-                <button class="btn white">Подробнее</button>
+                <a href="courses.html" class="btn white" style="text-decoration: none;">
+                    Подробнее
+                </a>
             </div>
         </div>
 
@@ -160,7 +172,8 @@
             <div class="Quote__Subject">
                 <div class="Quote">
                     <p class="P1"><span class="Quote-color">Хороший</span> план подготовки<br>
-                    <span class="Quote-color">залог хорошего</span> результата</p>
+                        <span class="Quote-color">залог хорошего</span> результата
+                    </p>
                 </div>
                 <!-- Переключение предмета -->
                 <div class="switch subject-switch">
@@ -183,7 +196,7 @@
                         <li class="P2">Материалы, адаптированные<br> под формат ОГЭ и ЕГЭ</li>
                     </ul>
 
-                    <button class="btn thin format-card__btn">
+                    <button class="btn thin format-card__btn open-form" data-title="Пройти тестирование">
                         Тестирование
                     </button>
                 </div>
@@ -192,13 +205,17 @@
                     <div class="card-header">
                         <h2 id="cardTitle">Математика</h2>
                     </div>
-                    <div class="textCourse"><p class="P2 cardText"></p></div>
+                    <div class="textCourse">
+                        <p class="P2 cardText"></p>
+                    </div>
                     <!-- Переключение экзамена -->
                     <div class="switch exam-switch">
                         <button class="switch-btn exam left active" data-exam="ege">ЕГЭ</button>
                         <button class="switch-btn exam right" data-exam="oge">ОГЭ</button>
                     </div>
-                    <button class="btn thin white">Подробнее</button>
+                    <a href="courses.html" class="btn white" style="text-decoration: none;">
+                        Подробнее
+                    </a>
                 </div>
             </div>
         </div>
@@ -220,22 +237,38 @@
                 <div class="format-card-trust">
                     <img src="image/logo-black.webp" class="format-card-trust_logo" alt="Градус" loading="lazy">
                     <ul class="format-card__list">
-                        <li class="liFirst"><div class="P2">Более 5 лет готовим к ОГЭ и ЕГЭ</div></li>
-                        <li class="liFirst"><div class="P2">Очные занятия с преподавателем</div></li>
-                        <li class="liFirst"><div class="P2">Объясняем с нуля простым языком</div></li>
-                        <li class="liFirst"><div class="P2">Подготовка в формате экзамена</div></li>
+                        <li class="liFirst">
+                            <div class="P2">Более 5 лет готовим к ОГЭ и ЕГЭ</div>
+                        </li>
+                        <li class="liFirst">
+                            <div class="P2">Очные занятия с преподавателем</div>
+                        </li>
+                        <li class="liFirst">
+                            <div class="P2">Объясняем с нуля простым языком</div>
+                        </li>
+                        <li class="liFirst">
+                            <div class="P2">Подготовка в формате экзамена</div>
+                        </li>
                     </ul>
                 </div>
                 <div class="format-card-trust-tablet">
                     <div class="format-card-trust-text">
                         <h2>Подход</h2>
-                        <p class="P2">Наш центр подготовки к ОГЭ и ЕГЭ работает уже <b><strong>более 5 лет</strong></b>.</p>
-                        <p class="P2">Мы работаем в <b><strong>офлайн-формате</strong></b>, где преподаватель и ученик находятся в живом контакте. В любой момент можно задать вопрос, сразу разобрать ошибку и не потерять ход рассуждений.</p>
-                        <p class="P2">Помогаем разобраться в физике и математике <b><strong>с нуля</strong></b> и выстроить прочную систему знаний. Сложные темы объясняем простыми словами — шаг за шагом, без спешки и формального заучивания.</p>
-                        <p class="P2">Обучение идёт по чётко организованной программе, а задания подбираются под <b><strong>формат экзамена</strong></b>. Для этого используется собственная система генерации задач, максимально приближённых к ОГЭ и ЕГЭ.</p>
+                        <p class="P2">Наш центр подготовки к ОГЭ и ЕГЭ работает уже <b><strong>более 5 лет</strong></b>.
+                        </p>
+                        <p class="P2">Мы работаем в <b><strong>офлайн-формате</strong></b>, где преподаватель и ученик
+                            находятся в живом контакте. В любой момент можно задать вопрос, сразу разобрать ошибку и не
+                            потерять ход рассуждений.</p>
+                        <p class="P2">Помогаем разобраться в физике и математике <b><strong>с нуля</strong></b> и
+                            выстроить прочную систему знаний. Сложные темы объясняем простыми словами — шаг за шагом,
+                            без спешки и формального заучивания.</p>
+                        <p class="P2">Обучение идёт по чётко организованной программе, а задания подбираются под
+                            <b><strong>формат экзамена</strong></b>. Для этого используется собственная система
+                            генерации задач, максимально приближённых к ОГЭ и ЕГЭ.
+                        </p>
                     </div>
                     <!-- <img src="image/photo-tablet.webp" class="format-card-trust-photo" alt="Фотография основателя центра"> -->
-                     <picture class="format-card-trust-photo">
+                    <picture class="format-card-trust-photo">
                         <source media="(min-width: 1024px)" srcset="image/photo-desktop.webp">
                         <img src="image/photo-tablet.webp" alt="Фотография основателя центра" loading="lazy">
                     </picture>
@@ -248,24 +281,38 @@
                 <div class="swiper-slide">
                     <div class="card">
                         <img src="image/trust-1.webp" alt="Контроль" loading="lazy">
-                        <div class="card__trust-head"><h2>Контроль</h2></div>
-                        <div class="card__trust-text"><p class="P4">Посещаемость, успеваемость, динамика  — вся информация доступна в одном месте.</p></div>
+                        <div class="card__trust-head">
+                            <h2>Контроль</h2>
+                        </div>
+                        <div class="card__trust-text">
+                            <p class="P4">Посещаемость, успеваемость, динамика — вся информация доступна в одном месте.
+                            </p>
+                        </div>
                     </div>
                 </div>
                 <!-- Карточка 2 -->
                 <div class="swiper-slide">
                     <div class="card">
                         <img src="image/trust-2.webp" alt="Спокойствие" loading="lazy">
-                        <div class="card__trust-head"><h2>Спокойствие</h2></div>
-                        <div class="card__trust-text"><p class="P4">Подготовка проходит без спешки<br> и хаоса, с понятным планом<br>и регулярной обратной связью.</p></div>
+                        <div class="card__trust-head">
+                            <h2>Спокойствие</h2>
+                        </div>
+                        <div class="card__trust-text">
+                            <p class="P4">Подготовка проходит без спешки<br> и хаоса, с понятным планом<br>и регулярной
+                                обратной связью.</p>
+                        </div>
                     </div>
                 </div>
                 <!-- Карточка 3 -->
                 <div class="swiper-slide">
                     <div class="card">
                         <img src="image/trust-3.webp" alt="Надёжность" loading="lazy">
-                        <div class="card__trust-head"><h2>Надёжность</h2></div>
-                        <div class="card__trust-text"><p class="P4">Мы отслеживаем прогресс<br>и корректируем процесс по мере необходимости.</p></div>
+                        <div class="card__trust-head">
+                            <h2>Надёжность</h2>
+                        </div>
+                        <div class="card__trust-text">
+                            <p class="P4">Мы отслеживаем прогресс<br>и корректируем процесс по мере необходимости.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -273,32 +320,53 @@
             <div class="swiper-pagination"></div>
         </div>
         <div class="card__trust-tablet">
-        <!-- Карточка 1 -->
+            <!-- Карточка 1 -->
             <div class="card">
                 <img src="image/trust-2.webp" alt="Спокойствие" loading="lazy">
-                <div class="card__trust-head"><h2>Спокойствие</h2></div>
-                <div class="card__trust-text"><p class="P4">Подготовка проходит без спешки<br> и хаоса, с понятным планом<br>и регулярной обратной связью.</p></div>
-                <div class="card__trust-text-tablet"><p class="P4">Подготовка проходит без спешки<br> и хаоса, с понятным планом<br>и регулярной обратной связью.</p></div>
+                <div class="card__trust-head">
+                    <h2>Спокойствие</h2>
+                </div>
+                <div class="card__trust-text">
+                    <p class="P4">Подготовка проходит без спешки<br> и хаоса, с понятным планом<br>и регулярной обратной
+                        связью.</p>
+                </div>
+                <div class="card__trust-text-tablet">
+                    <p class="P4">Подготовка проходит без спешки<br> и хаоса, с понятным планом<br>и регулярной обратной
+                        связью.</p>
+                </div>
             </div>
-        <!-- Карточка 2 -->
+            <!-- Карточка 2 -->
             <div class="card">
                 <img src="image/trust-1.webp" alt="Контроль" loading="lazy">
-                <div class="card__trust-head"><h2>Контроль</h2></div>
-                <div class="card__trust-text"><p class="P4">Посещаемость, успеваемость, динамика  — вся информация доступна в одном месте.</p></div>
-                <div class="card__trust-text-tablet"><p class="P4">Посещаемость, домашние задания, динамика — вся информация доступна родителю в одном месте.</p></div>
+                <div class="card__trust-head">
+                    <h2>Контроль</h2>
+                </div>
+                <div class="card__trust-text">
+                    <p class="P4">Посещаемость, успеваемость, динамика — вся информация доступна в одном месте.</p>
+                </div>
+                <div class="card__trust-text-tablet">
+                    <p class="P4">Посещаемость, домашние задания, динамика — вся информация доступна родителю в одном
+                        месте.</p>
+                </div>
             </div>
-        <!-- Карточка 3 -->
+            <!-- Карточка 3 -->
             <div class="card">
                 <img src="image/trust-3.webp" alt="Надёжность" loading="lazy">
-                <div class="card__trust-head"><h2>Надёжность</h2></div>
-                <div class="card__trust-text"><p class="P4">Мы отслеживаем прогресс<br>и корректируем процесс по мере необходимости.</p></div>
-                <div class="card__trust-text-tablet"><p class="P4">Мы отслеживаем прогресс ученика<br>и корректируем процесс по мере необходимости.</p></div>
+                <div class="card__trust-head">
+                    <h2>Надёжность</h2>
+                </div>
+                <div class="card__trust-text">
+                    <p class="P4">Мы отслеживаем прогресс<br>и корректируем процесс по мере необходимости.</p>
+                </div>
+                <div class="card__trust-text-tablet">
+                    <p class="P4">Мы отслеживаем прогресс ученика<br>и корректируем процесс по мере необходимости.</p>
+                </div>
             </div>
         </div>
     </section>
     <!-- "Почему нам доверяют? конец" -->
 
-     <!-- "Как проходят занятия начало" -->
+    <!-- "Как проходят занятия начало" -->
     <picture class="bkg-2">
         <source media="(min-width: 1024px)" srcset="image/bkg-desktop-2.webp">
         <source media="(min-width: 768px)" srcset="image/bkg-tablet-2.webp">
@@ -314,32 +382,51 @@
                 <div class="swiper-slide">
                     <div class="card how">
                         <img src="image/how-mobile-1.webp" alt="Лично помогаем каждому ученику" loading="lazy">
-                        <div class="card__trust-head"><h2>Лично помогаем каждому</h2></div>
-                        <div class="card__trust-text"><p class="P3">Преподаватель всегда объяснит, поможет разобраться, если что-то не понятно.</p></div>
+                        <div class="card__trust-head">
+                            <h2>Лично помогаем каждому</h2>
+                        </div>
+                        <div class="card__trust-text">
+                            <p class="P3">Преподаватель всегда объяснит, поможет разобраться, если что-то не понятно.
+                            </p>
+                        </div>
                     </div>
                 </div>
                 <!-- Фото 2 -->
                 <div class="swiper-slide">
                     <div class="card how">
                         <img src="image/how-mobile-2.webp" alt="Занимаемся в мини-группах" loading="lazy">
-                        <div class="card__trust-head"><h2>Занимаемся в мини-группах</h2></div>
-                        <div class="card__trust-text"><p class="P3">Каждая группа до 8 человек. Спокойная, рабочая атмосфера, без лишнего шума.</p></div>
+                        <div class="card__trust-head">
+                            <h2>Занимаемся в мини-группах</h2>
+                        </div>
+                        <div class="card__trust-text">
+                            <p class="P3">Каждая группа до 8 человек. Спокойная, рабочая атмосфера, без лишнего шума.
+                            </p>
+                        </div>
                     </div>
                 </div>
                 <!-- Фото 3 -->
                 <div class="swiper-slide">
                     <div class="card how">
                         <img src="image/how-mobile-3.webp" alt="Учимся рассуждать" loading="lazy">
-                        <div class="card__trust-head"><h2>Учимся рассуждать</h2></div>
-                        <div class="card__trust-text"><p class="P3">Ученики учатся строить ход мысли, искать ошибки и понимать, откуда берется ответ.</p></div>
+                        <div class="card__trust-head">
+                            <h2>Учимся рассуждать</h2>
+                        </div>
+                        <div class="card__trust-text">
+                            <p class="P3">Ученики учатся строить ход мысли, искать ошибки и понимать, откуда берется
+                                ответ.</p>
+                        </div>
                     </div>
                 </div>
                 <!-- Фото 4 -->
                 <div class="swiper-slide">
                     <div class="card how">
                         <img src="image/how-mobile-4.webp" alt="Регулярно пишем пробники" loading="lazy">
-                        <div class="card__trust-head"><h2>Регулярно пишем пробники</h2></div>
-                        <div class="card__trust-text"><p class="P3">Пробуем свои силы на тестировании формата ОГЭ и ЕГЭ.</p></div>
+                        <div class="card__trust-head">
+                            <h2>Регулярно пишем пробники</h2>
+                        </div>
+                        <div class="card__trust-text">
+                            <p class="P3">Пробуем свои силы на тестировании формата ОГЭ и ЕГЭ.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -351,32 +438,59 @@
                 <!-- Фото 1 -->
                 <div class="card how">
                     <img src="image/how-mobile-2.webp" alt="Занимаемся в мини-группах" loading="lazy">
-                    <div class="card__trust-head"><h2>Занимаемся в мини-группах</h2></div>
-                    <div class="card__trust-text"><p class="P3">Каждая группа до 8 человек. Спокойная, рабочая атмосфера, без лишнего шума.</p></div>
-                    <div class="card__trust-text-tablet"><p class="P3">Каждая группа до 8 человек. Спокойная, рабочая атмосфера, без лишнего шума.</p></div>
+                    <div class="card__trust-head">
+                        <h2>Занимаемся в мини-группах</h2>
+                    </div>
+                    <div class="card__trust-text">
+                        <p class="P3">Каждая группа до 8 человек. Спокойная, рабочая атмосфера, без лишнего шума.</p>
+                    </div>
+                    <div class="card__trust-text-tablet">
+                        <p class="P3">Каждая группа до 8 человек. Спокойная, рабочая атмосфера, без лишнего шума.</p>
+                    </div>
                 </div>
                 <!-- Фото 2 -->
                 <div class="card how">
                     <img src="image/how-mobile-1.webp" alt="Лично помогаем каждому ученику" loading="lazy">
-                    <div class="card__trust-head"><h2>Лично помогаем каждому</h2></div>
-                    <div class="card__trust-text"><p class="P3">Преподаватель всегда объяснит, поможет разобраться, если что-то не понятно.</p></div>
-                    <div class="card__trust-text-tablet"><p class="P3">Преподаватель всегда объяснит, поможет разобраться, если что-то не понятно.</p></div>
+                    <div class="card__trust-head">
+                        <h2>Лично помогаем каждому</h2>
+                    </div>
+                    <div class="card__trust-text">
+                        <p class="P3">Преподаватель всегда объяснит, поможет разобраться, если что-то не понятно.</p>
+                    </div>
+                    <div class="card__trust-text-tablet">
+                        <p class="P3">Преподаватель всегда объяснит, поможет разобраться, если что-то не понятно.</p>
+                    </div>
                 </div>
             </div>
             <div class="how__trust__tablet-second">
                 <!-- Фото 3 -->
-                 <div class="card how">
+                <div class="card how">
                     <img src="image/how-mobile-3.webp" alt="Учимся рассуждать" loading="lazy">
-                    <div class="card__trust-head"><h2>Учимся рассуждать</h2></div>
-                    <div class="card__trust-text"><p class="P3">Ученики учатся строить ход мысли, искать ошибки и понимать, откуда берется ответ.</p></div>
-                    <div class="card__trust-text-tablet"><p class="P3">Ученики учатся строить ход мысли, искать ошибки и понимать, откуда берется ответ.</p></div>
+                    <div class="card__trust-head">
+                        <h2>Учимся рассуждать</h2>
+                    </div>
+                    <div class="card__trust-text">
+                        <p class="P3">Ученики учатся строить ход мысли, искать ошибки и понимать, откуда берется ответ.
+                        </p>
+                    </div>
+                    <div class="card__trust-text-tablet">
+                        <p class="P3">Ученики учатся строить ход мысли, искать ошибки и понимать, откуда берется ответ.
+                        </p>
+                    </div>
                 </div>
                 <!-- Фото 4 -->
-                 <div class="card how">
+                <div class="card how">
                     <img src="image/how-mobile-4.webp" alt="Регулярно пишем пробники" loading="lazy">
-                    <div class="card__trust-head"><h2>Регулярно пишем пробники</h2></div>
-                    <div class="card__trust-text"><p class="P3">Пробуем свои силы на тестировании<br>формата ОГЭ и ЕГЭ, смотрим на результаты<br>и корректируем подготовку.</p></div>
-                    <div class="card__trust-text-tablet"><p class="P3">Пробуем свои силы на тестировании формата ОГЭ и ЕГЭ.</p></div>
+                    <div class="card__trust-head">
+                        <h2>Регулярно пишем пробники</h2>
+                    </div>
+                    <div class="card__trust-text">
+                        <p class="P3">Пробуем свои силы на тестировании<br>формата ОГЭ и ЕГЭ, смотрим на результаты<br>и
+                            корректируем подготовку.</p>
+                    </div>
+                    <div class="card__trust-text-tablet">
+                        <p class="P3">Пробуем свои силы на тестировании формата ОГЭ и ЕГЭ.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -390,196 +504,224 @@
         <img src="image/bkg-mobile-3.webp" alt="Фон 3" loading="lazy">
     </picture>
     <section class="faq">
-            <div class="h1__grad">
-                <h1>Вопросы и ответы</h1>
-            </div>
-                <!-- Блок -->
-            <div class="faq-contact">     
-                <div class="faq-group">
-                    <div class="faq-group__block">
-                        <div class="faq-group__title"><h2>Начало обучения</h2></div>
-                        <div class="faq-group__box">
-                            <div class="faq-item">
-                                <button class="faq-question P2">
+        <div class="h1__grad">
+            <h1>Вопросы и ответы</h1>
+        </div>
+        <!-- Блок -->
+        <div class="faq-contact">
+            <div class="faq-group">
+                <div class="faq-group__block">
+                    <div class="faq-group__title">
+                        <h2>Начало обучения</h2>
+                    </div>
+                    <div class="faq-group__box">
+                        <div class="faq-item">
+                            <button class="faq-question P2">
                                 Есть ли пробное занятие?
                                 <span class="faq-icon">+</span>
-                                </button>
-                                <button class="faq-question-tablet P2">
+                            </button>
+                            <button class="faq-question-tablet P2">
                                 Есть ли пробное занятие?
                                 <span class="faq-icon">+</span>
-                                </button>
-                                <div class="faq-answer P3">
-                                Да, перед началом обучения можно посетить пробное занятие. Это помогает ученику понять формат занятий, а родителям — убедиться,<br>что подход и атмосфера подходят ребёнку.
-                                </div>
+                            </button>
+                            <div class="faq-answer P3">
+                                Да, перед началом обучения можно посетить пробное занятие. Это помогает ученику понять
+                                формат занятий, а родителям — убедиться,<br>что подход и атмосфера подходят ребёнку.
                             </div>
-                            <div class="faq-line"></div>
-                            <div class="faq-item">
-                                <button class="faq-question P2">
+                        </div>
+                        <div class="faq-line"></div>
+                        <div class="faq-item">
+                            <button class="faq-question P2">
                                 Можно ли начать со слабой базой?
                                 <span class="faq-icon">+</span>
-                                </button>
-                                <button class="faq-question-tablet P2">
+                            </button>
+                            <button class="faq-question-tablet P2">
                                 Подойдет ли обучение при слабой базе?
                                 <span class="faq-icon">+</span>
-                                </button>
-                                <div class="faq-answer P3">
-                                Мы начинаем подготовку с текущего уровня ученика, а не с формальных требований программы. Сначала выявляем пробелы,<br>затем последовательно закрываем их<br>и только после этого переходим к более сложным темам и формату экзамена.<br>Наша задача — выстроить понятную систему знаний, а не просто «пройти материал».
-                                </div>
+                            </button>
+                            <div class="faq-answer P3">
+                                Мы начинаем подготовку с текущего уровня ученика, а не с формальных требований
+                                программы. Сначала выявляем пробелы,<br>затем последовательно закрываем их<br>и только
+                                после этого переходим к более сложным темам и формату экзамена.<br>Наша задача —
+                                выстроить понятную систему знаний, а не просто «пройти материал».
                             </div>
-                            <div class="faq-line"></div>
-                            <div class="faq-item">
-                                <button class="faq-question P2">
+                        </div>
+                        <div class="faq-line"></div>
+                        <div class="faq-item">
+                            <button class="faq-question P2">
                                 Нужна ли входная диагностика?
                                 <span class="faq-icon">+</span>
-                                </button>
-                                <button class="faq-question-tablet P2">
+                            </button>
+                            <button class="faq-question-tablet P2">
                                 Нужно ли проходить входную диагностику?
                                 <span class="faq-icon">+</span>
-                                </button>
-                                <div class="faq-answer P3">
-                                Да, перед началом обучения мы проводим входную диагностику. Она помогает понять текущий уровень ученика, определить основные пробелы и подобрать оптимальный формат и темп подготовки.<br>Диагностика не является экзаменом и не создаёт дополнительного стресса.
-                                </div>
+                            </button>
+                            <div class="faq-answer P3">
+                                Да, перед началом обучения мы проводим входную диагностику. Она помогает понять текущий
+                                уровень ученика, определить основные пробелы и подобрать оптимальный формат и темп
+                                подготовки.<br>Диагностика не является экзаменом и не создаёт дополнительного стресса.
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="faq-group__block">
-                        <div class="faq-group__title"><h2>Формат занятий</h2></div>
-                        <div class="faq-group__box">
-                            <div class="faq-item">
-                                <button class="faq-question P2">
+                <div class="faq-group__block">
+                    <div class="faq-group__title">
+                        <h2>Формат занятий</h2>
+                    </div>
+                    <div class="faq-group__box">
+                        <div class="faq-item">
+                            <button class="faq-question P2">
                                 Как проходят занятия?
                                 <span class="faq-icon">+</span>
-                                </button>
-                                <button class="faq-question-tablet P2">
+                            </button>
+                            <button class="faq-question-tablet P2">
                                 В каком формате проходят занятия — онлайн или офлайн?
                                 <span class="faq-icon">+</span>
-                                </button>
-                                <div class="faq-answer P3">
-                                Занятия проходят в офлайн-формате,<br>в аудитории центра.<br>Мы считаем живое общение с учителем<br>важной частью обучения: ученик может<br>сразу задавать вопросы, разбирать<br>ошибки и не терять ход рассуждений.
-                                </div>
+                            </button>
+                            <div class="faq-answer P3">
+                                Занятия проходят в офлайн-формате,<br>в аудитории центра.<br>Мы считаем живое общение с
+                                учителем<br>важной частью обучения: ученик может<br>сразу задавать вопросы,
+                                разбирать<br>ошибки и не терять ход рассуждений.
                             </div>
-                            <div class="faq-line"></div>
-                            <div class="faq-item">
-                                <button class="faq-question P2">
+                        </div>
+                        <div class="faq-line"></div>
+                        <div class="faq-item">
+                            <button class="faq-question P2">
                                 Как часто проходят занятия?
                                 <span class="faq-icon">+</span>
-                                </button>
-                                <button class="faq-question-tablet P2">
+                            </button>
+                            <button class="faq-question-tablet P2">
                                 Как часто проходят занятия и сколько они длятся?
                                 <span class="faq-icon">+</span>
-                                </button>
-                                <div class="faq-answer P3">
-                                Занятия проходят два раза в неделю. Продолжительность одного занятия<br>составляет 60 минут.<br>Такой формат позволяет поддерживать регулярность обучения и при этом<br>не создавать избыточной нагрузки,<br>сохраняя комфортный темп подготовки.
-                                </div>
+                            </button>
+                            <div class="faq-answer P3">
+                                Занятия проходят два раза в неделю. Продолжительность одного занятия<br>составляет 60
+                                минут.<br>Такой формат позволяет поддерживать регулярность обучения и при этом<br>не
+                                создавать избыточной нагрузки,<br>сохраняя комфортный темп подготовки.
                             </div>
-                            <div class="faq-line"></div>
-                            <div class="faq-item">
-                                <button class="faq-question P2">
+                        </div>
+                        <div class="faq-line"></div>
+                        <div class="faq-item">
+                            <button class="faq-question P2">
                                 Что делать при пропуске?
                                 <span class="faq-icon">+</span>
-                                </button>
-                                <button class="faq-question-tablet P2">
+                            </button>
+                            <button class="faq-question-tablet P2">
                                 Что происходит, если ребёнок пропустил занятие?
                                 <span class="faq-icon">+</span>
-                                </button>
-                                <div class="faq-answer P3">
-                                Если ученик пропускает занятие,<br>мы помогаем восполнить материал:<br>объясняем пропущенную тему и даём<br>задания для самостоятельной отработки,<br>чтобы ребёнок не выпадал из общего<br>процесса подготовки.<br>При наличии справки производится<br>перерасчёт стоимости занятий.
-                                </div>
+                            </button>
+                            <div class="faq-answer P3">
+                                Если ученик пропускает занятие,<br>мы помогаем восполнить материал:<br>объясняем
+                                пропущенную тему и даём<br>задания для самостоятельной отработки,<br>чтобы ребёнок не
+                                выпадал из общего<br>процесса подготовки.<br>При наличии справки
+                                производится<br>перерасчёт стоимости занятий.
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="faq-group__block">
-                        <div class="faq-group__title"><h2>Контроль и результат</h2></div>
-                        <div class="faq-group__box">
-                            <div class="faq-item">
-                                <button class="faq-question P2">
+                <div class="faq-group__block">
+                    <div class="faq-group__title">
+                        <h2>Контроль и результат</h2>
+                    </div>
+                    <div class="faq-group__box">
+                        <div class="faq-item">
+                            <button class="faq-question P2">
                                 По какой программе вы работаете?
                                 <span class="faq-icon">+</span>
-                                </button>
-                                <button class="faq-question-tablet P2">
+                            </button>
+                            <button class="faq-question-tablet P2">
                                 По какой программе вы работаете?
                                 <span class="faq-icon">+</span>
-                                </button>
-                                <div class="faq-answer P3">
-                                Подготовка ведётся по программе, выстроенной под формат ОГЭ и ЕГЭ.<br>Она регулярно обновляется с учётом требований экзаменов и включает<br>как базовые темы, так и задания повышенной сложности.<br>Мы используем собственные материалы<br>и задания, приближённые к реальным экзаменационным вариантам.
-                                </div>
+                            </button>
+                            <div class="faq-answer P3">
+                                Подготовка ведётся по программе, выстроенной под формат ОГЭ и ЕГЭ.<br>Она регулярно
+                                обновляется с учётом требований экзаменов и включает<br>как базовые темы, так и задания
+                                повышенной сложности.<br>Мы используем собственные материалы<br>и задания, приближённые
+                                к реальным экзаменационным вариантам.
                             </div>
-                            <div class="faq-line"></div>
-                            <div class="faq-item">
-                                <button class="faq-question P2">
+                        </div>
+                        <div class="faq-line"></div>
+                        <div class="faq-item">
+                            <button class="faq-question P2">
                                 Как отслеживается прогресс ученика?
                                 <span class="faq-icon">+</span>
-                                </button>
-                                <button class="faq-question-tablet P2">
+                            </button>
+                            <button class="faq-question-tablet P2">
                                 Как вы отслеживаете прогресс ученика?
                                 <span class="faq-icon">+</span>
-                                </button>
-                                <div class="faq-answer P3">
-                                Прогресс отслеживается регулярно:<br>через проверочные работы, задания<br>в формате экзамена и пробные варианты.<br>Это позволяет видеть динамику<br>и при необходимости корректировать<br>план подготовки.
-                                </div>
+                            </button>
+                            <div class="faq-answer P3">
+                                Прогресс отслеживается регулярно:<br>через проверочные работы, задания<br>в формате
+                                экзамена и пробные варианты.<br>Это позволяет видеть динамику<br>и при необходимости
+                                корректировать<br>план подготовки.
                             </div>
-                            <div class="faq-line"></div>
-                            <div class="faq-item">
-                                <button class="faq-question P2">
+                        </div>
+                        <div class="faq-line"></div>
+                        <div class="faq-item">
+                            <button class="faq-question P2">
                                 Где родители видят успеваемость?
                                 <span class="faq-icon">+</span>
-                                </button>
-                                <button class="faq-question-tablet P2">
+                            </button>
+                            <button class="faq-question-tablet P2">
                                 Видят ли родители результаты и посещаемость?
                                 <span class="faq-icon">+</span>
-                                </button>
-                                <div class="faq-answer P3">
-                                Да, родители могут отслеживать результаты обучения и посещаемость в личном кабинете. Мы считаем важным, чтобы процесс подготовки был прозрачным и понятным<br>не только ученику, но и родителям.
-                                </div>
+                            </button>
+                            <div class="faq-answer P3">
+                                Да, родители могут отслеживать результаты обучения и посещаемость в личном кабинете. Мы
+                                считаем важным, чтобы процесс подготовки был прозрачным и понятным<br>не только ученику,
+                                но и родителям.
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="contact-card">
-                    <div class="contact-header">
-                        <div class="contact-icon"><img src="image/phone-mobile.webp" alt="Ответим на ваши вопросы" loading="lazy"></div>
-                        <div class="contact-icon-desktop"><img src="image/phone-desktop.webp" alt="Ответим на ваши вопросы" loading="lazy"></div>
-                        <div class="contact-header-hp">
-                            <h2>Остались вопросы?</h2>
-                            <p class="P5">Заполните форму, мы свяжемся с вами<br>в ближайшее время.</p>
-                        </div>
+            </div>
+            <div class="contact-card">
+                <div class="contact-header">
+                    <div class="contact-icon"><img src="image/phone-mobile.webp" alt="Ответим на ваши вопросы"
+                            loading="lazy"></div>
+                    <div class="contact-icon-desktop"><img src="image/phone-desktop.webp" alt="Ответим на ваши вопросы"
+                            loading="lazy"></div>
+                    <div class="contact-header-hp">
+                        <h2>Остались вопросы?</h2>
+                        <p class="P5">Заполните форму, мы свяжемся с вами<br>в ближайшее время.</p>
                     </div>
-                    <!-- Переключатель -->
-                    <div class="switch contact-switch">
-                        <button class="switch-btn role left active" data-role="parent">Родитель</button>
-                        <button class="switch-btn role right" data-role="student">Ученик</button>
-                    </div>
-                    <!-- Форма -->
-                    <form class="contact-form" id="contactForm">
+                </div>
+                <!-- Переключатель -->
+                <div class="switch contact-switch">
+                    <button class="switch-btn role left active" data-role="parent">Родитель</button>
+                    <button class="switch-btn role right" data-role="student">Ученик</button>
+                </div>
+                <!-- Форма -->
+                <form class="contact-form" id="contactForm" action="send.php" method="POST">
+                    <input type="hidden" name="role" value="Родитель" id="roleInput">
+                    <input type="text" name="name" autocomplete="name" placeholder="Ваше имя" required>
 
-                        <input type="text" name="name" autocomplete="name" placeholder="Ваше имя" required>
+                    <input type="tel" name="phone" autocomplete="tel" placeholder="Телефон*" required>
 
-                        <input type="tel" name="phone" autocomplete="tel" placeholder="Телефон*" required>
+                    <textarea name="question" placeholder="Ваш вопрос..."></textarea>
 
-                        <textarea name="question" placeholder="Ваш вопрос..."></textarea>
-
-                        <label class="checkbox">
-                            <input type="checkbox" required>
-                            <span class="checkmark"></span>
-                            <span class="checkbox-text P6">
+                    <label class="checkbox">
+                        <input type="checkbox" required>
+                        <span class="checkmark"></span>
+                        <span class="checkbox-text P6">
                             Я выражаю согласие на передачу и обработку персональных данных<br>
                             в соответствии с <a href="">Политикой конфиденциальности*</a>
-                            </span>
-                        </label>
+                        </span>
+                    </label>
 
-                        <button type="submit" class="btn">
-                            <div>Отправить</div>
-                        </button>
+                    <button type="submit" class="btn">
+                        <div>Отправить</div>
+                    </button>
 
-                    </form>
-                </div>
+                </form>
             </div>
+        </div>
     </section>
     <!-- "Вопросы и ответы - конец" -->
 
-     <!-- "Отзывы - начало" -->
+    <!-- "Отзывы - начало" -->
     <section class="review">
         <div class="h1__grad">
             <h1>Отзывы о нашей работе</h1>
@@ -590,7 +732,7 @@
                 <div class="swiper-slide">
                     <div class="card-review">
                         <div class="review-header">
-                            <img src="image/parent1-mobile.webp"  alt="Отзыв родителя" loading="lazy">
+                            <img src="image/parent1-mobile.webp" alt="Отзыв родителя" loading="lazy">
                             <div>
                                 <h3 class="H3">Любимова Светлана</h3>
                                 <p class="P2">Родитель</p>
@@ -617,7 +759,8 @@
                         </div>
                         <div class="card__review-text">
                             <p class="P3">Благодаря Сергею Юрьевичу, сын полюбил<br>математику, сдал ОГЭ.</p>
-                            <p class="P3">Сергей Юрьевич всегда идет на контакт с<br>родителями, объяснит что у ребенка получается,<br>что не получается, находит подход.</p>
+                            <p class="P3">Сергей Юрьевич всегда идет на контакт с<br>родителями, объяснит что у ребенка
+                                получается,<br>что не получается, находит подход.</p>
                             <p class="P3">Дети с большим удовольствиям идут на занятия.<br>Спасибо большое!</p>
                         </div>
                     </div>
@@ -634,8 +777,10 @@
                             <span><a href="">2ГИС</a></span>
                         </div>
                         <div class="card__review-text">
-                            <p class="P3">Шикарная школа для подготовки к ЕГЭ, сдал на 78,<br>хоть мог и лучше, просто со второй частью<br>не очень повезло.</p>
-                            <p class="P3">Преподаватель объясняет очень понятно, разбирает<br>проблемные темы с каждым учеником<br>индивидуально.</p>
+                            <p class="P3">Шикарная школа для подготовки к ЕГЭ, сдал на 78,<br>хоть мог и лучше, просто
+                                со второй частью<br>не очень повезло.</p>
+                            <p class="P3">Преподаватель объясняет очень понятно, разбирает<br>проблемные темы с каждым
+                                учеником<br>индивидуально.</p>
                         </div>
                     </div>
                 </div>
@@ -665,7 +810,7 @@
                 <!-- Отзыв 1 -->
                 <div class="card-review">
                     <div class="review-header">
-                        <img src="image/parent1-mobile.webp"  alt="Отзыв родителя" loading="lazy">
+                        <img src="image/parent1-mobile.webp" alt="Отзыв родителя" loading="lazy">
                         <div>
                             <h3 class="H3">Любимова Светлана</h3>
                             <p class="P2">Родитель</p>
@@ -690,8 +835,10 @@
                         <span><a href="">2ГИС</a></span>
                     </div>
                     <div class="card__review-text">
-                        <p class="P3">Шикарная школа для подготовки к ЕГЭ, сдал на 78,<br>хоть мог и лучше, просто со второй частью<br>не очень повезло.</p>
-                        <p class="P3">Преподаватель объясняет очень понятно, разбирает<br>проблемные темы с каждым учеником<br>индивидуально.</p>
+                        <p class="P3">Шикарная школа для подготовки к ЕГЭ, сдал на 78,<br>хоть мог и лучше, просто со
+                            второй частью<br>не очень повезло.</p>
+                        <p class="P3">Преподаватель объясняет очень понятно, разбирает<br>проблемные темы с каждым
+                            учеником<br>индивидуально.</p>
                     </div>
                 </div>
             </div>
@@ -709,8 +856,10 @@
                     <div class="card__review-text">
                         <p class="P3 br__phone">Благодаря Сергею Юрьевичу, сын полюбил<br>математику, сдал ОГЭ.</p>
                         <p class="P3 br__desktop">Благодаря Сергею Юрьевичу, сын полюбил математику,<br>сдал ОГЭ.</p>
-                        <p class="P3 br__phone">Сергей Юрьевич всегда идет на контакт с<br>родителями, объяснит что у ребенка получается,<br>что не получается, находит подход.</p>
-                        <p class="P3 br__desktop">Сергей Юрьевич всегда идет на контакт с родителями,<br>объяснит что у ребенка получается, что не получается,<br>находит подход.</p>
+                        <p class="P3 br__phone">Сергей Юрьевич всегда идет на контакт с<br>родителями, объяснит что у
+                            ребенка получается,<br>что не получается, находит подход.</p>
+                        <p class="P3 br__desktop">Сергей Юрьевич всегда идет на контакт с родителями,<br>объяснит что у
+                            ребенка получается, что не получается,<br>находит подход.</p>
                         <p class="P3">Дети с большим удовольствиям идут на занятия.<br>Спасибо большое!</p>
                     </div>
                 </div>
@@ -731,42 +880,52 @@
                 </div>
             </div>
         </div>
-        <button class="btn thin white tablet">Посмотреть все отзывы</button>
+        <a href="reviews.html" class="btn thin white tablet" style="text-decoration: none;">
+            Посмотреть все отзывы
+        </a>
     </section>
     <!-- "Отзывы - конец" -->
 
     <!-- "Контакты - начало" -->
-     <picture class="bkg-4">
+    <picture class="bkg-4">
         <source media="(min-width: 1024px)" srcset="image/bkg-desktop-4.webp">
         <source media="(min-width: 768px)" srcset="image/bkg-tablet-4.webp">
         <img src="image/bkg-mobile-4.webp" alt="Фон 4" loading="lazy">
     </picture>
-     <section class="contact-map">
+    <section class="contact-map">
         <div class="contact-map-card">
 
             <!-- Карта -->
             <div class="map-container">
-            <iframe id="map_648979627" frameborder="0" src="https://makemap.2gis.ru/widget?data=eJw1jkFvgzAMhf-Ld42qkDQU-AGdduut0qYeEPG2SAFHwZXaIf77TNh8st6zv_cWoOwxo39FGpFzwBm6jwX4mRA6OGPP94ygIGVKmLn4CwwUKYv_ok1TfRrxOXDcPmT1OA85JA407cLP2-TxAV2l_2dV8LUHPjfcX9qFwsRyP5CUClPPpUxjDq3RprLKuYO2trY3eQ9-452O603B2KcLzWEPXCD2DF25rWrjXG3apjpaBXGzC00UfWqcrdumlXpEo8CcUKU4xXj9RozvReV8x_UXvH1ZGA" sandbox="allow-modals allow-forms allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation" loading="lazy"></iframe>
+                <iframe id="map_648979627" frameborder="0"
+                    src="https://makemap.2gis.ru/widget?data=eJw1jkFvgzAMhf-Ld42qkDQU-AGdduut0qYeEPG2SAFHwZXaIf77TNh8st6zv_cWoOwxo39FGpFzwBm6jwX4mRA6OGPP94ygIGVKmLn4CwwUKYv_ok1TfRrxOXDcPmT1OA85JA407cLP2-TxAV2l_2dV8LUHPjfcX9qFwsRyP5CUClPPpUxjDq3RprLKuYO2trY3eQ9-452O603B2KcLzWEPXCD2DF25rWrjXG3apjpaBXGzC00UfWqcrdumlXpEo8CcUKU4xXj9RozvReV8x_UXvH1ZGA"
+                    sandbox="allow-modals allow-forms allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"
+                    loading="lazy"></iframe>
             </div>
 
             <!-- Кнопка -->
-            <button type="submit" class="btn call">
+            <button class="btn call  open-form" data-title="Записаться на занятия">
                 <div>Записаться на занятия</div>
             </button>
 
             <!-- Контакты -->
             <div class="contact-info">
-            <div class="contact-info_adress"><p class="P5">г.Новосибирск, ул. Красный Проспект, д.46, оф. 6</p></div>
-            <a href="tel:+79681748319" class="phone">
-                +7 (968) 174-83-19
-            </a>
+                <div class="contact-info_adress">
+                    <p class="P5">г.Новосибирск, ул. Красный Проспект, д.46, оф. 6</p>
+                </div>
+                <a href="tel:+79681748319" class="phone">
+                    +7 (968) 174-83-19
+                </a>
             </div>
 
         </div>
-         <div class="contact-map-card__tablet">
+        <div class="contact-map-card__tablet">
             <!-- Карта -->
             <div class="map-container">
-                <iframe id="map_937652176" frameborder="0" width="582px" height="279px" src="https://makemap.2gis.ru/widget?data=eJw1jkFOxDAMRe9ittGoySQ07QFA7GaHBJpF1RiIlNZR6pEYqt4dp4WsIn_7_bcClYAFwzPShFwiLtC_r8D3jNDDEw58KwgKcqGMhfd8hZESFckfGuP1h5GcI6d6Id-Ay1hi5kjzMfh5mQN-Q6-b_7cp-DwK7xX313ahOLPsjyRScR54l_Hm1Omu81Y5d2rOZ9faq9zHUIHOb1cF05AvtMSjcYU0MPT7sm6td1Z3jW2NglTjijPW2_ZR3K01TvyIJoE5oYo5pfT6hZje9imXG26_FktZVA" sandbox="allow-modals allow-forms allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation" loading="lazy"></iframe>
+                <iframe id="map_937652176" frameborder="0" width="582px" height="279px"
+                    src="https://makemap.2gis.ru/widget?data=eJw1jkFOxDAMRe9ittGoySQ07QFA7GaHBJpF1RiIlNZR6pEYqt4dp4WsIn_7_bcClYAFwzPShFwiLtC_r8D3jNDDEw58KwgKcqGMhfd8hZESFckfGuP1h5GcI6d6Id-Ay1hi5kjzMfh5mQN-Q6-b_7cp-DwK7xX313ahOLPsjyRScR54l_Hm1Omu81Y5d2rOZ9faq9zHUIHOb1cF05AvtMSjcYU0MPT7sm6td1Z3jW2NglTjijPW2_ZR3K01TvyIJoE5oYo5pfT6hZje9imXG26_FktZVA"
+                    sandbox="allow-modals allow-forms allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"
+                    loading="lazy"></iframe>
             </div>
             <div class="contact-map-card__tablet__flex">
                 <!-- Контакты -->
@@ -781,10 +940,12 @@
                 </div>
                 <div class="contact-info">
                     <img src="image/contact__home.svg" alt="Адрес центра">
-                    <div class="contact-info_adress"><p class="P2">г.Новосибирск, ул. Красный Проспект, д.46, оф. 6</p></div>
+                    <div class="contact-info_adress">
+                        <p class="P2">г.Новосибирск, ул. Красный Проспект, д.46, оф. 6</p>
+                    </div>
                 </div>
                 <!-- Кнопка -->
-                <button type="submit" class="btn call">
+                <button class="btn call  open-form" data-title="Записаться на занятия">
                     <div>Записаться на занятия</div>
                 </button>
             </div>
@@ -792,7 +953,81 @@
     </section>
     <!-- "Контакты - конец" -->
 
-    
+
+    <!--    btn__enroll-course - Begin  -->
+    <div class="modal" id="formModal">
+        <div class="modal__overlay"></div>
+
+        <div class="modal__content">
+            <form action="send.php" method="POST" class="form">
+
+                <!-- Заголовок -->
+                <div class="form__header">
+                    <img src="image/phone-form.webp" alt="Телефон">
+                    <div class="form__header-text">
+                        <h3 id="formTitle">Записаться на курсы</h3>
+                        <p>Заполните форму, мы свяжемся с вами<br>в ближайшее время.</p>
+                    </div>
+                </div>
+
+                <div class="form__fields">
+                    <!-- Переключатель -->
+                    <div class="form__tabs">
+                        <button type="button" class="form__tab active" data-role="parent">Родитель</button>
+                        <button type="button" class="form__tab" data-role="student">Ученик</button>
+                    </div>
+                    <!-- Скрытое поле -->
+                    <input type="hidden" name="role" value="Родитель" id="roleInput">
+                    <!-- Поля -->
+
+
+                    <input type="text" name="name" placeholder="Ваше имя" required>
+
+                    <input type="tel" name="phone" placeholder="Телефон*" required>
+                </div>
+
+                <!-- Согласие -->
+                <label class="form__checkbox">
+                    <input type="checkbox" required>
+                    <span class="checkmark"></span>
+                    <span>
+                        Я выражаю согласие на передачу и обработку персональных данных<br>
+                        в соответствии с <a href="#">Политикой конфиденциальности</a>*
+                    </span>
+                </label>
+
+                <!-- Кнопка -->
+                <button type="submit" class="cta-btn-2"
+                    style="width: max-content; border-radius: var(--radius-round); margin: 0 auto; padding: var(--space-3xs) var(--space-md); font-size: var(--text-lg);">
+                    Отправить
+                </button>
+            </form>
+            <div class="successModal">
+                <!-- Заголовок -->
+                <div class="form__header">
+                    <img src="image/phone-form.webp" alt="Телефон">
+                    <div class="form__header-text">
+                        <h3>Заявка отправлена!</h3>
+                        <p>Мы свяжемся с вами в ближайшее время.</p>
+                    </div>
+                </div>
+
+                <div class="modal__line">
+                    <div class="hor__line"></div>
+                    <img src="image/successful.png" alt="Успешно">
+                    <div class="hor__line"></div>
+                </div>
+
+                <button class="cta-btn-2"
+                    style="width: max-content; border-radius: var(--radius-round); margin: 0 auto; padding: var(--space-3xs) var(--space-md); font-size: var(--text-lg);"
+                    id="closeSuccessBtn">
+                    Продолжить
+                </button>
+            </div>
+        </div>
+    </div>
+    <!--    btn__enroll-course - End  -->
+
     <!-- Футер -->
     <footer class="footer">
         <div class="footer-container">
@@ -806,7 +1041,7 @@
                         <img src="image/logo-black.webp" class="footer-logo__img" alt="Логотип">
                     </div>
                     <p class="footer-description">
-                    Центр подготовки к ОГЭ и ЕГЭ по физике и математике
+                        Центр подготовки к ОГЭ и ЕГЭ по физике и математике
                     </p>
                 </div>
 
@@ -815,25 +1050,24 @@
 
                     <!-- Курсы -->
                     <div class="footer-column">
-                    <h3 class="H3">Курсы</h3>
-                    <ul>
-                        <li><a href="#">ЕГЭ по математике</a></li>
-                        <li><a href="#">ЕГЭ по физике</a></li>
-                        <li><a href="#">ОГЭ по математике</a></li>
-                        <li><a href="#">ОГЭ по физике</a></li>
-                    </ul>
+                        <h3 class="H3">Курсы</h3>
+                        <ul>
+                            <li><a href="courses-ege-math.html">ЕГЭ по математике</a></li>
+                            <li><a href="courses-ege-phys.html">ЕГЭ по физике</a></li>
+                            <li><a href="courses-oge-math.html">ОГЭ по математике</a></li>
+                            <li><a href="courses-oge-phys.html">ОГЭ по физике</a></li>
+                        </ul>
                     </div>
 
                     <!-- О центре -->
                     <div class="footer-column">
-                    <h3 class="H3">О центре</h3>
-                    <ul>
-                        <li><a href="#">Сведения об организации</a></li>
-                        <li><a href="#">Акции</a></li>
-                        <li><a href="#">Telegram</a></li>
-                        <li><a href="#">WhatsApp</a></li>
-                        <li><a href="#">Instagram</a></li>
-                    </ul>
+                        <h3 class="H3">О центре</h3>
+                        <ul>
+                            <li><a href="#">Сведения об организации</a></li>
+                            <li><a href="promotions.html">Акции</a></li>
+                            <li><a href="http://t.me/pavlidi_s_u">Telegram</a></li>
+                            <li><a href="https://wa.me/qr/KLHJ6VI3FB5PN1">WhatsApp</a></li>
+                        </ul>
                     </div>
 
                 </div>
@@ -867,33 +1101,32 @@
                         <img src="image/logo-black.webp" class="footer-logo__img" alt="Логотип">
                     </div>
                     <p class="footer-description">
-                    Центр подготовки к ОГЭ и ЕГЭ по физике и математике
+                        Центр подготовки к ОГЭ и ЕГЭ по физике и математике
                     </p>
                 </div>
 
 
-                    <!-- Курсы -->
-                    <div class="footer-column">
+                <!-- Курсы -->
+                <div class="footer-column">
                     <h3 class="H3">Курсы</h3>
                     <ul>
-                        <li><a href="#">ЕГЭ по математике</a></li>
-                        <li><a href="#">ЕГЭ по физике</a></li>
-                        <li><a href="#">ОГЭ по математике</a></li>
-                        <li><a href="#">ОГЭ по физике</a></li>
+                        <li><a href="courses-ege-math.html">ЕГЭ по математике</a></li>
+                        <li><a href="courses-ege-phys.html">ЕГЭ по физике</a></li>
+                        <li><a href="courses-oge-math.html">ОГЭ по математике</a></li>
+                        <li><a href="courses-oge-phys.html">ОГЭ по физике</a></li>
                     </ul>
-                    </div>
+                </div>
 
-                    <!-- О центре -->
-                    <div class="footer-column">
+                <!-- О центре -->
+                <div class="footer-column">
                     <h3 class="H3">О центре</h3>
                     <ul>
                         <li><a href="#">Сведения об организации</a></li>
-                        <li><a href="#">Акции</a></li>
-                        <li><a href="#">Telegram</a></li>
-                        <li><a href="#">WhatsApp</a></li>
-                        <li><a href="#">Instagram</a></li>
+                        <li><a href="promotions.html">Акции</a></li>
+                        <li><a href="http://t.me/pavlidi_s_u">Telegram</a></li>
+                        <li><a href="https://wa.me/qr/KLHJ6VI3FB5PN1">WhatsApp</a></li>
                     </ul>
-                    </div>
+                </div>
             </div>
 
             <!-- Разделительная линия -->
@@ -914,7 +1147,8 @@
 
         </div>
     </footer>
-    
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </body>
+
 </html>

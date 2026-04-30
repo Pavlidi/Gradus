@@ -6,3 +6,272 @@
 
     background-color: var(--color-border);
 }
+
+/* --- Forms - Begin --- */
+.form {
+    display: flex;
+    flex-direction: column;
+
+    width: max-content;
+    margin: 0 auto;
+    padding: var(--space-sm) var(--space-md);
+    gap: var(--space-sm);
+
+    background-color: var(--color-surface);
+    border-radius: var(--radius-card);
+    box-shadow: var(--box__shadow-3);
+}
+
+.form__header {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+}
+
+.form__header img {
+    width: var(--space-3xl);
+    height: var(--space-3xl);
+}
+
+.form__header-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.form__header-text h3 {
+    font-size: var(--text-lg);
+    font-weight: 700;
+    line-height: 1.5;
+
+    color: var(--color-text);
+}
+
+.form__header-text p {
+    font-size: var(--text-xs);
+    font-weight: 300;
+    line-height: 1.4;
+
+    color: var(--color-text);
+}
+
+.form__tabs {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: var(--space-4xs);
+
+    background-color: var(--color-primary);
+    border-radius: var(--radius-round);
+}
+
+.form__tab {
+    width: 50%;
+
+    padding: var(--space-4xs);
+    font-size: calc(100vw * 14 / var(--container-width));
+    font-weight: 700;
+    line-height: 1.5;
+
+    color: var(--color-text-secondary);
+    background: none;
+    border: none;
+}
+
+.form__tab:hover {
+  cursor: pointer; /* Меняет курсор на "руку" */
+}
+
+.form__tab.active {
+    background: var(--gradient-btn);
+    border-radius: var(--radius-round);
+    box-shadow: var(--box-shadows-sm);
+    color: var(--color-text-light)
+}
+
+.form__fields {
+    display: flex;
+    flex-direction: column;
+
+    gap: var(--space-xs);
+}
+
+.form__fields input {
+    padding: var(--space-4xs) var(--space-md);
+
+    font-size: calc(100vw * 14 / var(--container-width));
+    font-weight: 300;
+    line-height: 1.5;
+    color: var(--color-text);
+
+    background: none;
+    border: solid var(--color-border) var(--border-width);
+    border-radius: var(--radius-round);
+}
+
+.form input::placeholder {
+  color: var(--color-text-secondary);
+}
+
+.form__checkbox {
+    display: flex;
+}
+
+.form__checkbox span {
+    font-size: calc(100vw * 8 / var(--container-width));
+    font-weight: 300;
+    line-height: 1.1;
+}
+
+.form__checkbox input {
+  display: none;
+}
+
+.form__checkbox {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2xs);
+  cursor: pointer;
+}
+
+.form__checkbox .checkmark {
+  width: var(--size-2xs);
+  height: var(--size-2xs);
+  border-radius: 50%;
+  background-color: #2f2f3f;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form__checkbox .checkmark::after {
+  content: "";
+  display: block;
+
+  width: var(--size-2xs);
+  height: var(--size-2xs);
+
+  background-image: url("../image/check.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  opacity: 0;
+  transition: 0.2s;
+}
+
+.form__checkbox input:checked + .checkmark::after {
+  opacity: 1;
+}
+
+.form__checkbox:hover .checkmark {
+  transform: scale(1.05);
+}
+
+.successModal {
+    display: flex;
+    flex-direction: column;
+
+    width: max-content;
+    margin: 0 auto;
+    padding: var(--space-sm) var(--space-md);
+    gap: var(--space-sm);
+
+    background-color: var(--color-surface);
+    border-radius: var(--radius-card);
+    box-shadow: var(--box__shadow-3);
+}
+
+.modal__line {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: var(--space-sm);
+}
+
+.hor__line {
+    display: block;
+    height: var(--border-width);
+    width: 100%;
+    background-color: var(--color-border);
+}
+
+.modal__line img {
+    width: var(--size-sm);
+    height: var(--size-sm);
+}
+/* - Действия с формой - */
+.form,
+.successModal {
+  display: none;
+}
+
+.form.active,
+.successModal.active {
+  display: flex;
+}
+
+.cta-btn:hover {
+  cursor: pointer; /* Меняет курсор на "руку" */
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 1000;
+}
+
+.modal.active {
+  display: flex;
+}
+
+.modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(6px);
+}
+
+.modal__content {
+  position: relative;
+  z-index: 2;
+}
+
+
+.cta-btn-2 {
+  padding: var(--size-2xs) var(--size-xl);
+  border-radius: var(--radius-xl);
+  border: none;
+  background: var(--gradient-btn);
+  color: var(--color-text-light);
+  font-size: var(--text-md);
+  line-height: 1.5;
+  font-weight: 700;
+
+  display: flex;
+  /* 🔥 главное */
+  align-items: center;
+  /* вертикально по центру */
+  justify-content: center;
+  /* по центру */
+  gap: var(--space-xs);
+  /* расстояние между иконкой и текстом */
+
+  box-shadow: var(--box-shadows-sm);
+}
+
+.cta-btn-2 img {
+  width: var(--size-xl);
+  height: var(--size-xl);
+}
+
+/* --- Forms - End --- */

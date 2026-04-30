@@ -145,6 +145,7 @@ h3 {
 /*                                                 Переменные величины - Begin                                                 */
 :root {
   --mainWidth: 390;
+  --container-width: 390;
   /*  Основная ширина экрана в Фигме (390, 768, 1440  */
 
   --main_font_size: calc(100vw * 14 / var(--mainWidth));
@@ -327,6 +328,100 @@ h3 {
   --swiper-pagination_Active-radius: 99;
 
   /*  Swiper - End */
+
+  /* Новый значения переменных */
+  /*  Layout tokens  */
+  --container-width: 390;
+  --container-padding: calc(100vw * 16 / var(--container-width));
+  --section-padding: calc(100vw * 32 / var(--container-width));
+
+
+  /*  Spacing Tokens  */
+  --space-4xs: calc(100vw * 2 / var(--container-width));
+  --space-3xs: calc(100vw * 4 / var(--container-width));
+  --space-2xs: calc(100vw * 6 / var(--container-width));
+  --space-xs: calc(100vw * 8 / var(--container-width));
+  --space-sm: calc(100vw * 12 / var(--container-width));
+  --space-md: calc(100vw * 16 / var(--container-width));
+  --space-lg: calc(100vw * 24 / var(--container-width));
+  --space-xl: calc(100vw * 32 / var(--container-width));
+  --space-2xl: calc(100vw * 40 / var(--container-width));
+  --space-3xl: calc(100vw * 48 / var(--container-width));
+  --space-4xl: calc(100vw * 62 / var(--container-width));
+  --space-5xl: calc(100vw * 102 / var(--container-width));
+  --space-6xl: calc(100vw * 376 / var(--container-width));
+  --space-7xl: calc(100vw * 416 / var(--container-width));
+
+
+  /*  Size Tokens  */
+  --size-2xs: calc(100vw * 10 / var(--container-width));
+  --size-xs: calc(100vw * 12 / var(--container-width));
+  --size-sm: calc(100vw * 14 / var(--container-width));
+  --size-md: calc(100vw * 16 / var(--container-width));
+  --size-lg: calc(100vw * 18 / var(--container-width));
+  --size-xl: calc(100vw * 20 / var(--container-width));
+
+
+  /*  Radius Tokens  */
+  --radius-xs: calc(100vw * 2 / var(--container-width));
+  --radius-sm: calc(100vw * 4 / var(--container-width));
+  --radius-md: calc(100vw * 6 / var(--container-width));
+  --radius-lg: calc(100vw * 8 / var(--container-width));
+  --radius-xl: calc(100vw * 12 / var(--container-width));
+  --radius-card-s: calc(100vw * 20 / var(--container-width));
+  --radius-card: calc(100vw * 25 / var(--container-width));
+  --radius-round: calc(100vw * 100 / var(--container-width));
+
+
+  /*  Border Tokens  */
+  --border-width: calc(100vw * 1 / var(--container-width));
+  --border-width-thick: calc(100vw * 2 / var(--container-width));
+
+
+  /*  Text sizes  */
+  --text-xs: calc(100vw * 12 / var(--container-width));
+  --text-sm: calc(100vw * 13 / var(--container-width));
+  --text-md: calc(100vw * 15 / var(--container-width));
+  --text-lg: calc(100vw * 19 / var(--container-width));
+  --text-xl: calc(100vw * 24 / var(--container-width));
+  --text-2xl: calc(100vw * 30 / var(--container-width));
+  --text-3xl: calc(100vw * 37 / var(--container-width));
+
+
+  /*  Line-heights  */
+  --line-height-sm: calc(100vw * 1.4 / var(--container-width));
+  --line-height-md: calc(100vw * 1.5 / var(--container-width));
+  --line-height-lg: calc(100vw * 1.6 / var(--container-width));
+
+
+  /*  Colors  */
+  --color-text: #252532;
+  --color-text-light: #FFFFFF;
+  --color-text-secondary: #BABABA;
+  --color-text-secondary-dark: #5C5C64;
+  --color-bg: #FAF9F6;
+  --color-surface: #FFFFFF;
+  --color-surface-light: #FAF9F6;
+  --color-border: #E2E2E2;
+  --color-border-dark: #32303E;
+  --color-border-light: #F8F8F8;
+  --color-primary: #252532;
+  --color-primary-light: #E9E9EB;
+  --color-status-new: #DBEFFE;
+  --color-status-fail: #F64F59;
+  --color-status-complete: #92FE9D;
+  --color-progress-done: #00C9FF;
+  --color-progress-active: #92FE9E;
+
+  /*  Gradients */
+  --gradient-btn: linear-gradient(180deg, #3B3A4E 0%, #272733 100%);
+  --gradient-green: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%);
+  --gradient-green-vert: linear-gradient(360deg, #00C9FF 0%, #6BF0B8 100%);
+  --gradient-blue: radial-gradient(ellipse 165.01% 165.01% at 16.25% 82.50%, #12C2E9 0%, #C471ED 100%);
+
+  /*  Box-shadows  */
+  --box-shadows-sm: 0px 2px 8px rgba(0, 0, 0, 0.15);
+  --box-shadows-md:  0px 6px 30px rgba(0, 0, 0, 0.06);
 }
 /*                                                 Переменные величины - End                                                 */
 
@@ -355,6 +450,7 @@ h3 {
   /*                                                 Переменные величины - Begin                                                 */
   :root {
     --mainWidth: 768;
+    --container-width: 768;
   /*  Основная ширина экрана в Фигме (390, 768, 1440  */
 
     --main_font_size: calc(100vw * 14 / var(--mainWidth));
@@ -499,6 +595,7 @@ h3 {
   /*                                                 Переменные величины - Begin                                                 */
   :root {
     --mainWidth: 1440;
+    --container-width: 1440;
   /*  Основная ширина экрана в Фигме (390, 768, 1440  */
 
     --main_font_size: calc(100vw * 14 / var(--mainWidth));

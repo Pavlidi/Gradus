@@ -161,6 +161,8 @@ new Swiper(".coursesSwiper", {
   spaceBetween: 12,
   centeredSlides: true,
 
+  initialSlide: 1,
+
   speed: 600, // 🔥 плавность
   grabCursor: true,
 
@@ -173,13 +175,117 @@ new Swiper(".coursesSwiper", {
 const navLinks = document.querySelectorAll('.nav-link');
 
 navLinks.forEach(link => {
-  link.addEventListener('click', function() {
-    
+  link.addEventListener('click', function () {
+
     // Убираем active у всех
     navLinks.forEach(l => l.classList.remove('active'));
-    
+
     // Добавляем текущему
     this.classList.add('active');
-    
+
+  });
+});
+
+// === Работа с кнопками "Записаться"... - Начало ===
+const buttons = document.querySelectorAll('.open-form');
+const modal = document.getElementById('formModal');
+const formTitle = document.getElementById('formTitle');
+
+buttons.forEach(btn => {
+  btn.addEventListener('click', () => {
+
+    // меняем заголовок
+    formTitle.textContent = btn.dataset.title;
+
+    // открываем форму
+    modal.classList.add('active');
+    form.classList.add('active');   // 🔥 ВОТ ЭТО КЛЮЧ
+    success.classList.remove('active');
+  });
+});
+
+const form = document.querySelector('.form');
+const success = document.querySelector('.successModal');
+
+
+document.addEventListener('click', (e) => {
+  if (e.target.classList.contains('active') && e.target.classList.contains('form')) {
+    form.classList.remove('active');
+  }
+});
+
+// Перехват отправки
+form.addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  const formData = new FormData(this);
+
+  fetch('send.php', {
+    method: 'POST',
+    body: formData
+  })
+    .then(() => {
+      // 🔥 скрываем форму
+      form.classList.remove('active');
+
+      // 🔥 показываем success
+      success.classList.add('active');
+
+      form.reset();
+    })
+    .catch(() => {
+      alert('Ошибка отправки');
+    });
+});
+
+
+
+
+// Закрытие
+const closeBtn = document.getElementById('closeSuccessBtn');
+
+closeBtn.addEventListener('click', () => {
+  success.classList.remove('active');
+  modal.classList.remove('active');
+
+  closeBtn.addEventListener('click', () => {
+    success.classList.remove('active');
+    modal.classList.remove('active');
+  });
+});
+
+modal.addEventListener('click', (e) => {
+  if (e.target.classList.contains('modal__overlay')) {
+    modal.classList.remove('active');
+  }
+});
+// === Работа с кнопками "Записаться"... - Конец ===
+
+
+
+//  Forms - Begin
+const tabss = document.querySelectorAll('.form__tab');
+const roleInput = document.getElementById('roleInput');
+
+tabss.forEach(tab => {
+  tab.addEventListener('click', () => {
+    tabss.forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+
+    const role = tab.dataset.role === 'parent' ? 'Родитель' : 'Ученик';
+    roleInput.value = role;
+  });
+});
+//  Forms - End
+
+
+
+document.querySelectorAll('.switch-btn.role').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.switch-btn.role').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    const role = btn.dataset.role === 'parent' ? 'Родитель' : 'Ученик';
+    document.getElementById('roleInput').value = role;
   });
 });

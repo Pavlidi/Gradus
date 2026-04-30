@@ -295,6 +295,120 @@
 /* ======= Promotions - End ======= */
 
 
+/* ======= Review - Begin ======= */
+.review__container {
+  padding-top: var(--space-5xl);
+  background-image: url('../image/review-1-mobile.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.review__header {
+  display: flex;
+  width: 100%;
+  padding: var(--space-2xs);
+  justify-content: space-between;
+}
+
+.review__header a {
+  font-size: calc(100vw * 10 / var(--container-width));
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.review__avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: calc(100vw * 9 / var(--container-width));
+}
+
+.review__avatar img {
+  width: var(--space-2xl);
+  height: var(--space-2xl);
+}
+
+.review__role h3,
+.review__role p {
+  font-size: calc(100vw * 14 / var(--container-width));
+  line-height: 1.1;
+}
+
+.review__description {
+  display: flex;
+  flex-direction: column;
+
+  padding: var(--space-2xs);
+  gap: var(--space-3xs);
+}
+
+.review__description p {
+  line-height: 1.1;
+}
+
+.review-card {
+  margin: var(--space-sm) auto var(--space-xl);
+  width: max-content;
+}
+
+.review-s {
+  flex-direction: row;
+  width: 100%;
+}
+
+.reviews_mark {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.star-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3xs);
+}
+
+.star-row img {
+  width: var(--size-2xs);
+  height: var(--size-2xs);
+}
+
+.vert-line {
+  display: block;
+  width: var(--border-width);
+  height: auto;
+
+  background-color: var(--color-border);
+}
+
+.reviews_link {
+  margin: auto 0;
+}
+
+.reviews_link a {
+  text-decoration: none;
+}
+
+.review-btn {
+  display: flex;
+  align-items: center;
+
+  gap: var(--space-3xs);
+}
+
+.review-btn img {
+  width: var(--size-sm);
+  height: var(--size-sm);
+}
+
+/* ======= Review - End ======= */
 
 @media (min-width: 768px) {
   .top__background {
@@ -303,6 +417,7 @@
     background-size: cover;
     background-position: center;
   }
+
 
   /* ======= Courses - Begin ======= */
   .courses__container {
@@ -335,6 +450,10 @@
     width: 100%;
     gap: var(--space-3xs);
     /* 🔥 */
+  }
+
+  .review-card {
+    width: max-content;
   }
 
   .s {
@@ -404,9 +523,35 @@
     gap: var(--space-xs);
   }
 
+  .review__column-left {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: var(--space-xs);
+  }
+
+  .review__column-right {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: var(--space-xs);
+  }
+
   .promotion__grid {
     width: 100%;
     margin: var(--space-xs) auto var(--space-2xl);
+  }
+
+  .review__container {
+    background-image: none;
+    padding-top: var(--space-2xl);
+  }
+
+  .top__background-review {
+    background-image: url('../image/review-1-tablet.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
   }
 
   /* ======= Promotions - End ======= */
@@ -461,4 +606,9 @@
   }
 
   /* ======= Promotions - End ======= */
+
+  .top__background-review {
+    background-image: url('../image/review-1-desktop.webp');
+  }
+
 }
