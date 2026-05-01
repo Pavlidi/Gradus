@@ -438,6 +438,29 @@
 /* ======= CTA - End ======= */
 
 
+/* ======= Company-about - Begin ======= */
+.company-item {
+    display: block;
+    flex-direction: column;
+    margin-left: var(--space-xs);
+}
+
+.company-item h2 {
+    color: var(--color-text);
+    font-size: var(--text-lg);
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.company-item p {
+    color: var(--color-text);
+    font-size: var(--size-sm);
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+/* ======= Company-about - End ======= */
+
 
 @media (min-width: 768px) {
     .mobile {
@@ -706,7 +729,7 @@
         width: max-content;
     }
 
-    
+
     /* ======= Format - End ======= */
 
 
